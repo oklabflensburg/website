@@ -20,6 +20,10 @@ jobs:
       - name: Enable pnpm
         run: corepack enable
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
+      - name: Type-check application
+        run: pnpm typecheck
+      - name: Run tests
+        run: pnpm test
       - name: Generate static website
         run: pnpm generate
