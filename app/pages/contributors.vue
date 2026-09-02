@@ -25,6 +25,10 @@ const contributors = contributorsData as Contributor[]
         <article><h2>{{ $t('contributors.optOutTitle') }}</h2><p>{{ $t('contributors.optOutText') }}</p></article>
       </section>
       <section class="section-shell content-section">
+        <div class="section-heading team-heading">
+          <h2>{{ $t('contributors.teamTitle') }}</h2>
+          <p>{{ $t('contributors.teamIntro') }}</p>
+        </div>
         <div class="contributors-grid full">
           <ContributorCard v-for="contributor in contributors" :key="contributor.login" :contributor="contributor" />
         </div>

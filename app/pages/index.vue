@@ -7,6 +7,7 @@ useLocalizedSeo('meta.homeTitle', 'meta.homeDescription')
     <AppHeader />
     <main id="main-content">
       <HeroSection />
+      <AboutLabSection />
       <TechnologyPaths />
       <FeaturedProject />
       <ProjectGrid />

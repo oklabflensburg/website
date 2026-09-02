@@ -7,6 +7,8 @@ const root = resolve(import.meta.dirname, '..')
 const config = readFileSync(resolve(root, 'nuxt.config.ts'), 'utf8')
 const header = readFileSync(resolve(root, 'app/components/AppHeader.vue'), 'utf8')
 const switcher = readFileSync(resolve(root, 'app/components/LanguageSwitcher.vue'), 'utf8')
+const aboutLab = readFileSync(resolve(root, 'app/components/AboutLabSection.vue'), 'utf8')
+const contributors = JSON.parse(readFileSync(resolve(root, 'app/data/contributors.json'), 'utf8'))
 const locales = Object.fromEntries(['de', 'da', 'en'].map(code => [code, JSON.parse(readFileSync(resolve(root, `i18n/locales/${code}.json`), 'utf8'))]))
 
 function componentSources(directory: string): string[] {
@@ -45,6 +47,11 @@ describe('localized static site', () => {
     expect(header).toContain('aria-expanded')
     expect(header).toContain('aria-controls="mobile-navigation"')
     expect(header).toContain("menuOpen = !menuOpen")
+  })
+
+  it('introduces the lab and includes every currently public organization member', () => {
+    expect(aboutLab).toContain("aboutLab.process.steps")
+    expect(contributors.filter((person: { organizationMember?: boolean }) => person.organizationMember)).toHaveLength(11)
   })
 
   it('contains every required project exactly once and no placeholder URLs', () => {

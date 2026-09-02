@@ -143,6 +143,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background-size: 180px 130px, 210px 170px, 260px 260px;
 }
 
+.about-lab { background: #fff; }
+.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.about-grid article { padding: 1.8rem; border: 1px solid #10252a18; border-radius: 1rem; background: #f6f8f3; }
+.about-grid svg { color: #0069f6; }
+.about-grid h3 { margin: 1.8rem 0 .7rem; font-size: 1.3rem; }
+.about-grid p { margin: 0; color: #52676c; line-height: 1.65; }
+.lab-process { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; margin-top: 1.25rem; padding: clamp(2rem, 5vw, 3.5rem); border-radius: 1.5rem; background: #e7f2ff; }
+.lab-process h3 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; }
+.lab-process p:not(.featured-label) { color: #43585d; line-height: 1.7; }
+.lab-process ol { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; }
+.lab-process li { display: flex; align-items: center; gap: .9rem; padding: .8rem 0; border-bottom: 1px solid #10252a18; font-weight: 700; }
+.lab-process li span { display: grid; width: 2rem; height: 2rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #0069f6; color: #fff; font-size: .78rem; }
+.about-actions { margin-top: 1.25rem; }
+.member-label { grid-column: 1 / -1; display: flex; align-items: center; gap: .4rem; margin: 0; color: #0069f6; font-size: .75rem; font-weight: 800; }
+.team-heading { margin-top: 1rem; }
+.network > div > a { display: inline-flex; align-items: center; gap: .35rem; color: #0059d4; font-weight: 800; }
+
 @media (max-width: 1100px) {
   .desktop-nav { display: none; }
   .menu-button { display: grid; }
@@ -159,7 +176,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero h1, .page-hero h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
   .section-heading, .featured-project, .volunteer-panel, .meeting { grid-template-columns: 1fr; }
   .section-heading > p { justify-self: start; }
-  .path-grid, .project-grid, .contributors-grid, .contributors-grid.full, .contributor-explain, .task-grid { grid-template-columns: 1fr; }
+  .path-grid, .project-grid, .contributors-grid, .contributors-grid.full, .contributor-explain, .task-grid, .about-grid, .lab-process { grid-template-columns: 1fr; }
   .path-card { min-height: 16rem; }
   .featured-project { gap: 2rem; }
   .project-body { min-height: auto; }

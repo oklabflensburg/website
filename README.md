@@ -45,7 +45,7 @@ Strukturierte Projekte und Technologiepfade liegen typisiert in `app/data/projec
 
 ## Contributor-Daten aktualisieren
 
-Die Website fragt GitHub nicht im Browser ab. `scripts/update-contributors.ts` ermittelt öffentliche Commit-Autor:innen aus den in `contributors.config.json` ausgewählten OK-Lab-Repositories für einen rollierenden Zeitraum von 24 Monaten. Das Ergebnis wird lokal nach `app/data/contributors.json` geschrieben.
+Die Website fragt GitHub nicht im Browser ab. `scripts/update-contributors.ts` ermittelt alle öffentlich sichtbaren Mitglieder der GitHub-Organisation sowie öffentliche Commit-Autor:innen aus den in `contributors.config.json` ausgewählten OK-Lab-Repositories für einen rollierenden Zeitraum von 24 Monaten. Alle paginierten GitHub-Ergebnisse werden berücksichtigt. Das Ergebnis wird lokal nach `app/data/contributors.json` geschrieben.
 
 ```bash
 pnpm contributors:update
@@ -62,7 +62,7 @@ Der Token darf niemals `NUXT_PUBLIC_` heißen und wird weder in den Client-Build
 
 Datenschutzregeln:
 
-- nur öffentliche GitHub-Logins, Anzeigenamen, Profil-/Avatar-URLs und Repository-Zuordnungen;
+- nur öffentlich sichtbare Organisationsmitgliedschaften sowie öffentliche GitHub-Logins, Anzeigenamen, Profil-/Avatar-URLs und Repository-Zuordnungen;
 - keine Commit-E-Mail-Adressen oder Daten außerhalb des öffentlichen GitHub-Profils;
 - Deduplizierung ohne Beachtung der Groß-/Kleinschreibung;
 - Ausschluss von Dependabot, Renovate, GitHub Actions, Copilot und weiteren Bot-Logins;

@@ -23,6 +23,7 @@ export interface Contributor {
   repositories: string[]
   areas?: string[]
   featured?: boolean
+  organizationMember?: boolean
 }
 
 export interface TechnologyPath {

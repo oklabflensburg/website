@@ -1,8 +1,9 @@
 <template>
-  <section id="about" class="network section-shell">
+  <section id="network" class="network section-shell">
     <div>
       <h2>{{ $t('about.title') }}</h2>
       <p>{{ $t('about.text') }}</p>
+      <a href="https://codefor.de/flensburg/">{{ $t('about.link') }} <Icon name="lucide:arrow-up-right" /></a>
     </div>
     <img src="/logos/code-for-germany.svg" alt="Code for Germany" width="160" height="82">
   </section>

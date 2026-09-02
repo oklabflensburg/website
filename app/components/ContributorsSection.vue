@@ -2,7 +2,7 @@
 import contributorsData from '~/data/contributors.json'
 import type { Contributor } from '~/types/content'
 const localePath = useLocalePath()
-const contributors = (contributorsData as Contributor[]).slice(0, 4)
+const contributors = (contributorsData as Contributor[]).filter(contributor => contributor.organizationMember)
 </script>
 
 <template>

@@ -8,7 +8,7 @@ const navItems = computed(() => [
   { key: 'contributors', to: localePath('contributors') },
   { key: 'tasks', to: `${homePath.value}#tasks` },
   { key: 'join', to: `${homePath.value}#join` },
-  { key: 'about', to: `${homePath.value}#about` },
+  { key: 'about', to: `${homePath.value}#about-lab` },
 ])
 
 function closeMenu() {
