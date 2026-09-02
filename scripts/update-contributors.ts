@@ -77,7 +77,7 @@ async function update() {
 
   for (const member of publicMembers) {
     const key = member.login.toLowerCase()
-    const existing = merged.get(key) ?? {
+    const existing: Contributor = merged.get(key) ?? {
       login: member.login,
       avatarUrl: member.avatar_url,
       profileUrl: member.html_url,
