@@ -1,5 +1,6 @@
 import tailwindcss from '@tailwindcss/vite'
-import { resolve } from 'node:path'
+
+const legacyAssets = new URL('./src', import.meta.url).pathname
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
@@ -39,7 +40,7 @@ export default defineNuxtConfig({
   },
   routeRules: { '/': { redirect: { to: '/de', statusCode: 301 } } },
   nitro: {
-    publicAssets: [{ dir: resolve('src'), baseURL: '/legacy' }],
+    publicAssets: [{ dir: legacyAssets, baseURL: '/legacy' }],
     prerender: {
       routes: [
         '/', '/de', '/da', '/en',
