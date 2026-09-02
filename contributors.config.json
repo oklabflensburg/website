@@ -1,0 +1,29 @@
+{
+  "repositories": [
+    "open-city-planner",
+    "open-city-planner-packages",
+    "ocp-module-analysis-areas",
+    "open-monuments-map",
+    "open-data-api",
+    "open-school-map",
+    "open-living-map",
+    "open-bath-map",
+    "open-kita-map",
+    "open-accident-map"
+  ],
+  "exclude": [],
+  "manual": [],
+  "featured": ["p3t3r67x0", "roaldchristesen"],
+  "areasByRepository": {
+    "open-city-planner": ["GIS", "PostGIS", "Python", "MapLibre", "Nuxt"],
+    "open-city-planner-packages": ["Python", "Open Source"],
+    "ocp-module-analysis-areas": ["GIS", "PostGIS", "Python"],
+    "open-monuments-map": ["GIS", "Open Data"],
+    "open-data-api": ["Python", "PostgreSQL", "ETL", "Open Data"],
+    "open-school-map": ["Vue", "PostGIS", "Open Data"],
+    "open-living-map": ["Python", "PostGIS", "Open Data"],
+    "open-bath-map": ["Python", "GIS", "Open Data"],
+    "open-kita-map": ["GIS", "Open Data"],
+    "open-accident-map": ["Vue", "PostGIS", "Open Data"]
+  }
+}
