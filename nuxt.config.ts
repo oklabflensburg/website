@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/icon', '@nuxtjs/i18n'],
-  devtools: { enabled: true },
   vite: { plugins: [tailwindcss()] },
   dir: { public: 'static' },
   app: {
