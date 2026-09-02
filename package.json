@@ -5,18 +5,23 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && node scripts/validate-generated.mjs",
     "preview": "nuxt preview",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "contributors:update": "tsx scripts/update-contributors.ts"
   },
   "dependencies": {
     "@nuxt/icon": "^2.0.0",
+    "@nuxtjs/i18n": "^10.6.0",
     "nuxt": "^4.2.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.0",
     "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.0",
+    "vitest": "^3.2.4",
     "vue-tsc": "^3.0.0"
   },
   "packageManager": "pnpm@10.15.1",

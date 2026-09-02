@@ -1,0 +1,80 @@
+[
+  {
+    "login": "p3t3r67x0",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/7386680?v=4",
+    "profileUrl": "https://github.com/p3t3r67x0",
+    "contributions": 447,
+    "repositories": [
+      "open-city-planner",
+      "open-city-planner-packages",
+      "ocp-module-analysis-areas",
+      "open-monuments-map",
+      "open-data-api",
+      "open-school-map",
+      "open-living-map",
+      "open-bath-map",
+      "open-kita-map",
+      "open-accident-map"
+    ],
+    "name": "Open Data Coder",
+    "featured": true,
+    "areas": [
+      "GIS",
+      "PostGIS",
+      "Python",
+      "MapLibre",
+      "Nuxt"
+    ]
+  },
+  {
+    "login": "roaldchristesen",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/129624352?v=4",
+    "profileUrl": "https://github.com/roaldchristesen",
+    "contributions": 3,
+    "repositories": [
+      "open-data-api",
+      "open-school-map"
+    ],
+    "name": "Roald",
+    "featured": true,
+    "areas": [
+      "Python",
+      "PostgreSQL",
+      "ETL",
+      "Open Data",
+      "Vue"
+    ]
+  },
+  {
+    "login": "Philzen",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1634615?v=4",
+    "profileUrl": "https://github.com/Philzen",
+    "contributions": 2,
+    "repositories": [
+      "open-data-api"
+    ],
+    "featured": false,
+    "areas": [
+      "Python",
+      "PostgreSQL",
+      "ETL",
+      "Open Data"
+    ]
+  },
+  {
+    "login": "sonnenteich",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/59643794?v=4",
+    "profileUrl": "https://github.com/sonnenteich",
+    "contributions": 5,
+    "repositories": [
+      "open-data-api"
+    ],
+    "featured": false,
+    "areas": [
+      "Python",
+      "PostgreSQL",
+      "ETL",
+      "Open Data"
+    ]
+  }
+]

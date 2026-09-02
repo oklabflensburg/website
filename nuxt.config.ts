@@ -1,21 +1,50 @@
 import tailwindcss from '@tailwindcss/vite'
+import { resolve } from 'node:path'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/icon'],
+  modules: ['@nuxt/icon', '@nuxtjs/i18n'],
   devtools: { enabled: true },
   vite: { plugins: [tailwindcss()] },
   dir: { public: 'static' },
   app: {
     head: {
-      htmlAttrs: { lang: 'de' },
       meta: [
         { name: 'theme-color', content: '#0069F6' },
-        { name: 'description', content: 'Das OK Lab Flensburg entwickelt offene GIS-Anwendungen, Geodatenbanken und freie Software für die Region.' },
       ],
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
   },
-  nitro: { prerender: { routes: ['/', '/de', '/da', '/en'] } },
+  i18n: {
+    baseUrl: 'https://oklabflensburg.de',
+    defaultLocale: 'de',
+    strategy: 'prefix',
+    langDir: 'locales',
+    locales: [
+      { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
+      { code: 'da', language: 'da-DK', name: 'Dansk', file: 'da.json' },
+      { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
+    ],
+    detectBrowserLanguage: false,
+    customRoutes: 'config',
+    pages: {
+      contributors: {
+        de: '/mitwirkende',
+        da: '/bidragsydere',
+        en: '/contributors',
+      },
+    },
+    vueI18n: './i18n.config.ts',
+  },
+  routeRules: { '/': { redirect: { to: '/de', statusCode: 301 } } },
+  nitro: {
+    publicAssets: [{ dir: resolve('src'), baseURL: '/legacy' }],
+    prerender: {
+      routes: [
+        '/', '/de', '/da', '/en',
+        '/de/mitwirkende', '/da/bidragsydere', '/en/contributors',
+      ],
+    },
+  },
 })
