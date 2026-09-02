@@ -51,7 +51,14 @@ describe('localized static site', () => {
 
   it('introduces the lab and includes every currently public organization member', () => {
     expect(aboutLab).toContain("aboutLab.process.steps")
-    expect(contributors.filter((person: { organizationMember?: boolean }) => person.organizationMember)).toHaveLength(11)
+    const members = contributors
+      .filter((person: { organizationMember?: boolean }) => person.organizationMember)
+      .map((person: { login: string }) => person.login.toLowerCase())
+    expect(members).toEqual(expect.arrayContaining([
+      'adb-sh', 'chanty1512', 'dbo-monomorph', 'geobert1', 'oliver-lemke-lohnert',
+      'p3t3r67x0', 'roaldchristesen', 'sabrina55555', 'siddhijajoo', 'verschiebungen',
+      'zauberschloss',
+    ]))
   })
 
   it('contains every required project exactly once and no placeholder URLs', () => {
