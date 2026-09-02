@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-code-blue: #0069f6;
+  --color-code-sky: #00a9fa;
+  --color-code-green: #00b451;
+  --color-code-mint: #70dea1;
+  --color-code-teal: #00a9a7;
+  --color-code-coral: #ff645f;
+  --color-ink: #10252a;
+  --color-paper: #f6f8f3;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/variable/Manrope[wght].woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f6f8f3; color: #10252a; }
+::selection { background: #70dea1; color: #10252a; }
+.map-grid {
+  background-image:
+    linear-gradient(31deg, transparent 46%, rgb(0 105 246 / 18%) 47%, transparent 48%),
+    linear-gradient(112deg, transparent 64%, rgb(0 105 246 / 18%) 65%, transparent 66%),
+    radial-gradient(circle at 58% 42%, transparent 0 52px, rgb(0 105 246 / 18%) 53px 55px, transparent 56px);
+  background-size: 180px 130px, 210px 170px, 260px 260px;
+}
