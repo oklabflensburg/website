@@ -1,38 +1,31 @@
 {
   "name": "oklabflensburg-website",
-  "source": "src/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "staticFiles": {
-    "staticPath": "static"
-  },
+  "private": true,
+  "type": "module",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "htmlhint": "htmlhint \"src/**/*.html\" --ignore \"dist/**/*.html\" --format unix",
-    "lint:js": "pnpm exec eslint \"src/**/*.js\" --no-error-on-unmatched-pattern",
-    "lint:html": "pnpm run htmlhint",
-    "lint:css": "pnpm exec stylelint \"src/**/*.css\"",
-    "lint": "pnpm run lint:js && pnpm run lint:css && pnpm run lint:html"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate && node scripts/validate-generated.mjs",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "contributors:update": "tsx scripts/update-contributors.ts"
   },
   "dependencies": {
-    "parcel": "^2.11.0"
+    "@nuxt/icon": "^2.0.0",
+    "@nuxtjs/i18n": "^10.6.0",
+    "nuxt": "^4.2.0"
   },
   "devDependencies": {
-    "@parcel/config-default": "^2.11.0",
-    "@parcel/transformer-raw": "^2.11.0",
-    "eslint": "^8.56.0",
-    "htmlhint": "^1.1.4",
-    "parcel-reporter-static-files-copy": "^1.5.3",
-    "postcss": "^8.4.33",
-    "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^36.0.0",
-    "tailwindcss": "^3.4.1"
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.0"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "svgo": "2.8.0"
-      }
-    }
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=22"
   }
 }

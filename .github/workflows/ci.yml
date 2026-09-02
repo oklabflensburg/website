@@ -1,0 +1,29 @@
+name: Nuxt CI
+
+on:
+  push:
+    branches:
+      - main
+      - feat/nuxt4-contributor-website
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Enable pnpm
+        run: corepack enable
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Type-check application
+        run: pnpm typecheck
+      - name: Run tests
+        run: pnpm test
+      - name: Generate static website
+        run: pnpm generate
