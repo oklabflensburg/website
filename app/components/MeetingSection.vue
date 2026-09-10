@@ -1,9 +1,30 @@
+<script setup lang="ts">
+import { site } from '#shared/config/site'
+const localePath = useLocalePath()
+</script>
 <template>
-  <section id="meeting" class="meeting section-shell">
+  <section class="meeting-panel">
+    <div class="meeting-symbol" aria-hidden="true">↗</div>
     <div>
+      <p class="eyebrow">{{ $t('meeting.eyebrow') }}</p>
       <h2>{{ $t('meeting.title') }}</h2>
-      <p>{{ $t('meeting.info') }}</p>
+      <p class="meeting-time">
+        {{ $t(`weekdays.${site.meeting.weekday}`) }} ·
+        {{ site.meeting.start }}–{{ site.meeting.end }}
+      </p>
+      <p>
+        {{ site.meeting.location }} · {{ $t('meeting.rear') }}<br />{{
+          site.meeting.street
+        }}, {{ site.meeting.postalCode }} {{ site.meeting.city }}
+      </p>
+      <p class="muted">{{ $t('meeting.note') }}</p>
     </div>
-    <a href="https://www.openstreetmap.org/search?query=Norderstra%C3%9Fe%2049%20Flensburg" class="button button-translucent">{{ $t('meeting.map') }}</a>
+    <div class="meeting-actions">
+      <NuxtLink :to="localePath('/mitmachen')" class="button"
+        >{{ $t('meeting.cta') }} <span aria-hidden="true">→</span></NuxtLink
+      ><a :href="site.meeting.map" class="text-link"
+        >{{ $t('meeting.map') }} ↗</a
+      >
+    </div>
   </section>
 </template>

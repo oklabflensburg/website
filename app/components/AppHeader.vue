@@ -1,50 +1,79 @@
 <script setup lang="ts">
-const menuOpen = ref(false)
+import { site } from '#shared/config/site'
 const localePath = useLocalePath()
-const homePath = computed(() => localePath('/'))
-const navItems = computed(() => [
-  { key: 'projects', to: `${homePath.value}#projects` },
-  { key: 'technologies', to: `${homePath.value}#technologies` },
-  { key: 'contributors', to: localePath('contributors') },
-  { key: 'tasks', to: `${homePath.value}#tasks` },
-  { key: 'join', to: `${homePath.value}#join` },
-  { key: 'about', to: `${homePath.value}#about-lab` },
-])
-
-function closeMenu() {
-  menuOpen.value = false
+const route = useRoute()
+const open = ref(false)
+const ready = useInteractiveReady()
+const toggle = useTemplateRef('toggle')
+const items = ['projekte', 'ueber-uns', 'veranstaltungen', 'blog']
+watch(
+  () => route.fullPath,
+  () => {
+    open.value = false
+  },
+)
+function escapeMenu() {
+  if (open.value) {
+    open.value = false
+    toggle.value?.focus()
+  }
 }
 </script>
-
 <template>
   <a class="skip-link" href="#main-content">{{ $t('a11y.skip') }}</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <NuxtLink :to="homePath" class="brand" @click="closeMenu">
-        <img src="/logos/codefor-flensburg.svg" alt="" width="52" height="60">
-        <span>OK Lab Flensburg</span>
-      </NuxtLink>
-      <nav class="desktop-nav" :aria-label="$t('a11y.mainNav')">
-        <NuxtLink v-for="item in navItems" :key="item.key" :to="item.to">{{ $t(`nav.${item.key}`) }}</NuxtLink>
-      </nav>
-      <LanguageSwitcher class="desktop-languages" />
-      <NuxtLink :to="`${homePath}#join`" class="button button-mint header-cta">{{ $t('nav.join') }}</NuxtLink>
-      <button
-        class="menu-button"
-        type="button"
-        :aria-expanded="menuOpen"
-        aria-controls="mobile-navigation"
-        :aria-label="$t(menuOpen ? 'a11y.closeMenu' : 'a11y.openMenu')"
-        @click="menuOpen = !menuOpen"
+  <header class="header" @keydown.esc="escapeMenu">
+    <div class="shell header-inner">
+      <NuxtLink :to="localePath('/')" class="brand"
+        ><img
+          src="/logos/codefor-flensburg.svg"
+          alt=""
+          width="34"
+          height="40"
+        /><span
+          >{{ site.name }}<small>{{ $t('brand.subline') }}</small></span
+        ></NuxtLink
       >
-        <Icon :name="menuOpen ? 'lucide:x' : 'lucide:menu'" size="24" />
+      <nav class="desktop-nav" :aria-label="$t('a11y.mainNav')">
+        <NuxtLink
+          v-for="item in items"
+          :key="item"
+          :to="localePath(`/${item}`)"
+          >{{ $t(`nav.${item}`) }}</NuxtLink
+        >
+      </nav>
+      <div class="desktop-languages"><LanguageSwitcher /></div>
+      <NuxtLink :to="localePath('/mitmachen')" class="button header-join"
+        >{{ $t('nav.mitmachen') }} <span aria-hidden="true">↗</span></NuxtLink
+      >
+      <button
+        ref="toggle"
+        :disabled="!ready"
+        class="menu-toggle"
+        type="button"
+        :aria-expanded="open"
+        aria-controls="mobile-navigation"
+        @click="open = !open"
+      >
+        {{ $t(open ? 'a11y.closeMenu' : 'a11y.openMenu') }}
+        <span aria-hidden="true">{{ open ? '×' : '☰' }}</span>
       </button>
     </div>
-    <div v-show="menuOpen" id="mobile-navigation" class="mobile-panel">
+    <div v-show="open" id="mobile-navigation" class="mobile-panel shell">
       <nav :aria-label="$t('a11y.mainNav')">
-        <NuxtLink v-for="item in navItems" :key="item.key" :to="item.to" @click="closeMenu">{{ $t(`nav.${item.key}`) }}</NuxtLink>
+        <NuxtLink
+          v-for="item in [
+            ...items,
+            'mitmachen',
+            'team',
+            'daten-sind-daten',
+            'kontakt',
+          ]"
+          :key="item"
+          :to="localePath(`/${item}`)"
+          >{{ $t(`nav.${item}`) }}</NuxtLink
+        >
       </nav>
-      <LanguageSwitcher @click="closeMenu" />
+      <LanguageSwitcher />
     </div>
   </header>
 </template>

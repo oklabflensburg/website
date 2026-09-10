@@ -1,33 +1,18 @@
 <script setup lang="ts">
-const { locale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
-const localeCodes = ['de', 'da', 'en'] as const
-const preference = useCookie<string>('oklab_locale', {
-  maxAge: 60 * 60 * 24 * 365,
-  sameSite: 'lax',
-  secure: true,
-})
-
-function remember(code: string) {
-  preference.value = code
-}
+const { locales, locale } = useI18n()
 </script>
-
 <template>
-  <nav class="language-switcher" :aria-label="$t('a11y.languageNav')">
+  <nav class="languages" :aria-label="$t('a11y.language')">
     <NuxtLink
-      v-for="code in localeCodes"
-      :key="code"
-      :to="switchLocalePath(code)"
-      :lang="code"
-      :hreflang="code"
-      :aria-label="$t(`language.${code}`)"
-      :aria-current="code === locale ? 'page' : undefined"
-      class="language-link"
-      :class="{ active: code === locale }"
-      @click="remember(code)"
+      v-for="language in locales"
+      :key="language.code"
+      :to="switchLocalePath(language.code)"
+      :lang="language.code"
+      :hreflang="language.language"
+      :aria-current="locale === language.code ? 'true' : undefined"
+      :aria-label="language.name"
+      >{{ language.code.toUpperCase() }}</NuxtLink
     >
-      {{ code }}
-    </NuxtLink>
   </nav>
 </template>

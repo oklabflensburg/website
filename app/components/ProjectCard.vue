@@ -1,25 +1,42 @@
 <script setup lang="ts">
-import type { Project } from '~/types/content'
-defineProps<{ project: Project }>()
+import type { ProjectsCollectionItem } from '@nuxt/content'
+defineProps<{ project: ProjectsCollectionItem }>()
+const localePath = useLocalePath()
 </script>
-
 <template>
-  <article class="project-card">
-    <div v-if="project.image" class="project-image">
-      <img :src="project.image" :alt="$t('a11y.projectPreview', { title: project.title })" loading="lazy" width="640" height="360">
-    </div>
-    <div v-else class="map-grid project-placeholder" aria-hidden="true"><Icon name="lucide:map" size="48" /></div>
-    <div class="project-body">
-      <div class="project-meta">
-        <span>{{ $t(`project.category.${project.categoryKey}`) }}</span>
-        <span class="status" :data-status="project.status"><i />{{ $t(`project.status.${project.status}`) }}</span>
+  <article class="card project-card">
+    <NuxtLink
+      :to="localePath(`/projekte/${project.slug}`)"
+      tabindex="-1"
+      aria-hidden="true"
+      class="project-picture"
+      ><NuxtImg
+        v-if="project.image"
+        :src="project.image"
+        alt=""
+        width="640"
+        height="360"
+        sizes="sm:100vw md:50vw lg:33vw"
+        loading="lazy" />
+      <div v-else class="project-pattern">
+        <span>{{ project.title.slice(0, 2).toUpperCase() }}</span
+        ><span class="map-point" /></div
+    ></NuxtLink>
+    <div class="card-body">
+      <div class="card-meta">
+        <span>{{ $t(`categories.${project.categories[0]}`) }}</span
+        ><span class="status-dot">{{ $t(`status.${project.status}`) }}</span>
       </div>
-      <h3>{{ project.title }}</h3>
-      <p>{{ $t(`project.description.${project.descriptionKey}`) }}</p>
-      <div class="tag-list"><span v-for="tech in project.technologies.slice(0, 4)" :key="tech">{{ tech }}</span></div>
-      <div class="project-links">
-        <a v-if="project.websiteUrl" :href="project.websiteUrl">{{ $t('common.discover') }} <Icon name="lucide:arrow-up-right" /></a>
-        <a v-if="project.repositoryUrl" :href="project.repositoryUrl" :aria-label="`${$t('common.repository')}: ${project.title}`"><Icon name="lucide:github" /> {{ $t('common.repository') }}</a>
+      <h2>
+        <NuxtLink :to="localePath(`/projekte/${project.slug}`)"
+          >{{ project.title }} <span aria-hidden="true">↗</span></NuxtLink
+        >
+      </h2>
+      <p>{{ project.description }}</p>
+      <div class="tags">
+        <span v-for="tech in project.technologies.slice(0, 3)" :key="tech">{{
+          tech
+        }}</span>
       </div>
     </div>
   </article>

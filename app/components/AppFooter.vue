@@ -1,22 +1,48 @@
+<script setup lang="ts">
+import { site } from '#shared/config/site'
+const localePath = useLocalePath()
+const groups = [
+  ['projekte', 'mitmachen', 'veranstaltungen', 'blog'],
+  ['ueber-uns', 'team', 'daten-sind-daten', 'kontakt'],
+  ['impressum', 'datenschutz', 'code-of-conduct'],
+]
+</script>
 <template>
-  <section id="network" class="network section-shell">
-    <div>
-      <h2>{{ $t('about.title') }}</h2>
-      <p>{{ $t('about.text') }}</p>
-      <a href="https://codefor.de/flensburg/">{{ $t('about.link') }} <Icon name="lucide:arrow-up-right" /></a>
-    </div>
-    <img src="/logos/code-for-germany.svg" alt="Code for Germany" width="160" height="82">
-  </section>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>OK Lab Flensburg · {{ $t('footer.tagline') }}</span>
-      <nav aria-label="Footer">
-        <a href="https://github.com/oklabflensburg">GitHub</a>
-        <a href="https://norden.social/@oklabflensburg">Mastodon</a>
-        <a href="mailto:info@oklabflensburg.de">{{ $t('common.contact') }}</a>
-        <a href="/legacy/impressum.html">{{ $t('footer.imprint') }} & {{ $t('footer.privacy') }}</a>
-        <a href="/legacy/lizenz.html">{{ $t('footer.license') }}</a>
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <NuxtLink :to="localePath('/')" class="brand">{{ site.name }}</NuxtLink>
+        <p>{{ $t('footer.description') }}</p>
+        <a :href="site.network.url"
+          ><img
+            src="/logos/code-for-germany.svg"
+            :alt="site.network.name"
+            width="130"
+            height="66"
+            loading="lazy"
+        /></a>
+      </div>
+      <nav
+        v-for="(group, i) in groups"
+        :key="i"
+        :aria-label="$t(`footer.group${i}`)"
+      >
+        <h2>{{ $t(`footer.group${i}`) }}</h2>
+        <NuxtLink
+          v-for="item in group"
+          :key="item"
+          :to="localePath(`/${item}`)"
+          >{{ $t(`nav.${item}`) }}</NuxtLink
+        >
       </nav>
+    </div>
+    <div class="shell footer-bottom">
+      <span>{{ $t('footer.tagline') }}</span>
+      <div>
+        <a :href="site.github">GitHub ↗</a
+        ><a :href="site.social.mastodon" rel="me">Mastodon ↗</a
+        ><a :href="`/rss.xml?lang=${$i18n.locale}`">RSS ↗</a>
+      </div>
     </div>
   </footer>
 </template>
