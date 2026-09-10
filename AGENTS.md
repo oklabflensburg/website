@@ -8,7 +8,7 @@ This repository has one canonical Nuxt 4 architecture. Do not introduce legacy v
 
 - Extend existing components. When replacing one, remove the superseded implementation and unused styles, tests and assets. No `FooNew.vue`, `FooV2.vue` or `LegacyFoo.vue`.
 - Use Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs/i18n` 10, `@nuxt/content` 3 and `@nuxt/image` 2. Preserve SSR and Nitro's `node-server` output; no client-only replacement or second static application.
-- [package.json](package.json) defines dependency ranges and commands; `pnpm-lock.yaml` pins exact versions. Use Node >=22.22.0 and pnpm 10.15.1. Vite 8 is shared by Nuxt, Tailwind and Vitest; Content uses Node's native SQLite connector.
+- [package.json](package.json) defines dependency ranges and commands; `pnpm-lock.yaml` pins exact versions. Use Node >=22.22.0 and pnpm 12.3.4. Vite 8 is shared by Nuxt, Tailwind and Vitest; Content uses Node's native SQLite connector.
 
 | Location | Responsibility |
 | --- | --- |
@@ -73,6 +73,7 @@ Before editing: inspect `git status`, the relevant implementation, schemas and l
 | Command | Purpose |
 | --- | --- |
 | `pnpm dev` | Nuxt development server |
+| `pnpm peers check` | Verify that the locked dependency graph satisfies peer requirements |
 | `pnpm lint` | Nuxt-generated ESLint configuration via `eslint.config.mjs` |
 | `pnpm typecheck` | Nuxt/Vue TypeScript checks |
 | `pnpm test` | Vitest 5: schemas, locale/content parity, assets, branding and pure utilities |
@@ -88,9 +89,11 @@ Install the browser with `pnpm exec playwright install chromium` (CI uses `--wit
 - For UI changes, generate and visually review `/`, `/projekte`, `/ueber-uns`, `/mitmachen`, `/blog`, `/daten-sind-daten` at 1440 and 390 px; review relevant details/menu states too. Playwright writes `docs/screenshots/`. Check overflow, keyboard interaction, readable type and axe results, not screenshots alone.
 - Audit replaced implementations and unused code/assets. Report failures, skips and editorial gaps explicitly; do not describe missing remote CI as a pass.
 
+Dependency resolution and temporary scoped overrides are documented in [dependencies.md](docs/dependencies.md). Preserve pnpm release-age and build-script policies; dependency changes must also pass `pnpm peers check`.
+
 ## GitHub Actions
 
-- [Website CI](.github/workflows/ci.yml): `verify` job on PRs and pushes to `main`; frozen install, lint, typecheck, Vitest, build, Chromium install and Playwright. Uploads reports/screenshots as `browser-report-and-screenshots`.
+- [Website CI](.github/workflows/ci.yml): `verify` job on PRs and pushes to `main`; frozen install, peer check, lint, typecheck, Vitest, build, Chromium install and Playwright. Uploads reports/screenshots as `browser-report-and-screenshots`.
 - [CodeQL](.github/workflows/codeql.yml): JavaScript/TypeScript analysis on PRs, pushes to `main` and weekly schedule; `build-mode: none`.
 - These are the only workflow files; Playwright/build run within Website CI, with no separate Dependency Review workflow. Repository-level Actions were disabled when checked on 2026-09-10, although the workflow definitions are active. Recheck remote status when reporting CI; local validation remains required.
 

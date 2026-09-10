@@ -3,3 +3,11 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - zod@4.6.1
+
+# Temporary, parent/version-scoped corrections; rationale and removal criteria:
+# docs/dependencies.md
+# Nuxt CLI's ^0.0.19 excludes the upstream cac 7 peer-range fix in 0.0.22.
+overrides:
+  '@nuxt/cli@3.37.0>@bomb.sh/tab': 0.0.22
+  # Stay within component-meta's ^4.4.8 range; newer Kit brings incompatible unctx peers.
+  'nuxt-component-meta@0.18.0>@nuxt/kit': 4.4.8
