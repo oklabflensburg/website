@@ -2,6 +2,18 @@ import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { editorialSlugs, localizedPath, site } from '../../shared/config/site'
 
+test('association information never substitutes the network link', async ({ page }) => {
+  for (const locale of ['de', 'da', 'en']) {
+    await page.goto(localizedPath('/daten-sind-daten', locale))
+    await expect(page.locator('.editorial-aside h2')).toHaveText(site.association.name)
+    await expect(page.locator('.editorial-aside a')).toHaveCount(0)
+    await expect(page.locator(`main a[href="${site.network.url}"]`)).toHaveCount(0)
+    await page.goto(localizedPath('/ueber-uns', locale))
+    await expect(page.locator('.editorial-aside a')).toHaveAttribute('href', site.network.url)
+    await expect(page.locator('.editorial-aside a')).toContainText(site.network.name)
+  }
+})
+
 for (const locale of ['de', 'da', 'en']) {
   test(`${locale}: all pages render on the server and hydrate cleanly`, async ({
     page,
