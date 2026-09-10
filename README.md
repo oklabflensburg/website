@@ -37,7 +37,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. CI installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch.
+Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist auf Repository-Ebene derzeit deaktiviert (geprüft am 10.09.2026); vorhandene Workflow-Dateien bedeuten daher keinen erfolgreichen Remote-Testlauf.
 
 ## Sprachen und Routing
 
@@ -67,7 +67,7 @@ status: development
 featured: false
 categories: [environment]
 technologies: [PostGIS]
-image: /images/projects/bestaetigtes-projekt.svg
+image: /images/projects/bestaetigter-slug.svg
 imageAlt: Eine konkrete Beschreibung des grafischen Symbols in der Sprache dieser Datei
 links:
   website: https://example.org
@@ -121,7 +121,7 @@ Vor dem öffentlichen Deployment die [redaktionellen TODOs](docs/editorial-todos
 
 ## Mitentwickeln
 
-Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, alle Prüfungen ausführen und einen Pull Request öffnen. Bestehende Komponenten erweitern, ersetzte Implementierungen entfernen. Vorgaben stehen in [AGENTS.md](AGENTS.md). Auch Übersetzungen, Datenprüfung, UX, Dokumentation und Tests helfen.
+Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, die zum Änderungstyp gehörenden Prüfungen ausführen und einen Pull Request öffnen. Für Anwendung, Content, Assets und Konfiguration gilt die vollständige Prüfsequenz oben; reine Dokumentationsänderungen erfordern Markdown-, Link-/Pfad-, Command- und Konsistenzprüfung. Bestehende Komponenten erweitern, ersetzte Implementierungen entfernen. Verbindliche Vorgaben stehen in [AGENTS.md](AGENTS.md). Auch Übersetzungen, Datenprüfung, UX, Dokumentation und Tests helfen.
 
 ## Lizenz und Quellen
 
