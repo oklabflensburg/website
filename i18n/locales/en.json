@@ -36,7 +36,8 @@
     "allPosts": "All posts",
     "joinTitle": "Get involved",
     "joinText": "Want to work on real projects for your city? Whether you code, design, work with data or are simply curious – we look forward to meeting you!",
-    "associationText": "The supporting association provides an organisational home for our shared commitment."
+    "associationText": "The supporting association provides an organisational home for our shared commitment.",
+    "networkText": "We are part of Code for Germany, the network for open data and technology for the common good."
   },
   "meeting": {
     "title": "Come along!",
@@ -138,5 +139,8 @@
     "seeking-contributors": "Seeking contributors",
     "completed": "Completed",
     "unknown": "See repository status"
+  },
+  "brand": {
+    "projectBy": "A project by"
   }
 }

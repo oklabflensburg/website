@@ -45,6 +45,14 @@ Nur Nuxt i18n verwaltet die Sprache. Deutsch liegt unter `/`, Dänisch unter `/d
 
 Die Nuxt-Routen umfassen Startseite, Projekte mit Details, Mitmachen, Über uns, Team, Verein, Veranstaltungen, Blog mit Beiträgen, Kontakt, Impressum, Datenschutz und Code of Conduct. Die gemeinsame `[page].vue` rendert ausschließlich die explizit freigegebenen redaktionellen Slugs; unbekannte URLs liefern 404. Inhalte werden über `locale` und `slug` abgefragt. Interne Markdown-Links werden über `ProseA` lokalisiert. Sämtliche Übersetzungen eines Eintrags verwenden denselben Slug.
 
+## Kanonische Organisationsmarke
+
+`shared/config/site.ts` definiert `site.logo`: `/brand/oklabflensburg-logo.png`. Die Datei ist die unveränderte PNG aus dem offiziellen Organisationsrepository. `AppLogo.vue` verwendet sie für Header, Footer und Projekt-Absender; Projekt-Signets bleiben eigenständige Identitäten. Die Marke enthält bereits Schrift und erhält keine zusätzliche Text-Wortmarke.
+
+`pnpm brand:generate` leitet daraus ICO-/PNG-Favicons, Apple-Touch-Icon, die allgemeine Social Card und gebrandete Projekt-Social-Cards ab. `pnpm build` führt diesen Schritt automatisch aus. Projektzuordnungen kommen aus Nuxt Content. Nach Änderungen am Logo oder an Projekt-Signets die Ableitungen vor Tests neu erzeugen und zusammen mit der Quelle einchecken. Alle Blogbeiträge nutzen dieselbe gebrandete Standardvorschau; optionale Artikelbilder bleiben Inhaltsbilder.
+
+Quelle, Prüfsumme, Markenrollen und Audit: [docs/brand.md](docs/brand.md).
+
 ## Projekt hinzufügen
 
 Pro Sprache eine Datei `content/{de,da,en}/projects/<slug>.md` erstellen. Das sind Übersetzungen derselben kanonischen Content-Quelle, keine zusätzlichen Datensysteme.
@@ -68,7 +76,7 @@ source: https://example.org/projektquelle
 ---
 ```
 
-Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<slug>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau wird per Nuxt Image als PNG aus derselben SVG-Quelle erzeugt.
+Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<slug>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau kombiniert dieselbe SVG-Quelle mit der kanonischen Organisationsmarke als PNG.
 
 ## Blogbeitrag schreiben
 

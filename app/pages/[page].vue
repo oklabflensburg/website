@@ -40,7 +40,7 @@ usePageSeo(
         <h2>
           {{ slug === 'ueber-uns' ? site.network.name : site.association.name }}
         </h2>
-        <p>{{ $t('home.associationText') }}</p>
+        <p>{{ $t(slug === 'ueber-uns' ? 'home.networkText' : 'home.associationText') }}</p>
         <a :href="site.network.url" class="text-link"
           >{{ site.network.name }} ↗</a
         >

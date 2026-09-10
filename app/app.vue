@@ -19,6 +19,7 @@ useHead({
             '@id': `${site.url}/#organization`,
             name: site.name,
             url: site.url,
+            logo: new URL(site.logo, site.url).href,
             email: site.email,
             sameAs: [site.github, site.network.url, site.social.mastodon],
           },

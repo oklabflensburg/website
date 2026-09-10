@@ -36,7 +36,8 @@
     "allPosts": "Alle indlæg",
     "joinTitle": "Vær med",
     "joinText": "Har du lyst til at arbejde på konkrete projekter for din by? Uanset om du udvikler, designer, arbejder med data eller bare er nysgerrig – vi glæder os til at møde dig!",
-    "associationText": "Foreningen skaber en organisatorisk ramme om vores fælles engagement."
+    "associationText": "Foreningen skaber en organisatorisk ramme om vores fælles engagement.",
+    "networkText": "Vi er en del af Code for Germany, netværket for åbne data og teknologi til fælles gavn."
   },
   "meeting": {
     "title": "Kom forbi!",
@@ -138,5 +139,8 @@
     "seeking-contributors": "Søger bidragsydere",
     "completed": "Afsluttet",
     "unknown": "Status i repositoriet"
+  },
+  "brand": {
+    "projectBy": "Et projekt fra"
   }
 }

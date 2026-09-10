@@ -1,5 +1,14 @@
 export const site = {
   name: 'OK Lab Flensburg',
+  logo: '/brand/oklabflensburg-logo.png',
+  socialImage: '/social-card.png',
+  projectSocialImages: '/social/projects',
+  favicons: {
+    ico: '/favicon.ico',
+    small: '/favicon-16x16.png',
+    medium: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+  },
   url: 'https://oklabflensburg.de',
   email: 'info@oklabflensburg.de',
   github: 'https://github.com/oklabflensburg',

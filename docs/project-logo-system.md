@@ -22,7 +22,7 @@ Die Signets sind einzeln von Hand als SVG-Geometrien gestaltet. Keine Bildgeneri
 | Effekte | keine Schatten, Filter, Verläufe, Schriften oder externen Ressourcen |
 | Karten | 4:3-Bildbereich, zentrierte quadratische SVGs, `object-fit: contain`, maximal 208 px |
 | Detailseiten | eigenes helles Bildfeld, vollständiges quadratisches SVG, maximal 360 px |
-| Social Preview | Nuxt Image erzeugt aus demselben SVG ein lokales PNG mit 1200 × 630 px und `fit: contain` |
+| Social Preview | `pnpm brand:generate` kombiniert das vollständige SVG mit der kanonischen Organisationsmarke in einem lokalen PNG mit 1200 × 630 px |
 
 Die Dateien sind direkt editierbar und verwenden keine Symbole aus einem externen Iconset. Die eigenständigen Formen sind neue Beiträge zum Quellcode; die Repository-Lizenz in `LICENSE` gilt entsprechend. Vorhandene OK-Lab-Marken wurden nicht als Projektsymbol kopiert.
 
@@ -57,7 +57,7 @@ Die deutsche Symbolbeschreibung dient zugleich als konkreter Alt-Text. Eigenstä
 - **57 Content-Dateien:** `image` und `imageAlt` für sämtliche 19 Projekte in DE/DA/EN aktualisiert; Beschreibungen, Quellen, Links, Status und Technologien bleiben erhalten.
 - **19 Assets:** `public/images/projects/<slug>.svg`; die ersetzten Fotomotive und deren Originale gehören nicht mehr zur Website. Die vorgefundenen uncommitteten Originale wurden vor dem Entfernen außerhalb des Repositorys unter `/tmp/oklab-superseded-project-photos/` gesichert.
 - **Komponenten:** `app/components/ProjectCard.vue` rendert die SVG-Datei direkt als Bild ohne Rasterisierung oder Beschnitt. Die vorhandene Titelhierarchie, Themen-Badges und Links bleiben bestehen.
-- **Detailseiten:** `app/pages/projekte/[slug].vue` zeigt das vollständige Signet; die OpenGraph-/Twitter-Vorschau verwendet ein aus derselben Quelle abgeleitetes PNG.
+- **Detailseiten:** `app/pages/projekte/[slug].vue` zeigt das vollständige Signet; die OpenGraph-/Twitter-Vorschau kombiniert dieselbe Quelle mit der unveränderten Organisationsmarke als PNG.
 - **Schema:** `shared/config/content.ts` verlangt den kanonischen lokalen SVG-Pfad sowie einen beschreibenden Alt-Text.
 - **Styles:** gemeinsame Größen und Zentrierung in `app/assets/css/main.css`, weiterhin Teil desselben Tailwind-Designsystems.
 - **Tests:** Content-Prüfungen für Vollständigkeit, eindeutige Dateien, Locale-Parität und sichere SVGs; Browserprüfungen für alle Karten und Detailseiten in drei Sprachen, unveränderte Bildrahmen beim Laden, vollständige Darstellung und funktionierende PNG-Vorschauen.
