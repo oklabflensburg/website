@@ -3,6 +3,7 @@ title: "Technology for the common good."
 description: "An open lab for Flensburg and Schleswig-Holstein."
 locale: "en"
 slug: "ueber-uns"
+translationKey: "ueber-uns"
 noindex: false
 ---
 

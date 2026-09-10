@@ -3,6 +3,7 @@ title: "Open City Planner"
 description: "Explore urban spaces, draw areas and run spatial analyses."
 locale: "en"
 slug: "open-city-planner"
+translationKey: "open-city-planner"
 status: "unknown"
 featured: true
 featuredOrder: 0

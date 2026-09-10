@@ -3,6 +3,7 @@ title: "Bodenflächennutzung"
 description: "Sammenlign arealanvendelse i Slesvig-Holstens kommuner."
 locale: "da"
 slug: "bodenflaechennutzung"
+translationKey: "bodenflaechennutzung"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

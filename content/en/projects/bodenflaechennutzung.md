@@ -3,6 +3,7 @@ title: "Bodenflächennutzung"
 description: "Compare land-use types across Schleswig-Holstein municipalities."
 locale: "en"
 slug: "bodenflaechennutzung"
+translationKey: "bodenflaechennutzung"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

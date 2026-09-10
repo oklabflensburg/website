@@ -3,6 +3,7 @@ title: "Datenschutz"
 description: "Technische Angaben zur Website und noch zu ergänzende Betreiberinformationen."
 locale: "de"
 slug: "datenschutz"
+translationKey: "datenschutz"
 noindex: true
 ---
 

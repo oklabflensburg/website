@@ -37,13 +37,15 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions wurde am 10.09.2026 auf Repository-Ebene wieder aktiviert. Beide bestehenden Workflows prüfen Pull Requests gegen `main`; konkrete Ergebnisse müssen am jeweiligen PR-Head kontrolliert werden. Ursache und Wiederherstellung sind im [CI-Audit](docs/ci-audit.md) dokumentiert.
+Vitest 5 prüft Schemas, Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist auf Repository-Ebene derzeit deaktiviert (geprüft am 10.09.2026); vorhandene Workflow-Dateien bedeuten daher keinen erfolgreichen Remote-Testlauf.
 
 ## Sprachen und Routing
 
-Nur Nuxt i18n verwaltet die Sprache. Deutsch liegt unter `/`, Dänisch unter `/da`, Englisch unter `/en`; die Pfadsegmente bleiben bewusst sprachübergreifend gleich. Beispiele: `/projekte`, `/da/projekte`, `/en/projekte`. Der Sprachwechsel erhält auch Detailseiten. Kein Spracherkennungscookie und keine parallele Locale-Implementierung.
+Nur Nuxt i18n verwaltet Sprache und Routing. Deutsch liegt unter `/`, Dänisch unter `/da`, Englisch unter `/en`, mit übersetzten Pfaden: `/projekte`, `/da/projekter`, `/en/projects`. Die zentrale Routenmatrix steht in `shared/config/site.ts`. Sprachwechsel berücksichtigen die tatsächlich vorhandenen Übersetzungen, auch bei unterschiedlichen Detail-Slugs. Kein Spracherkennungscookie.
 
-Die Nuxt-Routen umfassen Startseite, Projekte mit Details, Mitmachen, Über uns, Team, Verein, Veranstaltungen, Blog mit Beiträgen, Kontakt, Impressum, Datenschutz und Code of Conduct. Die gemeinsame `[page].vue` rendert ausschließlich die explizit freigegebenen redaktionellen Slugs; unbekannte URLs liefern 404. Inhalte werden über `locale` und `slug` abgefragt. Interne Markdown-Links werden über `ProseA` lokalisiert. Sämtliche Übersetzungen eines Eintrags verwenden denselben Slug.
+Die redaktionellen Route-Einstiege rendern ausschließlich die gemeinsame `EditorialPage.vue`. Die bisherige generische `[page].vue` ist entfernt; unbekannte URLs liefern 404. Projekte und Blogbeiträge werden über `locale` und `slug` abgefragt; `translationKey` verbindet Übersetzungen derselben Collection unabhängig vom Slug. Editorial-Seiten werden über ihren stabilen Key abgefragt. Interne Markdown-Links werden über `ProseA` lokalisiert.
+
+Canonical, OpenGraph und strukturierte Daten verwenden die aufgerufene Sprachroute. Hreflang und Sitemap verwenden denselben aus Nuxt Content abgeleiteten Übersetzungsindex. Fehlende oder unveröffentlichte Sprachvarianten werden nicht erfunden; `noindex`-Varianten werden nicht als Alternates ausgegeben. Alte Sprachpfade und dokumentierte Slug-Aliase werden mit 301 direkt weitergeleitet. [Routenmatrix, Migration und SEO-Regeln](docs/localized-routing.md).
 
 ## Kanonische Organisationsmarke
 
@@ -55,7 +57,7 @@ Quelle, Prüfsumme, Markenrollen und Audit: [docs/brand.md](docs/brand.md).
 
 ## Projekt hinzufügen
 
-Pro Sprache eine Datei `content/{de,da,en}/projects/<slug>.md` erstellen. Das sind Übersetzungen derselben kanonischen Content-Quelle, keine zusätzlichen Datensysteme.
+Pro Sprache eine Datei `content/{de,da,en}/projects/<translationKey>.md` erstellen. Das sind Übersetzungen derselben kanonischen Content-Quelle, keine zusätzlichen Datensysteme.
 
 ```yaml
 ---
@@ -63,6 +65,7 @@ title: Bestätigter Projektname
 description: Eine konkrete Beschreibung des tatsächlichen Projekts.
 locale: de
 slug: bestaetigter-slug
+translationKey: bestaetigter-slug
 status: development
 featured: false
 categories: [environment]
@@ -76,7 +79,7 @@ source: https://example.org/projektquelle
 ---
 ```
 
-Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<slug>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau kombiniert dieselbe SVG-Quelle mit der kanonischen Organisationsmarke als PNG.
+Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<translationKey>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau kombiniert dieselbe SVG-Quelle mit der kanonischen Organisationsmarke als PNG.
 
 ## Blogbeitrag schreiben
 
@@ -88,6 +91,7 @@ title: Titel
 description: Zusammenfassung des Beitrags.
 locale: de
 slug: beitrags-slug
+translationKey: beitrags-slug
 date: '2026-09-10'
 updated: '2026-09-10'
 authors: [Bestätigte Autorenschaft]

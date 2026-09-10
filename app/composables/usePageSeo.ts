@@ -1,4 +1,5 @@
 import { site } from '#shared/config/site'
+import { alternateLinks } from '#shared/utils/translations'
 export function usePageSeo(
   title: MaybeRefOrGetter<string>,
   description: MaybeRefOrGetter<string>,
@@ -10,7 +11,8 @@ export function usePageSeo(
 ) {
   const route = useRoute()
   const { locale } = useI18n()
-  const canonical = computed(() => `${site.url}${route.path}`)
+  const { current } = useTranslations()
+  const canonical = computed(() => new URL(route.path, site.url).href)
   const image = computed(
     () => new URL(toValue(options.image) || site.socialImage, site.url).href,
   )
@@ -31,6 +33,10 @@ export function usePageSeo(
       toValue(options.noindex) ? 'noindex, follow' : 'index, follow',
   })
   useHead(() => ({
+    link: [
+      { key: 'canonical', rel: 'canonical', href: canonical.value },
+      ...alternateLinks(current.value).map((link) => ({ key: `alternate-${link.hreflang}`, ...link })),
+    ],
     script: [
       {
         key: 'webpage',

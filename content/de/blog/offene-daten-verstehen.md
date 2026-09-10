@@ -3,6 +3,7 @@ title: "Offene Daten: anfangen mit einer guten Frage"
 description: "Ein praktischer Einstieg in Datenquellen, Lizenzen und Qualität."
 locale: "de"
 slug: "offene-daten-verstehen"
+translationKey: "offene-daten-verstehen"
 date: "2026-09-10"
 authors: ["OK Lab Flensburg"]
 tags: ["Open Data"]

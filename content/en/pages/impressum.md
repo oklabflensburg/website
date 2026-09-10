@@ -3,6 +3,7 @@ title: "Legal notice"
 description: "Provider details are being completed."
 locale: "en"
 slug: "impressum"
+translationKey: "impressum"
 noindex: true
 ---
 

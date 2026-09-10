@@ -3,6 +3,7 @@ title: "Kitafinder"
 description: "Kitas in Flensburg über offene Standort- und Kontaktdaten finden."
 locale: "de"
 slug: "kitafinder"
+translationKey: "kitafinder"
 status: "seeking-contributors"
 featured: false
 categories: ["education"]

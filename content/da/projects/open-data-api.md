@@ -3,6 +3,7 @@ title: "Open Data API"
 description: "Stil offentlige datasæt til rådighed gennem en åben, maskinlæsbar grænseflade."
 locale: "da"
 slug: "open-data-api"
+translationKey: "open-data-api"
 status: "seeking-contributors"
 featured: false
 categories: ["infrastructure"]

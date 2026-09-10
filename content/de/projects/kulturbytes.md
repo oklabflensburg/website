@@ -3,6 +3,7 @@ title: "kulturbytes"
 description: "Kulturangebote bündeln und auch kleinen Initiativen digitale Sichtbarkeit geben."
 locale: "de"
 slug: "kulturbytes"
+translationKey: "kulturbytes"
 status: "development"
 featured: true
 featuredOrder: 1

@@ -3,6 +3,7 @@ title: "Kulturnacht Flensburg"
 description: "Find spillestederne under Kulturnatten i Flensborg på et åbent kort."
 locale: "da"
 slug: "kulturnacht-karte"
+translationKey: "kulturnacht-karte"
 status: "completed"
 featured: false
 categories: ["culture"]

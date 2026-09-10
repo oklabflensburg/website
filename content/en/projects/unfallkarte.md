@@ -3,6 +3,7 @@ title: "Unfallkarte"
 description: "Explore injury accidents spatially and across multiple years."
 locale: "en"
 slug: "unfallkarte"
+translationKey: "unfallkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]

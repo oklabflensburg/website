@@ -3,6 +3,7 @@ title: "Zusammenkommen. Ausprobieren. Lernen."
 description: "Offene Treffen und Raum für Austausch."
 locale: "de"
 slug: "veranstaltungen"
+translationKey: "veranstaltungen"
 noindex: false
 ---
 

@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { editorialSlugs, site } from '#shared/config/site'
-definePageMeta({
-  validate: (route) =>
-    editorialSlugs.some((slug) => slug === route.params.page),
-})
+import { site } from '#shared/config/site'
 const route = useRoute()
 const { locale } = useI18n()
-const slug = computed(() => String(route.params.page))
+const slug = computed(() => String(route.meta.editorialKey))
 const { data: page } = await useAsyncData(
   () => `page-${locale.value}-${slug.value}`,
   () =>
     queryCollection('pages')
       .where('locale', '=', locale.value)
-      .where('slug', '=', slug.value)
+      .where('translationKey', '=', slug.value)
       .first(),
 )
 if (!page.value)

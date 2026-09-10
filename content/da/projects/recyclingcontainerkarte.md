@@ -3,6 +3,7 @@ title: "Recyclingcontainerkarte"
 description: "Vis offentlige glas- og tekstilcontainere gennemsigtigt."
 locale: "da"
 slug: "recyclingcontainerkarte"
+translationKey: "recyclingcontainerkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

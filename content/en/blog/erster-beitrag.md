@@ -2,7 +2,9 @@
 title: "Your first contribution doesn’t need code"
 description: "How feedback, research and documentation move projects forward."
 locale: "en"
-slug: "erster-beitrag"
+slug: "your-first-contribution"
+translationKey: "erster-beitrag"
+aliases: ["erster-beitrag"]
 date: "2026-09-10"
 authors: ["OK Lab Flensburg"]
 tags: ["Community"]

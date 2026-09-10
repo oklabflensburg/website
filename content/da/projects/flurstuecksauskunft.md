@@ -3,6 +3,7 @@ title: "Flurstücksauskunft Schleswig-Holstein"
 description: "Interaktive, uofficielle matrikeloplysninger uden ejerdata."
 locale: "da"
 slug: "flurstuecksauskunft"
+translationKey: "flurstuecksauskunft"
 status: "development"
 featured: false
 categories: ["administration"]

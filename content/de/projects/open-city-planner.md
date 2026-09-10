@@ -3,6 +3,7 @@ title: "Open City Planner"
 description: "Urbanen Raum erkunden, Flächen zeichnen und räumliche Analysen durchführen."
 locale: "de"
 slug: "open-city-planner"
+translationKey: "open-city-planner"
 status: "unknown"
 featured: true
 featuredOrder: 0

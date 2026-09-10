@@ -3,6 +3,7 @@ title: "Sozialatlas"
 description: "Visualisér sociale strukturdata til planlægning og civilsamfund."
 locale: "da"
 slug: "sozialatlas"
+translationKey: "sozialatlas"
 status: "seeking-contributors"
 featured: false
 categories: ["society"]

@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { site } from '#shared/config/site'
-const localeHead = useLocaleHead({ seo: true })
+import type { TranslationGroup } from '#shared/utils/translations'
+const requestFetch = useRequestFetch()
+await useAsyncData('translations', () => requestFetch<TranslationGroup[]>('/api/translations'))
+// Content-aware canonical/alternate links are owned by usePageSeo.
+const localeHead = useLocaleHead({ seo: false })
 useHead(() => ({
   htmlAttrs: localeHead.value.htmlAttrs,
-  link: localeHead.value.link,
-  meta: localeHead.value.meta,
 }))
 useHead({
   script: [

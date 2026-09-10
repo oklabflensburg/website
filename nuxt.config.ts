@@ -1,5 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
-import { site } from './shared/config/site'
+import { editorialSlugs, routePaths, site } from './shared/config/site'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
@@ -8,6 +8,22 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: ['@nuxtjs/i18n', '@nuxt/content', '@nuxt/image', '@nuxt/eslint'],
   vite: { plugins: [tailwindcss()] },
+  hooks: {
+    'pages:extend'(pages) {
+      for (const page of pages) {
+        const editorialKey = editorialSlugs.find((key) => key === page.name)
+        if (editorialKey) {
+          page.meta = { ...page.meta, editorialKey, i18n: { paths: routePaths[editorialKey] } }
+        }
+        if (page.name === 'projekte' || page.name === 'projekte-slug') {
+          const detail = page.name === 'projekte-slug'
+          page.meta = { ...page.meta, i18n: { paths: Object.fromEntries(
+            Object.entries(routePaths.projekte).map(([locale, path]) => [locale, `${path}${detail ? '/[slug]' : ''}`]),
+          ) } }
+        }
+      }
+    },
+  },
   app: {
     head: {
       link: [

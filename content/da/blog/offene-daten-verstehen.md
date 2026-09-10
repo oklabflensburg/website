@@ -2,7 +2,9 @@
 title: "Åbne data begynder med et godt spørgsmål"
 description: "En praktisk introduktion til datakilder, licenser og kvalitet."
 locale: "da"
-slug: "offene-daten-verstehen"
+slug: "forstaa-aabne-data"
+translationKey: "offene-daten-verstehen"
+aliases: ["offene-daten-verstehen"]
 date: "2026-09-10"
 authors: ["OK Lab Flensburg"]
 tags: ["Open Data"]

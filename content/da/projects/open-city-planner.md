@@ -3,6 +3,7 @@ title: "Open City Planner"
 description: "Udforsk byrum, tegn arealer og gennemfør geografiske analyser."
 locale: "da"
 slug: "open-city-planner"
+translationKey: "open-city-planner"
 status: "unknown"
 featured: true
 featuredOrder: 0

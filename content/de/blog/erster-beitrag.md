@@ -3,6 +3,7 @@ title: "Dein erster Beitrag braucht keinen Code"
 description: "Wie Feedback, Recherche und Dokumentation Projekte weiterbringen."
 locale: "de"
 slug: "erster-beitrag"
+translationKey: "erster-beitrag"
 date: "2026-09-10"
 authors: ["OK Lab Flensburg"]
 tags: ["Community"]

@@ -3,6 +3,7 @@ title: "Unfallkarte"
 description: "Undersøg trafikulykker geografisk og over flere år."
 locale: "da"
 slug: "unfallkarte"
+translationKey: "unfallkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]

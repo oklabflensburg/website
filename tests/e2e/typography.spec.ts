@@ -38,7 +38,7 @@ test('zoom-equivalent and narrow viewports reflow without clipped content', asyn
   // Also check 320 CSS pixels for narrow-screen reflow, without hiding overflow.
   for (const width of [720, 320]) {
     await page.setViewportSize({ width, height: 1000 })
-    for (const path of [...pages, '/da', '/en', '/da/projekte', '/en/projekte']) {
+    for (const path of [...pages, '/da', '/en', '/da/projekter', '/en/projects']) {
       await page.goto(path)
       await page.evaluate(() => document.fonts.ready)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${width}: ${path}`).toBe(true)

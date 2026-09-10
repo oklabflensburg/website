@@ -16,7 +16,7 @@ if (!project.value)
 usePageSeo(
   () => project.value?.title ?? '',
   () => project.value?.description ?? '',
-  { image: () => project.value ? `${site.projectSocialImages}/${project.value.slug}.png` : undefined },
+  { image: () => project.value ? `${site.projectSocialImages}/${project.value.translationKey}.png` : undefined },
 )
 </script>
 <template>

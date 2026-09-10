@@ -3,6 +3,7 @@ title: "Flurstücksauskunft Schleswig-Holstein"
 description: "Interactive, unofficial parcel information without ownership data."
 locale: "en"
 slug: "flurstuecksauskunft"
+translationKey: "flurstuecksauskunft"
 status: "development"
 featured: false
 categories: ["administration"]

@@ -3,6 +3,7 @@ title: "Notfallkarte Schleswig-Holstein"
 description: "Polizeidienststellen in Schleswig-Holstein schnell in der Nähe finden."
 locale: "de"
 slug: "notfallkarte"
+translationKey: "notfallkarte"
 status: "development"
 featured: false
 categories: ["safety"]

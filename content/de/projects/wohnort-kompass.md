@@ -3,6 +3,7 @@ title: "Wohnort-Kompass"
 description: "Regionen in Deutschland anhand offener Daten vergleichen und passende Wohnorte finden."
 locale: "de"
 slug: "wohnort-kompass"
+translationKey: "wohnort-kompass"
 status: "development"
 featured: false
 categories: ["housing"]

@@ -2,7 +2,9 @@
 title: "Spielplatzkarte"
 description: "Make playgrounds and their facilities easier to find with open data."
 locale: "en"
-slug: "spielplatzkarte"
+slug: "playground-map"
+translationKey: "spielplatzkarte"
+aliases: ["spielplatzkarte"]
 status: "seeking-contributors"
 featured: false
 categories: ["leisure"]

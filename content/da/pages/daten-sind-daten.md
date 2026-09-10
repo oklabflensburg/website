@@ -3,6 +3,7 @@ title: "DatenSindDaten e.V."
 description: "En organisatorisk ramme for åbent engagement."
 locale: "da"
 slug: "daten-sind-daten"
+translationKey: "daten-sind-daten"
 noindex: false
 ---
 

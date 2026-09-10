@@ -3,6 +3,7 @@ title: "Recyclingcontainerkarte"
 description: "Map public glass and textile recycling containers transparently."
 locale: "en"
 slug: "recyclingcontainerkarte"
+translationKey: "recyclingcontainerkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

@@ -3,6 +3,7 @@ title: "Wohnort-Kompass"
 description: "Sammenlign tyske regioner med åbne data og find et sted, der passer."
 locale: "da"
 slug: "wohnort-kompass"
+translationKey: "wohnort-kompass"
 status: "development"
 featured: false
 categories: ["housing"]

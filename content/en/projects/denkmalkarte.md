@@ -3,6 +3,7 @@ title: "Digitale Denkmalkarte"
 description: "Discover Schleswig-Holstein’s cultural monuments on an open map."
 locale: "en"
 slug: "denkmalkarte"
+translationKey: "denkmalkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["culture"]

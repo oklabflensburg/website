@@ -42,12 +42,29 @@ export const editorialSlugs = [
   'datenschutz',
   'code-of-conduct',
 ] as const
-export const staticPaths = [
-  '/',
-  '/projekte',
-  '/blog',
-  ...editorialSlugs.map((slug) => `/${slug}`),
-]
+// One typed route matrix drives Nuxt i18n and server-side URL serialization.
+// Content slugs are not translation identities and are never stored here.
+export const routePaths = {
+  index: { de: '/', da: '/', en: '/' },
+  projekte: { de: '/projekte', da: '/projekter', en: '/projects' },
+  blog: { de: '/blog', da: '/blog', en: '/blog' },
+  mitmachen: { de: '/mitmachen', da: '/deltag', en: '/join' },
+  'ueber-uns': { de: '/ueber-uns', da: '/om-os', en: '/about' },
+  team: { de: '/team', da: '/team', en: '/team' },
+  'daten-sind-daten': { de: '/daten-sind-daten', da: '/daten-sind-daten', en: '/daten-sind-daten' },
+  veranstaltungen: { de: '/veranstaltungen', da: '/arrangementer', en: '/events' },
+  kontakt: { de: '/kontakt', da: '/kontakt', en: '/contact' },
+  impressum: { de: '/impressum', da: '/kolofon', en: '/legal-notice' },
+  datenschutz: { de: '/datenschutz', da: '/privatliv', en: '/privacy' },
+  'code-of-conduct': { de: '/code-of-conduct', da: '/adfaerdskodeks', en: '/code-of-conduct' },
+} as const satisfies Record<string, Record<SiteLocale, string>>
+export const localeLanguages = { de: 'de-DE', da: 'da-DK', en: 'en-GB' } as const
+export const staticPaths = Object.values(routePaths).map((paths) => paths.de)
 export function localizedPath(path: string, locale: string) {
-  return locale === 'de' ? path : `/${locale}${path === '/' ? '' : path}`
+  if (!locales.includes(locale as SiteLocale)) throw new Error(`Unsupported locale: ${locale}`)
+  const match = path.match(/^(\/[^/?#]*)(.*)$/)
+  if (!match) throw new Error(`Expected a root-relative route: ${path}`)
+  const base = Object.values(routePaths).find((paths) => paths.de === match[1])
+  const translated = (base?.[locale as SiteLocale] ?? match[1]!) + match[2]!
+  return locale === 'de' ? translated : `/${locale}${translated === '/' ? '' : translated}`
 }

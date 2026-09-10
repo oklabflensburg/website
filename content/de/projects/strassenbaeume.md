@@ -3,6 +3,7 @@ title: "Straßenbäume"
 description: "Offene Baumdaten der Stadt Flensburg verständlich auf einer Karte zeigen."
 locale: "de"
 slug: "strassenbaeume"
+translationKey: "strassenbaeume"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

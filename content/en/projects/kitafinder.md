@@ -3,6 +3,7 @@ title: "Kitafinder"
 description: "Find childcare centres in Flensburg using open location and contact data."
 locale: "en"
 slug: "kitafinder"
+translationKey: "kitafinder"
 status: "seeking-contributors"
 featured: false
 categories: ["education"]

@@ -3,6 +3,7 @@ title: "kulturbytes"
 description: "Samler kulturtilbud og giver også små initiativer digital synlighed."
 locale: "da"
 slug: "kulturbytes"
+translationKey: "kulturbytes"
 status: "development"
 featured: true
 featuredOrder: 1

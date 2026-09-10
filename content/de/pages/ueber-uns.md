@@ -3,6 +3,7 @@ title: "Technologie für das Gemeinwohl."
 description: "Ein offenes Lab für Flensburg und Schleswig-Holstein."
 locale: "de"
 slug: "ueber-uns"
+translationKey: "ueber-uns"
 noindex: false
 ---
 

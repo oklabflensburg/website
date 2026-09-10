@@ -3,6 +3,7 @@ title: "Respekt ist unsere Grundlage."
 description: "Ein Vorschlag für den gemeinsamen Umgang im Lab und in unseren Projekten."
 locale: "de"
 slug: "code-of-conduct"
+translationKey: "code-of-conduct"
 noindex: true
 ---
 

@@ -3,6 +3,7 @@ title: "Unfallkarte"
 description: "Unfälle mit Personenschaden räumlich und über mehrere Jahre untersuchen."
 locale: "de"
 slug: "unfallkarte"
+translationKey: "unfallkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]
