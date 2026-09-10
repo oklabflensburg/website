@@ -167,6 +167,13 @@ test('review screenshots', async ({ page }, testInfo) => {
   for (const path of ['/', '/projekte', '/daten-sind-daten']) {
     await page.goto(path)
     await page.evaluate(() => document.fonts.ready)
+    // Full-page captures include images below the browser's lazy-loading range.
+    await page.locator('img').evaluateAll(async (images) => {
+      await Promise.all(images.map((image) => {
+        image.loading = 'eager'
+        return image.decode()
+      }))
+    })
     await page.screenshot({
       path: `docs/screenshots/${testInfo.project.name}-${path === '/' ? 'home' : path.slice(1)}.png`,
       fullPage: true,

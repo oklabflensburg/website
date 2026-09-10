@@ -28,7 +28,8 @@
     "eslint": "^10.10.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.9.0",
-    "vitest": "^3.2.4",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0",
     "vue-tsc": "^3.0.0",
     "yaml": "^2.8.0"
   },

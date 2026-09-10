@@ -18,7 +18,7 @@ Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs
 
 ## Entwicklung
 
-Node.js **22.22 oder neuer**, pnpm **10.15.1**. Nuxt Content nutzt den nativen SQLite-Treiber von Node; keine zusätzliche Datenbankinstallation nötig.
+Node.js **22.22 oder neuer**, pnpm **10.15.1**. Vite 8 ist als gemeinsamer Peer für Nuxt, Tailwind und Vitest festgelegt. Nuxt Content nutzt den nativen SQLite-Treiber von Node; keine zusätzliche Datenbankinstallation nötig.
 
 ```sh
 corepack enable
@@ -37,7 +37,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. CI installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch.
+Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. CI installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch.
 
 ## Sprachen und Routing
 
