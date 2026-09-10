@@ -3,6 +3,7 @@ title: "Badestellenkarte Schleswig-Holstein"
 description: "Find badesteder og steder ved vandet i hele Slesvig-Holsten."
 locale: "da"
 slug: "badestellenkarte"
+translationKey: "badestellenkarte"
 status: "development"
 featured: false
 categories: ["leisure"]

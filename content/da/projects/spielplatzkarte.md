@@ -2,7 +2,9 @@
 title: "Spielplatzkarte"
 description: "Gør legepladser og deres faciliteter lettere at finde med åbne data."
 locale: "da"
-slug: "spielplatzkarte"
+slug: "legepladskort"
+translationKey: "spielplatzkarte"
+aliases: ["spielplatzkarte"]
 status: "seeking-contributors"
 featured: false
 categories: ["leisure"]

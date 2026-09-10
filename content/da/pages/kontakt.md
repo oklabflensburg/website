@@ -3,6 +3,7 @@ title: "Lad os tale sammen."
 description: "En idé, et spørgsmål eller interesse i samarbejde?"
 locale: "da"
 slug: "kontakt"
+translationKey: "kontakt"
 noindex: false
 ---
 

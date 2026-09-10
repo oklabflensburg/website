@@ -3,6 +3,7 @@ title: "Privatliv"
 description: "Tekniske oplysninger og udestående oplysninger fra operatøren."
 locale: "da"
 slug: "datenschutz"
+translationKey: "datenschutz"
 noindex: true
 ---
 

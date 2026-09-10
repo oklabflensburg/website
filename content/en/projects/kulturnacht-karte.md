@@ -3,6 +3,7 @@ title: "Kulturnacht Flensburg"
 description: "Discover Flensburg Culture Night venues on an open map."
 locale: "en"
 slug: "kulturnacht-karte"
+translationKey: "kulturnacht-karte"
 status: "completed"
 featured: false
 categories: ["culture"]

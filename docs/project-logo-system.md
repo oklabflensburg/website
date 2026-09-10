@@ -2,7 +2,7 @@
 
 ## Gestaltungsregeln
 
-Alle 19 tatsächlichen Projekte werden ausschließlich aus `content/de/projects/` ermittelt und haben passende Übersetzungen in `content/da/projects/` und `content/en/projects/`. Die Content-Felder `image` und `imageAlt` sind die einzige Zuordnung zwischen Projekt und Signet. Es gibt keine zusätzliche Laufzeit-Liste und kein Logo-Mapping.
+Alle 19 tatsächlichen Projekte werden ausschließlich aus `content/{de,da,en}/projects/` ermittelt und über `translationKey` zusammengeführt. Die Content-Felder `image` und `imageAlt` sind die einzige Zuordnung zwischen Projekt und Signet. Es gibt keine zusätzliche Laufzeit-Liste und kein Logo-Mapping.
 
 Die Signets sind einzeln von Hand als SVG-Geometrien gestaltet. Keine Bildgenerierung, keine Fotos, keine Screenshots, keine Textmarken und keine eingebetteten Rasterbilder. Die gemeinsame Serie übernimmt die helle Navy-/Blau-Gestaltung der Website. Die Symbole unterscheiden sich durch Komposition und Silhouette, nicht nur durch die Farbe.
 
@@ -55,7 +55,7 @@ Die deutsche Symbolbeschreibung dient zugleich als konkreter Alt-Text. Eigenstä
 ## Integration und Änderungen
 
 - **57 Content-Dateien:** `image` und `imageAlt` für sämtliche 19 Projekte in DE/DA/EN aktualisiert; Beschreibungen, Quellen, Links, Status und Technologien bleiben erhalten.
-- **19 Assets:** `public/images/projects/<slug>.svg`; die ersetzten Fotomotive und deren Originale gehören nicht mehr zur Website. Die vorgefundenen uncommitteten Originale wurden vor dem Entfernen außerhalb des Repositorys unter `/tmp/oklab-superseded-project-photos/` gesichert.
+- **19 Assets:** `public/images/projects/<translationKey>.svg`; die ersetzten Fotomotive und deren Originale gehören nicht mehr zur Website. Die vorgefundenen uncommitteten Originale wurden vor dem Entfernen außerhalb des Repositorys unter `/tmp/oklab-superseded-project-photos/` gesichert.
 - **Komponenten:** `app/components/ProjectCard.vue` rendert die SVG-Datei direkt als Bild ohne Rasterisierung oder Beschnitt. Die vorhandene Titelhierarchie, Themen-Badges und Links bleiben bestehen.
 - **Detailseiten:** `app/pages/projekte/[slug].vue` zeigt das vollständige Signet; die OpenGraph-/Twitter-Vorschau kombiniert dieselbe Quelle mit der unveränderten Organisationsmarke als PNG.
 - **Schema:** `shared/config/content.ts` verlangt den kanonischen lokalen SVG-Pfad sowie einen beschreibenden Alt-Text.
@@ -64,7 +64,7 @@ Die deutsche Symbolbeschreibung dient zugleich als konkreter Alt-Text. Eigenstä
 
 ## Neue Projekte ergänzen
 
-Zuerst Zweck und Datenfunktion aus verifizierten Inhalten bestimmen. Ein eigenes geometrisches Konzept wählen, das sich auch ohne Farbe von den bestehenden Silhouetten unterscheidet. Die Datei mit denselben Raster-, Kontur- und Abstandsregeln erstellen. Kein Projektname, kein wiederverwendetes OK-Lab-Zeichen und kein zusätzliches generisches App-Icon als Rahmen. SVG unter dem Content-Slug speichern und konkrete visuelle Beschreibungen in allen drei Übersetzungen ergänzen. Vorschauen bei 1440/390 px und bei kleiner Symbolgröße kontrollieren.
+Zuerst Zweck und Datenfunktion aus verifizierten Inhalten bestimmen. Ein eigenes geometrisches Konzept wählen, das sich auch ohne Farbe von den bestehenden Silhouetten unterscheidet. Die Datei mit denselben Raster-, Kontur- und Abstandsregeln erstellen. Kein Projektname, kein wiederverwendetes OK-Lab-Zeichen und kein zusätzliches generisches App-Icon als Rahmen. SVG unter dem stabilen `translationKey` speichern und konkrete visuelle Beschreibungen in allen drei Übersetzungen ergänzen. Vorschauen bei 1440/390 px und bei kleiner Symbolgröße kontrollieren.
 
 ## Quality Review und Tests
 

@@ -3,6 +3,7 @@ title: "Bildungsatlas"
 description: "Gør skoler og uddannelsestilbud tilgængelige gennem åbne data."
 locale: "da"
 slug: "bildungsatlas"
+translationKey: "bildungsatlas"
 status: "seeking-contributors"
 featured: false
 categories: ["education"]

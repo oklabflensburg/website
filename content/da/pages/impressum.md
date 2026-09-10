@@ -3,6 +3,7 @@ title: "Juridiske oplysninger"
 description: "Oplysninger om udbyderen er under udarbejdelse."
 locale: "da"
 slug: "impressum"
+translationKey: "impressum"
 noindex: true
 ---
 

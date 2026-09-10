@@ -3,6 +3,7 @@ title: "Biotopkarte Schleswig-Holstein"
 description: "Explore protected and other biotopes across Schleswig-Holstein."
 locale: "en"
 slug: "biotopkarte"
+translationKey: "biotopkarte"
 status: "development"
 featured: true
 featuredOrder: 2

@@ -3,6 +3,7 @@ title: "Open Data API"
 description: "Provide public datasets through an open, machine-readable interface."
 locale: "en"
 slug: "open-data-api"
+translationKey: "open-data-api"
 status: "seeking-contributors"
 featured: false
 categories: ["infrastructure"]

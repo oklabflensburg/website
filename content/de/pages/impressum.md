@@ -3,6 +3,7 @@ title: "Impressum"
 description: "Anbieterangaben werden redaktionell vervollständigt."
 locale: "de"
 slug: "impressum"
+translationKey: "impressum"
 noindex: true
 ---
 

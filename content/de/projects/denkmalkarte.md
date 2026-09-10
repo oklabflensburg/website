@@ -3,6 +3,7 @@ title: "Digitale Denkmalkarte"
 description: "Kulturdenkmäler Schleswig-Holsteins auf einer freien Karte entdecken."
 locale: "de"
 slug: "denkmalkarte"
+translationKey: "denkmalkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["culture"]

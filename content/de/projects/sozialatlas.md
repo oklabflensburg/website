@@ -3,6 +3,7 @@ title: "Sozialatlas"
 description: "Soziale Strukturdaten als Grundlage für Planung und Zivilgesellschaft visualisieren."
 locale: "de"
 slug: "sozialatlas"
+translationKey: "sozialatlas"
 status: "seeking-contributors"
 featured: false
 categories: ["society"]

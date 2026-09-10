@@ -3,6 +3,7 @@ title: "Biotopkarte Schleswig-Holstein"
 description: "Wertbiotope und Nichtwertbiotope in Schleswig-Holstein interaktiv erkunden."
 locale: "de"
 slug: "biotopkarte"
+translationKey: "biotopkarte"
 status: "development"
 featured: true
 featuredOrder: 2

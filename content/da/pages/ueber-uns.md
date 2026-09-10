@@ -3,6 +3,7 @@ title: "Teknologi til fælles gavn."
 description: "Et åbent lab for Flensborg og Slesvig-Holsten."
 locale: "da"
 slug: "ueber-uns"
+translationKey: "ueber-uns"
 noindex: false
 ---
 

@@ -3,6 +3,7 @@ title: "kulturbytes"
 description: "Bringing cultural listings together and giving smaller initiatives a digital presence."
 locale: "en"
 slug: "kulturbytes"
+translationKey: "kulturbytes"
 status: "development"
 featured: true
 featuredOrder: 1

@@ -3,6 +3,7 @@ title: "Deine Ideen. Unser nächstes Projekt."
 description: "Programmieren ist keine Voraussetzung. Neugier reicht für den ersten Schritt."
 locale: "de"
 slug: "mitmachen"
+translationKey: "mitmachen"
 noindex: false
 ---
 

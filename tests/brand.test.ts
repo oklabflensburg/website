@@ -9,9 +9,11 @@ const source = readFileSync(`public${site.logo}`)
 const resizeLogo = (size: number) => sharp(source).resize(size, size, {
   fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 },
 })
-const projects = readdirSync('content/de/projects').filter((file) => file.endsWith('.md')).map((file) =>
-  parse(readFileSync(`content/de/projects/${file}`, 'utf8').split('---')[1]!),
-)
+const projects = [...new Map(['de', 'da', 'en'].flatMap((locale) =>
+  readdirSync(`content/${locale}/projects`).filter((file) => file.endsWith('.md')).map((file) =>
+    parse(readFileSync(`content/${locale}/projects/${file}`, 'utf8').split('---')[1]!),
+  ),
+).map((project) => [project.translationKey, project])).values()]
 
 describe('canonical organisation branding', () => {
   it('preserves the exact upstream PNG, including its alpha channel', async () => {
@@ -49,7 +51,7 @@ describe('canonical organisation branding', () => {
   it('brands the default and every project social card without cropping the logo', async () => {
     const cards = [
       { path: site.socialImage, size: 420, left: 390, top: 105 },
-      ...projects.map((project) => ({ path: `${site.projectSocialImages}/${project.slug}.png`, size: 240, left: 120, top: 195 })),
+      ...projects.map((project) => ({ path: `${site.projectSocialImages}/${project.translationKey}.png`, size: 240, left: 120, top: 195 })),
     ]
     for (const card of cards) {
       const actual = sharp(`public${card.path}`)
@@ -68,6 +70,6 @@ describe('canonical organisation branding', () => {
       }
       expect(maxDifference).toBeLessThanOrEqual(1)
     }
-    expect(readdirSync(`public${site.projectSocialImages}`).sort()).toEqual(projects.map((project) => `${project.slug}.png`).sort())
+    expect(readdirSync(`public${site.projectSocialImages}`).sort()).toEqual(projects.map((project) => `${project.translationKey}.png`).sort())
   })
 })

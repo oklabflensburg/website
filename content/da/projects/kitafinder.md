@@ -3,6 +3,7 @@ title: "Kitafinder"
 description: "Find daginstitutioner i Flensborg via åbne adresse- og kontaktdata."
 locale: "da"
 slug: "kitafinder"
+translationKey: "kitafinder"
 status: "seeking-contributors"
 featured: false
 categories: ["education"]

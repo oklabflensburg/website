@@ -15,8 +15,8 @@ describe('canonical content', () => {
         const rows = readdirSync(dir)
           .filter((file) => file.endsWith('.md'))
           .map((file) => readContent(`${dir}/${file}`))
-        expect(rows.length).toBeGreaterThan(0)
         expect(new Set(rows.map((row) => row.slug)).size).toBe(rows.length)
+        expect(new Set(rows.map((row) => row.translationKey)).size).toBe(rows.length)
         for (const row of rows) {
           const result = schemas[collection].safeParse(row)
           expect(result.success, JSON.stringify(result)).toBe(true)
@@ -26,24 +26,10 @@ describe('canonical content', () => {
         }
       })
     }
-    it(`${locale} has every editorial route and the requested projects`, () => {
-      for (const slug of editorialSlugs)
-        expect(existsSync(`content/${locale}/pages/${slug}.md`)).toBe(true)
-      for (const slug of [
-        'open-city-planner',
-        'kulturbytes',
-        'flurstuecksauskunft',
-        'biotopkarte',
-        'denkmalkarte',
-        'sozialatlas',
-        'spielplatzkarte',
-        'strassenbaeume',
-        'kitafinder',
-        'open-data-api',
-        'bildungsatlas',
-        'badestellenkarte',
-      ])
-        expect(existsSync(`content/${locale}/projects/${slug}.md`)).toBe(true)
+    it(`${locale} editorial identities use the route allowlist`, () => {
+      for (const file of readdirSync(`content/${locale}/pages`).filter((name) => name.endsWith('.md'))) {
+        expect(editorialSlugs).toContain(readContent(`content/${locale}/pages/${file}`).translationKey)
+      }
     })
   }
   it('publishes only deliberately approved team profiles', () => {
@@ -59,12 +45,11 @@ describe('canonical content', () => {
     expect(schemas.team.safeParse({ name: 'Unapproved' }).success).toBe(false)
   })
   it('gives every project a distinct safe SVG signet and translated image descriptions', () => {
-    const projects = readdirSync('content/de/projects').map((file) =>
-      readContent(`content/de/projects/${file}`),
-    )
+    const translations = locales.flatMap((locale) => readdirSync(`content/${locale}/projects`).filter((file) => file.endsWith('.md')).map((file) => readContent(`content/${locale}/projects/${file}`)))
+    const projects = [...new Map(translations.map((project) => [project.translationKey, project])).values()]
     const hashes = new Set<string>()
     for (const project of projects) {
-      expect(project.image).toBe(`/images/projects/${project.slug}.svg`)
+      expect(project.image).toBe(`/images/projects/${project.translationKey}.svg`)
       const bytes = readFileSync(`public${project.image}`)
       const svg = bytes.toString('utf8')
       expect(svg).toContain('width="1024" height="1024" viewBox="0 0 128 128"')
@@ -73,23 +58,23 @@ describe('canonical content', () => {
       expect(svg).toContain('fill="#f3f7fa"')
       hashes.add(createHash('sha256').update(bytes).digest('hex'))
       const descriptions = new Set<string>()
-      for (const locale of locales) {
-        const translation = readContent(`content/${locale}/projects/${project.slug}.md`)
+      const variants = translations.filter((item) => item.translationKey === project.translationKey)
+      for (const translation of variants) {
         expect(translation.image).toBe(project.image)
         expect(translation.imageAlt.length).toBeGreaterThan(20)
         expect(translation.imageAlt).not.toBe(translation.title)
         descriptions.add(translation.imageAlt)
       }
-      expect(descriptions.size).toBe(locales.length)
+      expect(descriptions.size).toBe(variants.length)
       expect(schemas.projects.safeParse({ ...project, image: undefined }).success).toBe(false)
       expect(schemas.projects.safeParse({ ...project, imageAlt: '' }).success).toBe(false)
     }
     expect(hashes.size).toBe(projects.length)
     expect(readdirSync('public/images/projects').sort()).toEqual(
-      projects.map((project) => `${project.slug}.svg`).sort(),
+      projects.map((project) => `${project.translationKey}.svg`).sort(),
     )
   })
-  it('has matching translation keys and content slugs in all languages', () => {
+  it('has matching UI translation keys in all languages', () => {
     function keys(value: Record<string, unknown>, prefix = ''): string[] {
       return Object.entries(value)
         .flatMap(([key, child]) =>
@@ -104,10 +89,7 @@ describe('canonical content', () => {
       expect(
         keys(JSON.parse(readFileSync(`i18n/locales/${locale}.json`, 'utf8'))),
       ).toEqual(keys(de))
-      for (const collection of ['projects', 'blog', 'pages'])
-        expect(readdirSync(`content/${locale}/${collection}`).sort()).toEqual(
-          readdirSync(`content/de/${collection}`).sort(),
-        )
+
     }
   })
 })

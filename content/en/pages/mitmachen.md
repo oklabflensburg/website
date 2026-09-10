@@ -3,6 +3,7 @@ title: "Your ideas. Our next project."
 description: "You don’t need to know how to code. Curiosity is enough to get started."
 locale: "en"
 slug: "mitmachen"
+translationKey: "mitmachen"
 noindex: false
 ---
 

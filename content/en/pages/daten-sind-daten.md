@@ -3,6 +3,7 @@ title: "DatenSindDaten e.V."
 description: "An organisational home for open collaboration."
 locale: "en"
 slug: "daten-sind-daten"
+translationKey: "daten-sind-daten"
 noindex: false
 ---
 

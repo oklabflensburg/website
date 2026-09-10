@@ -5,12 +5,14 @@ const identity = {
 }
 const editorial = {
   ...identity,
+  translationKey: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   title: z.string().min(1),
   description: z.string().min(20),
 }
 export const schemas = {
   projects: z.object({
     ...editorial,
+    aliases: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).default([]),
     status: z.enum([
       'development',
       'seeking-contributors',
@@ -31,6 +33,7 @@ export const schemas = {
   }),
   blog: z.object({
     ...editorial,
+    aliases: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).default([]),
     date: z.iso.date(),
     updated: z.iso.date().optional(),
     authors: z.array(z.string()).min(1),

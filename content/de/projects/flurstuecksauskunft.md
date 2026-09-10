@@ -3,6 +3,7 @@ title: "Flurstücksauskunft Schleswig-Holstein"
 description: "Nicht amtliche, interaktive Flurstücksinformationen ohne Eigentümerangaben."
 locale: "de"
 slug: "flurstuecksauskunft"
+translationKey: "flurstuecksauskunft"
 status: "development"
 featured: false
 categories: ["administration"]

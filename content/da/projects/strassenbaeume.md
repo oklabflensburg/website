@@ -3,6 +3,7 @@ title: "Straßenbäume"
 description: "Vis Flensborgs åbne data om gadetræer på et forståeligt kort."
 locale: "da"
 slug: "strassenbaeume"
+translationKey: "strassenbaeume"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

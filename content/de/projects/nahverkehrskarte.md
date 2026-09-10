@@ -3,6 +3,7 @@ title: "Nahverkehrskarte"
 description: "Nahverkehrsangebote in Flensburg auf einer verständlichen Stadtkarte zeigen."
 locale: "de"
 slug: "nahverkehrskarte"
+translationKey: "nahverkehrskarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]

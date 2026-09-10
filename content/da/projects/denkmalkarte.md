@@ -3,6 +3,7 @@ title: "Digitale Denkmalkarte"
 description: "Find Slesvig-Holstens kulturminder på et åbent kort."
 locale: "da"
 slug: "denkmalkarte"
+translationKey: "denkmalkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["culture"]

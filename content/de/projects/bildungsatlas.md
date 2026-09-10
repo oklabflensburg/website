@@ -3,6 +3,7 @@ title: "Bildungsatlas"
 description: "Schulen und Bildungsangebote mithilfe offener Daten zugänglich machen."
 locale: "de"
 slug: "bildungsatlas"
+translationKey: "bildungsatlas"
 status: "seeking-contributors"
 featured: false
 categories: ["education"]

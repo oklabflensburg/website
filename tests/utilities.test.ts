@@ -52,5 +52,5 @@ it('escapes content in RSS and sitemap XML', () => {
 it('uses the canonical prefix strategy', () => {
   expect(localizedPath('/', 'de')).toBe('/')
   expect(localizedPath('/', 'da')).toBe('/da')
-  expect(localizedPath('/projekte/a', 'en')).toBe('/en/projekte/a')
+  expect(localizedPath('/projekte/a', 'en')).toBe('/en/projects/a')
 })

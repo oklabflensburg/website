@@ -3,6 +3,7 @@ title: "Spielplatzkarte"
 description: "Spielplätze und ihre Ausstattung mit offenen Daten leichter auffindbar machen."
 locale: "de"
 slug: "spielplatzkarte"
+translationKey: "spielplatzkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["leisure"]

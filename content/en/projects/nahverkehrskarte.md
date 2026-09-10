@@ -3,6 +3,7 @@ title: "Nahverkehrskarte"
 description: "Show Flensburg public transport on a clear city map."
 locale: "en"
 slug: "nahverkehrskarte"
+translationKey: "nahverkehrskarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]

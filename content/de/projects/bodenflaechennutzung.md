@@ -3,6 +3,7 @@ title: "Bodenflächennutzung"
 description: "Flächennutzungsarten in Gemeinden Schleswig-Holsteins interaktiv vergleichen."
 locale: "de"
 slug: "bodenflaechennutzung"
+translationKey: "bodenflaechennutzung"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

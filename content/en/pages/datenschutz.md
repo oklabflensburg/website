@@ -3,6 +3,7 @@ title: "Privacy"
 description: "Technical details and operator information still to be completed."
 locale: "en"
 slug: "datenschutz"
+translationKey: "datenschutz"
 noindex: true
 ---
 

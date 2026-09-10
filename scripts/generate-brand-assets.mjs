@@ -2,12 +2,12 @@ import { readFile, readdir, mkdir, writeFile, unlink } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 import { parse } from 'yaml'
-import { site } from '../shared/config/site.ts'
+import { site, locales } from '../shared/config/site.ts'
 
 // All derived branding assets read the single, unmodified organisation master.
 // Project identities are read directly from canonical Content, not a second list.
 const publicDir = fileURLToPath(new URL('../public/', import.meta.url))
-const projectDir = fileURLToPath(new URL('../content/de/projects/', import.meta.url))
+const contentDir = fileURLToPath(new URL('../content/', import.meta.url))
 const logo = await readFile(`${publicDir}${site.logo}`)
 const transparent = { r: 255, g: 255, b: 255, alpha: 0 }
 const icon = (size) => sharp(logo).resize(size, size, { fit: 'contain', background: transparent }).png().toBuffer()
@@ -39,12 +39,18 @@ await canvas().composite([{ input: await icon(420), left: 390, top: 105 }]).png(
 const outputDir = `${publicDir}${site.projectSocialImages}`
 await mkdir(outputDir, { recursive: true })
 const expected = new Set()
-for (const file of (await readdir(projectDir)).filter((name) => name.endsWith('.md')).sort()) {
-  const project = parse((await readFile(`${projectDir}/${file}`, 'utf8')).split('---')[1])
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug) || project.image !== `/images/projects/${project.slug}.svg`) {
-    throw new Error(`Invalid project identity: ${file}`)
+const projects = new Map()
+for (const locale of locales) {
+  for (const file of (await readdir(`${contentDir}/${locale}/projects`)).filter((name) => name.endsWith('.md')).sort()) {
+    const project = parse((await readFile(`${contentDir}/${locale}/projects/${file}`, 'utf8')).split('---')[1])
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.translationKey) || project.image !== `/images/projects/${project.translationKey}.svg`) {
+      throw new Error(`Invalid project identity: ${locale}/${file}`)
+    }
+    projects.set(project.translationKey, project)
   }
-  const filename = `${project.slug}.png`
+}
+for (const [key, project] of [...projects].sort(([a], [b]) => a.localeCompare(b))) {
+  const filename = `${key}.png`
   expected.add(filename)
   const signet = await sharp(`${publicDir}${project.image}`).resize(440, 440, { fit: 'contain' }).png().toBuffer()
   await canvas().composite([

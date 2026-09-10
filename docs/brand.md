@@ -35,7 +35,7 @@ Das Original wird weder nachgezeichnet, beschnitten, vektorisiert noch umgefärb
 | Favicon | `public/favicon-32x32.png` | 32 × 32 px |
 | Apple-Touch-Icon | `public/apple-touch-icon.png` | 180 × 180 px |
 | Allgemeine und Blog-Social-Card | `public/social-card.png` | 1200 × 630 px, vollständiges 420-px-Logo mittig auf Weiß |
-| Projekt-Social-Cards | `public/social/projects/<slug>.png` | 1200 × 630 px, Organisationsmarke links, eigenes Projekt-Signet rechts |
+| Projekt-Social-Cards | `public/social/projects/<translationKey>.png` | 1200 × 630 px, Organisationsmarke links, eigenes Projekt-Signet rechts |
 
 Diese Ausgaben sind ausschließlich Größenableitungen bzw. fertige Social-Kompositionen; sie sind keine weiteren bearbeitbaren Logo-Quellen. Das Original wird nur einmal gespeichert. Sämtliche Größenänderungen verwenden `fit: contain`. Auf Social Cards wird die Transparenz auf Weiß zusammengesetzt, ohne die Farben zu verändern; die Marke hat mindestens 105 px Abstand zum Bildrand.
 

@@ -3,6 +3,7 @@ title: "Recyclingcontainerkarte"
 description: "Standorte für Altglas- und Altkleidercontainer transparent darstellen."
 locale: "de"
 slug: "recyclingcontainerkarte"
+translationKey: "recyclingcontainerkarte"
 status: "seeking-contributors"
 featured: false
 categories: ["environment"]

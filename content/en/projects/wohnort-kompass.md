@@ -3,6 +3,7 @@ title: "Wohnort-Kompass"
 description: "Compare German regions using open data and find a place that suits you."
 locale: "en"
 slug: "wohnort-kompass"
+translationKey: "wohnort-kompass"
 status: "development"
 featured: false
 categories: ["housing"]

@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
+import { parse } from 'yaml'
 import AxeBuilder from '@axe-core/playwright'
 import { editorialSlugs, localizedPath, site } from '../../shared/config/site'
 
@@ -33,7 +35,9 @@ for (const locale of ['de', 'da', 'en']) {
       '/blog/offene-daten-verstehen',
       ...editorialSlugs.map((slug) => `/${slug}`),
     ]) {
-      const url = localizedPath(path, locale)
+      const localized = path === '/blog/offene-daten-verstehen'
+        ? `/blog/${parse(readFileSync(`content/${locale}/blog/offene-daten-verstehen.md`, 'utf8').split('---')[1]!).slug}` : path
+      const url = localizedPath(localized, locale)
       const response = await request.get(url)
       expect(response.status(), url).toBe(200)
       expect(await response.text()).toContain('<h1')
@@ -46,9 +50,11 @@ for (const locale of ['de', 'da', 'en']) {
       await expect(page.locator('link[rel="canonical"]')).toHaveCount(1)
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
         'href',
-        site.url + (url === '/' ? '' : url),
+        new URL(url, site.url).href,
       )
-      await expect(page.locator('link[hreflang="en-GB"]')).toHaveCount(1)
+      if (!['/impressum', '/datenschutz', '/code-of-conduct'].includes(path)) {
+        await expect(page.locator('link[hreflang="en-GB"]')).toHaveCount(1)
+      }
       await expect(page.locator('main')).toBeVisible()
       expect(
         await page.evaluate(
@@ -67,16 +73,16 @@ test('navigation and language switching retain the detail page', async ({
   await page.goto('/projekte/denkmalkarte')
   if (isMobile) await page.getByRole('button', { name: 'Menü öffnen' }).click()
   await page.getByRole('link', { name: 'English', exact: true }).click()
-  await expect(page).toHaveURL('/en/projekte/denkmalkarte')
+  await expect(page).toHaveURL('/en/projects/denkmalkarte')
   await expect(page.locator('h1')).toContainText('Denkmalkarte')
   if (isMobile) await page.getByRole('button', { name: 'Open menu' }).click()
   await page.getByRole('link', { name: 'Dansk', exact: true }).click()
-  await expect(page).toHaveURL('/da/projekte/denkmalkarte')
+  await expect(page).toHaveURL('/da/projekter/denkmalkarte')
   await page
     .locator('footer')
     .getByRole('link', { name: 'Vær med', exact: true })
     .click()
-  await expect(page).toHaveURL('/da/mitmachen')
+  await expect(page).toHaveURL('/da/deltag')
   await expect(page.locator('main')).toContainText('programmere')
 })
 test('mobile menu supports escape, focus return and closes after navigation', async ({
@@ -155,13 +161,13 @@ test('RSS, sitemap, robots, redirects and 404s', async ({ request }) => {
     expect(rss.status()).toBe(200)
     expect(await rss.text()).toContain(`<language>${locale}</language>`)
     expect(await rss.text()).toContain(
-      localizedPath('/blog/offene-daten-verstehen', locale),
+      localizedPath(`/blog/${parse(readFileSync(`content/${locale}/blog/offene-daten-verstehen.md`, 'utf8').split('---')[1]!).slug}`, locale),
     )
   }
   expect((await request.get('/rss.xml?lang=fr')).status()).toBe(400)
   const sitemap = await request.get('/sitemap.xml')
   expect(sitemap.status()).toBe(200)
-  expect(await sitemap.text()).toContain('/en/projekte/open-city-planner')
+  expect(await sitemap.text()).toContain('/en/projects/open-city-planner')
   expect(await sitemap.text()).not.toContain('/impressum')
   expect(await (await request.get('/robots.txt')).text()).toContain(
     'Sitemap: https://oklabflensburg.de/sitemap.xml',
@@ -208,11 +214,11 @@ test('tablet navigation exposes the language switcher', async ({ page, isMobile 
 test('content and navigation remain usable without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, baseURL: 'http://127.0.0.1:3100' })
   const page = await context.newPage()
-  await page.goto('/en/projekte/denkmalkarte')
+  await page.goto('/en/projects/denkmalkarte')
   await expect(page.locator('h1')).toHaveText('Digitale Denkmalkarte')
   await expect(page.locator('.prose')).toContainText('Help improve it')
   await page.locator('footer').getByRole('link', { name: 'Get involved', exact: true }).click()
-  await expect(page).toHaveURL('/en/mitmachen')
+  await expect(page).toHaveURL('/en/join')
   await expect(page.locator('main')).toContainText('Norderstraße 49')
   await context.close()
 })

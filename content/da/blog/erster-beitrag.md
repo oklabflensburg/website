@@ -2,7 +2,9 @@
 title: "Dit første bidrag behøver ingen kode"
 description: "Sådan hjælper feedback, research og dokumentation projekter videre."
 locale: "da"
-slug: "erster-beitrag"
+slug: "dit-foerste-bidrag"
+translationKey: "erster-beitrag"
+aliases: ["erster-beitrag"]
 date: "2026-09-10"
 authors: ["OK Lab Flensburg"]
 tags: ["Community"]

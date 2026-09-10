@@ -3,6 +3,7 @@ title: "Menschen machen den Unterschied."
 description: "Unterschiedliche Perspektiven, ein gemeinsames Interesse an offenen Lösungen."
 locale: "de"
 slug: "team"
+translationKey: "team"
 noindex: false
 ---
 

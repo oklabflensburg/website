@@ -3,6 +3,7 @@ title: "Nahverkehrskarte"
 description: "Vis den kollektive trafik i Flensborg på et overskueligt bykort."
 locale: "da"
 slug: "nahverkehrskarte"
+translationKey: "nahverkehrskarte"
 status: "seeking-contributors"
 featured: false
 categories: ["mobility"]

@@ -3,6 +3,7 @@ title: "Sozialatlas"
 description: "Visualise social data for planning and civil society."
 locale: "en"
 slug: "sozialatlas"
+translationKey: "sozialatlas"
 status: "seeking-contributors"
 featured: false
 categories: ["society"]
