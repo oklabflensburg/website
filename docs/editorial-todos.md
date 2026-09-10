@@ -1,5 +1,7 @@
 # Editorial checklist before public deployment
 
+Repository administration: GitHub Actions was disabled (`enabled: false`) when PR #2 was created. Enable Actions in repository settings to run the supplied CI/CodeQL workflows remotely. The complete pipeline has passed locally.
+
 The implementation does not infer missing facts. The pages below remain explicit about their editorial status.
 
 - **Legal notice:** confirm responsible provider, service address, representation and registration details. The previous page contained unresolved environment variables, a school-site title and outdated boilerplate; it did not establish current facts. Do not substitute the meetup venue for a legal address.
