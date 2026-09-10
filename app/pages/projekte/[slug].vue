@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { site } from '#shared/config/site'
 const route = useRoute()
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
-const image = useImage()
 const { data: project } = await useAsyncData(
   () => `project-${locale.value}-${route.params.slug}`,
   () =>
@@ -16,7 +16,7 @@ if (!project.value)
 usePageSeo(
   () => project.value?.title ?? '',
   () => project.value?.description ?? '',
-  { image: () => project.value ? image(project.value.image, { format: 'png', width: 1200, height: 630, fit: 'contain', background: '#f3f7fa' }) : undefined },
+  { image: () => project.value ? `${site.projectSocialImages}/${project.value.slug}.png` : undefined },
 )
 </script>
 <template>
@@ -40,6 +40,10 @@ usePageSeo(
         /></div><ContentRenderer class="prose" :value="project" />
       </article>
       <aside class="card detail-aside">
+        <NuxtLink :to="localePath('/ueber-uns')" class="mb-2 flex items-center justify-between gap-4 border-b border-border pb-4 text-xs text-text-muted no-underline hover:text-brand">
+          <span>{{ $t('brand.projectBy') }}</span>
+          <AppLogo size="sm" />
+        </NuxtLink>
         <h2>{{ $t('common.status') }}</h2>
         <p class="text-sm">{{ $t(`status.${project.status}`) }}</p>
         <h2 v-if="project.technologies.length">

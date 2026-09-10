@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { site } from '#shared/config/site'
 const localePath = useLocalePath()
 const route = useRoute()
 const open = ref(false)
@@ -23,16 +22,7 @@ function escapeMenu() {
   <a class="skip-link" href="#main-content">{{ $t('a11y.skip') }}</a>
   <header class="header" @keydown.esc="escapeMenu">
     <div class="shell header-inner">
-      <NuxtLink :to="localePath('/')" class="brand"
-        ><img
-          src="/logos/codefor-flensburg.svg"
-          alt=""
-          width="38"
-          height="44"
-        /><span
-          >{{ site.name }}</span
-        ></NuxtLink
-      >
+      <NuxtLink :to="localePath('/')" class="brand"><AppLogo /></NuxtLink>
       <nav class="desktop-nav" :aria-label="$t('a11y.mainNav')">
         <NuxtLink
           v-for="item in items"

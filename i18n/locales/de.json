@@ -36,7 +36,8 @@
     "allPosts": "Alle Beiträge",
     "joinTitle": "Mitmachen",
     "joinText": "Du hast Lust, an echten Projekten für deine Stadt mitzuarbeiten? Egal ob Entwicklerin, Designer, Datenmensch oder einfach interessiert – wir freuen uns auf dich!",
-    "associationText": "Der Trägerverein gibt unserem gemeinsamen Engagement einen organisatorischen Rahmen."
+    "associationText": "Der Trägerverein gibt unserem gemeinsamen Engagement einen organisatorischen Rahmen.",
+    "networkText": "Wir sind Teil von Code for Germany, dem Netzwerk für offene Daten und gemeinwohlorientierte Technik."
   },
   "meeting": {
     "title": "Komm vorbei!",
@@ -138,5 +139,8 @@
     "seeking-contributors": "Sucht Mitwirkende",
     "completed": "Abgeschlossen",
     "unknown": "Stand im Repository"
+  },
+  "brand": {
+    "projectBy": "Ein Projekt von"
   }
 }

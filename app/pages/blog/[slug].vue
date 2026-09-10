@@ -17,7 +17,7 @@ if (!post.value)
 usePageSeo(
   () => post.value?.title ?? '',
   () => post.value?.description ?? '',
-  { article: true, image: () => post.value?.image },
+  { article: true },
 )
 useHead(() => ({
   script: [
@@ -39,7 +39,7 @@ useHead(() => ({
         publisher: { '@id': `${site.url}/#organization` },
         mainEntityOfPage: `${site.url}${route.path}`,
         inLanguage: locale.value,
-        image: new URL(post.value?.image || '/social-card.png', site.url).href,
+        image: new URL(site.socialImage, site.url).href,
       }).replace(/</g, '\u003c'),
     },
   ],

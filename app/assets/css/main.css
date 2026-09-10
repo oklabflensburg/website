@@ -42,8 +42,6 @@
   .header { @apply border-b border-border bg-white; }
   .header-inner { @apply flex min-h-[76px] items-center gap-6 md:min-h-[88px]; }
   .brand { @apply flex shrink-0 items-center gap-3 no-underline; }
-  .brand img { @apply h-11 w-auto; }
-  .brand span { @apply max-w-[120px] text-[15px] font-extrabold uppercase leading-[1.15]; }
   .desktop-nav { @apply ml-auto hidden items-center gap-7 text-[13px] font-semibold min-[1101px]:flex; }
   .desktop-nav a { @apply py-3 no-underline hover:text-brand; }
   .desktop-nav .router-link-active { @apply text-brand; }
@@ -119,8 +117,6 @@
   .blog-card .byline { @apply mb-0 mt-4 text-xs; }
   .footer { @apply border-t border-border bg-white py-6; }
   .footer-inner { @apply flex flex-wrap items-center justify-between gap-x-8 gap-y-5; }
-  .footer .brand img { @apply h-10; }
-  .footer .brand span { @apply text-[13px]; }
   .footer-tagline { @apply m-0 max-w-64 text-xs text-text-muted; }
   .footer-links { @apply flex flex-col gap-2 md:items-end; }
   .footer-social { @apply flex items-center gap-2; }

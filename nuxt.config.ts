@@ -10,7 +10,12 @@ export default defineNuxtConfig({
   vite: { plugins: [tailwindcss()] },
   app: {
     head: {
-      link: [{ rel: 'icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', href: site.favicons.ico, sizes: 'any' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: site.favicons.medium },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: site.favicons.small },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: site.favicons.apple },
+      ],
       meta: [{ name: 'theme-color', content: '#0b4f80' }],
     },
   },

@@ -12,7 +12,7 @@ export function usePageSeo(
   const { locale } = useI18n()
   const canonical = computed(() => `${site.url}${route.path}`)
   const image = computed(
-    () => new URL(toValue(options.image) || '/social-card.png', site.url).href,
+    () => new URL(toValue(options.image) || site.socialImage, site.url).href,
   )
   useSeoMeta({
     title: () => `${toValue(title)} · ${site.name}`,

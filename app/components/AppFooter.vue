@@ -6,8 +6,7 @@ const localePath = useLocalePath()
   <footer class="footer">
     <div class="shell footer-inner">
       <NuxtLink :to="localePath('/')" class="brand">
-        <img src="/logos/codefor-flensburg.svg" alt="" width="38" height="44" loading="lazy" />
-        <span>{{ site.name }}</span>
+        <AppLogo size="sm" loading="lazy" />
       </NuxtLink>
       <p class="footer-tagline">{{ $t('footer.tagline') }}</p>
       <div class="footer-links">
