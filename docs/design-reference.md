@@ -11,9 +11,9 @@ Die Vorlage zeigt eine kompakte neutrale Sans-Serif, kräftige dunkelblaue Über
 | Inhalt | max. 1180 px, mittig; außen mindestens 32 px Desktop / 20 px Mobil |
 | Header | 88 px Desktop / 76 px Mobil, weiße Fläche, 1 px Border, Logo 44 px |
 | Hero | 45/55-Aufteilung; Navy-Headline 52 px Desktop / 34 px Mobil, Gewicht 800, Zeilenhöhe 1.08, Laufweite −0.035 em |
-| Abschnitte | Überschriften 28/24 px, Gewicht 700; 36–40 px Abschnittsabstand |
-| Fließtext | 15 px, Gewicht 400, Zeilenhöhe 1.625; längere Artikel 1.8 |
-| Navigation / Buttons | 13/14 px, Gewicht 600; primäre Buttons 44 px hoch |
+| Abschnitte | Überschriften 30/24 px, Gewicht 700; 36–40 px Abschnittsabstand |
+| Fließtext | 16 px Mobil / 18 px Desktop, Zeilenhöhe 28/32 px; Einleitungen 18/20 px |
+| Navigation / Buttons | Desktop 16 px, mobile Navigation 18 px, Buttons 16 px; Touch-Ziele mindestens 44 px hoch |
 | Farben | Navy `#102c48`, Blau `#0b4f80`, Weiß, Soft Surface `#f5f7fa`, Border `#dfe7ee` |
 | Rundungen | Buttons 6 px, Karten 8 px, Meeting-Block 12 px |
 | Schatten | zwei sehr schwache Ebenen; ausschließlich Karten |
@@ -23,6 +23,8 @@ Die Vorlage zeigt eine kompakte neutrale Sans-Serif, kräftige dunkelblaue Über
 | Footer | Weiß, obere Border, kompaktes Logo, kleine Links und lineare Social-Icons |
 
 Gemeinsame Tailwind-Tokens und mit `@apply` zusammengesetzte Komponentenklassen liegen in `app/assets/css/main.css`. Seiten und Komponenten verwenden dieselben Klassen. Es gibt keine zweite Designimplementierung, keinen Theme-Schalter und keine zusätzlich geladene Schrift. Die frühere abstrakte Kartenzeichnung, der blaue CTA-Banner, die großflächige Vereinsleiste, der mehrspaltige Footer und deren Styles sind ersetzt.
+
+Die anschließende systematische Lesbarkeitsverbesserung ist in [typography.md](typography.md) dokumentiert: größere Inhalts- und Bedientexte, dunklerer Sekundärton, mehrzeiliger Umbruch und Prüfung schmaler Ansichten.
 
 ## Herkunft der Gestaltungsmittel
 

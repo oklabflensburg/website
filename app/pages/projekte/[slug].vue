@@ -40,12 +40,12 @@ usePageSeo(
         /></div><ContentRenderer class="prose" :value="project" />
       </article>
       <aside class="card detail-aside">
-        <NuxtLink :to="localePath('/ueber-uns')" class="mb-2 flex items-center justify-between gap-4 border-b border-border pb-4 text-xs text-text-muted no-underline hover:text-brand">
+        <NuxtLink :to="localePath('/ueber-uns')" class="mb-2 flex items-center justify-between gap-4 border-b border-border pb-4 text-sm text-text-muted no-underline hover:text-brand">
           <span>{{ $t('brand.projectBy') }}</span>
           <AppLogo size="sm" />
         </NuxtLink>
         <h2>{{ $t('common.status') }}</h2>
-        <p class="text-sm">{{ $t(`status.${project.status}`) }}</p>
+        <p>{{ $t(`status.${project.status}`) }}</p>
         <h2 v-if="project.technologies.length">
           {{ $t('common.technologies') }}
         </h2>
