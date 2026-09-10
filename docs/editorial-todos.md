@@ -6,7 +6,7 @@ The implementation does not infer missing facts. The pages below remain explicit
 
 - **Legal notice:** confirm responsible provider, service address, representation and registration details. The previous page contained unresolved environment variables, a school-site title and outdated boilerplate; it did not establish current facts. Do not substitute the meetup venue for a legal address.
 - **Privacy:** confirm hosting provider, logging, retention, controller, legal bases, rights and email handling for the actual production environment. The application itself has no trackers, third-party embeds, external fonts or locale cookie.
-- **Association:** the supporting role of DatenSindDaten e.V. is specified by the task. Board, statutes, transparency documents, membership terms, funding, sponsorship and donations require verified material.
+- **Association:** the supporting role of DatenSindDaten e.V. is specified by the task. Board, statutes, transparency documents, membership terms, funding, sponsorship and donations require verified material. No verified canonical association website is recorded in this repository; keep the association information unlinked until one is confirmed and added to `site.association`. Never substitute the Code for Germany network URL.
 - **Code of Conduct:** the proposed text needs community adoption, named confidential contacts and an agreed reporting and enforcement process.
 - **Team:** collect explicit approval and maintain profiles in `content/team/`. No previous automatically collected profiles were carried forward.
 - **Events:** add confirmed one-off events to Content. Do not infer the year of an Open Data Day from an undated reference. Maintain holiday exceptions or cancellation notices before they occur.
