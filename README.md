@@ -37,7 +37,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist auf Repository-Ebene derzeit deaktiviert (geprüft am 10.09.2026); vorhandene Workflow-Dateien bedeuten daher keinen erfolgreichen Remote-Testlauf.
+Vitest 5 prüft Schemas, Content-Vollständigkeit, Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions wurde am 10.09.2026 auf Repository-Ebene wieder aktiviert. Beide bestehenden Workflows prüfen Pull Requests gegen `main`; konkrete Ergebnisse müssen am jeweiligen PR-Head kontrolliert werden. Ursache und Wiederherstellung sind im [CI-Audit](docs/ci-audit.md) dokumentiert.
 
 ## Sprachen und Routing
 

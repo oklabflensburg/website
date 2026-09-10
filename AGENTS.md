@@ -92,7 +92,7 @@ Install the browser with `pnpm exec playwright install chromium` (CI uses `--wit
 
 - [Website CI](.github/workflows/ci.yml): `verify` job on PRs and pushes to `main`; frozen install, lint, typecheck, Vitest, build, Chromium install and Playwright. Uploads reports/screenshots as `browser-report-and-screenshots`.
 - [CodeQL](.github/workflows/codeql.yml): JavaScript/TypeScript analysis on PRs, pushes to `main` and weekly schedule; `build-mode: none`.
-- These are the only workflow files; Playwright/build run within Website CI, with no separate Dependency Review workflow. Repository-level Actions were disabled when checked on 2026-09-10, although the workflow definitions are active. Recheck remote status when reporting CI; local validation remains required.
+- These are the only workflow files; Playwright/build run within Website CI, with no separate Dependency Review workflow. Repository-level Actions were re-enabled on 2026-09-10 after the audit in [ci-audit.md](docs/ci-audit.md). Both workflows target PRs against `main`. Check the current PR head and actual run conclusions when reporting CI; workflow presence alone is not a successful check. Local validation remains required.
 
 ## Git, commits and pull requests
 
