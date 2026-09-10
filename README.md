@@ -18,7 +18,7 @@ Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs
 
 ## Entwicklung
 
-Node.js **22.22 oder neuer**, pnpm **10.15.1**. Vite 8 ist als gemeinsamer Peer für Nuxt, Tailwind und Vitest festgelegt. Nuxt Content nutzt den nativen SQLite-Treiber von Node; keine zusätzliche Datenbankinstallation nötig.
+Node.js **22.22 oder neuer**, pnpm **12.3.4**. Vite 8 ist als gemeinsamer Peer für Nuxt, Tailwind und Vitest festgelegt. Nuxt Content nutzt den nativen SQLite-Treiber von Node; keine zusätzliche Datenbankinstallation nötig.
 
 ```sh
 corepack enable
@@ -29,6 +29,7 @@ pnpm dev
 ## Build und Tests
 
 ```sh
+pnpm peers check
 pnpm lint
 pnpm typecheck
 pnpm test
@@ -38,6 +39,8 @@ pnpm test:e2e
 ```
 
 Vitest 5 prüft Schemas, Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist auf Repository-Ebene derzeit deaktiviert (geprüft am 10.09.2026); vorhandene Workflow-Dateien bedeuten daher keinen erfolgreichen Remote-Testlauf.
+
+Peer-Abhängigkeiten, zwei vorübergehende eng begrenzte Versionskorrekturen und ihre Entfernungskriterien: [docs/dependencies.md](docs/dependencies.md). Release-Alter und Build-Script-Freigaben bleiben erhalten.
 
 ## Sprachen und Routing
 

@@ -105,6 +105,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@nuxt/cli@3.37.0>@bomb.sh/tab': 0.0.22
+  nuxt-component-meta@0.18.0>@nuxt/kit: 4.4.8
+
 importers:
 
   .:
@@ -298,11 +302,11 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@bomb.sh/tab@0.0.19':
-    resolution: {integrity: sha512-dTRfo9Q9B+lbLG3JCu8a/AGQSfD2XXcFcnakQzVjSOX+VvR/s9zpsH8TlqV3iHqazniRn1Ypwd1hcRlXcu/4BA==}
+  '@bomb.sh/tab@0.0.22':
+    resolution: {integrity: sha512-l5IuWpV7szqG4MM6A7I+qPMmP2qPMq2TD4veIXaOH0sD53dV0Tv8WZPARp5O5Kp4+y4fnVCl3VL1HZKNghO1yg==}
     hasBin: true
     peerDependencies:
-      cac: ^6.7.14
+      cac: ^6.7.14 || ^7.0.0
       citty: ^0.1.6 || ^0.2.0
       commander: ^13.1.0 || ^14.0.0 || ^15.0.0
     peerDependenciesMeta:
@@ -1188,6 +1192,10 @@ packages:
   '@nuxt/image@2.1.0':
     resolution: {integrity: sha512-UzAYq25uhwH1G6jvZBn/SwmniJr77fgF8KzbwUI3MuSdkIP3WQqt/F5wWKXgbGgAWWZGt8Vv2NQ0WZgFuxUBgQ==}
     engines: {node: ^20.19.0 || >=22.3.0}
+
+  '@nuxt/kit@4.4.8':
+    resolution: {integrity: sha512-ZUlZ5iYfyfJFDPluhn6ZxFWcsuxWbLnZBc8w3MAROcQ4lYfZ+qFpALBLSNlpc0zhOa++33EE+5PEbOAdVIY+dw==}
+    engines: {node: '>=18.12.0'}
 
   '@nuxt/kit@4.5.2':
     resolution: {integrity: sha512-l66LU9DcJYjmNwqwAj2I5UGRrUbnG2DOKGChnN70zIGtn0eq/z87gi/FRgha6eMb9/FmB1PFHgtx6PWVml1C2Q==}
@@ -6097,9 +6105,6 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.5.4:
-    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
-
   zod@4.6.1:
     resolution: {integrity: sha512-341aRWQsve0rvronKNTqZpjmzdbUDlFuzHaI/XLg/Ej82qffDJRRfBTCuv7+9q/rMjB6LSLyEBnW4InJeMtt/Q==}
 
@@ -6290,7 +6295,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@bomb.sh/tab@0.0.19(cac@7.0.0)(citty@0.2.2)':
+  '@bomb.sh/tab@0.0.22(cac@7.0.0)(citty@0.2.2)':
     optionalDependencies:
       cac: 7.0.0
       citty: 0.2.2
@@ -6904,12 +6909,12 @@ snapshots:
 
   '@modelcontextprotocol/core@2.0.0':
     dependencies:
-      zod: 4.5.4
+      zod: 4.6.1
 
   '@modelcontextprotocol/server@2.0.0':
     dependencies:
       '@modelcontextprotocol/core': 2.0.0
-      zod: 4.5.4
+      zod: 4.6.1
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -6951,7 +6956,7 @@ snapshots:
 
   '@nuxt/cli@3.37.0(@nuxt/schema@4.5.2)(cac@7.0.0)(magicast@0.5.4)(supports-color@10.2.2)':
     dependencies:
-      '@bomb.sh/tab': 0.0.19(cac@7.0.0)(citty@0.2.2)
+      '@bomb.sh/tab': 0.0.22(cac@7.0.0)(citty@0.2.2)
       '@clack/prompts': 1.8.0
       c12: 3.3.4(magicast@0.5.4)
       citty: 0.2.2
@@ -7249,7 +7254,7 @@ snapshots:
       - unplugin
       - unstorage
 
-  '@nuxt/kit@4.5.2(magic-string@0.30.21)(magicast@0.5.4)(oxc-parser@0.139.0)(rolldown@1.2.8)(unplugin@2.3.11)':
+  '@nuxt/kit@4.4.8(magicast@0.5.4)':
     dependencies:
       c12: 3.3.4(magicast@0.5.4)
       consola: 3.4.2
@@ -7261,23 +7266,18 @@ snapshots:
       jiti: 2.7.0
       klona: 2.0.6
       mlly: 1.8.2
-      nostics: 1.2.0
       ohash: 2.0.12
       pathe: 2.0.3
       pkg-types: 2.3.3
       rc9: 3.1.0
       scule: 1.3.0
+      semver: 7.8.5
       tinyglobby: 0.2.17
       ufo: 1.6.4
-      unctx: 3.0.1(magic-string@0.30.21)(oxc-parser@0.139.0)(rolldown@1.2.8)(unplugin@2.3.11)
+      unctx: 2.5.0
       untyped: 2.0.0
-      verkit: 0.3.2
     transitivePeerDependencies:
-      - magic-string
       - magicast
-      - oxc-parser
-      - rolldown
-      - unplugin
 
   '@nuxt/kit@4.5.2(magic-string@0.30.21)(magicast@0.5.4)(oxc-parser@0.141.0)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.1)(vite@8.2.2(@types/node@26.5.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))':
     dependencies:
@@ -10911,7 +10911,7 @@ snapshots:
 
   nuxt-component-meta@0.18.0(@oxc-project/types@0.149.0)(magicast@0.5.4)(rolldown@1.2.8):
     dependencies:
-      '@nuxt/kit': 4.5.2(magic-string@0.30.21)(magicast@0.5.4)(oxc-parser@0.139.0)(rolldown@1.2.8)(unplugin@2.3.11)
+      '@nuxt/kit': 4.4.8(magicast@0.5.4)
       citty: 0.2.2
       defu: 6.1.7
       jiti: 2.7.0
@@ -12252,13 +12252,6 @@ snapshots:
       magic-string: 0.30.21
       unplugin: 2.3.11
 
-  unctx@3.0.1(magic-string@0.30.21)(oxc-parser@0.139.0)(rolldown@1.2.8)(unplugin@2.3.11):
-    optionalDependencies:
-      magic-string: 0.30.21
-      oxc-parser: 0.139.0
-      rolldown: 1.2.8
-      unplugin: 2.3.11
-
   unctx@3.0.1(magic-string@0.30.21)(oxc-parser@0.141.0)(rolldown@1.2.8)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(rollup@4.63.1)(vite@8.2.2(@types/node@26.5.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))):
     optionalDependencies:
       magic-string: 0.30.21
@@ -12808,8 +12801,6 @@ snapshots:
       zod: 3.25.76
 
   zod@3.25.76: {}
-
-  zod@4.5.4: {}
 
   zod@4.6.1: {}
 
