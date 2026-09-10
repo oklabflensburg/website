@@ -9,7 +9,9 @@ categories: ["environment"]
 technologies: ["GIS", "Open Data"]
 links: {"website": "https://baumkataster.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-trees-map"}
 source: "https://codefor.de/projekte/fl-open-trees-map/"
-image: "/images/baumkataster-karte.webp"
+
+image: /images/projects/strassenbaeume.svg
+imageAlt: "A branching tree crown beside a street axis with three mapped location points."
 ---
 
 ## What is it about?

@@ -1,7 +1,4 @@
 {
-  "brand": {
-    "subline": "Offen. Gemeinsam. Vor Ort."
-  },
   "a11y": {
     "skip": "Zum Hauptinhalt springen",
     "mainNav": "Hauptnavigation",
@@ -11,58 +8,52 @@
     "breadcrumbs": "Brotkrumennavigation"
   },
   "hero": {
-    "eyebrow": "Civic Tech aus Flensburg",
     "line1": "Offene Daten.",
     "line2": "Für eine lebenswerte Region.",
-    "intro": "Wir machen aus offenen Daten praktische Werkzeuge für Flensburg und Schleswig-Holstein. Ehrenamtlich, gemeinsam und für alle.",
-    "explore": "Projekte entdecken",
-    "label": "Lokale Fragen. Offene Lösungen.",
-    "map": "Flensburg & die Region",
-    "caption": "Daten verbinden. Perspektiven öffnen."
+    "intro": "Wir sind eine ehrenamtliche Civic-Tech-Community aus Flensburg. Wir entwickeln Open-Source-Projekte, nutzen offene Daten und machen Informationen aus Verwaltung, Stadt und Region zugänglich.",
+    "explore": "Unsere Projekte",
+    "map": "Helle Straßenkarte von Flensburg und der Förde. Blaue Punkte dienen der Gestaltung.",
+    "caption": "Daten. Menschen. Gemeinwohl."
   },
   "pillars": {
     "data": {
-      "title": "Open Data",
-      "text": "Wissen teilen und öffentliche Daten zugänglich machen."
+      "title": "Offene Daten",
+      "text": "Open-Data-Projekte"
     },
     "source": {
       "title": "Open Source",
-      "text": "Software, die offen bleibt und weitergenutzt werden kann."
+      "text": "aus Überzeugung"
     },
     "civic": {
-      "title": "Civic Tech",
-      "text": "Digitale Werkzeuge für Fragen aus unserem Alltag."
-    },
-    "community": {
-      "title": "Community",
-      "text": "Voneinander lernen und zusammen etwas bewegen."
+      "title": "Gemeinsam",
+      "text": "für Flensburg"
     }
   },
   "home": {
-    "projects": "Aus Daten wird etwas Praktisches.",
-    "projectsIntro": "Karten, Werkzeuge und Schnittstellen aus der Region.",
-    "allProjects": "Alle Projekte ansehen",
-    "blog": "Einblicke ins offene Lab.",
-    "allPosts": "Zum Blog",
-    "joinTitle": "Deine Perspektive fehlt noch.",
-    "joinText": "Ob Daten, Design oder eine gute Frage: Gestalte mit. Programmieren ist keine Voraussetzung.",
-    "associationText": "Der Trägerverein gibt unserem gemeinsamen Engagement einen organisatorischen Rahmen.",
-    "associationLink": "Den Verein kennenlernen"
+    "projects": "Unsere Projekte",
+    "allProjects": "Alle Projekte",
+    "blog": "Neuigkeiten",
+    "allPosts": "Alle Beiträge",
+    "joinTitle": "Mitmachen",
+    "joinText": "Du hast Lust, an echten Projekten für deine Stadt mitzuarbeiten? Egal ob Entwicklerin, Designer, Datenmensch oder einfach interessiert – wir freuen uns auf dich!",
+    "associationText": "Der Trägerverein gibt unserem gemeinsamen Engagement einen organisatorischen Rahmen."
   },
   "meeting": {
-    "eyebrow": "Offenes Lab-Treffen",
-    "title": "Mittendrin statt nur dabei.",
+    "title": "Komm vorbei!",
     "rear": "Hinterhaus",
     "note": "Komm einfach vorbei. Bei Feiertagen oder Änderungen frag kurz nach.",
-    "cta": "So kannst du mitmachen",
-    "map": "Anfahrt auf OpenStreetMap"
+    "map": "Anfahrt auf OpenStreetMap",
+    "every": "Jeden {day}",
+    "calendar": "Zum Kalender",
+    "welcome": "Offen für alle – auch ohne Programmierkenntnisse!",
+    "imageAlt": "Ein Teilnehmer erklärt technische Zusammenhänge an einem Flipchart.",
+    "imageCaption": "Code-for-Germany-Summit · Berlin 2023"
   },
   "weekdays": {
     "3": "Mittwoch"
   },
   "footer": {
-    "description": "Offene Daten und freie Software für eine lebenswerte Region.",
-    "tagline": "Gemeinsam offen gestalten.",
+    "tagline": "Offene Daten. Starke Gemeinschaft. Flensburg.",
     "group0": "Entdecken",
     "group1": "Das Lab",
     "group2": "Gut zu wissen"
@@ -83,7 +74,9 @@
     "updated": "Aktualisiert",
     "contact": "Schreib uns",
     "learn": "Mehr erfahren",
-    "status": "Projektstatus"
+    "status": "Projektstatus",
+    "search": "Projekte suchen",
+    "searchPlaceholder": "Suchbegriff eingeben"
   },
   "projects": {
     "title": "Offene Projekte. Konkreter Nutzen.",

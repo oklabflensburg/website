@@ -1,7 +1,4 @@
 {
-  "brand": {
-    "subline": "Åbent. Sammen. Lokalt."
-  },
   "a11y": {
     "skip": "Gå til hovedindhold",
     "mainNav": "Hovednavigation",
@@ -11,58 +8,52 @@
     "breadcrumbs": "Brødkrummenavigation"
   },
   "hero": {
-    "eyebrow": "Civic tech fra Flensborg",
     "line1": "Åbne data.",
     "line2": "For en region med livskvalitet.",
-    "intro": "Vi omsætter åbne data til praktiske værktøjer for Flensborg og Slesvig-Holsten. Frivilligt, i fællesskab og for alle.",
-    "explore": "Se projekterne",
-    "label": "Lokale spørgsmål. Åbne løsninger.",
-    "map": "Flensborg & regionen",
-    "caption": "Forbind data. Åbn perspektiver."
+    "intro": "Vi er et frivilligt civic tech-fællesskab fra Flensborg. Vi udvikler open source-projekter, bruger åbne data og gør information fra forvaltning, by og region tilgængelig.",
+    "explore": "Vores projekter",
+    "map": "Lyst vejkort over Flensborg og fjorden. Blå punkter er dekorative.",
+    "caption": "Data. Mennesker. Fællesskab."
   },
   "pillars": {
     "data": {
-      "title": "Open Data",
-      "text": "Del viden og gør offentlige data tilgængelige."
+      "title": "Åbne data",
+      "text": "Open data-projekter"
     },
     "source": {
       "title": "Open Source",
-      "text": "Software, der forbliver åben og kan genbruges."
+      "text": "af overbevisning"
     },
     "civic": {
-      "title": "Civic Tech",
-      "text": "Digitale værktøjer til spørgsmål fra hverdagen."
-    },
-    "community": {
-      "title": "Fællesskab",
-      "text": "Lær af hinanden og skab noget sammen."
+      "title": "Sammen",
+      "text": "for Flensborg"
     }
   },
   "home": {
-    "projects": "Fra data til noget brugbart.",
-    "projectsIntro": "Kort, værktøjer og API’er fra regionen.",
-    "allProjects": "Se alle projekter",
-    "blog": "Indblik i det åbne lab.",
-    "allPosts": "Til bloggen",
-    "joinTitle": "Dit perspektiv mangler endnu.",
-    "joinText": "Data, design eller et godt spørgsmål: Vær med. Du behøver ikke kunne programmere.",
-    "associationText": "Foreningen skaber en organisatorisk ramme om vores fælles engagement.",
-    "associationLink": "Lær foreningen at kende"
+    "projects": "Vores projekter",
+    "allProjects": "Alle projekter",
+    "blog": "Nyheder",
+    "allPosts": "Alle indlæg",
+    "joinTitle": "Vær med",
+    "joinText": "Har du lyst til at arbejde på konkrete projekter for din by? Uanset om du udvikler, designer, arbejder med data eller bare er nysgerrig – vi glæder os til at møde dig!",
+    "associationText": "Foreningen skaber en organisatorisk ramme om vores fælles engagement."
   },
   "meeting": {
-    "eyebrow": "Åbent lab-møde",
-    "title": "Bliv en del af fællesskabet.",
+    "title": "Kom forbi!",
     "rear": "Baghuset",
     "note": "Kom bare forbi. Spørg gerne om ændringer ved helligdage.",
-    "cta": "Sådan kan du være med",
-    "map": "Find vej på OpenStreetMap"
+    "map": "Find vej på OpenStreetMap",
+    "every": "Hver {day}",
+    "calendar": "Til kalenderen",
+    "welcome": "Åbent for alle – også uden erfaring med programmering!",
+    "imageAlt": "En deltager forklarer tekniske sammenhænge ved en flipover.",
+    "imageCaption": "Code for Germany-summit · Berlin 2023"
   },
   "weekdays": {
     "3": "Onsdag"
   },
   "footer": {
-    "description": "Åbne data og fri software for en region med livskvalitet.",
-    "tagline": "Vi skaber åbenhed sammen.",
+    "tagline": "Åbne data. Stærkt fællesskab. Flensborg.",
     "group0": "Udforsk",
     "group1": "Vores lab",
     "group2": "Godt at vide"
@@ -83,7 +74,9 @@
     "updated": "Opdateret",
     "contact": "Skriv til os",
     "learn": "Læs mere",
-    "status": "Projektstatus"
+    "status": "Projektstatus",
+    "search": "Søg i projekter",
+    "searchPlaceholder": "Indtast søgeord"
   },
   "projects": {
     "title": "Åbne projekter. Praktisk værdi.",

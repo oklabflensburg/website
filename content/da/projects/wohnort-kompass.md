@@ -9,6 +9,8 @@ categories: ["housing"]
 technologies: ["Python", "PostGIS", "Open Data"]
 links: {"website": "https://wohnortkompass.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-living-map"}
 source: "https://codefor.de/projekte/fl-open-living-map/"
+image: /images/projects/wohnort-kompass.svg
+imageAlt: "En kompasnål over en husform forbinder orientering med søgningen efter et bosted."
 ---
 
 ## Hvad handler det om?

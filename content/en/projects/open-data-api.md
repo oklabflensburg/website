@@ -9,6 +9,8 @@ categories: ["infrastructure"]
 technologies: ["Python", "FastAPI", "PostgreSQL", "ETL"]
 links: {"website": "https://api.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-data-api"}
 source: "https://codefor.de/projekte/fl-open-data-api/"
+image: /images/projects/open-data-api.svg
+imageAlt: "Three open data modules connect through lines to four outer data nodes."
 ---
 
 ## What is it about?

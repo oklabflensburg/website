@@ -21,11 +21,16 @@ const category = computed({
     router.replace({ query: { ...route.query, category: value || undefined } })
   },
 })
+const search = computed({
+  get: () => typeof route.query.q === 'string' ? route.query.q : '',
+  set: (value: string) => { router.replace({ query: { ...route.query, q: value || undefined } }) },
+})
 const filtered = computed(
   () =>
     projects.value?.filter(
       (project) =>
-        !category.value || project.categories.includes(category.value),
+        (!category.value || project.categories.includes(category.value)) &&
+        `${project.title} ${project.description} ${project.categories.map((item) => t(`categories.${item}`)).join(' ')}`.toLocaleLowerCase(locale.value).includes(search.value.trim().toLocaleLowerCase(locale.value)),
     ) ?? [],
 )
 usePageSeo(
@@ -41,6 +46,8 @@ usePageSeo(
       :eyebrow="$t('nav.projekte')"
     />
     <div class="filter-bar">
+      <label for="project-search" class="sr-only">{{ $t('common.search') }}</label>
+      <input id="project-search" v-model="search" type="search" :placeholder="$t('common.searchPlaceholder')" :disabled="!ready" />
       <label for="project-category">{{ $t('common.category') }}</label
       ><select id="project-category" v-model="category" :disabled="!ready">
         <option value="">{{ $t('common.all') }}</option>

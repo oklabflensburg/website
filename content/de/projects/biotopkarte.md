@@ -4,11 +4,14 @@ description: "Wertbiotope und Nichtwertbiotope in Schleswig-Holstein interaktiv 
 locale: "de"
 slug: "biotopkarte"
 status: "development"
-featured: false
+featured: true
+featuredOrder: 2
 categories: ["nature"]
 technologies: ["GIS", "OpenStreetMap"]
 links: {"website": "https://biotopkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-biotope-map"}
 source: "https://codefor.de/projekte/fl-open-biotope-map/"
+image: /images/projects/biotopkarte.svg
+imageAlt: "Ein Blatt in einer Biotopfläche mit Blattadern und zwei Linien für Wasserläufe."
 ---
 
 ## Worum geht es?

@@ -9,6 +9,8 @@ categories: ["safety"]
 technologies: ["OpenStreetMap", "Open Data"]
 links: {"github": "https://github.com/oklabflensburg/open-emergency-map"}
 source: "https://codefor.de/projekte/fl-open-emergency-map/"
+image: /images/projects/notfallkarte.svg
+imageAlt: "Et beskyttelsesskjold med en indlejret stedmarkør for politistationer."
 ---
 
 ## Hvad handler det om?

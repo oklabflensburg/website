@@ -59,7 +59,8 @@ status: development
 featured: false
 categories: [environment]
 technologies: [PostGIS]
-image: /images/bestaetigtes-projekt.webp
+image: /images/projects/bestaetigtes-projekt.svg
+imageAlt: Eine konkrete Beschreibung des grafischen Symbols in der Sprache dieser Datei
 links:
   website: https://example.org
   github: https://github.com/organisation/repository
@@ -67,7 +68,7 @@ source: https://example.org/projektquelle
 ---
 ```
 
-Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Bilder lokal unter `public/images/` ablegen und Rechte prüfen. Keine zweite Liste in Vue oder JSON.
+Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<slug>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau wird per Nuxt Image als PNG aus derselben SVG-Quelle erzeugt.
 
 ## Blogbeitrag schreiben
 

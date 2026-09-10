@@ -9,7 +9,9 @@ categories: ["education"]
 technologies: ["HTML", "Open Data", "GIS"]
 links: {"website": "https://kitakarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-kita-map"}
 source: "https://codefor.de/projekte/fl-open-kita-map/"
-image: "/images/kitafinder-karte.webp"
+
+image: /images/projects/kitafinder.svg
+imageAlt: "A simple house with a building-block window and a violet location marker."
 ---
 
 ## What is it about?

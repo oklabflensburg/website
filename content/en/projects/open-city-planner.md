@@ -5,10 +5,13 @@ locale: "en"
 slug: "open-city-planner"
 status: "unknown"
 featured: true
+featuredOrder: 0
 categories: ["urbanDevelopment"]
 technologies: ["PostGIS", "FastAPI", "Nuxt", "MapLibre", "OpenStreetMap"]
 links: {"website": "https://stadtplaner.oklabflensburg.de/", "github": "https://github.com/oklabflensburg/open-city-planner"}
 source: "https://github.com/oklabflensburg/open-city-planner"
+image: /images/projects/open-city-planner.svg
+imageAlt: "Stacked map layers with street axes, polygon areas and a central data point."
 ---
 
 ## What is it about?

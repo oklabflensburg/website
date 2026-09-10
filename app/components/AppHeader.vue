@@ -5,7 +5,7 @@ const route = useRoute()
 const open = ref(false)
 const ready = useInteractiveReady()
 const toggle = useTemplateRef('toggle')
-const items = ['projekte', 'ueber-uns', 'veranstaltungen', 'blog']
+const items = ['projekte', 'mitmachen', 'ueber-uns', 'blog', 'kontakt']
 watch(
   () => route.fullPath,
   () => {
@@ -27,10 +27,10 @@ function escapeMenu() {
         ><img
           src="/logos/codefor-flensburg.svg"
           alt=""
-          width="34"
-          height="40"
+          width="38"
+          height="44"
         /><span
-          >{{ site.name }}<small>{{ $t('brand.subline') }}</small></span
+          >{{ site.name }}</span
         ></NuxtLink
       >
       <nav class="desktop-nav" :aria-label="$t('a11y.mainNav')">
@@ -42,9 +42,7 @@ function escapeMenu() {
         >
       </nav>
       <div class="desktop-languages"><LanguageSwitcher /></div>
-      <NuxtLink :to="localePath('/mitmachen')" class="button header-join"
-        >{{ $t('nav.mitmachen') }} <span aria-hidden="true">↗</span></NuxtLink
-      >
+      <NuxtLink :to="`${localePath('/projekte')}#project-search`" class="icon-button hidden min-[1101px]:inline-flex" :aria-label="$t('common.search')"><AppIcon name="search" /></NuxtLink>
       <button
         ref="toggle"
         :disabled="!ready"
@@ -55,7 +53,7 @@ function escapeMenu() {
         @click="open = !open"
       >
         {{ $t(open ? 'a11y.closeMenu' : 'a11y.openMenu') }}
-        <span aria-hidden="true">{{ open ? '×' : '☰' }}</span>
+        <AppIcon :name="open ? 'close' : 'menu'" />
       </button>
     </div>
     <div v-show="open" id="mobile-navigation" class="mobile-panel shell">
@@ -63,17 +61,17 @@ function escapeMenu() {
         <NuxtLink
           v-for="item in [
             ...items,
-            'mitmachen',
+            'veranstaltungen',
             'team',
             'daten-sind-daten',
-            'kontakt',
+
           ]"
           :key="item"
           :to="localePath(`/${item}`)"
           >{{ $t(`nav.${item}`) }}</NuxtLink
         >
       </nav>
-      <LanguageSwitcher />
+      <div class="flex items-center justify-between"><LanguageSwitcher /><NuxtLink :to="`${localePath('/projekte')}#project-search`" class="icon-button" :aria-label="$t('common.search')"><AppIcon name="search" /></NuxtLink></div>
     </div>
   </header>
 </template>

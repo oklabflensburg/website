@@ -9,7 +9,9 @@ categories: ["mobility"]
 technologies: ["Vue", "PostGIS", "Open Data"]
 links: {"website": "https://unfallkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-accident-map"}
 source: "https://codefor.de/projekte/fl-open-accident-map/"
-image: "/images/unfallatlas-karte.webp"
+
+image: /images/projects/unfallkarte.svg
+imageAlt: "Et vejkryds med analysepunkter i forskellige størrelser for geografiske ulykkesdata."
 ---
 
 ## Hvad handler det om?

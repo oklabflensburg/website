@@ -9,7 +9,9 @@ categories: ["environment"]
 technologies: ["GIS", "Open Data"]
 links: {"website": "https://baumkataster.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-trees-map"}
 source: "https://codefor.de/projekte/fl-open-trees-map/"
-image: "/images/baumkataster-karte.webp"
+
+image: /images/projects/strassenbaeume.svg
+imageAlt: "En forgrenet trækrone ved siden af en vejlinje med tre kortlagte punkter."
 ---
 
 ## Hvad handler det om?

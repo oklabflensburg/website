@@ -9,7 +9,9 @@ categories: ["environment"]
 technologies: ["OpenStreetMap", "Open Data"]
 links: {"website": "https://recycling.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-recycling-map"}
 source: "https://codefor.de/projekte/fl-open-recycling-map/"
-image: "/images/recycling-karte.webp"
+
+image: /images/projects/recyclingcontainerkarte.svg
+imageAlt: "En genbrugscontainer med indkast omgivet af tre cirkulære pile."
 ---
 
 ## Hvad handler det om?

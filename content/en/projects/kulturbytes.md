@@ -4,11 +4,14 @@ description: "Bringing cultural listings together and giving smaller initiatives
 locale: "en"
 slug: "kulturbytes"
 status: "development"
-featured: false
+featured: true
+featuredOrder: 1
 categories: ["culture"]
 technologies: ["Nuxt", "Vue", "TypeScript"]
 links: {"website": "https://kulturbytes.de", "github": "https://github.com/sndcds/kulturbytes-client"}
 source: "https://codefor.de/projekte/fl-kulturbytes/"
+image: /images/projects/kulturbytes.svg
+imageAlt: "An event ticket with notched sides and a geometric cultural star."
 ---
 
 ## What is it about?

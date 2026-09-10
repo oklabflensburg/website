@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: 'icon', href: '/favicon.ico' }],
-      meta: [{ name: 'theme-color', content: '#0758ce' }],
+      meta: [{ name: 'theme-color', content: '#0b4f80' }],
     },
   },
   i18n: {

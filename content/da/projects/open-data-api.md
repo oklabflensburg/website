@@ -9,6 +9,8 @@ categories: ["infrastructure"]
 technologies: ["Python", "FastAPI", "PostgreSQL", "ETL"]
 links: {"website": "https://api.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-data-api"}
 source: "https://codefor.de/projekte/fl-open-data-api/"
+image: /images/projects/open-data-api.svg
+imageAlt: "Tre åbne datamoduler er forbundet med fire ydre dataknudepunkter."
 ---
 
 ## Hvad handler det om?

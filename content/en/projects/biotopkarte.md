@@ -4,11 +4,14 @@ description: "Explore protected and other biotopes across Schleswig-Holstein."
 locale: "en"
 slug: "biotopkarte"
 status: "development"
-featured: false
+featured: true
+featuredOrder: 2
 categories: ["nature"]
 technologies: ["GIS", "OpenStreetMap"]
 links: {"website": "https://biotopkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-biotope-map"}
 source: "https://codefor.de/projekte/fl-open-biotope-map/"
+image: /images/projects/biotopkarte.svg
+imageAlt: "A leaf within a habitat polygon, with leaf veins and two watercourse lines."
 ---
 
 ## What is it about?

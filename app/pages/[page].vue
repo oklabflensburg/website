@@ -36,7 +36,7 @@ usePageSeo(
         v-if="slug === 'ueber-uns' || slug === 'daten-sind-daten'"
         class="card editorial-aside"
       >
-        <span class="pillar-icon" aria-hidden="true">◎</span>
+        <AppIcon name="users" class="mb-4" :size="28" />
         <h2>
           {{ slug === 'ueber-uns' ? site.network.name : site.association.name }}
         </h2>

@@ -18,9 +18,11 @@ export const schemas = {
       'unknown',
     ]),
     featured: z.boolean().default(false),
+    featuredOrder: z.number().int().min(0).default(0),
     categories: z.array(z.string()).min(1),
     technologies: z.array(z.string()),
-    image: z.string().optional(),
+    image: z.string().regex(/^\/images\/projects\/[a-z0-9]+(?:-[a-z0-9]+)*\.svg$/),
+    imageAlt: z.string().min(20),
     links: z.object({
       website: z.string().url().optional(),
       github: z.string().url().optional(),

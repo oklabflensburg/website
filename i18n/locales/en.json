@@ -1,7 +1,4 @@
 {
-  "brand": {
-    "subline": "Open. Together. Local."
-  },
   "a11y": {
     "skip": "Skip to main content",
     "mainNav": "Main navigation",
@@ -11,58 +8,52 @@
     "breadcrumbs": "Breadcrumbs"
   },
   "hero": {
-    "eyebrow": "Civic tech from Flensburg",
     "line1": "Open data.",
     "line2": "For a region worth living in.",
-    "intro": "We turn open data into useful tools for Flensburg and Schleswig-Holstein. Voluntary, collaborative and for everyone.",
-    "explore": "Explore projects",
-    "label": "Local questions. Open solutions.",
-    "map": "Flensburg & the region",
-    "caption": "Connect data. Open perspectives."
+    "intro": "We are a volunteer civic tech community from Flensburg. We build open source projects, use open data and make information from local government, the city and the region accessible.",
+    "explore": "Our projects",
+    "map": "Light street map of Flensburg and its fjord. Blue dots are decorative.",
+    "caption": "Data. People. Common good."
   },
   "pillars": {
     "data": {
-      "title": "Open Data",
-      "text": "Share knowledge and make public data accessible."
+      "title": "Open data",
+      "text": "Open data projects"
     },
     "source": {
       "title": "Open Source",
-      "text": "Software that stays open and can be reused."
+      "text": "by conviction"
     },
     "civic": {
-      "title": "Civic Tech",
-      "text": "Digital tools for questions from everyday life."
-    },
-    "community": {
-      "title": "Community",
-      "text": "Learn from each other and make things happen together."
+      "title": "Together",
+      "text": "for Flensburg"
     }
   },
   "home": {
-    "projects": "Turning data into something useful.",
-    "projectsIntro": "Maps, tools and APIs from the region.",
-    "allProjects": "View all projects",
-    "blog": "Inside the open lab.",
-    "allPosts": "Read the blog",
-    "joinTitle": "Bring your perspective.",
-    "joinText": "Data, design or a good question: join in. You don’t need to know how to code.",
-    "associationText": "The supporting association provides an organisational home for our shared commitment.",
-    "associationLink": "Meet the association"
+    "projects": "Our projects",
+    "allProjects": "All projects",
+    "blog": "News",
+    "allPosts": "All posts",
+    "joinTitle": "Get involved",
+    "joinText": "Want to work on real projects for your city? Whether you code, design, work with data or are simply curious – we look forward to meeting you!",
+    "associationText": "The supporting association provides an organisational home for our shared commitment."
   },
   "meeting": {
-    "eyebrow": "Open lab meetup",
-    "title": "Come and be part of it.",
+    "title": "Come along!",
     "rear": "Rear building",
     "note": "Just drop by. Check with us about changes around public holidays.",
-    "cta": "How to get involved",
-    "map": "Directions on OpenStreetMap"
+    "map": "Directions on OpenStreetMap",
+    "every": "Every {day}",
+    "calendar": "View calendar",
+    "welcome": "Open to everyone – no programming skills needed!",
+    "imageAlt": "A participant explains technical concepts at a flip chart.",
+    "imageCaption": "Code for Germany Summit · Berlin 2023"
   },
   "weekdays": {
     "3": "Wednesday"
   },
   "footer": {
-    "description": "Open data and free software for a region worth living in.",
-    "tagline": "Building openly, together.",
+    "tagline": "Open data. Strong community. Flensburg.",
     "group0": "Explore",
     "group1": "The lab",
     "group2": "Good to know"
@@ -83,7 +74,9 @@
     "updated": "Updated",
     "contact": "Write to us",
     "learn": "Learn more",
-    "status": "Project status"
+    "status": "Project status",
+    "search": "Search projects",
+    "searchPlaceholder": "Enter a search term"
   },
   "projects": {
     "title": "Open projects. Practical value.",

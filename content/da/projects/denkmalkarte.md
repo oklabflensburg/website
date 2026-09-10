@@ -4,12 +4,14 @@ description: "Find Slesvig-Holstens kulturminder på et åbent kort."
 locale: "da"
 slug: "denkmalkarte"
 status: "seeking-contributors"
-featured: true
+featured: false
 categories: ["culture"]
 technologies: ["MapLibre", "PostGIS", "Open Data"]
 links: {"website": "https://denkmalkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-monuments-map"}
 source: "https://codefor.de/projekte/fl-open-monuments-map/"
-image: "/images/denkmalschutz-karte.webp"
+
+image: /images/projects/denkmalkarte.svg
+imageAlt: "En historisk dobbeltfacade med gavle, vinduer og en fælles portbue."
 ---
 
 ## Hvad handler det om?

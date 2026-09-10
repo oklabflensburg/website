@@ -4,12 +4,14 @@ description: "Discover Schleswig-Holstein’s cultural monuments on an open map.
 locale: "en"
 slug: "denkmalkarte"
 status: "seeking-contributors"
-featured: true
+featured: false
 categories: ["culture"]
 technologies: ["MapLibre", "PostGIS", "Open Data"]
 links: {"website": "https://denkmalkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-monuments-map"}
 source: "https://codefor.de/projekte/fl-open-monuments-map/"
-image: "/images/denkmalschutz-karte.webp"
+
+image: /images/projects/denkmalkarte.svg
+imageAlt: "A historic twin facade with gables, windows and a shared arched entrance."
 ---
 
 ## What is it about?

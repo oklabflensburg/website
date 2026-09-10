@@ -9,6 +9,8 @@ categories: ["administration"]
 technologies: ["PostGIS", "OpenLayers", "Open Data"]
 links: {"website": "https://flurstuecksauskunft.oklabflensburg.de/", "github": "https://github.com/oklabflensburg/open-parcel-map"}
 source: "https://codefor.de/projekte/fl-open-parcel-map/"
+image: /images/projects/flurstuecksauskunft.svg
+imageAlt: "Et net af matrikler i forskellige størrelser med ét område fremhævet i blåt."
 ---
 
 ## Hvad handler det om?

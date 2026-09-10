@@ -4,11 +4,14 @@ description: "Udforsk værdifulde og andre biotoper i Slesvig-Holsten."
 locale: "da"
 slug: "biotopkarte"
 status: "development"
-featured: false
+featured: true
+featuredOrder: 2
 categories: ["nature"]
 technologies: ["GIS", "OpenStreetMap"]
 links: {"website": "https://biotopkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-biotope-map"}
 source: "https://codefor.de/projekte/fl-open-biotope-map/"
+image: /images/projects/biotopkarte.svg
+imageAlt: "Et blad i et biotopområde med bladnerver og to linjer for vandløb."
 ---
 
 ## Hvad handler det om?

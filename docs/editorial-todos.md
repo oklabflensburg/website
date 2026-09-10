@@ -16,3 +16,5 @@ The implementation does not infer missing facts. The pages below remain explicit
 - **History:** add a dated chronology only once milestones are documented.
 
 Incomplete legal and conduct pages have `noindex: true` and are excluded from the sitemap. This does not replace editorial completion before publication.
+
+- **Workshop photo:** `public/images/codefor-workshop.jpeg` restores the already published repository asset `static/Event-20230910-berlin-codefor-summit-13.jpeg` from commit `7e8b748`. Its caption identifies the Berlin summit according to the source filename. Document photographer, exact license and continued permission before production publication; the previous repository does not contain those details. Replace with an approved local meetup photo when available.

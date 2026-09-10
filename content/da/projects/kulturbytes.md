@@ -4,11 +4,14 @@ description: "Samler kulturtilbud og giver også små initiativer digital synlig
 locale: "da"
 slug: "kulturbytes"
 status: "development"
-featured: false
+featured: true
+featuredOrder: 1
 categories: ["culture"]
 technologies: ["Nuxt", "Vue", "TypeScript"]
 links: {"website": "https://kulturbytes.de", "github": "https://github.com/sndcds/kulturbytes-client"}
 source: "https://codefor.de/projekte/fl-kulturbytes/"
+image: /images/projects/kulturbytes.svg
+imageAlt: "En arrangementsbillet med udskårne sider og en geometrisk kulturstjerne."
 ---
 
 ## Hvad handler det om?

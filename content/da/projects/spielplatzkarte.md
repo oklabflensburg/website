@@ -4,12 +4,14 @@ description: "Gør legepladser og deres faciliteter lettere at finde med åbne d
 locale: "da"
 slug: "spielplatzkarte"
 status: "seeking-contributors"
-featured: true
+featured: false
 categories: ["leisure"]
 technologies: ["Vue", "OpenStreetMap"]
 links: {"website": "https://spielplatzkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-playgrounds-map"}
 source: "https://codefor.de/projekte/fl-open-playgrounds-map/"
-image: "/images/spielplatz-karte.webp"
+
+image: /images/projects/spielplatzkarte.svg
+imageAlt: "En gynge med to stativer, et hængende sæde og en tydelig jordlinje."
 ---
 
 ## Hvad handler det om?

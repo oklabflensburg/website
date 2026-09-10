@@ -9,7 +9,9 @@ categories: ["environment"]
 technologies: ["GIS", "Open Data"]
 links: {"website": "https://bodennutzung.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-surface-map"}
 source: "https://codefor.de/projekte/fl-open-surface-map/"
-image: "/images/bodenflaeche-karte.webp"
+
+image: /images/projects/bodenflaechennutzung.svg
+imageAlt: "Vier klar getrennte Flächen zeigen Vegetation, Landwirtschaft, Wasser und Siedlung."
 ---
 
 ## Worum geht es?

@@ -9,6 +9,8 @@ categories: ["leisure"]
 technologies: ["Python", "OpenStreetMap", "Open Data"]
 links: {"website": "https://badestellenkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-bath-map"}
 source: "https://codefor.de/projekte/fl-open-bath-map/"
+image: /images/projects/badestellenkarte.svg
+imageAlt: "Ein Standortmarker über zwei Wasserwellen neben einer stilisierten Küstenlinie."
 ---
 
 ## Worum geht es?

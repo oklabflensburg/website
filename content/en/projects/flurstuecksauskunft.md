@@ -9,6 +9,8 @@ categories: ["administration"]
 technologies: ["PostGIS", "OpenLayers", "Open Data"]
 links: {"website": "https://flurstuecksauskunft.oklabflensburg.de/", "github": "https://github.com/oklabflensburg/open-parcel-map"}
 source: "https://codefor.de/projekte/fl-open-parcel-map/"
+image: /images/projects/flurstuecksauskunft.svg
+imageAlt: "A network of differently sized land parcels with one area highlighted in blue."
 ---
 
 ## What is it about?

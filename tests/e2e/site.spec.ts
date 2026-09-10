@@ -164,8 +164,10 @@ test('RSS, sitemap, robots, redirects and 404s', async ({ request }) => {
     expect((await request.get(path)).status()).toBe(404)
 })
 test('review screenshots', async ({ page }, testInfo) => {
-  for (const path of ['/', '/projekte', '/daten-sind-daten']) {
+  await page.setViewportSize({ width: testInfo.project.name === 'mobile' ? 390 : 1440, height: 1000 })
+  for (const path of ['/', '/projekte', '/mitmachen', '/ueber-uns', '/blog', '/daten-sind-daten']) {
     await page.goto(path)
+    await expect(page.locator('.menu-toggle')).toBeEnabled()
     await page.evaluate(() => document.fonts.ready)
     // Full-page captures include images below the browser's lazy-loading range.
     await page.locator('img').evaluateAll(async (images) => {
@@ -201,4 +203,24 @@ test('content and navigation remain usable without JavaScript', async ({ browser
   await expect(page).toHaveURL('/en/mitmachen')
   await expect(page.locator('main')).toContainText('Norderstraße 49')
   await context.close()
+})
+
+test('header search filters projects and survives reload and clearing', async ({ page, isMobile }) => {
+  await page.goto('/')
+  if (isMobile) await page.getByRole('button', { name: 'Menü öffnen' }).click()
+  await page.getByRole('link', { name: 'Projekte suchen', exact: true }).click()
+  await expect(page).toHaveURL('/projekte#project-search')
+  const search = page.getByRole('searchbox', { name: 'Projekte suchen' })
+  await expect(search).toBeVisible()
+  const total = await page.locator('.project-card').count()
+  await search.fill('Biotop')
+  await expect(page.locator('.project-card')).toHaveCount(1)
+  await expect(page.locator('.project-card')).toContainText('Biotopkarte')
+  await page.reload()
+  await expect(search).toHaveValue('Biotop')
+  await expect(page.locator('.project-card')).toHaveCount(1)
+  await search.fill('no-matching-project')
+  await expect(page.locator('.empty')).toBeVisible()
+  await search.fill('')
+  await expect(page.locator('.project-card')).toHaveCount(total)
 })

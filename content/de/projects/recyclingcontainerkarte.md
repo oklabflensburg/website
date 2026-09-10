@@ -9,7 +9,9 @@ categories: ["environment"]
 technologies: ["OpenStreetMap", "Open Data"]
 links: {"website": "https://recycling.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-recycling-map"}
 source: "https://codefor.de/projekte/fl-open-recycling-map/"
-image: "/images/recycling-karte.webp"
+
+image: /images/projects/recyclingcontainerkarte.svg
+imageAlt: "Ein Sammelcontainer mit Einwurfschlitz, umgeben von drei kreislaufförmigen Pfeilen."
 ---
 
 ## Worum geht es?

@@ -9,7 +9,9 @@ categories: ["mobility"]
 technologies: ["OpenStreetMap", "GIS"]
 links: {"website": "https://nahverkehr.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-transport-map"}
 source: "https://codefor.de/projekte/fl-open-transport-map/"
-image: "/images/nahverkehr-karte.webp"
+
+image: /images/projects/nahverkehrskarte.svg
+imageAlt: "An abstract bus beside a transit route with marked stops."
 ---
 
 ## What is it about?

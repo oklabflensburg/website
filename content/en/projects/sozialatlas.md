@@ -9,7 +9,9 @@ categories: ["society"]
 technologies: ["PostGIS", "Open Data", "HTML"]
 links: {"website": "https://dev.sozialatlas-flensburg.de", "github": "https://github.com/oklabflensburg/open-social-map"}
 source: "https://codefor.de/projekte/fl-open-social-map/"
-image: "/images/sozialatlas-karte.webp"
+
+image: /images/projects/sozialatlas.svg
+imageAlt: "Connected data points of different sizes across neighbouring urban districts."
 ---
 
 ## What is it about?

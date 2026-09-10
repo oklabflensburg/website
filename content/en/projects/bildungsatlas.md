@@ -9,7 +9,9 @@ categories: ["education"]
 technologies: ["Vue", "Python", "PostGIS"]
 links: {"website": "https://schulkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-school-map"}
 source: "https://codefor.de/projekte/fl-open-school-map/"
-image: "/images/bildungsatlas-karte.webp"
+
+image: /images/projects/bildungsatlas.svg
+imageAlt: "An open book with folded map areas and a blue learning-location point."
 ---
 
 ## What is it about?

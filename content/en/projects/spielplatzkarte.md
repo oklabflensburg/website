@@ -4,12 +4,14 @@ description: "Make playgrounds and their facilities easier to find with open dat
 locale: "en"
 slug: "spielplatzkarte"
 status: "seeking-contributors"
-featured: true
+featured: false
 categories: ["leisure"]
 technologies: ["Vue", "OpenStreetMap"]
 links: {"website": "https://spielplatzkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-playgrounds-map"}
 source: "https://codefor.de/projekte/fl-open-playgrounds-map/"
-image: "/images/spielplatz-karte.webp"
+
+image: /images/projects/spielplatzkarte.svg
+imageAlt: "A swing with two supports, a suspended seat and a clear ground line."
 ---
 
 ## What is it about?

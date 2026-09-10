@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { parse } from 'yaml'
 import { schemas } from '../shared/config/content'
 import { locales, editorialSlugs } from '../shared/config/site'
@@ -56,6 +57,37 @@ describe('canonical content', () => {
       ).toBe(true)
     }
     expect(schemas.team.safeParse({ name: 'Unapproved' }).success).toBe(false)
+  })
+  it('gives every project a distinct safe SVG signet and translated image descriptions', () => {
+    const projects = readdirSync('content/de/projects').map((file) =>
+      readContent(`content/de/projects/${file}`),
+    )
+    const hashes = new Set<string>()
+    for (const project of projects) {
+      expect(project.image).toBe(`/images/projects/${project.slug}.svg`)
+      const bytes = readFileSync(`public${project.image}`)
+      const svg = bytes.toString('utf8')
+      expect(svg).toContain('width="1024" height="1024" viewBox="0 0 128 128"')
+      expect(svg).not.toMatch(/<(?:text|image|script|foreignObject|filter)\b|(?:href|style|onload)=/i)
+      expect(svg).toContain('stroke-width="3"')
+      expect(svg).toContain('fill="#f3f7fa"')
+      hashes.add(createHash('sha256').update(bytes).digest('hex'))
+      const descriptions = new Set<string>()
+      for (const locale of locales) {
+        const translation = readContent(`content/${locale}/projects/${project.slug}.md`)
+        expect(translation.image).toBe(project.image)
+        expect(translation.imageAlt.length).toBeGreaterThan(20)
+        expect(translation.imageAlt).not.toBe(translation.title)
+        descriptions.add(translation.imageAlt)
+      }
+      expect(descriptions.size).toBe(locales.length)
+      expect(schemas.projects.safeParse({ ...project, image: undefined }).success).toBe(false)
+      expect(schemas.projects.safeParse({ ...project, imageAlt: '' }).success).toBe(false)
+    }
+    expect(hashes.size).toBe(projects.length)
+    expect(readdirSync('public/images/projects').sort()).toEqual(
+      projects.map((project) => `${project.slug}.svg`).sort(),
+    )
   })
   it('has matching translation keys and content slugs in all languages', () => {
     function keys(value: Record<string, unknown>, prefix = ''): string[] {

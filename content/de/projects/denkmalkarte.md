@@ -4,12 +4,14 @@ description: "Kulturdenkmäler Schleswig-Holsteins auf einer freien Karte entdec
 locale: "de"
 slug: "denkmalkarte"
 status: "seeking-contributors"
-featured: true
+featured: false
 categories: ["culture"]
 technologies: ["MapLibre", "PostGIS", "Open Data"]
 links: {"website": "https://denkmalkarte.oklabflensburg.de", "github": "https://github.com/oklabflensburg/open-monuments-map"}
 source: "https://codefor.de/projekte/fl-open-monuments-map/"
-image: "/images/denkmalschutz-karte.webp"
+
+image: /images/projects/denkmalkarte.svg
+imageAlt: "Eine historische Doppelfassade mit Giebeln, Fenstern und einem gemeinsamen Torbogen."
 ---
 
 ## Worum geht es?

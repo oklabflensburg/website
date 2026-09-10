@@ -9,6 +9,8 @@ categories: ["safety"]
 technologies: ["OpenStreetMap", "Open Data"]
 links: {"github": "https://github.com/oklabflensburg/open-emergency-map"}
 source: "https://codefor.de/projekte/fl-open-emergency-map/"
+image: /images/projects/notfallkarte.svg
+imageAlt: "Ein Schutzschild mit einem eingebetteten Standortmarker für Polizeidienststellen."
 ---
 
 ## Worum geht es?
