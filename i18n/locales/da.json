@@ -1,224 +1,142 @@
 {
-  "meta": {
-    "homeTitle": "OK Lab Flensburg · Vi udvikler åbne geodata sammen",
-    "homeDescription": "Vær med til at udvikle frie GIS-applikationer, PostGIS-databaser og åbne grænseflader for Flensborg og Slesvig-Holsten.",
-    "contributorsTitle": "Bidragsydere · OK Lab Flensburg",
-    "contributorsDescription": "Mød menneskene bag OK Lab Flensburgs åbne civic tech-projekter."
-  },
   "a11y": {
     "skip": "Gå til hovedindhold",
     "mainNav": "Hovednavigation",
-    "languageNav": "Vælg sprog",
+    "language": "Vælg sprog",
     "openMenu": "Åbn menu",
     "closeMenu": "Luk menu",
-    "projectPreview": "Forhåndsvisning af projektet {title}",
-    "external": "Åbner et eksternt websted"
-  },
-  "language": {
-    "de": "Tysk",
-    "da": "Dansk",
-    "en": "Engelsk"
-  },
-  "nav": {
-    "projects": "Projekter",
-    "technologies": "Teknologier",
-    "contributors": "Bidragsydere",
-    "tasks": "Åbne opgaver",
-    "join": "Deltag",
-    "about": "Om os"
-  },
-  "common": {
-    "github": "GitHub",
-    "contact": "Kontakt",
-    "discover": "Se projektet",
-    "repository": "Se repository",
-    "allProjects": "Alle projekter",
-    "status": "Status",
-    "technologies": "Teknologier",
-    "projects": "Projekter",
-    "backHome": "Til forsiden"
+    "breadcrumbs": "Brødkrummenavigation"
   },
   "hero": {
-    "eyebrow": "Open GIS · Open Data · Open Source",
-    "title": "Vær med til at bygge regionens åbne geodatainfrastruktur.",
-    "intro": "Vi udvikler frie GIS-applikationer, geografiske databaser og åbne grænseflader for Flensborg og Slesvig-Holsten – frivilligt, i fællesskab og offentligt på GitHub.",
-    "find": "Se åbne opgaver",
-    "explore": "Udforsk GIS-projekter",
-    "localRemote": "Lokalt & remote"
+    "line1": "Åbne data.",
+    "line2": "For en region med livskvalitet.",
+    "intro": "Vi er et frivilligt civic tech-fællesskab fra Flensborg. Vi udvikler open source-projekter, bruger åbne data og gør information fra forvaltning, by og region tilgængelig.",
+    "explore": "Vores projekter",
+    "map": "Lyst vejkort over Flensborg og fjorden. Blå punkter er dekorative.",
+    "caption": "Data. Mennesker. Fællesskab."
   },
-  "paths": {
-    "title": "Hvor vil du begynde?",
-    "intro": "Brug din erfaring, eller lær sammen med os. Vi tilpasser dit første bidrag til dit niveau.",
-    "cta": "Find en indgang",
-    "webgis": {
-      "title": "Udvikl WebGIS",
-      "text": "Interaktive kort, MapLibre, vektorfliser og geografiske værktøjer."
+  "pillars": {
+    "data": {
+      "title": "Åbne data",
+      "text": "Open data-projekter"
     },
-    "geodata": {
-      "title": "Modellér geodata",
-      "text": "PostgreSQL, PostGIS, geografiske forespørgsler, indeks og migrationer."
+    "source": {
+      "title": "Open Source",
+      "text": "af overbevisning"
     },
-    "pipelines": {
-      "title": "Gør data tilgængelige",
-      "text": "Importprocesser, datakvalitet, FastAPI og åbne grænseflader."
+    "civic": {
+      "title": "Sammen",
+      "text": "for Flensborg"
     }
   },
-  "featured": {
-    "label": "Fyrtårnsprojekt",
-    "text": "Et modulært open source-WebGIS til at udforske, tegne og analysere byområder. Hjælp os med at gøre det til en genanvendelig platform for byer og regioner.",
-    "cta": "GitHub & åbne opgaver",
-    "codeLabel": "PostGIS · analyseområde"
-  },
-  "projectsSection": {
-    "title": "Åbne projekter med reel værdi",
-    "intro": "Vores løsninger udspringer af konkrete spørgsmål i regionen. Kode, dataprocesser og projektstatus er gennemsigtige."
-  },
-  "project": {
-    "category": {
-      "urbanDevelopment": "Byudvikling",
-      "culture": "Kultur",
-      "housing": "Bolig",
-      "leisure": "Fritid",
-      "safety": "Sikkerhed",
-      "administration": "Forvaltning",
-      "nature": "Naturbeskyttelse",
-      "education": "Uddannelse",
-      "infrastructure": "Datainfrastruktur",
-      "mobility": "Mobilitet",
-      "environment": "Miljø",
-      "society": "Samfund",
-      "community": "Fællesskab"
-    },
-    "status": {
-      "active": "Aktivt",
-      "development": "Under udvikling",
-      "seeking-contributors": "Søger bidragsydere",
-      "completed": "Afsluttet"
-    },
-    "description": {
-      "openCityPlanner": "Udforsk byrum, tegn arealer og gennemfør geografiske analyser.",
-      "kulturbytes": "Find spillestederne under Kulturnatten i Flensborg på et åbent kort.",
-      "living": "Sammenlign tyske regioner med åbne data og find et sted, der passer.",
-      "bath": "Find badesteder og steder ved vandet i hele Slesvig-Holsten.",
-      "emergency": "Find hurtigt politistationer i nærheden i Slesvig-Holsten.",
-      "parcel": "Interaktive, uofficielle matrikeloplysninger uden ejerdata.",
-      "biotope": "Udforsk værdifulde og andre biotoper i Slesvig-Holsten.",
-      "monuments": "Find Slesvig-Holstens kulturminder på et åbent kort.",
-      "school": "Gør skoler og uddannelsestilbud tilgængelige gennem åbne data.",
-      "kita": "Find daginstitutioner i Flensborg via åbne adresse- og kontaktdata.",
-      "api": "Stil offentlige datasæt til rådighed gennem en åben, maskinlæsbar grænseflade.",
-      "transport": "Vis den kollektive trafik i Flensborg på et overskueligt bykort.",
-      "recycling": "Vis offentlige glas- og tekstilcontainere gennemsigtigt.",
-      "social": "Visualisér sociale strukturdata til planlægning og civilsamfund.",
-      "surface": "Sammenlign arealanvendelse i Slesvig-Holstens kommuner.",
-      "trees": "Vis Flensborgs åbne data om gadetræer på et forståeligt kort.",
-      "playgrounds": "Gør legepladser og deres faciliteter lettere at finde med åbne data.",
-      "accidents": "Undersøg trafikulykker geografisk og over flere år.",
-      "odd": "Workshops, oplæg og dialog om åbne data i Flensborg."
-    }
-  },
-  "contributors": {
-    "eyebrow": "Menneskene bag projekterne",
-    "title": "Menneskene i OK Lab Flensburg.",
-    "intro": "Vores team forbinder lokalt samarbejde med åbne bidrag på GitHub. Her viser vi alle offentligt synlige medlemmer af vores GitHub-organisation.",
-    "cta": "Bliv en del af holdet",
-    "all": "Se alle medlemmer og bidragsydere",
-    "profile": "{name}s GitHub-profil",
-    "projectsLabel": "Udvalgte projekter",
-    "pageTitle": "Bidrag lokalt eller digitalt",
-    "pageIntro": "Et lille datatjek, dokumentation eller en ny PostGIS-funktion – hvert bidrag hjælper. Du behøver ikke deltage fast, og reviews støtter dig undervejs.",
-    "howTitle": "Sådan bidrager du",
-    "howText": "Vælg et offentligt repository eller en åben opgave, tal med os på et møde, eller kontakt os. Nye og lærende er meget velkomne.",
-    "listedTitle": "Hvem vises her?",
-    "listedText": "Siden viser alle offentligt synlige medlemmer af GitHub-organisationen OK Lab Flensburg samt andre personer med offentlige bidrag til relevante repositories inden for de seneste 24 måneder.",
-    "optOutTitle": "Rettelser og fravalg",
-    "optOutText": "Vil du rette oplysninger eller ikke vises? Send os en mail, eller opret et issue i websitets repository. Vi opdaterer de lokale data.",
-    "memberLabel": "Medlem af GitHub-organisationen",
-    "teamTitle": "Team og bidragsydere",
-    "teamIntro": "Organisationsmedlemmer er markeret. Derudover anerkender vi personer, som offentligt har bidraget med kode, data eller dokumentation."
-  },
-  "volunteer": {
-    "eyebrow": "Digitalt frivilligt arbejde",
-    "title": "Din kode kan gøre en lokal forskel.",
-    "intro": "Digitale bidrag gør regionale data nemmere at finde, kontrollere og genbruge. Arbejd lokalt eller remote, fast eller blot på et enkelt issue.",
-    "points": {
-      "small": "Små pull requests, tests og dataundersøgelser er velkomne.",
-      "support": "Vi hjælper dig i gang og giver konstruktive reviews.",
-      "learn": "Lærende kan få praktisk erfaring med overskuelige opgaver.",
-      "impact": "Fri software og åbne data forbliver tilgængelige for alle."
-    },
-    "tasks": "Se åbne opgaver",
-    "github": "Bidrag på GitHub",
-    "meeting": "Kom til næste møde",
-    "contact": "Kontakt os"
-  },
-  "tasks": {
-    "title": "Aktuelle muligheder for at komme i gang",
-    "intro": "Reelle fagområder frem for opdigtede tickets: Se den aktuelle status på GitHub, og aftal et passende issue.",
-    "items": {
-      "postgis": {
-        "title": "Geografiske analyser & PostGIS",
-        "meta": "Open City Planner · Øvet · fleksibelt"
-      },
-      "etl": {
-        "title": "Dataimport & datakvalitet",
-        "meta": "Open Data API · Begynder til øvet · fleksibelt"
-      },
-      "maplibre": {
-        "title": "MapLibre, Nuxt & TypeScript",
-        "meta": "WebGIS-projekter · Begynder til øvet · fleksibelt"
-      },
-      "docs": {
-        "title": "Tests, dokumentation & research",
-        "meta": "Alle projekter · Begynder · små bidrag er velkomne"
-      }
-    }
+  "home": {
+    "projects": "Vores projekter",
+    "allProjects": "Alle projekter",
+    "blog": "Nyheder",
+    "allPosts": "Alle indlæg",
+    "joinTitle": "Vær med",
+    "joinText": "Har du lyst til at arbejde på konkrete projekter for din by? Uanset om du udvikler, designer, arbejder med data eller bare er nysgerrig – vi glæder os til at møde dig!",
+    "associationText": "Foreningen skaber en organisatorisk ramme om vores fælles engagement."
   },
   "meeting": {
-    "title": "Kom til vores næste åbne labmøde.",
-    "info": "Onsdage kl. 18–21 · Aktivitetshusets baghus, Norderstraße 49, Flensborg",
-    "map": "Se stedet på OpenStreetMap"
+    "title": "Kom forbi!",
+    "rear": "Baghuset",
+    "note": "Kom bare forbi. Spørg gerne om ændringer ved helligdage.",
+    "map": "Find vej på OpenStreetMap",
+    "every": "Hver {day}",
+    "calendar": "Til kalenderen",
+    "welcome": "Åbent for alle – også uden erfaring med programmering!",
+    "imageAlt": "En deltager forklarer tekniske sammenhænge ved en flipover.",
+    "imageCaption": "Code for Germany-summit · Berlin 2023"
   },
-  "about": {
-    "title": "En del af Code for Germany",
-    "text": "OK Lab Flensburg er en del af det landsdækkende, selvorganiserede netværk for åbne data, civic tech og digitalisering til gavn for fællesskabet. Code for Germany blev startet af Open Knowledge Foundation Deutschland.",
-    "link": "Læs mere om OK Lab Flensburg"
+  "weekdays": {
+    "3": "Onsdag"
   },
   "footer": {
-    "tagline": "Digitalt frivilligt arbejde i regionen",
-    "imprint": "Kolofon",
-    "privacy": "Databeskyttelse",
-    "license": "Licens"
+    "tagline": "Åbne data. Stærkt fællesskab. Flensborg.",
+    "group0": "Udforsk",
+    "group1": "Vores lab",
+    "group2": "Godt at vide"
   },
-  "aboutLab": {
-    "eyebrow": "Hvem vi er · Hvad vi laver",
-    "title": "Vi gør åbne data anvendelige for regionen.",
-    "intro": "OK Lab Flensburg er et åbent fællesskab af engagerede mennesker fra Flensborg og regionen. Vi mødes hver uge og udvikler frivilligt digitale værktøjer, prototyper og åben datainfrastruktur til gavn for fællesskabet.",
-    "community": {
-      "title": "Et åbent lokalt fællesskab",
-      "text": "Hos os arbejder mennesker fra softwareudvikling, geoinformatik, data, design, forvaltning og civilsamfund sammen. Erfaring er nyttig, men ikke et krav."
-    },
-    "work": {
-      "title": "Civic tech og åbne data",
-      "text": "Vi forbinder offentlige data med åbne teknologier og skaber forståelige kort, grænseflader og værktøjer for Flensborg og Slesvig-Holsten."
-    },
-    "impact": {
-      "title": "Gennemsigtighed og genbrug",
-      "text": "Vores projekter letter adgangen til information, understøtter innovation i forvaltningen og forbliver offentligt dokumenterede og genanvendelige som open source."
-    },
-    "process": {
-      "eyebrow": "Sådan arbejder vi",
-      "title": "Fra åbne data til en åben applikation.",
-      "text": "Vi ser på mere end brugerfladen. Datakvalitet, oprindelse, drift og langsigtet genbrug er en del af hvert projekt.",
-      "steps": {
-        "find": "Find åbne data og konkrete regionale spørgsmål",
-        "understand": "Forstå kvalitet, licens og oprindelse",
-        "prepare": "Kontrollér, modellér og bearbejd data forståeligt",
-        "publish": "Udgiv som åben applikation eller grænseflade",
-        "learn": "Lær sammen med forvaltning og civilsamfund og gør genbrug muligt"
-      }
-    },
-    "meeting": "Besøg vores åbne møde",
-    "codeFor": "Profil hos Code for Germany"
+  "common": {
+    "all": "Alle",
+    "category": "Kategori",
+    "tag": "Emne",
+    "results": "{count} resultater",
+    "website": "Åbn hjemmeside",
+    "github": "Kildekode på GitHub",
+    "source": "Projektkilde",
+    "technologies": "Teknologier",
+    "back": "Tilbage",
+    "next": "Næste",
+    "page": "Side {page} af {total}",
+    "empty": "Der er ingen indlæg her endnu.",
+    "updated": "Opdateret",
+    "contact": "Skriv til os",
+    "learn": "Læs mere",
+    "status": "Projektstatus",
+    "search": "Søg i projekter",
+    "searchPlaceholder": "Indtast søgeord"
+  },
+  "projects": {
+    "title": "Åbne projekter. Praktisk værdi.",
+    "description": "Udforsk civic tech, GIS og åbne data fra Flensborg og Slesvig-Holsten. Find et emne, der interesserer dig."
+  },
+  "blog": {
+    "title": "Tanker, data & værkstedsnoter.",
+    "description": "Indblik og praktiske introduktioner til arbejdet med åbne data.",
+    "by": "Af",
+    "pagination": "Blogsider"
+  },
+  "events": {
+    "title": "Flere arrangementer",
+    "empty": "Vi offentliggør flere bekræftede arrangementer her.",
+    "scheduled": "Planlagt",
+    "cancelled": "Aflyst",
+    "postponed": "Udsat",
+    "register": "Tilmelding",
+    "details": "Se arrangement",
+    "past": "Tidligere arrangementer",
+    "regular": "Fast lab-møde"
+  },
+  "error": {
+    "title": "Denne side er ikke tilgængelig.",
+    "text": "Kontrollér adressen eller gå til forsiden.",
+    "home": "Til forsiden"
+  },
+  "nav": {
+    "home": "Forside",
+    "projekte": "Projekter",
+    "mitmachen": "Vær med",
+    "ueber-uns": "Om os",
+    "team": "Team",
+    "daten-sind-daten": "DatenSindDaten e.V.",
+    "veranstaltungen": "Arrangementer",
+    "blog": "Blog",
+    "kontakt": "Kontakt",
+    "impressum": "Juridiske oplysninger",
+    "datenschutz": "Privatliv",
+    "code-of-conduct": "Adfærdskodeks"
+  },
+  "categories": {
+    "urbanDevelopment": "Byudvikling",
+    "culture": "Kultur",
+    "housing": "Bolig",
+    "leisure": "Fritid",
+    "safety": "Sikkerhed",
+    "administration": "Forvaltning",
+    "nature": "Naturbeskyttelse",
+    "education": "Uddannelse",
+    "infrastructure": "Datainfrastruktur",
+    "mobility": "Mobilitet",
+    "environment": "Miljø",
+    "society": "Samfund",
+    "community": "Fællesskab"
+  },
+  "status": {
+    "development": "Under udvikling",
+    "seeking-contributors": "Søger bidragsydere",
+    "completed": "Afsluttet",
+    "unknown": "Status i repositoriet"
   }
 }

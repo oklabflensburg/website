@@ -1,29 +1,37 @@
-name: Nuxt CI
-
+name: Website CI
 on:
   push:
-    branches:
-      - main
-      - feat/nuxt4-contributor-website
+    branches: [main]
   pull_request:
-
+permissions:
+  contents: read
+concurrency:
+  group: website-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Enable pnpm
-        run: corepack enable
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Type-check application
-        run: pnpm typecheck
-      - name: Run tests
-        run: pnpm test
-      - name: Generate static website
-        run: pnpm generate
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-report-and-screenshots
+          path: |
+            playwright-report/
+            test-results/
+            docs/screenshots/
+          retention-days: 14

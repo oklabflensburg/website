@@ -1,25 +1,23 @@
 import tailwindcss from '@tailwindcss/vite'
-
-const legacyAssets = new URL('./src', import.meta.url).pathname
+import { site } from './shared/config/site'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
+  ssr: true,
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/icon', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@nuxt/content', '@nuxt/image', '@nuxt/eslint'],
   vite: { plugins: [tailwindcss()] },
-  dir: { public: 'static' },
   app: {
     head: {
-      meta: [
-        { name: 'theme-color', content: '#0069F6' },
-      ],
       link: [{ rel: 'icon', href: '/favicon.ico' }],
+      meta: [{ name: 'theme-color', content: '#0b4f80' }],
     },
   },
   i18n: {
-    baseUrl: 'https://oklabflensburg.de',
+    baseUrl: site.url,
     defaultLocale: 'de',
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     langDir: 'locales',
     locales: [
       { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
@@ -27,24 +25,20 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
     ],
     detectBrowserLanguage: false,
-    customRoutes: 'config',
-    pages: {
-      contributors: {
-        de: '/mitwirkende',
-        da: '/bidragsydere',
-        en: '/contributors',
-      },
-    },
     vueI18n: './i18n.config.ts',
   },
-  routeRules: { '/': { redirect: { to: '/de', statusCode: 301 } } },
-  nitro: {
-    publicAssets: [{ dir: legacyAssets, baseURL: '/legacy' }],
-    prerender: {
-      routes: [
-        '/', '/de', '/da', '/en',
-        '/de/mitwirkende', '/da/bidragsydere', '/en/contributors',
-      ],
-    },
+  content: {
+    experimental: { sqliteConnector: 'native' },
+    build: { markdown: { highlight: false } },
+  },
+  image: { format: ['webp'], quality: 80 },
+  nitro: { preset: 'node-server' },
+  routeRules: {
+    '/de': { redirect: { to: '/', statusCode: 301 } },
+    '/de/mitwirkende': { redirect: { to: '/team', statusCode: 301 } },
+    '/da/bidragsydere': { redirect: { to: '/da/team', statusCode: 301 } },
+    '/en/contributors': { redirect: { to: '/en/team', statusCode: 301 } },
+    '/impressum.html': { redirect: { to: '/impressum', statusCode: 301 } },
+    '/lizenz.html': { redirect: { to: '/impressum', statusCode: 301 } },
   },
 })

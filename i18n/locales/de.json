@@ -1,224 +1,142 @@
 {
-  "meta": {
-    "homeTitle": "OK Lab Flensburg · Offene Geodaten gemeinsam entwickeln",
-    "homeDescription": "Entwickle mit uns freie GIS-Anwendungen, PostGIS-Datenbanken und offene Schnittstellen für Flensburg und Schleswig-Holstein.",
-    "contributorsTitle": "Mitwirkende · OK Lab Flensburg",
-    "contributorsDescription": "Lerne die Menschen hinter den offenen Civic-Tech-Projekten des OK Lab Flensburg kennen."
-  },
   "a11y": {
     "skip": "Zum Hauptinhalt springen",
     "mainNav": "Hauptnavigation",
-    "languageNav": "Sprache auswählen",
+    "language": "Sprache wählen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "projectPreview": "Vorschau des Projekts {title}",
-    "external": "Öffnet eine externe Website"
-  },
-  "language": {
-    "de": "Deutsch",
-    "da": "Dänisch",
-    "en": "Englisch"
-  },
-  "nav": {
-    "projects": "Projekte",
-    "technologies": "Technologien",
-    "contributors": "Mitwirkende",
-    "tasks": "Offene Aufgaben",
-    "join": "Mitmachen",
-    "about": "Über uns"
-  },
-  "common": {
-    "github": "GitHub",
-    "contact": "Kontakt",
-    "discover": "Projekt entdecken",
-    "repository": "Repository ansehen",
-    "allProjects": "Alle Projekte",
-    "status": "Status",
-    "technologies": "Technologien",
-    "projects": "Projekte",
-    "backHome": "Zur Startseite"
+    "breadcrumbs": "Brotkrumennavigation"
   },
   "hero": {
-    "eyebrow": "Open GIS · Open Data · Open Source",
-    "title": "Baue mit uns die offene Geodaten-Infrastruktur der Region.",
-    "intro": "Wir entwickeln freie GIS-Anwendungen, räumliche Datenbanken und offene Schnittstellen für Flensburg und Schleswig-Holstein – ehrenamtlich, gemeinsam und öffentlich auf GitHub.",
-    "find": "Offene Aufgaben ansehen",
-    "explore": "GIS-Projekte entdecken",
-    "localRemote": "Vor Ort & remote"
+    "line1": "Offene Daten.",
+    "line2": "Für eine lebenswerte Region.",
+    "intro": "Wir sind eine ehrenamtliche Civic-Tech-Community aus Flensburg. Wir entwickeln Open-Source-Projekte, nutzen offene Daten und machen Informationen aus Verwaltung, Stadt und Region zugänglich.",
+    "explore": "Unsere Projekte",
+    "map": "Helle Straßenkarte von Flensburg und der Förde. Blaue Punkte dienen der Gestaltung.",
+    "caption": "Daten. Menschen. Gemeinwohl."
   },
-  "paths": {
-    "title": "Wo möchtest du einsteigen?",
-    "intro": "Bring Erfahrung mit oder lerne gemeinsam mit uns. Wir schneiden den Einstieg passend zu deinem Kenntnisstand zu.",
-    "cta": "Einstieg finden",
-    "webgis": {
-      "title": "WebGIS entwickeln",
-      "text": "Interaktive Karten, MapLibre, Vektorkacheln und räumliche Werkzeuge."
+  "pillars": {
+    "data": {
+      "title": "Offene Daten",
+      "text": "Open-Data-Projekte"
     },
-    "geodata": {
-      "title": "Geodaten modellieren",
-      "text": "PostgreSQL, PostGIS, räumliche Abfragen, Indizes und Migrationen."
+    "source": {
+      "title": "Open Source",
+      "text": "aus Überzeugung"
     },
-    "pipelines": {
-      "title": "Daten zugänglich machen",
-      "text": "Importpipelines, Datenqualität, FastAPI und offene Schnittstellen."
+    "civic": {
+      "title": "Gemeinsam",
+      "text": "für Flensburg"
     }
   },
-  "featured": {
-    "label": "Leuchtturmprojekt",
-    "text": "Ein modulares Open-Source-WebGIS zum Erkunden, Zeichnen und Analysieren urbaner Räume. Hilf uns, daraus eine wiederverwendbare Plattform für Städte und Regionen zu machen.",
-    "cta": "GitHub & offene Aufgaben",
-    "codeLabel": "PostGIS · Analysegebiet"
-  },
-  "projectsSection": {
-    "title": "Offene Projekte mit echtem Nutzen",
-    "intro": "Unsere Anwendungen entstehen aus konkreten Fragen der Region. Quellcode, Datenwege und Projektstatus sind nachvollziehbar."
-  },
-  "project": {
-    "category": {
-      "urbanDevelopment": "Stadtentwicklung",
-      "culture": "Kultur",
-      "housing": "Wohnen",
-      "leisure": "Freizeit",
-      "safety": "Sicherheit",
-      "administration": "Verwaltung",
-      "nature": "Naturschutz",
-      "education": "Bildung",
-      "infrastructure": "Dateninfrastruktur",
-      "mobility": "Mobilität",
-      "environment": "Umwelt",
-      "society": "Gesellschaft",
-      "community": "Community"
-    },
-    "status": {
-      "active": "Aktiv",
-      "development": "In Entwicklung",
-      "seeking-contributors": "Sucht Mitwirkende",
-      "completed": "Abgeschlossen"
-    },
-    "description": {
-      "openCityPlanner": "Urbanen Raum erkunden, Flächen zeichnen und räumliche Analysen durchführen.",
-      "kulturbytes": "Veranstaltungsorte der Flensburger Kulturnacht auf einer offenen Karte entdecken.",
-      "living": "Regionen in Deutschland anhand offener Daten vergleichen und passende Wohnorte finden.",
-      "bath": "Badestellen und wassernahe Orte in Schleswig-Holstein übersichtlich entdecken.",
-      "emergency": "Polizeidienststellen in Schleswig-Holstein schnell in der Nähe finden.",
-      "parcel": "Nicht amtliche, interaktive Flurstücksinformationen ohne Eigentümerangaben.",
-      "biotope": "Wertbiotope und Nichtwertbiotope in Schleswig-Holstein interaktiv erkunden.",
-      "monuments": "Kulturdenkmäler Schleswig-Holsteins auf einer freien Karte entdecken.",
-      "school": "Schulen und Bildungsangebote mithilfe offener Daten zugänglich machen.",
-      "kita": "Kitas in Flensburg über offene Standort- und Kontaktdaten finden.",
-      "api": "Öffentliche Datensätze über eine offene, maschinenlesbare Schnittstelle bereitstellen.",
-      "transport": "Nahverkehrsangebote in Flensburg auf einer verständlichen Stadtkarte zeigen.",
-      "recycling": "Standorte für Altglas- und Altkleidercontainer transparent darstellen.",
-      "social": "Soziale Strukturdaten als Grundlage für Planung und Zivilgesellschaft visualisieren.",
-      "surface": "Flächennutzungsarten in Gemeinden Schleswig-Holsteins interaktiv vergleichen.",
-      "trees": "Offene Baumdaten der Stadt Flensburg verständlich auf einer Karte zeigen.",
-      "playgrounds": "Spielplätze und ihre Ausstattung mit offenen Daten leichter auffindbar machen.",
-      "accidents": "Unfälle mit Personenschaden räumlich und über mehrere Jahre untersuchen.",
-      "odd": "Workshops, Präsentationen und Austausch rund um offene Daten in Flensburg."
-    }
-  },
-  "contributors": {
-    "eyebrow": "Menschen hinter den Projekten",
-    "title": "Die Menschen im OK Lab Flensburg.",
-    "intro": "Unser Team verbindet lokale Zusammenarbeit mit offenen Beiträgen auf GitHub. Hier zeigen wir alle öffentlich sichtbaren Mitglieder unserer GitHub-Organisation.",
-    "cta": "Werde Teil des Teams",
-    "all": "Alle Teammitglieder und Mitwirkenden",
-    "profile": "GitHub-Profil von {name}",
-    "projectsLabel": "Ausgewählte Projekte",
-    "pageTitle": "Mitwirken – vor Ort oder digital",
-    "pageIntro": "Ob kleiner Datencheck, Dokumentation oder neue PostGIS-Funktion: Jeder Beitrag hilft. Du musst nicht regelmäßig teilnehmen und bekommst Unterstützung durch Reviews.",
-    "howTitle": "So funktioniert die Mitarbeit",
-    "howText": "Wähle ein öffentliches Repository oder eine offene Aufgabe, sprich uns beim Treffen an oder nimm Kontakt auf. Auch Lernende sind ausdrücklich willkommen.",
-    "listedTitle": "Wer wird hier gezeigt?",
-    "listedText": "Die Seite zeigt alle öffentlich sichtbaren Mitglieder der GitHub-Organisation OK Lab Flensburg sowie weitere Personen mit öffentlichen Beiträgen in relevanten Repositories innerhalb der letzten 24 Monate.",
-    "optOutTitle": "Korrektur und Opt-out",
-    "optOutText": "Du möchtest Angaben korrigieren oder nicht angezeigt werden? Melde dich per E-Mail oder eröffne ein Issue im Website-Repository. Wir passen den lokalen Datenstand an.",
-    "memberLabel": "Mitglied der GitHub-Organisation",
-    "teamTitle": "Team und Mitwirkende",
-    "teamIntro": "Organisationsmitglieder sind entsprechend gekennzeichnet. Ergänzend würdigen wir Menschen, die öffentlich Code, Daten oder Dokumentation beigetragen haben."
-  },
-  "volunteer": {
-    "eyebrow": "Digitales Ehrenamt",
-    "title": "Dein Code kann vor Ort etwas bewegen.",
-    "intro": "Digitale Beiträge machen regionale Daten auffindbar, überprüfbar und wiederverwendbar. Arbeite vor Ort oder remote, regelmäßig oder nur an einem einzelnen Issue.",
-    "points": {
-      "small": "Kleine Pull Requests, Tests und Datenrecherchen sind willkommen.",
-      "support": "Wir unterstützen beim Einstieg und geben konstruktive Reviews.",
-      "learn": "Lernende können mit überschaubaren Aufgaben praktische Erfahrung sammeln.",
-      "impact": "Freie Software und offene Daten bleiben für alle nutzbar."
-    },
-    "tasks": "Offene Aufgaben ansehen",
-    "github": "Auf GitHub mitarbeiten",
-    "meeting": "Beim nächsten Treffen vorbeikommen",
-    "contact": "Kontakt aufnehmen"
-  },
-  "tasks": {
-    "title": "Aktuelle Einstiegsmöglichkeiten",
-    "intro": "Konkrete Themenfelder statt erfundener Tickets: In den GitHub-Repositories findest du den aktuellen Stand und kannst ein passendes Issue abstimmen.",
-    "items": {
-      "postgis": {
-        "title": "Räumliche Analysen & PostGIS",
-        "meta": "Open City Planner · Fortgeschritten · flexibel"
-      },
-      "etl": {
-        "title": "Datenimporte & Datenqualität",
-        "meta": "Open Data API · Einstieg bis fortgeschritten · flexibel"
-      },
-      "maplibre": {
-        "title": "MapLibre, Nuxt & TypeScript",
-        "meta": "WebGIS-Projekte · Einstieg bis fortgeschritten · flexibel"
-      },
-      "docs": {
-        "title": "Tests, Dokumentation & Recherche",
-        "meta": "Alle Projekte · Einstieg · kleine Beiträge möglich"
-      }
-    }
+  "home": {
+    "projects": "Unsere Projekte",
+    "allProjects": "Alle Projekte",
+    "blog": "Neuigkeiten",
+    "allPosts": "Alle Beiträge",
+    "joinTitle": "Mitmachen",
+    "joinText": "Du hast Lust, an echten Projekten für deine Stadt mitzuarbeiten? Egal ob Entwicklerin, Designer, Datenmensch oder einfach interessiert – wir freuen uns auf dich!",
+    "associationText": "Der Trägerverein gibt unserem gemeinsamen Engagement einen organisatorischen Rahmen."
   },
   "meeting": {
-    "title": "Komm beim nächsten offenen Lab-Treffen vorbei.",
-    "info": "Mittwochs, 18:00–21:00 Uhr · Aktivitetshuset, Hinterhaus, Norderstraße 49, Flensburg",
-    "map": "Ort auf OpenStreetMap ansehen"
+    "title": "Komm vorbei!",
+    "rear": "Hinterhaus",
+    "note": "Komm einfach vorbei. Bei Feiertagen oder Änderungen frag kurz nach.",
+    "map": "Anfahrt auf OpenStreetMap",
+    "every": "Jeden {day}",
+    "calendar": "Zum Kalender",
+    "welcome": "Offen für alle – auch ohne Programmierkenntnisse!",
+    "imageAlt": "Ein Teilnehmer erklärt technische Zusammenhänge an einem Flipchart.",
+    "imageCaption": "Code-for-Germany-Summit · Berlin 2023"
   },
-  "about": {
-    "title": "Teil von Code for Germany",
-    "text": "Das OK Lab Flensburg ist Teil des deutschlandweiten, selbstorganisierten Netzwerks für offene Daten, Civic Tech und gemeinwohlorientierte Digitalisierung. Code for Germany wurde von der Open Knowledge Foundation Deutschland initiiert.",
-    "link": "Mehr über das OK Lab Flensburg"
+  "weekdays": {
+    "3": "Mittwoch"
   },
   "footer": {
-    "tagline": "Digitales Ehrenamt in der Region",
-    "imprint": "Impressum",
-    "privacy": "Datenschutz",
-    "license": "Lizenz"
+    "tagline": "Offene Daten. Starke Gemeinschaft. Flensburg.",
+    "group0": "Entdecken",
+    "group1": "Das Lab",
+    "group2": "Gut zu wissen"
   },
-  "aboutLab": {
-    "eyebrow": "Wer wir sind · Was wir machen",
-    "title": "Wir machen offene Daten für die Region praktisch nutzbar.",
-    "intro": "Das OK Lab Flensburg ist eine offene Community engagierter Menschen aus Flensburg und der Region. Wir treffen uns wöchentlich und entwickeln ehrenamtlich gemeinwohlorientierte Anwendungen, Prototypen und offene Dateninfrastrukturen.",
-    "community": {
-      "title": "Eine offene lokale Community",
-      "text": "Bei uns arbeiten Menschen aus Softwareentwicklung, Geoinformatik, Daten, Design, Verwaltung und Zivilgesellschaft zusammen. Vorkenntnisse sind hilfreich, aber keine Voraussetzung."
-    },
-    "work": {
-      "title": "Civic Tech & Open Data",
-      "text": "Wir verbinden öffentliche Daten mit offenen Technologien und entwickeln daraus verständliche Karten, Schnittstellen und Werkzeuge für Flensburg und Schleswig-Holstein."
-    },
-    "impact": {
-      "title": "Transparenz & Nachnutzung",
-      "text": "Unsere Projekte erleichtern den Zugang zu Informationen, unterstützen Verwaltungsinnovation und bleiben als Open Source öffentlich nachvollziehbar und nachnutzbar."
-    },
-    "process": {
-      "eyebrow": "So arbeiten wir",
-      "title": "Von offenen Daten zur offenen Anwendung.",
-      "text": "Wir betrachten nicht nur die Oberfläche. Datenqualität, Herkunft, Betrieb und langfristige Nachnutzung gehören für uns zum Projekt.",
-      "steps": {
-        "find": "Offene Daten und konkrete regionale Fragen finden",
-        "understand": "Qualität, Lizenz und Herkunft verstehen",
-        "prepare": "Daten prüfen, modellieren und verständlich aufbereiten",
-        "publish": "Als offene Anwendung oder Schnittstelle veröffentlichen",
-        "learn": "Mit Verwaltung und Zivilgesellschaft lernen und Nachnutzung ermöglichen"
-      }
-    },
-    "meeting": "Unser offenes Treffen besuchen",
-    "codeFor": "Profil bei Code for Germany"
+  "common": {
+    "all": "Alle",
+    "category": "Kategorie",
+    "tag": "Thema",
+    "results": "{count} Ergebnisse",
+    "website": "Website öffnen",
+    "github": "Quellcode auf GitHub",
+    "source": "Projektquelle",
+    "technologies": "Technologien",
+    "back": "Zurück",
+    "next": "Weiter",
+    "page": "Seite {page} von {total}",
+    "empty": "Hier gibt es aktuell keine Einträge.",
+    "updated": "Aktualisiert",
+    "contact": "Schreib uns",
+    "learn": "Mehr erfahren",
+    "status": "Projektstatus",
+    "search": "Projekte suchen",
+    "searchPlaceholder": "Suchbegriff eingeben"
+  },
+  "projects": {
+    "title": "Offene Projekte. Konkreter Nutzen.",
+    "description": "Entdecke Civic Tech, GIS und Open Data aus Flensburg und Schleswig-Holstein. Finde ein Thema, das dich interessiert."
+  },
+  "blog": {
+    "title": "Gedanken, Daten & Werkstattnotizen.",
+    "description": "Einblicke und praktische Einstiege in die Arbeit mit offenen Daten.",
+    "by": "Von",
+    "pagination": "Blogseiten"
+  },
+  "events": {
+    "title": "Weitere Termine",
+    "empty": "Weitere bestätigte Termine veröffentlichen wir hier.",
+    "scheduled": "Geplant",
+    "cancelled": "Abgesagt",
+    "postponed": "Verschoben",
+    "register": "Zur Anmeldung",
+    "details": "Zum Termin",
+    "past": "Vergangene Termine",
+    "regular": "Regelmäßiges Lab-Treffen"
+  },
+  "error": {
+    "title": "Diese Seite ist nicht verfügbar.",
+    "text": "Prüfe die Adresse oder kehre zur Startseite zurück.",
+    "home": "Zur Startseite"
+  },
+  "nav": {
+    "home": "Startseite",
+    "projekte": "Projekte",
+    "mitmachen": "Mitmachen",
+    "ueber-uns": "Über uns",
+    "team": "Team",
+    "daten-sind-daten": "DatenSindDaten e.V.",
+    "veranstaltungen": "Veranstaltungen",
+    "blog": "Blog",
+    "kontakt": "Kontakt",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "code-of-conduct": "Code of Conduct"
+  },
+  "categories": {
+    "urbanDevelopment": "Stadtentwicklung",
+    "culture": "Kultur",
+    "housing": "Wohnen",
+    "leisure": "Freizeit",
+    "safety": "Sicherheit",
+    "administration": "Verwaltung",
+    "nature": "Naturschutz",
+    "education": "Bildung",
+    "infrastructure": "Dateninfrastruktur",
+    "mobility": "Mobilität",
+    "environment": "Umwelt",
+    "society": "Gesellschaft",
+    "community": "Community"
+  },
+  "status": {
+    "development": "In Entwicklung",
+    "seeking-contributors": "Sucht Mitwirkende",
+    "completed": "Abgeschlossen",
+    "unknown": "Stand im Repository"
   }
 }
