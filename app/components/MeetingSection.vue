@@ -17,11 +17,11 @@ const localePath = useLocalePath()
     </div>
     <figure class="m-0">
       <NuxtImg src="/images/codefor-workshop.jpeg" :alt="$t('meeting.imageAlt')" width="440" height="280" sizes="sm:100vw md:35vw" loading="lazy" class="aspect-[11/7] w-full rounded-sm object-cover" />
-      <figcaption class="mt-1 text-[10px] text-text-muted">{{ $t('meeting.imageCaption') }}</figcaption>
+      <figcaption class="mt-2 text-sm leading-6 text-text-muted">{{ $t('meeting.imageCaption') }}</figcaption>
     </figure>
     <div class="meeting-note">
       <p>{{ $t('meeting.welcome') }}</p>
-      <p class="!text-xs !text-text-muted">{{ $t('meeting.note') }}</p>
+      <p>{{ $t('meeting.note') }}</p>
       <a :href="site.meeting.map" class="text-link">{{ $t('meeting.map') }} <AppIcon name="arrow" :size="16" /></a>
     </div>
   </section>
