@@ -75,11 +75,11 @@ Die Prüfung erkennt verbreitete Fehler, **verifiziert aber weder die Existenz n
 
 Betreiber- und Hosting-Angaben ausschließlich in der Deployment-Konfiguration pflegen. Übersetzte Rechtstexte ausschließlich in den sechs Content-Dateien ändern. Jede Änderung an Identität, Vertretung, Zuständigkeit oder Rechtstexten benötigt vor Veröffentlichung menschliche und fachliche/rechtliche Prüfung. Die technische Umsetzung ersetzt diese Prüfung nicht.
 
-Der Code-Audit für Issue #17 ergab:
+Der aktuelle Anwendungsumfang nach Issue #17 und der Plausible-Erweiterung:
 
 - Manrope, Bilder, SVG-Kartenillustration und Projekt-Signets werden lokal ausgeliefert. Externe Karten, GitHub und Mastodon sind Links; es gibt keine automatisch geladenen Einbettungen.
-- Keine Analyse-/Werbeintegration, keine Anwendungscookies, kein `localStorage` oder `sessionStorage`. Sprachwahl und Filter verwenden URLs. Kein Kontaktformular und keine Benutzerkonten.
-- Kein eigener Besucher-Access-Logger. Hosting, Reverse-Proxy-/CDN-Protokolle, Empfänger, Aufbewahrungsfristen, etwaige Drittlandübermittlungen und der E-Mail-Betrieb sind aus dem Repository nicht feststellbar. Der Browsercheck überprüft zusätzlich Requests und Speicher im Testbetrieb; das belegt keine Produktionsinfrastruktur.
+- [Plausible-Nutzungsstatistik](analytics.md) auf der produktiven Domain; keine Werbeintegration oder Anwendungscookies. Das Skript schreibt keine Browser-Kennungen, liest aber einen gegebenenfalls vorhandenen `plausible_ignore`-Opt-out-Wert aus `localStorage`. Nuxt Content kann bei Client-Navigation Inhalte und Prüfsummen als `content_collection_*` / `content_checksum_*` im LocalStorage cachen; das sind technische Inhalts-Caches ohne Besucherkennung. Sprachwahl und Filter verwenden URLs. Kein Kontaktformular und keine Benutzerkonten.
+- Kein eigener Besucher-Access-Logger. Hosting, Plausible-Betrieb, Reverse-Proxy-/CDN-Protokolle, Empfänger, Aufbewahrungsfristen, etwaige Drittlandübermittlungen und der E-Mail-Betrieb sind aus dem Repository nicht feststellbar. Der Browsercheck überprüft zusätzlich Requests und Speicher im Testbetrieb; das belegt keine Produktionsinfrastruktur.
 
 **Vor Veröffentlichung offen:** die vom Betreiber benannten Hosting-Daten und die Vertragsbestätigung außerhalb von Git konfigurieren; den tatsächlichen Hosting- und E-Mail-Betrieb einschließlich Protokollen, Empfängern und Aufbewahrung erheben und die Datenschutztexte in allen drei Sprachen um die erforderlichen konkreten Informationen ergänzen. Die Texte beschreiben bisher den belegten Anwendungsumfang und allgemeine Kriterien, nennen keine erfundenen Dienstleister oder Fristen. Register, USt-ID, Vertretung, §-18-Verantwortlichkeit, Datenschutzkontakt und zuständige Aufsichtsbehörde ebenfalls prüfen. Alle offenen Punkte bleiben in [editorial-todos.md](editorial-todos.md) sichtbar. Ein technisch vollständiger Datensatz ist keine redaktionelle Freigabe.
 

@@ -37,7 +37,13 @@ Personal data may only be retained for as long as necessary for its purpose or a
 
 ## Local resources and language
 
-Fonts, images and the map illustration are served by this website. There are no external webfonts, embedded maps or automatically loaded social media. The website sets no cookies and stores no information in your browser's LocalStorage or SessionStorage. Language selection and search filters use the URL. No analytics trackers or advertising services are integrated.
+Fonts, images and the map illustration are served by this website. There are no external webfonts, embedded maps or automatically loaded social media. The website sets no cookies. When navigating between pages, the website may cache editorial content and its checksums in your browser's LocalStorage so that content is available again. These technical content caches contain no visitor identifier and can be removed by clearing the site's data in your browser. SessionStorage is not used during normal website use. Language selection and search filters use the URL. No advertising services are integrated.
+
+## Usage statistics with Plausible
+
+We use Plausible Analytics via `plausible.oklabflensburg.de` to analyse website usage and improve the site. Your browser loads the analytics script from that service and sends pageviews with the visited URL and referring page. The script also records time spent, scroll depth, and clicks on external links and file downloads with their destination addresses. Fetching the script and sending this information also transmits your IP address and browser information to the service as part of the connection.
+
+The integrated script sets no analytics cookies and stores no identifier in your browser. These statistics are not used for advertising. Please contact the controller listed above for information about the operation of the analytics service, recipients and retention.
 
 ## External links
 

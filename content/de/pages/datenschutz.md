@@ -37,7 +37,13 @@ Personenbezogene Daten dürfen nur so lange aufbewahrt werden, wie es für den j
 
 ## Lokale Ressourcen und Sprache
 
-Schriften, Bilder und die Kartenillustration werden von dieser Website ausgeliefert. Es werden keine externen Webfonts, eingebetteten Karten oder automatisch geladenen sozialen Medien verwendet. Die Website setzt keine Cookies und speichert keine Angaben in LocalStorage oder SessionStorage Ihres Browsers. Die Sprachwahl und Suchfilter werden über die URL gesteuert. Es sind keine Analyse-Tracker oder Werbedienste eingebunden.
+Schriften, Bilder und die Kartenillustration werden von dieser Website ausgeliefert. Es werden keine externen Webfonts, eingebetteten Karten oder automatisch geladenen sozialen Medien verwendet. Die Website setzt keine Cookies. Bei Seitenwechseln innerhalb der Website können redaktionelle Inhalte und deren Prüfsummen im LocalStorage Ihres Browsers zwischengespeichert werden, damit Inhalte erneut verfügbar sind. Diese technischen Inhalts-Caches enthalten keine Besucherkennung und können über die Website-Daten Ihres Browsers gelöscht werden. SessionStorage wird im regulären Website-Betrieb nicht verwendet. Die Sprachwahl und Suchfilter werden über die URL gesteuert. Werbedienste sind nicht eingebunden.
+
+## Nutzungsstatistik mit Plausible
+
+Wir verwenden Plausible Analytics über `plausible.oklabflensburg.de`, um die Nutzung dieser Website auszuwerten und das Angebot zu verbessern. Ihr Browser lädt dort das Analyseskript und übermittelt Seitenaufrufe mit der aufgerufenen URL und der verweisenden Seite. Das Skript erfasst außerdem Nutzungsdauer, Scrolltiefe sowie Klicks auf externe Links und Dateidownloads mit der jeweiligen Zieladresse. Beim Abruf und bei der Übertragung werden technisch auch IP-Adresse und Browserinformationen an diesen Dienst übermittelt.
+
+Das eingebundene Skript setzt keine Analyse-Cookies und speichert keine Kennung im Browser. Die Statistik ist nicht für Werbung bestimmt. Informationen zum Betrieb des Analysedienstes, zu Empfängern und zur Aufbewahrung erhalten Sie bei der oben genannten verantwortlichen Stelle.
 
 ## Externe Links
 

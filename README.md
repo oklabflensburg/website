@@ -4,7 +4,7 @@ Die Website des OK Lab Flensburg: offene Daten, freie Software und Civic Tech f�
 
 ## Architektur
 
-Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs/i18n`, Nuxt Content 3 und Nuxt Image. Node-Server mit SSR, kein Onepager. Das Designsystem liegt in `app/assets/css/main.css`. Keine UI-Bibliothek und keine externen Tracker.
+Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs/i18n`, Nuxt Content 3 und Nuxt Image. Node-Server mit SSR, kein Onepager. Das Designsystem liegt in `app/assets/css/main.css`. Keine UI-Bibliothek. Nutzungsstatistik über die angegebene Plausible-Instanz; siehe [Analytics](docs/analytics.md).
 
 - `app/`: gemeinsame Komponenten, Seiten und SEO.
 - `content/`: einzige Quelle für Projekte, Blog, redaktionelle Seiten, Team und zusätzliche Events.
