@@ -38,7 +38,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest 5 prüft Schemas, Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist auf Repository-Ebene derzeit deaktiviert (geprüft am 10.09.2026); vorhandene Workflow-Dateien bedeuten daher keinen erfolgreichen Remote-Testlauf.
+Vitest 5 prüft Schemas, Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist aktiviert; der [CI-Audit](docs/ci-audit.md) dokumentiert die Wiederaktivierung. Für einen PR zählt das tatsächliche Ergebnis der Runs auf seinem aktuellen Commit, nicht allein das Vorhandensein der Workflow-Dateien.
 
 Peer-Abhängigkeiten, zwei vorübergehende eng begrenzte Versionskorrekturen und ihre Entfernungskriterien: [docs/dependencies.md](docs/dependencies.md). Release-Alter und Build-Script-Freigaben bleiben erhalten.
 
@@ -117,10 +117,14 @@ Mit Zustimmung eine YAML-Datei in `content/team/` anlegen. Felder: `name`, optio
 
 ## Deployment
 
+Betreiberangaben für Impressum und Datenschutz werden ausschließlich über `NUXT_PUBLIC_LEGAL_*` konfiguriert. Pflichtfelder sind Name, Straße, Hausnummer, Postleitzahl, Ort, Land und E-Mail. [Variablen, `.env.example`, Produktionsprüfung und redaktionelle Freigabe](docs/legal-configuration.md) dokumentieren alle Pflicht- und optionalen Angaben. Echte Produktionswerte dürfen nicht in Git oder CI-Logs gelangen.
+
 ```sh
 pnpm build
-HOST=0.0.0.0 PORT=3000 node .output/server/index.mjs
+HOST=0.0.0.0 PORT=3000 node --env-file=.env .output/server/index.mjs
 ```
+
+Die `.env` auf dem Zielserver muss geprüfte Werte enthalten; alternativ die Variablen über systemd/Prozessumgebung setzen und `--env-file` weglassen. Ein Build ohne Betreiberwerte ist möglich, der gebaute Server verweigert bei fehlenden Pflichtangaben oder erkennbaren Platzhaltern den Start. Playwright verwendet ausschließlich fiktive Testangaben und prüft auch diesen Startfehler.
 
 Die gesamte `.output/` als Node-Anwendung betreiben, hinter einem HTTPS-Reverse-Proxy für `oklabflensburg.de`. Prozess benötigt einen beschreibbaren Arbeitsbereich für die Content-SQLite-Datenbank `.data/`; Inhalte werden beim Build eingebunden. Build und Runtime verwenden eine unterstützte Node-Version. Kein reines Datei-Hosting: SSR, RSS, Sitemap und Bildoptimierung benötigen den Server. Bei Domainänderungen `shared/config/site.ts` anpassen. Alte `.html`- und Contributor-URLs haben gezielte 301-Weiterleitungen.
 
