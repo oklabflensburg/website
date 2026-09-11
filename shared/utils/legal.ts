@@ -50,8 +50,9 @@ export function validateLegalContact(input: unknown): LegalContact {
 }
 
 export function legalContactLinks(contact: LegalContact) {
+  const [localPart = '', domain = ''] = contact.email.split('@')
   return {
-    email: emailPattern.test(contact.email) ? `mailto:${encodeURIComponent(contact.email).replace('%40', '@')}` : undefined,
+    email: emailPattern.test(contact.email) ? `mailto:${encodeURIComponent(localPart)}@${encodeURIComponent(domain)}` : undefined,
     phone: phonePattern.test(contact.phone) && contact.phone.replace(/\D/g, '').length >= 5
       ? `tel:${contact.phone.replace(/[^\d+]/g, '')}` : undefined,
   }

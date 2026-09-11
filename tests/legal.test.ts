@@ -53,6 +53,11 @@ describe('legal runtime configuration', () => {
     expect(legalContactLinks(contact)).toEqual({ email: 'mailto:legal%2Bweb@kuestenlabor-pruefverein.de', phone: 'tel:+49012345678' })
   })
 
+  it('keeps encoded characters in the mailbox distinct from the address separator', () => {
+    const contact = normalizeLegalContact({ ...legalFixture, email: 'legal%40web@kuestenlabor-pruefverein.de' })
+    expect(legalContactLinks(contact).email).toBe('mailto:legal%2540web@kuestenlabor-pruefverein.de')
+  })
+
   it('documents every field and keeps the development example unfit for production', () => {
     const example = readFileSync('.env.example', 'utf8')
     const fields = [...example.matchAll(/^(NUXT_PUBLIC_LEGAL_\w+)="(.*)"$/gm)]
