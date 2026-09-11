@@ -37,7 +37,13 @@ Personoplysninger må kun opbevares, så længe det er nødvendigt for formålet
 
 ## Lokale ressourcer og sprog
 
-Skrifttyper, billeder og kortillustrationen leveres fra denne hjemmeside. Der bruges ingen eksterne webfonte, indlejrede kort eller automatisk indlæste sociale medier. Hjemmesiden sætter ingen cookies og gemmer ingen oplysninger i browserens LocalStorage eller SessionStorage. Sprogvalg og søgefiltre styres via URL'en. Der er ingen analysetrackere eller reklametjenester.
+Skrifttyper, billeder og kortillustrationen leveres fra denne hjemmeside. Der bruges ingen eksterne webfonte, indlejrede kort eller automatisk indlæste sociale medier. Hjemmesiden sætter ingen cookies. Når du navigerer mellem sider, kan hjemmesiden gemme redaktionelt indhold og dets kontrolsummer i browserens LocalStorage, så indholdet er tilgængeligt igen. Disse tekniske indholdscaches indeholder ingen besøgsidentifikator og kan slettes via browserens webstedsdata. SessionStorage bruges ikke ved almindelig brug af hjemmesiden. Sprogvalg og søgefiltre styres via URL'en. Der er ingen reklametjenester.
+
+## Brugsstatistik med Plausible
+
+Vi bruger Plausible Analytics via `plausible.oklabflensburg.de` til at analysere brugen af hjemmesiden og forbedre tilbuddet. Din browser henter analysescriptet derfra og sender sidevisninger med den besøgte URL og den henvisende side. Scriptet registrerer også besøgstid, rulledybde samt klik på eksterne links og fildownloads med den tilhørende destinationsadresse. Ved hentning og overførsel sendes også IP-adresse og browseroplysninger til tjenesten som en teknisk del af forbindelsen.
+
+Det indlejrede script sætter ingen analysecookies og gemmer ingen identifikator i browseren. Statistikken bruges ikke til reklamer. Kontakt den ovenfor angivne dataansvarlige for oplysninger om driften af analysetjenesten, modtagere og opbevaring.
 
 ## Eksterne links
 

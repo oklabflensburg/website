@@ -10,6 +10,9 @@ export const site = {
     apple: '/apple-touch-icon.png',
   },
   url: 'https://oklabflensburg.de',
+  analytics: {
+    script: 'https://plausible.oklabflensburg.de/js/pa-kAVDHPi3E6v_DQyTEdWt-.js',
+  },
   email: 'info@oklabflensburg.de',
   github: 'https://github.com/oklabflensburg',
   repository: 'https://github.com/oklabflensburg/website',

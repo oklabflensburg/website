@@ -5,6 +5,20 @@ const requestFetch = useRequestFetch()
 await useAsyncData('translations', () => requestFetch<TranslationGroup[]>('/api/translations'))
 // Content-aware canonical/alternate links are owned by usePageSeo.
 const localeHead = useLocaleHead({ seo: false })
+// Load once in the shared shell, only on the public site's production hostname.
+// Plausible handles History API navigation; an extra router hook would double count.
+if (!import.meta.dev && useRequestURL().hostname === new URL(site.url).hostname) {
+  useHead({
+    script: [
+      {
+        key: 'plausible-init',
+        tagPriority: 1,
+        innerHTML: 'window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};window.plausible.init=window.plausible.init||function(i){window.plausible.o=i||{}};window.plausible.init();',
+      },
+      { key: 'plausible', tagPriority: 2, async: true, src: site.analytics.script },
+    ],
+  })
+}
 useHead(() => ({
   htmlAttrs: localeHead.value.htmlAttrs,
 }))

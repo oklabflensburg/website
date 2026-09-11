@@ -119,7 +119,7 @@ test('production startup rejects missing and example config without logging valu
   expect((await request.get('/impressum')).status()).toBe(200)
 })
 
-test('the audited website uses local resources and no browser storage', async ({ page, context }) => {
+test('fresh preview page loads omit analytics and leave browser storage empty', async ({ page, context }) => {
   const external: string[] = []
   page.on('request', (request) => {
     if (new URL(request.url()).origin !== 'http://127.0.0.1:3100') external.push(request.url())
@@ -127,6 +127,7 @@ test('the audited website uses local resources and no browser storage', async ({
   for (const path of ['/', '/projekte', '/datenschutz', '/en/privacy']) {
     await page.goto(path)
     await expect(page.locator('.menu-toggle')).toBeEnabled()
+    await expect(page.locator(`script[src="${site.analytics.script}"]`)).toHaveCount(0)
     await page.evaluate(() => document.fonts.ready)
     expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 })
   }
