@@ -1,8 +1,16 @@
 <script setup lang="ts">
-import { optionalLegalFields } from '#shared/utils/legal'
+import { hasHostingProvider, optionalLegalFields } from '#shared/utils/legal'
 
-const props = withDefaults(defineProps<{ kind?: 'provider' | 'privacy' }>(), { kind: 'provider' })
+const props = withDefaults(defineProps<{ kind?: 'provider' | 'privacy' | 'hosting' }>(), { kind: 'provider' })
 const { contact, links } = useLegalContact()
+const address = computed(() => props.kind === 'hosting' ? {
+  name: contact.hostingProviderName,
+  street: contact.hostingProviderStreet,
+  houseNumber: contact.hostingProviderHouseNumber,
+  postalCode: contact.hostingProviderPostalCode,
+  city: contact.hostingProviderCity,
+  country: contact.hostingProviderCountry,
+} : contact)
 const details = computed(() => optionalLegalFields.filter((field) =>
   field !== 'phone' && contact[field] && (props.kind === 'privacy'
     ? field === 'privacyContactPerson'
@@ -11,14 +19,18 @@ const details = computed(() => optionalLegalFields.filter((field) =>
 </script>
 
 <template>
-  <div class="legal-details mb-6" :data-legal-kind="kind">
+  <div v-if="kind !== 'hosting' || hasHostingProvider(contact)" class="legal-details mb-6" :data-legal-kind="kind">
+    <slot />
     <address class="not-italic">
-      <strong data-legal-name>{{ contact.name }}</strong><br />
-      {{ [contact.street, contact.houseNumber].filter(Boolean).join(' ') }}<br />
-      {{ [contact.postalCode, contact.city].filter(Boolean).join(' ') }}<br />
-      {{ contact.country }}
+      <strong :data-legal-name="kind !== 'hosting' ? '' : undefined">{{ address.name }}</strong><br />
+      {{ [address.street, address.houseNumber].filter(Boolean).join(' ') }}<br />
+      {{ [address.postalCode, address.city].filter(Boolean).join(' ') }}<br />
+      {{ address.country }}
     </address>
-    <dl class="mt-6 grid gap-4">
+    <div v-if="kind === 'hosting' && contact.hostingDpa" class="mt-6" data-hosting-dpa>
+      <slot name="dpa" />
+    </div>
+    <dl v-if="kind !== 'hosting'" class="mt-6 grid gap-4">
       <div v-if="contact.email" data-legal-field="email">
         <dt class="font-bold text-text">{{ $t('legal.email') }}</dt>
         <dd><a v-if="links.email" :href="links.email">{{ contact.email }}</a><span v-else>{{ contact.email }}</span></dd>

@@ -5,9 +5,28 @@ export const optionalLegalFields = [
   'phone', 'representedBy', 'registerCourt', 'registerNumber', 'vatId',
   'privacyContactPerson', 'contentResponsible',
 ] as const
-export const legalFields = [...requiredLegalFields, ...optionalLegalFields]
+export const requiredHostingFields = [
+  'hostingProviderName', 'hostingProviderStreet', 'hostingProviderPostalCode',
+  'hostingProviderCity', 'hostingProviderCountry',
+] as const
+export const hostingFields = [...requiredHostingFields, 'hostingProviderHouseNumber'] as const
+export const legalStringFields = [...requiredLegalFields, ...optionalLegalFields, ...hostingFields]
+export const legalFields = [...legalStringFields, 'hostingDpa'] as const
 export type LegalField = (typeof legalFields)[number]
-export type LegalContact = Record<LegalField, string>
+export type LegalContact = Record<(typeof legalStringFields)[number], string> & { hostingDpa: boolean }
+
+function configSource(input: unknown): Record<string, unknown> {
+  return input && typeof input === 'object' ? input as Record<string, unknown> : {}
+}
+
+function explicitBoolean(value: unknown): boolean | undefined {
+  if (value === true || value === 'true') return true
+  if (value === false || value === 'false') return false
+}
+
+export function hasHostingProvider(contact: LegalContact): boolean {
+  return contact.hostingDpa || hostingFields.some((field) => Boolean(contact[field]))
+}
 
 export function legalEnvironmentKey(field: LegalField) {
   return `NUXT_PUBLIC_LEGAL_${field.replace(/[A-Z]/g, (letter) => `_${letter}`).toUpperCase()}`
@@ -15,14 +34,15 @@ export function legalEnvironmentKey(field: LegalField) {
 
 /** Ignore unexpected types and keys; never stringify objects or missing values. */
 export function normalizeLegalContact(input: unknown): LegalContact {
-  const source = input && typeof input === 'object' ? input as Record<string, unknown> : {}
-  return Object.fromEntries(legalFields.map((field) => {
+  const source = configSource(input)
+  const strings = Object.fromEntries(legalStringFields.map((field) => {
     const value = source[field]
     // Nitro parses numeric environment strings using destr (e.g. house number).
-    const numeric = ['houseNumber', 'postalCode', 'phone', 'registerNumber'].includes(field)
+    const numeric = ['houseNumber', 'postalCode', 'phone', 'registerNumber', 'hostingProviderHouseNumber', 'hostingProviderPostalCode'].includes(field)
       && typeof value === 'number' && Number.isFinite(value)
     return [field, typeof value === 'string' ? value.trim().replace(/\s+/g, ' ') : numeric ? String(value) : '']
-  })) as LegalContact
+  })) as Record<(typeof legalStringFields)[number], string>
+  return { ...strings, hostingDpa: explicitBoolean(source.hostingDpa) ?? false }
 }
 
 const emailPattern = /^[a-z0-9.!#$%&'*+/=_`{|}~-]+@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i
@@ -36,12 +56,21 @@ export function validateLegalContact(input: unknown): LegalContact {
   for (const field of requiredLegalFields) {
     if (!contact[field]) invalid.add(field)
   }
-  for (const field of legalFields) {
+  if (hasHostingProvider(contact)) {
+    for (const field of requiredHostingFields) {
+      if (!contact[field]) invalid.add(field)
+    }
+  }
+  const dpa = configSource(input).hostingDpa
+  // Omitted config uses the false default. Supplied values must be explicit.
+  if (dpa !== undefined && explicitBoolean(dpa) === undefined) invalid.add('hostingDpa')
+  for (const field of legalStringFields) {
     if (contact[field] && placeholderPattern.test(contact[field])) invalid.add(field)
   }
   if (!emailPattern.test(contact.email)) invalid.add('email')
   if (contact.phone && (!phonePattern.test(contact.phone) || contact.phone.replace(/\D/g, '').length < 5)) invalid.add('phone')
   if (/^0+$/.test(contact.postalCode)) invalid.add('postalCode')
+  if (/^0+$/.test(contact.hostingProviderPostalCode)) invalid.add('hostingProviderPostalCode')
   if (invalid.size) {
     // Field names only: this error is safe to include in server startup logs.
     throw new Error(`Invalid legal configuration: ${[...invalid].map(legalEnvironmentKey).join(', ')}`)

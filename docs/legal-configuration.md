@@ -6,7 +6,7 @@ Die Angaben sind **öffentlich**, auch im Nuxt-Seitenpayload. Nur zur Veröffent
 
 ## Variablen
 
-Alle Werte beziehen sich auf denselben Betreiber und gelten unverändert in DE, DA und EN. Keine `ADDRESS_*`-/`CONTACT_*`-Aliase.
+Betreiber- und Hosting-Daten gelten jeweils unverändert in DE, DA und EN. Keine `ADDRESS_*`-/`CONTACT_*`-Aliase.
 
 | Umgebungsvariable | Pflicht | Inhalt |
 | --- | --- | --- |
@@ -24,8 +24,25 @@ Alle Werte beziehen sich auf denselben Betreiber und gelten unverändert in DE, 
 | `NUXT_PUBLIC_LEGAL_VAT_ID` | nein | Umsatzsteuer-ID, sofern vorhanden und anzugeben |
 | `NUXT_PUBLIC_LEGAL_PRIVACY_CONTACT_PERSON` | nein | Zusätzliche Kontaktperson für Datenschutz; keine automatische Benennung als Datenschutzbeauftragte/r |
 | `NUXT_PUBLIC_LEGAL_CONTENT_RESPONSIBLE` | nein | Vollständiger Name **und ladungsfähige Anschrift** der inhaltlich verantwortlichen Person, nur wenn § 18 Abs. 2 MStV nach Prüfung einschlägig ist |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_NAME` | bei Hosting | Vollständiger Name des externen Hosting-Anbieters |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_STREET` | bei Hosting | Straße des Hosting-Anbieters |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_HOUSE_NUMBER` | nein | Hausnummer einschließlich etwaiger Zusätze |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_POSTAL_CODE` | bei Hosting | Postleitzahl des Hosting-Anbieters |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_CITY` | bei Hosting | Ort des Hosting-Anbieters |
+| `NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_COUNTRY` | bei Hosting | Land des Hosting-Anbieters |
+| `NUXT_PUBLIC_LEGAL_HOSTING_DPA` | Boolean, Standard `false` | Ausschließlich `true` oder `false`; `true` bestätigt einen bestehenden Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO |
 
 Optionale Felder werden bei leerem Wert einschließlich ihrer Beschriftung weggelassen. Fachlich können einzelne davon für den tatsächlichen Betreiber verpflichtend sein; diese Entscheidung kann der Code nicht treffen. Datenschutzkontakt und inhaltliche Verantwortung sind unterschiedliche Rollen.
+
+## Hosting und Auftragsverarbeitung
+
+Sobald ein Hosting-Adressfeld gesetzt ist oder `hostingDpa` auf `true` steht, ist Hosting aktiviert. Dann verlangt der Produktionsstart Name, Straße, Postleitzahl, Ort und Land; die Hausnummer bleibt optional. Leere Hosting-Felder zusammen mit `false` blenden den gesamten Abschnitt einschließlich Überschrift aus. `false` blendet bei vollständig konfiguriertem Anbieter nur den AVV-Satz aus; daraus wird keine Aussage über das Nichtbestehen eines Vertrags abgeleitet.
+
+Die bestehende MDC-Komponente `LegalDetails` verwendet `kind="hosting"` und denselben `useLegalContact()`-Zugriff wie die Betreiberangaben. Die Datenschutz-Markdown-Dateien enthalten Überschrift und Einführung im Standardslot sowie den übersetzten Vertragssatz im benannten Slot `#dpa`. Nur bei `true` rendert die Komponente diesen Slot. So bleiben Fakten in der Runtime-Config und Rechtstexte in Content; es gibt kein `HOSTING_DPA_DESCRIPTION`-Feld und keinen zweiten Legal-Renderer. Die deutsche Formulierung lautet: „Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.“ Grundlage: [Art. 28 DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/deu).
+
+`NUXT_PUBLIC_LEGAL_HOSTING_DPA` akzeptiert explizit `true` oder `false` (nach Nuxt-Parsing auch native Booleans). Andere gesetzte Werte, etwa `yes`, `1`, ein leerer String oder ein Objekt, führen beim Produktionsstart zu einem Fehler, der ausschließlich den Konfigurationsschlüssel nennt. Fehlende Werte verwenden den Standard `false`. Keine implizite JavaScript-Wahrheitsprüfung von Strings. Auch Hosting-Texte werden auf Platzhalter geprüft.
+
+Die tatsächlichen Providerdaten und die Bestätigung des Vertrags gehören ausschließlich in die geschützte Deployment-Umgebung, beispielsweise `/etc/oklabflensburg-website.env` mit systemd `EnvironmentFile=`. `.env.example` enthält dafür fiktive Werte und `false`. Nur einen tatsächlich abgeschlossenen Vertrag mit `true` bestätigen. Die Konfiguration ersetzt keine Prüfung von Vertragsumfang, Unterauftragnehmern, Protokollen oder Aufbewahrungsfristen.
 
 ## Entwicklung und Deployment
 
@@ -56,7 +73,7 @@ Die Prüfung erkennt verbreitete Fehler, **verifiziert aber weder die Existenz n
 
 ## Redaktion und Datenschutzprüfung vor Veröffentlichung
 
-Betreiberangaben ausschließlich in der Deployment-Konfiguration pflegen. Übersetzte Rechtstexte ausschließlich in den sechs Content-Dateien ändern. Jede Änderung an Identität, Vertretung, Zuständigkeit oder Rechtstexten benötigt vor Veröffentlichung menschliche und fachliche/rechtliche Prüfung. Die technische Umsetzung ersetzt diese Prüfung nicht.
+Betreiber- und Hosting-Angaben ausschließlich in der Deployment-Konfiguration pflegen. Übersetzte Rechtstexte ausschließlich in den sechs Content-Dateien ändern. Jede Änderung an Identität, Vertretung, Zuständigkeit oder Rechtstexten benötigt vor Veröffentlichung menschliche und fachliche/rechtliche Prüfung. Die technische Umsetzung ersetzt diese Prüfung nicht.
 
 Der Code-Audit für Issue #17 ergab:
 
@@ -64,7 +81,7 @@ Der Code-Audit für Issue #17 ergab:
 - Keine Analyse-/Werbeintegration, keine Anwendungscookies, kein `localStorage` oder `sessionStorage`. Sprachwahl und Filter verwenden URLs. Kein Kontaktformular und keine Benutzerkonten.
 - Kein eigener Besucher-Access-Logger. Hosting, Reverse-Proxy-/CDN-Protokolle, Empfänger, Aufbewahrungsfristen, etwaige Drittlandübermittlungen und der E-Mail-Betrieb sind aus dem Repository nicht feststellbar. Der Browsercheck überprüft zusätzlich Requests und Speicher im Testbetrieb; das belegt keine Produktionsinfrastruktur.
 
-**Vor Veröffentlichung offen:** tatsächlichen Hosting- und E-Mail-Betrieb erheben und die Datenschutztexte in allen drei Sprachen um die erforderlichen konkreten Informationen ergänzen. Die Texte beschreiben bisher den belegten Anwendungsumfang und allgemeine Kriterien, nennen keine erfundenen Dienstleister oder Fristen. Register, USt-ID, Vertretung, §-18-Verantwortlichkeit, Datenschutzkontakt und zuständige Aufsichtsbehörde ebenfalls prüfen. Alle offenen Punkte bleiben in [editorial-todos.md](editorial-todos.md) sichtbar. Ein technisch vollständiger Datensatz ist keine redaktionelle Freigabe.
+**Vor Veröffentlichung offen:** die vom Betreiber benannten Hosting-Daten und die Vertragsbestätigung außerhalb von Git konfigurieren; den tatsächlichen Hosting- und E-Mail-Betrieb einschließlich Protokollen, Empfängern und Aufbewahrung erheben und die Datenschutztexte in allen drei Sprachen um die erforderlichen konkreten Informationen ergänzen. Die Texte beschreiben bisher den belegten Anwendungsumfang und allgemeine Kriterien, nennen keine erfundenen Dienstleister oder Fristen. Register, USt-ID, Vertretung, §-18-Verantwortlichkeit, Datenschutzkontakt und zuständige Aufsichtsbehörde ebenfalls prüfen. Alle offenen Punkte bleiben in [editorial-todos.md](editorial-todos.md) sichtbar. Ein technisch vollständiger Datensatz ist keine redaktionelle Freigabe.
 
 Alle sechs Seiten behalten absichtlich `noindex: true` (`noindex, follow`). Sie bleiben öffentlich und SSR-fähig, mit dem vorhandenen lokalisierten Canonical, OpenGraph/Twitter und WebPage-Daten. Entsprechend der bestehenden Architektur erscheinen nicht indexierbare Seiten weder in Sitemap noch in hreflang. Der Sprachwechsel bleibt über den Content-Übersetzungsindex möglich. `noindex` ist kein Zugriffsschutz und ersetzt keine vollständigen Rechtstexte.
 

@@ -10,15 +10,22 @@ export const legalFixture = normalizeLegalContact({
   city: 'Küstenstadt',
   country: 'Deutschland',
   email: 'kontakt@kuestenlabor-pruefverein.de',
+  hostingProviderName: 'Wolkenhafen Rechenbetrieb',
+  hostingProviderStreet: 'Dünenallee',
+  hostingProviderHouseNumber: '7',
+  hostingProviderPostalCode: '23456',
+  hostingProviderCity: 'Wolkenstadt',
+  hostingProviderCountry: 'Deutschland',
+  hostingDpa: true,
 })
 
-export function legalFixtureEnvironment(overrides: Partial<LegalContact> = {}) {
+export function legalFixtureEnvironment(overrides: Partial<Record<keyof LegalContact, string | boolean>> = {}) {
   return {
     // Prevent inherited parent-object config from contaminating the fixtures.
     NUXT_PUBLIC: '{}',
     NUXT_PUBLIC_LEGAL: '{}',
     ...Object.fromEntries(Object.entries({ ...legalFixture, ...overrides }).map(([field, value]) => [
-      legalEnvironmentKey(field as keyof LegalContact), value,
+      legalEnvironmentKey(field as keyof LegalContact), String(value),
     ])),
   }
 }
