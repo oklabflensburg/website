@@ -67,7 +67,8 @@ describe('canonical content', () => {
       const svg = bytes.toString('utf8')
       expect(svg).toContain('width="1024" height="1024" viewBox="0 0 128 128"')
       expect(svg).not.toMatch(/<(?:text|image|script|foreignObject|filter)\b|(?:href|style|onload)=/i)
-      expect(svg).toContain('stroke-width="3"')
+      // The supplied kulturbytes wordmark uses filled paths; the house signets use outlines.
+      if (project.translationKey !== 'kulturbytes') expect(svg).toContain('stroke-width="3"')
       expect(svg).toContain('fill="#f3f7fa"')
       hashes.add(createHash('sha256').update(bytes).digest('hex'))
       const descriptions = new Set<string>()

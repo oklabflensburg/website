@@ -1,6 +1,6 @@
 ---
 title: "kulturbytes"
-description: "Kulturveranstaltungen und Kulturorte entdecken: kulturbytes verbindet eine durchsuchbare Plattform mit Sichtbarkeit für Veranstaltende."
+description: "Eine offene Plattform für Kulturveranstaltungen und Kulturorte."
 locale: "de"
 slug: "kulturbytes"
 translationKey: "kulturbytes"
@@ -12,29 +12,52 @@ technologies: ["Nuxt", "Vue", "TypeScript"]
 links: {"website": "https://kulturbytes.de", "github": "https://github.com/sndcds/kulturbytes-client"}
 source: "https://codefor.de/projekte/fl-kulturbytes/"
 image: /images/projects/kulturbytes.svg
-imageAlt: "Ein Veranstaltungsticket mit ausgestanzten Seiten und einem geometrischen Kulturstern."
+imageAlt: "Pinkes geometrisches kulturbytes-Zeichen mit schwarzem, zweizeiligem Schriftzug oben rechts."
 ---
+
+Kulturelle Angebote werden häufig über viele verschiedene Webseiten, Kalender und soziale Netzwerke verteilt. Besonders kleinere Vereine, Initiativen und freie Kulturschaffende haben dabei oft nur begrenzte Möglichkeiten, ihre Angebote an vielen Stellen sichtbar zu machen.
+
+**kulturbytes** bringt diese Informationen auf einer gemeinsamen Plattform zusammen und stellt sie zugleich als strukturierte Daten für andere Webseiten und Anwendungen bereit.
 
 ## Worum geht es?
 
-kulturbytes ist eine Plattform für Kulturveranstaltungen und Kulturorte, die im OK Lab Flensburg entstanden ist. Sie bringt Angebote von Einrichtungen, Initiativen, Projekten und freien Kulturschaffenden zusammen. Besuchende können Veranstaltungen entdecken; Veranstaltende erhalten eine gemeinsame Plattform, auf der ihre Angebote sichtbar werden können.
+kulturbytes ist im **OK Lab Flensburg** entstanden und verbindet Veranstaltungen, Kulturorte, Organisationen und Kulturschaffende in einer gemeinsamen Datenbasis.
 
-Die Suche lässt sich nach Kategorien, Veranstaltungsarten, Genres, Datum und Ort eingrenzen. Auch eine Suche im Umkreis ist vorgesehen und im Client dokumentiert. Veranstaltungsansichten bündeln die Angaben zum jeweiligen Angebot, während eigene Ortsseiten und eine Karte den Zugang über Kulturorte ermöglichen. So kannst du sowohl von einem Interesse als auch von einem Ort aus nach passenden Veranstaltungen suchen.
+Menschen können Veranstaltungen und Kulturorte nach **Kategorie, Veranstaltungsart, Genre, Datum und Ort** entdecken oder sich über eine Karte orientieren. Gleichzeitig erhalten Kulturakteure eine gemeinsame Infrastruktur, über die ihre Angebote sichtbar und auch auf anderen Webseiten nutzbar werden.
 
-Die Anwendung ist mehrsprachig und enthält deutsche, dänische und englische Oberflächentexte. Ihr Ursprung liegt in Flensburg, die Orts- und Regionsauswahl ist jedoch nicht auf die Stadt beschränkt. Welche Angebote du findest, richtet sich nach den tatsächlich veröffentlichten Einträgen.
+Das Projekt richtet sich ausdrücklich auch an **kleine Einrichtungen, Vereine, Initiativen und freie Kulturschaffende**. kulturbytes soll nicht nur ein weiterer Veranstaltungskalender sein, sondern eine gemeinsam nutzbare digitale Infrastruktur für das kulturelle Leben einer Region.
 
 ## Warum gibt es das Projekt?
 
-Kulturelle Informationen verteilen sich häufig auf viele einzelne Webseiten. Wer einen Überblick sucht, muss die passenden Einrichtungen oft bereits kennen. Eine gemeinsame Suche kann auch Angebote auffindbar machen, nach denen man nicht gezielt gesucht hätte.
+Wer wissen möchte, was in einer Region kulturell passiert, muss heute häufig viele einzelne Quellen kennen. Gleichzeitig müssen Veranstaltende dieselben Informationen an unterschiedlichen Stellen pflegen.
 
-Dabei richtet sich kulturbytes ausdrücklich auch an kleinere Einrichtungen, Vereine, Initiativen und unabhängige Kulturschaffende. Das Projekt möchte ihnen neben größeren Häusern digitale Sichtbarkeit ermöglichen. Die Nutzung wird in der Projektbeschreibung sowohl für Besuchende als auch für veröffentlichende Kulturakteur:innen als kostenlos beschrieben.
+kulturbytes setzt deshalb auf eine **gemeinsame strukturierte Datenbasis**: Informationen werden einmal erfasst und können anschließend auf verschiedenen Webseiten, regionalen Portalen oder in eingebetteten Veranstaltungskalendern verwendet werden.
 
-## Daten und Technik
+So soll die digitale Sichtbarkeit kultureller Angebote verbessert und gleichzeitig der Aufwand für die einzelnen Veranstaltenden reduziert werden.
 
-Die Informationen werden über die KulturBytes beziehungsweise Uranus API bereitgestellt. Der verlinkte Client verwendet Nuxt, Vue und TypeScript; im aktuellen Quellcode ist MapLibre für Karten eingebunden. Veranstaltungen und Veranstaltungsorte werden als strukturierte Datensätze verarbeitet und in unterschiedlichen Ansichten zugänglich gemacht.
+## Offen und gemeinschaftlich
 
-Die Oberfläche, die Verwaltung der Inhalte und das Backend sind eigene Teile des Projekts. Eine Beschreibung des Clients ist deshalb keine Zusage, dass jede Verwaltungsfunktion direkt auf der öffentlichen Webseite verfügbar ist.
+kulturbytes ist **kostenlos, quelloffen und gemeinwohlorientiert**. Das Projekt soll von den Menschen weiterentwickelt werden können, die es nutzen – technisch ebenso wie inhaltlich.
+
+Neben Kultur werden auch Angebote aus den Bereichen **Bildung, Sport, Freizeit, Familie und Gesellschaft** berücksichtigt. Ein gemeinsames Kategoriensystem hilft dabei, unterschiedliche Angebote auffindbar zu machen.
+
+Das Projekt ist in Flensburg entstanden, soll aber auch für andere Städte und Regionen nutzbar sein.
+
+## Technik und Daten
+
+kulturbytes besteht aus mehreren miteinander verbundenen Open-Source-Komponenten:
+
+- [**kulturbytes-client**](https://github.com/sndcds/kulturbytes-client) – Weboberfläche für **Kultursuchende**, über die Veranstaltungen und Kulturorte entdeckt werden können.
+- [**uranus-dashboard**](https://github.com/sndcds/uranus-dashboard) – Webanwendung für die **Erfassung und Pflege von Veranstaltungen, Orten und weiteren Daten**.
+- [**uranus**](https://github.com/sndcds/uranus) – das **Backend und die API**. Es verwaltet und stellt die strukturierten Veranstaltungs- und Ortsdaten bereit.
+- [**pluto**](https://github.com/sndcds/pluto) – der **Bildserver** für die in kulturbytes verwendeten Medien.
+
+Die Komponenten sind so aufgebaut, dass die Daten nicht an eine einzelne Webseite gebunden sind. Die API ermöglicht es, dieselben Informationen auch in andere Webseiten und digitale Angebote zu integrieren.
 
 ## Mitmachen
 
-Du kannst Veranstaltungen und Filteransichten testen, unklare Angaben melden oder an Übersetzungen, Dokumentation und Code mitarbeiten. Beschreibe bei Rückmeldungen möglichst konkret, welches Angebot oder welche Suche betroffen ist. Das verlinkte Repository bietet einen Einstieg in die technische Entwicklung.
+kulturbytes lebt davon, dass Kulturakteure ihre Angebote einbringen und Menschen die Plattform ausprobieren und weiterentwickeln.
+
+Du kannst Veranstaltungen und Kulturorte auf [kulturbytes](https://kulturbytes.de/) entdecken, fehlende oder unklare Informationen melden oder das Projekt technisch, organisatorisch und inhaltlich unterstützen.
+
+**kulturbytes soll eine gemeinsame digitale Infrastruktur für Kultur sein – offen entwickelt und von den Menschen mitgestaltet, die sie nutzen.**

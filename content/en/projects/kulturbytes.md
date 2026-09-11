@@ -1,6 +1,6 @@
 ---
 title: "kulturbytes"
-description: "Discover cultural events and venues: kulturbytes combines searchable listings with a shared platform for organisers."
+description: "An open platform for cultural events and venues."
 locale: "en"
 slug: "kulturbytes"
 translationKey: "kulturbytes"
@@ -12,29 +12,52 @@ technologies: ["Nuxt", "Vue", "TypeScript"]
 links: {"website": "https://kulturbytes.de", "github": "https://github.com/sndcds/kulturbytes-client"}
 source: "https://codefor.de/projekte/fl-kulturbytes/"
 image: /images/projects/kulturbytes.svg
-imageAlt: "An event ticket with notched sides and a geometric cultural star."
+imageAlt: "Pink geometric kulturbytes symbol with black lettering on two lines in the upper right corner."
 ---
+
+Cultural activities are often spread across many different websites, calendars and social networks. Smaller associations, initiatives and independent cultural practitioners in particular often have limited resources to make their activities visible in many places.
+
+**kulturbytes** brings this information together on a shared platform and also makes it available as structured data for other websites and applications.
 
 ## What is it about?
 
-kulturbytes is a cultural events and venues platform that originated at OK Lab Flensburg. It brings together listings from institutions, initiatives, projects and independent cultural practitioners. Visitors can discover events, while organisers gain a shared platform where their activities can become visible.
+kulturbytes originated at **OK Lab Flensburg** and connects events, cultural venues, organisations and cultural practitioners in a shared database.
 
-Searches can be narrowed by category, event type, genre, date and place. The client documentation also describes radius-based searching. Event views bring together information about individual listings, while venue pages and a map offer another way to explore. You can start with an interest or a place when looking for an event.
+People can discover events and cultural venues by **category, event type, genre, date and location**, or explore them on a map. At the same time, cultural organisations and practitioners gain shared infrastructure that makes their activities visible and available for use on other websites.
 
-The application is multilingual, with German, Danish and English interface text. Its roots are in Flensburg, but its place and region selection is not restricted to the city. The events you can find depend on the listings actually published.
+The project explicitly welcomes **small institutions, associations, initiatives and independent cultural practitioners**. kulturbytes aims to be more than another events calendar: it is intended as shared digital infrastructure for a region’s cultural life.
 
-## Why does it exist?
+## Why does the project exist?
 
-Cultural information is often spread across many separate websites. Finding an overview can require knowing the relevant institutions already. A shared search can also surface activities you would not have known to look for.
+Finding out what is happening culturally in a region often requires knowing many individual sources. Meanwhile, organisers have to maintain the same information in different places.
 
-kulturbytes explicitly includes smaller institutions, associations, initiatives and independent cultural practitioners. It aims to give them digital visibility alongside larger cultural institutions. The project description states that using the platform is free both for visitors and for cultural actors publishing their activities.
+kulturbytes therefore uses a **shared, structured database**: information is entered once and can then be used on different websites, regional portals or embedded event calendars.
 
-## Data and technology
+The aim is to improve the online visibility of cultural activities while reducing the workload for individual organisers.
 
-Information is supplied through the KulturBytes API, also referred to as the Uranus API. The linked client uses Nuxt, Vue and TypeScript, with MapLibre included in the current code for maps. Events and venues are processed as structured records and made accessible through different views.
+## Open and community-driven
 
-The public interface, content administration and backend are separate parts of the project. Describing the client therefore does not imply that every administrative function is available directly on the public website.
+kulturbytes is **free to use, open source and oriented towards the common good**. The people who use the project should be able to help develop both its technology and its content.
 
-## Help improve it
+Alongside culture, the platform also includes activities in **education, sport, leisure, family life and society**. A shared category system helps people find different kinds of activities.
 
-You can test event pages and filters, report unclear information or contribute translations, documentation and code. When giving feedback, identify the listing or search involved as precisely as possible. The linked repository provides a starting point for development contributions.
+The project originated in Flensburg, but is also intended to be usable by other cities and regions.
+
+## Technology and data
+
+kulturbytes consists of several interconnected open-source components:
+
+- [**kulturbytes-client**](https://github.com/sndcds/kulturbytes-client) – the web interface for **people looking for cultural activities**, where they can discover events and cultural venues.
+- [**uranus-dashboard**](https://github.com/sndcds/uranus-dashboard) – the web application for **entering and maintaining events, venues and other data**.
+- [**uranus**](https://github.com/sndcds/uranus) – the **backend and API**. It manages and provides the structured event and venue data.
+- [**pluto**](https://github.com/sndcds/pluto) – the **image server** for the media used in kulturbytes.
+
+The components are designed so that the data is not tied to a single website. The API allows the same information to be integrated into other websites and digital services.
+
+## Get involved
+
+kulturbytes depends on cultural organisations and practitioners contributing their activities, and on people trying out and developing the platform.
+
+You can discover events and cultural venues on [kulturbytes](https://kulturbytes.de/), report missing or unclear information, or support the project through technical work, organisation and content contributions.
+
+**kulturbytes aims to provide shared digital infrastructure for culture – developed openly and shaped by the people who use it.**
