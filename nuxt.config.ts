@@ -5,6 +5,28 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
   ssr: true,
   devtools: { enabled: false },
+  // Nuxt overrides these at runtime with NUXT_PUBLIC_LEGAL_<FIELD>.
+  // Empty build defaults keep deployment identities out of the build artifact.
+  runtimeConfig: {
+    public: {
+      legal: {
+        name: '',
+        street: '',
+        houseNumber: '',
+        postalCode: '',
+        city: '',
+        country: '',
+        email: '',
+        phone: '',
+        representedBy: '',
+        registerCourt: '',
+        registerNumber: '',
+        vatId: '',
+        privacyContactPerson: '',
+        contentResponsible: '',
+      },
+    },
+  },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxtjs/i18n', '@nuxt/content', '@nuxt/image', '@nuxt/eslint'],
   vite: { plugins: [tailwindcss()] },

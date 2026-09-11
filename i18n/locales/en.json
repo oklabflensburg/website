@@ -142,5 +142,15 @@
   },
   "brand": {
     "projectBy": "A project by"
+  },
+  "legal": {
+    "email": "Email",
+    "phone": "Phone",
+    "representedBy": "Represented by",
+    "registerCourt": "Registry court",
+    "registerNumber": "Registration number",
+    "vatId": "VAT identification number",
+    "privacyContactPerson": "Privacy contact person",
+    "contentResponsible": "Responsible for content under section 18(2) MStV"
   }
 }

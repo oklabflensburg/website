@@ -142,5 +142,15 @@
   },
   "brand": {
     "projectBy": "Et projekt fra"
+  },
+  "legal": {
+    "email": "E-mail",
+    "phone": "Telefon",
+    "representedBy": "Repræsenteret af",
+    "registerCourt": "Registerdomstol",
+    "registerNumber": "Registernummer",
+    "vatId": "Momsregistreringsnummer",
+    "privacyContactPerson": "Kontaktperson for databeskyttelse",
+    "contentResponsible": "Ansvarlig for indhold i henhold til § 18, stk. 2, MStV"
   }
 }

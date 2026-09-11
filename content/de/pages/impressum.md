@@ -1,19 +1,18 @@
 ---
 title: "Impressum"
-description: "Anbieterangaben werden redaktionell vervollständigt."
+description: "Anbieter und Kontaktinformationen für die Website des OK Lab Flensburg."
 locale: "de"
 slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---
 
-## Stand der Angaben
+## Anbieter
 
-TODO vor Veröffentlichung: Verantwortlichen Anbieter, ladungsfähige Anschrift, Vertretungsberechtigte und gegebenenfalls Registerangaben bestätigen und ergänzen. Der Treffpunkt des Labs ist nicht automatisch die rechtliche Anschrift des Vereins.
+::legal-details
+::
 
-## Kontakt
-
-Die allgemeine Kontaktmöglichkeit steht unten. Sie ersetzt nicht die noch zu bestätigenden Anbieterangaben.
+Diese Website informiert über das OK Lab Flensburg, seine Projekte und Möglichkeiten zur Beteiligung.
 
 ## Lizenzen
 
