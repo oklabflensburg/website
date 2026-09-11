@@ -1,19 +1,18 @@
 ---
 title: "Legal notice"
-description: "Provider details are being completed."
+description: "Provider and contact information for the OK Lab Flensburg website."
 locale: "en"
 slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---
 
-## Information status
+## Provider
 
-TODO before publication: Confirm and add the responsible provider, legal service address, authorised representatives and any registration details. The meetup venue is not automatically the association’s legal address.
+::legal-details
+::
 
-## Contact
-
-The general contact option appears below. It does not replace the provider information still awaiting confirmation.
+This website provides information about OK Lab Flensburg, its projects and ways to participate.
 
 ## Licences
 

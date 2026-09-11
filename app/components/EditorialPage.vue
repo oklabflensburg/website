@@ -49,8 +49,6 @@ usePageSeo(
       v-if="
         [
           'kontakt',
-          'impressum',
-          'datenschutz',
           'code-of-conduct',
           'daten-sind-daten',
         ].includes(slug)

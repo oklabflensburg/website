@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test'
+import { legalFixtureEnvironment } from './tests/fixtures/legal'
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: true,
@@ -18,8 +19,8 @@ export default defineConfig({
   webServer: {
     command: 'node .output/server/index.mjs',
     url: 'http://127.0.0.1:3100',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120000,
-    env: { PORT: '3100', HOST: '127.0.0.1' },
+    env: { PORT: '3100', HOST: '127.0.0.1', ...legalFixtureEnvironment() },
   },
 })

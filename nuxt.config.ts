@@ -1,14 +1,48 @@
 import tailwindcss from '@tailwindcss/vite'
+import { useNuxt } from 'nuxt/kit'
 import { editorialSlugs, routePaths, site } from './shared/config/site'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
   ssr: true,
   devtools: { enabled: false },
+  // Nuxt overrides these at runtime with NUXT_PUBLIC_LEGAL_<FIELD>.
+  // Empty build defaults keep deployment identities out of the build artifact.
+  runtimeConfig: {
+    public: {
+      legal: {
+        name: '',
+        street: '',
+        houseNumber: '',
+        postalCode: '',
+        city: '',
+        country: '',
+        email: '',
+        phone: '',
+        representedBy: '',
+        registerCourt: '',
+        registerNumber: '',
+        vatId: '',
+        privacyContactPerson: '',
+        contentResponsible: '',
+      },
+    },
+  },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxtjs/i18n', '@nuxt/content', '@nuxt/image', '@nuxt/eslint'],
   vite: { plugins: [tailwindcss()] },
   hooks: {
+    'modules:done'() {
+      // MDC is a transitive Content dependency. Its optimizer paths must start
+      // at our direct dependency under pnpm; retain the actual prebundling.
+      // Remove when MDC supplies resolvable paths (docs/dependencies.md).
+      useNuxt().hook('vite:extendConfig', (config) => {
+        if (!config.optimizeDeps?.include) return
+        config.optimizeDeps.include = config.optimizeDeps.include.map((entry) =>
+          entry.startsWith('@nuxtjs/mdc > ') ? `@nuxt/content > ${entry}` : entry,
+        )
+      })
+    },
     'pages:extend'(pages) {
       for (const page of pages) {
         const editorialKey = editorialSlugs.find((key) => key === page.name)

@@ -1,11 +1,11 @@
 # Editorial checklist before public deployment
 
-Repository administration: GitHub Actions was disabled (`enabled: false`) when PR #2 was created. Enable Actions in repository settings to run the supplied CI/CodeQL workflows remotely. The complete pipeline has passed locally.
+Repository administration: GitHub Actions has been re-enabled; see [ci-audit.md](ci-audit.md). Verify actual Website CI and CodeQL conclusions for the current PR commit before publication.
 
-The implementation does not infer missing facts. The pages below remain explicit about their editorial status.
+The implementation does not infer missing facts. This checklist records the remaining editorial work; legal pages no longer display publication TODO text.
 
-- **Legal notice:** confirm responsible provider, service address, representation and registration details. The previous page contained unresolved environment variables, a school-site title and outdated boilerplate; it did not establish current facts. Do not substitute the meetup venue for a legal address.
-- **Privacy:** confirm hosting provider, logging, retention, controller, legal bases, rights and email handling for the actual production environment. The application itself has no trackers, third-party embeds, external fonts or locale cookie.
+- **Legal notice:** configure the confirmed provider and service address through the [legal runtime environment](legal-configuration.md). Verify representation, register/VAT details and whether section 18(2) MStV applies; optional technical fields may be legally mandatory for the actual provider. Do not substitute the meetup venue for a legal address. Production startup validation checks completeness and common placeholders, not legal truth or editorial approval.
+- **Privacy:** the shared runtime identity and translated sections on delivery, email, local assets, external links and rights are implemented. Before publication, confirm actual hosting/email providers, logging, recipients, retention, legal bases and any international transfers; complete the DE/DA/EN prose with the necessary specific information. No provider, retention period, privacy officer or supervisory authority was invented. The application itself has no trackers, third-party embeds, external fonts, cookies or browser storage. This does not establish the behavior of production hosting/CDN/email services.
 - **Association:** the supporting role of DatenSindDaten e.V. is specified by the task. Board, statutes, transparency documents, membership terms, funding, sponsorship and donations require verified material. No verified canonical association website is recorded in this repository; keep the association information unlinked until one is confirmed and added to `site.association`. Never substitute the Code for Germany network URL.
 - **Code of Conduct:** the proposed text needs community adoption, named confidential contacts and an agreed reporting and enforcement process.
 - **Team:** collect explicit approval and maintain profiles in `content/team/`. No previous automatically collected profiles were carried forward.

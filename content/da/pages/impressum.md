@@ -1,19 +1,18 @@
 ---
 title: "Juridiske oplysninger"
-description: "Oplysninger om udbyderen er under udarbejdelse."
+description: "Udbyder og kontaktoplysninger for OK Lab Flensburgs hjemmeside."
 locale: "da"
 slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---
 
-## Oplysningernes status
+## Udbyder
 
-TODO før offentliggørelse: Bekræft og tilføj ansvarlig udbyder, juridisk adresse, tegningsberettigede og eventuelle registeroplysninger. Mødestedet er ikke automatisk foreningens juridiske adresse.
+::legal-details
+::
 
-## Kontakt
-
-Den generelle kontaktmulighed står nedenfor. Den erstatter ikke de udestående oplysninger om udbyderen.
+Denne hjemmeside informerer om OK Lab Flensburg, projekterne og mulighederne for at deltage.
 
 ## Licenser
 

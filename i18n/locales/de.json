@@ -142,5 +142,15 @@
   },
   "brand": {
     "projectBy": "Ein Projekt von"
+  },
+  "legal": {
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "representedBy": "Vertreten durch",
+    "registerCourt": "Registergericht",
+    "registerNumber": "Registernummer",
+    "vatId": "Umsatzsteuer-Identifikationsnummer",
+    "privacyContactPerson": "Kontaktperson für Datenschutz",
+    "contentResponsible": "Inhaltlich verantwortlich nach § 18 Abs. 2 MStV"
   }
 }
