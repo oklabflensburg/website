@@ -44,6 +44,19 @@ describe('canonical content', () => {
     }
     expect(schemas.team.safeParse({ name: 'Unapproved' }).success).toBe(false)
   })
+  it('keeps project technical facts and source links consistent across translations', () => {
+    const projects = locales.flatMap((locale) => readdirSync(`content/${locale}/projects`)
+      .filter((file) => file.endsWith('.md'))
+      .map((file) => readContent(`content/${locale}/projects/${file}`)))
+    for (const project of projects) {
+      const variants = projects.filter((item) => item.translationKey === project.translationKey)
+      for (const variant of variants) {
+        for (const field of ['status', 'categories', 'technologies', 'links', 'source', 'image']) {
+          expect(variant[field], `${project.translationKey}: ${field}`).toEqual(project[field])
+        }
+      }
+    }
+  })
   it('gives every project a distinct safe SVG signet and translated image descriptions', () => {
     const translations = locales.flatMap((locale) => readdirSync(`content/${locale}/projects`).filter((file) => file.endsWith('.md')).map((file) => readContent(`content/${locale}/projects/${file}`)))
     const projects = [...new Map(translations.map((project) => [project.translationKey, project])).values()]

@@ -1,6 +1,6 @@
 ---
 title: "Spielplatzkarte"
-description: "Spielplätze und ihre Ausstattung mit offenen Daten leichter auffindbar machen."
+description: "Spielplätze in Flensburg auf einer gemeinsamen Karte entdecken und vorhandene Angaben zu Standort und Ausstattung lesen."
 locale: "de"
 slug: "spielplatzkarte"
 translationKey: "spielplatzkarte"
@@ -17,12 +17,20 @@ imageAlt: "Eine Schaukel mit zwei Trägern, hängendem Sitz und einer klaren Bod
 
 ## Worum geht es?
 
-Spielplätze und ihre Ausstattung mit offenen Daten leichter auffindbar machen.
+Die Spielplatzkarte macht Flensburger Spielplätze über eine interaktive Karte auffindbar. Wer mit Kindern unterwegs ist oder das eigene Wohnumfeld erkunden möchte, kann Standorte auswählen und die dazu vorhandenen Informationen lesen. Die Detailanzeige verbindet den Namen eines Platzes mit Adresse und hinterlegten Angaben zur Spielfläche.
 
-## Gemeinsam weiterentwickeln
+Dadurch lassen sich auch Spielplätze entdecken, die man noch nicht kennt. Die Karte bildet den veröffentlichten Datenbestand ab; wie ausführlich Ausstattung und weitere Merkmale beschrieben sind, hängt vom jeweiligen Eintrag ab.
 
-Prüfe die Daten für einen Ort, den du kennst. Sind Informationen verständlich und Quellen nachvollziehbar? Auch ein dokumentierter Fehler oder ein Vorschlag zur Bedienung hilft dem Projekt. Stimme größere Änderungen zuerst im Repository ab.
+## Warum gibt es das Projekt?
 
-## Quellen und Projektstand
+Die Stadt stellte bereits eine Spielplatzliste als PDF bereit, und das TBZ Flensburg hatte zusätzliche Informationen in einer eigenen Karte. Das Projekt entstand aus dem Wunsch, diese Angaben leichter auffindbar und ohne aufwendige Suche nutzbar zu machen.
 
-Die [Projektquelle](https://codefor.de/projekte/fl-open-playgrounds-map/) beschreibt das Vorhaben. Der hier angezeigte Status ist eine redaktionelle Momentaufnahme; aktuelle Aufgaben und technische Hinweise stehen im verlinkten Repository.
+Die ehrenamtliche Arbeit bestand deshalb auch darin, vorhandene Daten aus verschiedenen Darstellungen zu erschließen. Aus einzelnen Listen und Karteninformationen wurde eine Grundlage, die sich im Browser ansehen und für weitere Anwendungen verarbeiten lässt.
+
+## Daten und Technik
+
+Quellen sind die Spielplatzliste der Stadt Flensburg und die Spielflächendaten des TBZ. Python-Werkzeuge im Repository bereiten die Angaben als GeoJSON auf. Die Kartendarstellung nutzt Leaflet und einen OpenStreetMap-Hintergrund. Die Ortsdaten der Spielplätze und die Hintergrundkarte haben damit unterschiedliche Quellen.
+
+## Mitmachen
+
+Kennst du einen der Plätze, kannst du prüfen, ob Standort, Bezeichnung und Beschreibung verständlich zusammenpassen. Melde nachvollziehbare Abweichungen im verlinkten Repository und nenne möglichst eine Quelle. Auch Rückmeldungen dazu, wie gut sich die Karte unterwegs bedienen lässt, helfen bei der Weiterentwicklung.

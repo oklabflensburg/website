@@ -1,6 +1,6 @@
 ---
 title: "Bildungsatlas"
-description: "Gør skoler og uddannelsestilbud tilgængelige gennem åbne data."
+description: "Udforsk skoler i Slesvig-Holsten efter beliggenhed og skoletype, find kontaktoplysninger, og åbn den enkelte skole direkte."
 locale: "da"
 slug: "bildungsatlas"
 translationKey: "bildungsatlas"
@@ -17,12 +17,20 @@ imageAlt: "En åben bog med foldede kortflader og et blåt punkt for et lærings
 
 ## Hvad handler det om?
 
-Gør skoler og uddannelsestilbud tilgængelige gennem åbne data.
+Bildungsatlas viser skolers placering på et interaktivt kort. Den oprindelige idé om en skoleoversigt for Flensborg er blevet til en applikation for Slesvig-Holsten. Forældre, interesserede og kommuner kan se, hvor skolerne ligger, og finde tilgængelige kontaktoplysninger og links til mere information.
 
-## Udvikl det sammen med os
+Kortet kan filtreres efter skoletype. Markører åbner en detaljevisning, og de enkelte skoler har egne adresser, som kan åbnes direkte. En positionsfunktion hjælper med at finde skoler i nærheden. Det giver eksempelvis et overblik over skolernes placering i forhold til hjemmet, men indebærer ikke beregning af skolevejen.
 
-Undersøg data for et sted, du kender. Er oplysningerne forståelige, og kan kilderne spores? En dokumenteret fejl eller et forslag til brugerfladen hjælper også. Aftal større ændringer i repositoriet først.
+## Hvorfor findes projektet?
 
-## Kilder og projektstatus
+Projektet udsprang af en søgning efter en grundskole i Flensborg. Kontaktoplysningerne fandtes allerede, men var besværlige at samle til et geografisk overblik. Bildungsatlas forbinder oplysningerne med et kort og gør det lettere at danne sig et første indtryk af mulige skoler.
 
-[Projektkilden](https://codefor.de/projekte/fl-open-school-map/) beskriver initiativet. Status her er et redaktionelt øjebliksbillede; aktuelle opgaver og tekniske oplysninger findes i det tilknyttede repository.
+## Data og teknik
+
+Projektbeskrivelsen henviser til fortegnelserne over almendannende og erhvervsrettede skoler i Slesvig-Holsten samt oplysninger fra de tilknyttede institutioner. Det nuværende repository dokumenterer brug af skolegrænsefladen i Open Data API og import til PostgreSQL/PostGIS. Skolenumre kan ved import forbindes med poster i Wikidata.
+
+Kortapplikationen bygger på Nuxt og Leaflet. En tidligere beskrevet analyse af lege- og skolegårdsarealer var en idé til videreudvikling og er ikke blandt de funktioner, der loves her.
+
+## Vær med
+
+Meld gerne forkerte kontaktoplysninger, uklare skoletyper eller problemer med at åbne en skole. Angiv institutionen og helst dens officielle informationsside i det tilknyttede repository. Bedre betjening og dokumentation gør også applikationen lettere at bruge.

@@ -13,6 +13,7 @@ The implementation does not infer missing facts. This checklist records the rema
 - **Blog:** the two new introductory articles are editorial drafts for review of wording, with `draft: false` so the proposed website is reviewable. They describe no invented event or history. Confirm publication date and organisational authorship before deploying, or set `draft: true` in all translations.
 - **Languages:** have Danish and English copy reviewed, including retained proper project names.
 - **Project status and technologies:** statuses reflect the reference at migration time, not live health monitoring. Open City Planner points readers to its repository for current status. Recheck technology lists inherited from the repository with project maintainers.
+- **Project descriptions:** all 19 projects now have researched DE/DA/EN articles; see the [source audit](project-description-research.md) for pinned repository references, legacy differences and verified metadata corrections. Review Danish phrasing and specialist terminology with a human editor. Confirm current project maintenance and dataset refresh practices separately; source descriptions alone do not verify ongoing operations.
 - **History:** add a dated chronology only once milestones are documented.
 
 Incomplete legal and conduct pages have `noindex: true` and are excluded from the sitemap. This does not replace editorial completion before publication.

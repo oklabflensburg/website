@@ -1,6 +1,6 @@
 ---
 title: "Biotopkarte Schleswig-Holstein"
-description: "Explore protected and other biotopes across Schleswig-Holstein."
+description: "Explore mapped habitats in Schleswig-Holstein and inspect recorded biotope types, areas and protection attributes."
 locale: "en"
 slug: "biotopkarte"
 translationKey: "biotopkarte"
@@ -17,12 +17,20 @@ imageAlt: "A leaf within a habitat polygon, with leaf veins and two watercourse 
 
 ## What is it about?
 
-Explore protected and other biotopes across Schleswig-Holstein.
+Biotopkarte Schleswig-Holstein makes the state’s biotope survey accessible in a browser. It displays mapped habitats and connects their records to geographic locations. Selecting an area reveals available information such as its biotope type and, where recorded, its FFH habitat type.
+
+The presentation distinguishes the source categories Wertbiotope and Nichtwertbiotope. It is useful for people exploring their local landscapes or working with nature conservation data. The map is explicitly unofficial, and displayed information may be outdated.
+
+## Why does it exist?
+
+Visits to the salt marshes and coastal cliffs at Holnis inspired the project. They prompted the idea of making Schleswig-Holstein’s range of habitats easier to explore digitally. The map connects observations outdoors with existing survey records, without requiring visitors to install GIS software.
+
+## Data and technology
+
+The biotope survey comes from the Landesamt für Umwelt and is published through Schleswig-Holstein’s open data portal. The repository also documents the coverage of the state-wide survey from 2014 to 2020 and supplementary classification keys. That period describes the survey, rather than a fresh assessment of conditions on the ground.
+
+PostgreSQL/PostGIS and import tools prepare the geographic data. The Leaflet interface requests information about a selected position through the Open Data API. Specialist labels remain connected to the underlying datasets.
 
 ## Help improve it
 
-Check the data for a place you know. Is the information understandable and can you trace its sources? A documented bug or a suggestion for the interface also helps. Discuss larger changes in the repository first.
-
-## Sources and project status
-
-The [project source](https://codefor.de/projekte/fl-open-biotope-map/) describes the initiative. The status shown here is an editorial snapshot; current tasks and technical guidance live in the linked repository.
+Contributions can include clearer explanations of biotope types, feedback on map usability or documented data discrepancies. Where possible, identify the location and source when opening an issue in the linked repository.
