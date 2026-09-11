@@ -1,6 +1,6 @@
 ---
 title: "Spielplatzkarte"
-description: "Gør legepladser og deres faciliteter lettere at finde med åbne data."
+description: "Find legepladser i Flensborg på ét kort, og læs tilgængelige oplysninger om placering og faciliteter."
 locale: "da"
 slug: "legepladskort"
 translationKey: "spielplatzkarte"
@@ -18,12 +18,20 @@ imageAlt: "En gynge med to stativer, et hængende sæde og en tydelig jordlinje.
 
 ## Hvad handler det om?
 
-Gør legepladser og deres faciliteter lettere at finde med åbne data.
+Spielplatzkarte gør Flensborgs legepladser tilgængelige gennem et interaktivt kort. Er du på tur med børn eller vil lære dit nærområde bedre at kende, kan du vælge placeringer og læse de registrerede oplysninger. Detaljevisningen forbinder legepladsens navn med adresse og oplysninger om legeområdet.
 
-## Udvikl det sammen med os
+Dermed kan du også opdage legepladser, du ikke kender i forvejen. Kortet viser det offentliggjorte datagrundlag. Hvor udførligt faciliteter og andre forhold er beskrevet, afhænger af det enkelte opslag.
 
-Undersøg data for et sted, du kender. Er oplysningerne forståelige, og kan kilderne spores? En dokumenteret fejl eller et forslag til brugerfladen hjælper også. Aftal større ændringer i repositoriet først.
+## Hvorfor findes projektet?
 
-## Kilder og projektstatus
+Kommunen havde allerede offentliggjort en legepladsliste som PDF, og TBZ Flensburg havde yderligere oplysninger på et eget kort. Projektet opstod af ønsket om at gøre disse oplysninger lettere at finde og bruge uden omfattende søgning.
 
-[Projektkilden](https://codefor.de/projekte/fl-open-playgrounds-map/) beskriver initiativet. Status her er et redaktionelt øjebliksbillede; aktuelle opgaver og tekniske oplysninger findes i det tilknyttede repository.
+Det frivillige arbejde bestod derfor også i at hente eksisterende oplysninger ud af forskellige præsentationer. Separate lister og kortdata blev til et grundlag, der både kan ses i browseren og behandles i andre applikationer.
+
+## Data og teknik
+
+Kilderne er Flensborg Kommunes legepladsliste og TBZ's data om legeområder. Python-værktøjer i repositoriet bearbejder oplysningerne til GeoJSON. Kortvisningen bruger Leaflet med OpenStreetMap som baggrund. Legepladsernes positionsdata og baggrundskortet kommer dermed fra forskellige kilder.
+
+## Vær med
+
+Kender du en af legepladserne, kan du kontrollere, om placering, navn og beskrivelse hænger forståeligt sammen. Meld dokumenterbare afvigelser i det tilknyttede repository, helst med en kilde. Tilbagemeldinger om at bruge kortet på farten hjælper også videreudviklingen.

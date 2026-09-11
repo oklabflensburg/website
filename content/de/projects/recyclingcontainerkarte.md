@@ -1,6 +1,6 @@
 ---
 title: "Recyclingcontainerkarte"
-description: "Standorte für Altglas- und Altkleidercontainer transparent darstellen."
+description: "Altglas- und Altkleidercontainer auf städtischen Flächen in Flensburg finden und Standorte nach Stadtteilen erkunden."
 locale: "de"
 slug: "recyclingcontainerkarte"
 translationKey: "recyclingcontainerkarte"
@@ -17,12 +17,20 @@ imageAlt: "Ein Sammelcontainer mit Einwurfschlitz, umgeben von drei kreislauffö
 
 ## Worum geht es?
 
-Standorte für Altglas- und Altkleidercontainer transparent darstellen.
+Die Recyclingcontainerkarte zeigt Standorte für Altglas und Altkleider in Flensburg. Du kannst die Karte erkunden, einen Stadtteil auswählen und Informationen zu einzelnen Sammelstellen öffnen. Die Einträge geben an, welche der erfassten Containerarten am jeweiligen Ort vorhanden sind.
 
-## Gemeinsam weiterentwickeln
+Die Grundlage umfasst Standorte des Technischen Betriebszentrums Flensburg auf städtischen Flächen. Die Karte ist deshalb kein vollständiges Verzeichnis sämtlicher privater Sammelstellen oder aller Entsorgungsangebote. Sie hilft bei der konkreten Frage, wo die erfassten Container im eigenen Umfeld stehen.
 
-Prüfe die Daten für einen Ort, den du kennst. Sind Informationen verständlich und Quellen nachvollziehbar? Auch ein dokumentierter Fehler oder ein Vorschlag zur Bedienung hilft dem Projekt. Stimme größere Änderungen zuerst im Repository ab.
+## Warum gibt es das Projekt?
 
-## Quellen und Projektstand
+Gerade nach einem Umzug ist oft unklar, wo Altglas und nicht mehr benötigte Kleidung abgegeben werden können. Bereits vorhandene Standortinformationen sollten leichter auffindbar und zugleich für andere Anwendungen weiterverwendbar werden. Das Projekt verbindet diese Alltagssuche mit der Aufbereitung kommunaler Daten.
 
-Die [Projektquelle](https://codefor.de/projekte/fl-open-recycling-map/) beschreibt das Vorhaben. Der hier angezeigte Status ist eine redaktionelle Momentaufnahme; aktuelle Aufgaben und technische Hinweise stehen im verlinkten Repository.
+## Daten und Technik
+
+Die Daten stammen aus den Standortkarten des TBZ Flensburg für Altglas- und Alttextiliencontainer. Werkzeuge im Repository extrahieren die Informationen und wandeln sie in maschinenlesbare Geodaten um. Die Anwendung lädt GeoJSON und zeigt die Standorte mit Leaflet auf einer OpenStreetMap-Grundkarte.
+
+Stadtteilflächen unterstützen die räumliche Auswahl. Zusätzliche Anbieter und Standortfotos werden in den Quellen als mögliche Erweiterungen beschrieben; sie sind keine Voraussetzung für die hier dargestellte Grundfunktion und werden nicht als vollständig vorhanden zugesagt.
+
+## Mitmachen
+
+Du kannst prüfen, ob ein bekannter Standort richtig eingeordnet ist und die Containerarten verständlich angezeigt werden. Dokumentiere Abweichungen mit Ort und Quelle im verlinkten Repository. Auch Vorschläge zur Suche und zur Pflege der Datengrundlage sind hilfreich.

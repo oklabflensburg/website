@@ -1,6 +1,6 @@
 ---
 title: "Bodenflächennutzung"
-description: "Sammenlign arealanvendelse i Slesvig-Holstens kommuner."
+description: "En kortprototype om arealanvendelse i Tyskland: undersøg kommunernes arealandele med statistik fra 2019."
 locale: "da"
 slug: "bodenflaechennutzung"
 translationKey: "bodenflaechennutzung"
@@ -17,12 +17,20 @@ imageAlt: "Fire tydeligt adskilte områder viser vegetation, landbrug, vand og b
 
 ## Hvad handler det om?
 
-Sammenlign arealanvendelse i Slesvig-Holstens kommuner.
+Bodenflächennutzung viser statistiske oplysninger om den faktiske arealanvendelse på et interaktivt kort. Prototypen bruger kommunedata fra Tyskland og er dermed ikke begrænset til Slesvig-Holsten. Når du vælger en kommune, vises nøgletal for blandt andet skov, landbrug, trafik samt bebyggelses- og trafikarealer.
 
-## Udvikl det sammen med os
+Det gør det muligt at undersøge forskelle mellem kommuner. Tallene beskriver arealandele for en kommune, ikke anvendelsen af hver enkelt grund. Det offentliggjorte datagrundlag vedrører 2019.
 
-Undersøg data for et sted, du kender. Er oplysningerne forståelige, og kan kilderne spores? En dokumenteret fejl eller et forslag til brugerfladen hjælper også. Aftal større ændringer i repositoriet først.
+## Hvorfor findes projektet?
 
-## Kilder og projektstatus
+En stor statistiktabel er vanskelig at forstå geografisk. Kortet forbinder tallene med kommuneområder og gør regionale forskelle lettere at opdage. Det giver en visuel indgang for mennesker med interesse for landskab, bebyggelsesstruktur og kommunal arealanvendelse.
 
-[Projektkilden](https://codefor.de/projekte/fl-open-surface-map/) beskriver initiativet. Status her er et redaktionelt øjebliksbillede; aktuelle opgaver og tekniske oplysninger findes i det tilknyttede repository.
+## Data og teknik
+
+Repositoriet henviser til arealstatistikken for 2019 fra Statistische Ämter des Bundes og administrative områder fra BKG i udgaven VG5000, ligeledes fra 2019. Oplysningerne forbindes gennem den officielle kommunekode og bearbejdes til GeoJSON. Leaflet viser arealerne på et baggrundskort fra OpenStreetMap.
+
+Kilderne beskriver løsningen som en første prototype. Flere filtre samt tilføjelse af kredsfrie byer og bystater er nævnt som mål for videreudvikling. Der loves derfor hverken fuld dækning af alle kommuner eller en aktuel arealplan.
+
+## Vær med
+
+Videreudvikling kan begynde med databehandling og tydelige forklaringer af nøgletallene. Beskriv i repositoriet, hvilken kommune, dataperiode eller visning dit forslag vedrører. Ved brug af nyere data bør det også dokumenteres, hvordan de passer til de anvendte geografiske grænser.

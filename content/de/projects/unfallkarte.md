@@ -1,6 +1,6 @@
 ---
 title: "Unfallkarte"
-description: "Unfälle mit Personenschaden räumlich und über mehrere Jahre untersuchen."
+description: "Verkehrsunfälle mit Personenschaden in Flensburg von 2016 bis 2024 auf einer Karte nach Jahren, Stadtteilen und Unfallmerkmalen untersuchen."
 locale: "de"
 slug: "unfallkarte"
 translationKey: "unfallkarte"
@@ -17,12 +17,22 @@ imageAlt: "Eine Straßenkreuzung mit unterschiedlich großen Analysepunkten für
 
 ## Worum geht es?
 
-Unfälle mit Personenschaden räumlich und über mehrere Jahre untersuchen.
+Die Unfallkarte zeigt erfasste Verkehrsunfälle mit Personenschaden in Flensburg. Du kannst einzelne Unfallpunkte auswählen und ihre hinterlegten Merkmale betrachten. Filter für Jahre, Stadtteile, Unfalltyp und Unfallhergang ermöglichen es, den sichtbaren Bestand nach einer konkreten Fragestellung einzugrenzen.
 
-## Gemeinsam weiterentwickeln
+Die aktuelle Oberfläche bietet die Jahrgänge 2016 bis 2024 an. Damit lässt sich untersuchen, an welchen Straßen oder Kreuzungen sich die dargestellten Ereignisse häufen und wie sich die Auswahl über mehrere Jahre verändert. Die Karte zeigt dokumentierte Unfallereignisse, keine Echtzeit-Verkehrslage.
 
-Prüfe die Daten für einen Ort, den du kennst. Sind Informationen verständlich und Quellen nachvollziehbar? Auch ein dokumentierter Fehler oder ein Vorschlag zur Bedienung hilft dem Projekt. Stimme größere Änderungen zuerst im Repository ab.
+## Warum gibt es das Projekt?
 
-## Quellen und Projektstand
+Für Diskussionen über Verkehrssicherheit ist es hilfreich, Ereignisse räumlich und nach Merkmalen betrachten zu können. Eine Karte erleichtert den Zugang zu den statistischen Datensätzen und gibt kommunalen Entscheidungsträger:innen sowie interessierten Einwohner:innen eine gemeinsame Grundlage für weitere Fragen.
 
-Die [Projektquelle](https://codefor.de/projekte/fl-open-accident-map/) beschreibt das Vorhaben. Der hier angezeigte Status ist eine redaktionelle Momentaufnahme; aktuelle Aufgaben und technische Hinweise stehen im verlinkten Repository.
+Sichtbare Häufungen allein erklären allerdings weder Unfallursachen noch das individuelle Risiko eines Weges. Die Darstellung hilft beim Erkunden des Datenbestands; eine fachliche Bewertung braucht zusätzliche Einordnung.
+
+## Daten und Technik
+
+Das aktuelle Repository nennt die Statistischen Ämter des Bundes und der Länder sowie das BKG als Quellen und Bezugspunkte. Lokale Metadaten ergänzen den Flensburger Bestand. Erfasst sind Unfälle mit Personenschaden, nicht sämtliche Sachschäden oder Beinaheunfälle.
+
+Die Anwendung verwendet Nuxt und Leaflet. Der aktuelle Kartenbaustein lädt Flensburger Unfallinformationen über die Open Data API. PostgreSQL/PostGIS, SQL-Dateien und Python-Werkzeuge unterstützen die Datenaufbereitung; das Repository enthält zusätzlich Beispieldaten im GeoJSON-Format.
+
+## Mitmachen
+
+Du kannst die Filter und Detailangaben prüfen oder verständlichere Erklärungen der Unfallmerkmale vorschlagen. Ein guter Fehlerbericht im Repository nennt den gewählten Jahrgang, die gesetzten Filter und den betroffenen Ort. So bleibt eine Rückmeldung reproduzierbar.
