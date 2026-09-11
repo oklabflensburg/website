@@ -4,7 +4,7 @@
 
 Alle 19 tatsächlichen Projekte werden ausschließlich aus `content/{de,da,en}/projects/` ermittelt und über `translationKey` zusammengeführt. Die Content-Felder `image` und `imageAlt` sind die einzige Zuordnung zwischen Projekt und Signet. Es gibt keine zusätzliche Laufzeit-Liste und kein Logo-Mapping.
 
-Die Signets sind einzeln von Hand als SVG-Geometrien gestaltet. Keine Bildgenerierung, keine Fotos, keine Screenshots, keine Textmarken und keine eingebetteten Rasterbilder. Die gemeinsame Serie übernimmt die helle Navy-/Blau-Gestaltung der Website. Die Symbole unterscheiden sich durch Komposition und Silhouette, nicht nur durch die Farbe.
+Mit Ausnahme der unten dokumentierten, vom Nutzer gelieferten kulturbytes-Marke sind die Signets einzeln von Hand als SVG-Geometrien gestaltet. Keine Bildgenerierung, keine Fotos, keine Screenshots, keine Textmarken und keine eingebetteten Rasterbilder. Die gemeinsame Serie übernimmt die helle Navy-/Blau-Gestaltung der Website. Die Symbole unterscheiden sich durch Komposition und Silhouette, nicht nur durch die Farbe.
 
 | Regel | Wert |
 | --- | --- |
@@ -26,6 +26,14 @@ Die Signets sind einzeln von Hand als SVG-Geometrien gestaltet. Keine Bildgeneri
 
 Die Dateien sind direkt editierbar und verwenden keine Symbole aus einem externen Iconset. Die eigenständigen Formen sind neue Beiträge zum Quellcode; die Repository-Lizenz in `LICENSE` gilt entsprechend. Vorhandene OK-Lab-Marken wurden nicht als Projektsymbol kopiert.
 
+## Gelieferte kulturbytes-Marke
+
+Am 11.09.2026 wurde das Ticket-Signet auf ausdrücklichen Nutzerwunsch durch die bereitgestellte Datei `kulturbytes-logo-tiny-typo-corner.svg` ersetzt (SHA-256 der gelieferten Datei: `85516fcf415f291a9b36ea942e829871414fdd3191ac9d8272f8a5eafd3a15ef`). Sie enthält ein pinkes geometrisches Zeichen und einen schwarzen, zweizeiligen Schriftzug oben rechts. Diese konkrete Marke ist eine freigegebene Ausnahme von den Regeln für textfreie Motive, Serienfarben und Konturen. Die Nutzungsanweisung stammt vom Nutzer; eine gesonderte Lizenzangabe wurde nicht mitgeliefert. Aus der Quellcode-Lizenz wird keine zusätzliche Markenlizenz abgeleitet.
+
+Die ursprüngliche Zeichenfläche von 1920 × 1355 wird vollständig und proportional in das gemeinsame 128er-Raster eingepasst: Breite 104, links/rechts jeweils 12 Einheiten Abstand, vertikal zentriert. Das SVG hat wie die anderen Projektbilder intrinsisch 1024 × 1024 px und den Hintergrund `#f3f7fa`. Farben, Pfade und die relative Position des Schriftzugs bleiben erhalten. XML-/DOCTYPE- und ungenutzte Namespace-Angaben wurden entfernt und Inline-Stile in SVG-Attribute überführt. Die Schrift besteht bereits aus Pfaden; es werden keine Fonts oder externen Ressourcen geladen.
+
+Die kanonische Datei bleibt [kulturbytes.svg](../public/images/projects/kulturbytes.svg). Karten, Detailseiten und generierte Social Cards nutzen sie gemeinsam; es gibt keine zweite Logo-Quelle im Repository.
+
 ## Gefundene Projekte und erstellte Logos
 
 Die deutsche Symbolbeschreibung dient zugleich als konkreter Alt-Text. Eigenständige dänische und englische Beschreibungen stehen direkt in den jeweiligen Content-Dateien.
@@ -39,7 +47,7 @@ Die deutsche Symbolbeschreibung dient zugleich als konkreter Alt-Text. Eigenstä
 | Digitale Denkmalkarte | [denkmalkarte.svg](../public/images/projects/denkmalkarte.svg) | Eine historische Doppelfassade mit Giebeln, Fenstern und einem gemeinsamen Torbogen. | Blau |
 | Flurstücksauskunft Schleswig-Holstein | [flurstuecksauskunft.svg](../public/images/projects/flurstuecksauskunft.svg) | Ein Netz unterschiedlich großer Grundstücksparzellen mit einer blau hervorgehobenen Fläche. | Blau / Graublau |
 | Kitafinder | [kitafinder.svg](../public/images/projects/kitafinder.svg) | Ein einfaches Haus mit Bausteinfenster und einem violetten Standortmarker. | Violett |
-| kulturbytes | [kulturbytes.svg](../public/images/projects/kulturbytes.svg) | Ein Veranstaltungsticket mit ausgestanzten Seiten und einem geometrischen Kulturstern. | Magenta |
+| kulturbytes | [kulturbytes.svg](../public/images/projects/kulturbytes.svg) | Pinkes geometrisches kulturbytes-Zeichen mit schwarzem, zweizeiligem Schriftzug oben rechts. | Pink / Schwarz |
 | Kulturnacht Flensburg | [kulturnacht-karte.svg](../public/images/projects/kulturnacht-karte.svg) | Eine Mondsichel über einer gefalteten Karte mit drei verbundenen Veranstaltungsorten. | Magenta / Violett |
 | Nahverkehrskarte | [nahverkehrskarte.svg](../public/images/projects/nahverkehrskarte.svg) | Ein abstrahierter Bus neben einer Linienroute mit markierten Haltestellen. | Blau / Türkis |
 | Notfallkarte Schleswig-Holstein | [notfallkarte.svg](../public/images/projects/notfallkarte.svg) | Ein Schutzschild mit einem eingebetteten Standortmarker für Polizeidienststellen. | Blau |
@@ -68,7 +76,7 @@ Zuerst Zweck und Datenfunktion aus verifizierten Inhalten bestimmen. Ein eigenes
 
 ## Quality Review und Tests
 
-Alle 19 Motive wurden in der Desktop-Galerie und in mobiler Darstellung auf Motivbezug, Silhouette, Innenabstand, Kontur, Farbwirkung und Beschnitt kontrolliert. Die SVG-Dateien enthalten weder Schrift noch eingebettete Bilder. Zusammen sind sie nur 12.023 Bytes groß.
+Alle 19 Motive wurden in der Desktop-Galerie und in mobiler Darstellung auf Motivbezug, Silhouette, Innenabstand, Kontur, Farbwirkung und Beschnitt kontrolliert. Die ursprüngliche Serie enthielt weder Schrift noch eingebettete Bilder und war zusammen 12.023 Bytes groß. Die oben dokumentierte kulturbytes-Marke ersetzt inzwischen eines dieser Motive und enthält einen Schriftzug als Pfade.
 
 Nach dem ersten Entwurf wurde **Nahverkehrskarte** überarbeitet: Die Räder sind nun gefüllte geometrische Formen statt einer abweichend dicken Linie, damit die Konturstärke im gesamten Set einheitlich bleibt. Die anderen 18 Symbolkonzepte wurden nach dem Review beibehalten. Zusätzlich wurde die Bildbox auf schmalen Detailseiten korrigiert, damit auch das eigentliche Bildelement quadratisch bleibt.
 

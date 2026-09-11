@@ -1,6 +1,6 @@
 ---
 title: "kulturbytes"
-description: "Find kulturarrangementer og kultursteder: kulturbytes samler søgbare tilbud og giver arrangører større synlighed."
+description: "En åben platform for kulturarrangementer og kultursteder."
 locale: "da"
 slug: "kulturbytes"
 translationKey: "kulturbytes"
@@ -12,29 +12,52 @@ technologies: ["Nuxt", "Vue", "TypeScript"]
 links: {"website": "https://kulturbytes.de", "github": "https://github.com/sndcds/kulturbytes-client"}
 source: "https://codefor.de/projekte/fl-kulturbytes/"
 image: /images/projects/kulturbytes.svg
-imageAlt: "En arrangementsbillet med udskårne sider og en geometrisk kulturstjerne."
+imageAlt: "Pink geometrisk kulturbytes-symbol med sort tekst på to linjer i øverste højre hjørne."
 ---
+
+Kulturtilbud er ofte spredt over mange forskellige hjemmesider, kalendere og sociale netværk. Især mindre foreninger, initiativer og uafhængige kulturaktører har ofte begrænsede muligheder for at gøre deres tilbud synlige mange steder.
+
+**kulturbytes** samler disse oplysninger på en fælles platform og stiller dem samtidig til rådighed som strukturerede data for andre hjemmesider og applikationer.
 
 ## Hvad handler det om?
 
-kulturbytes er en platform for kulturarrangementer og kultursteder, som er opstået i OK Lab Flensburg. Den samler tilbud fra institutioner, initiativer, projekter og uafhængige kulturaktører. Besøgende kan opdage arrangementer, mens arrangører får en fælles platform, hvor deres tilbud kan blive synlige.
+kulturbytes er opstået i **OK Lab Flensburg** og forbinder arrangementer, kultursteder, organisationer og kulturaktører i en fælles database.
 
-Søgningen kan afgrænses efter kategorier, arrangementstyper, genrer, dato og sted. Klientens dokumentation beskriver også søgning inden for en radius. Arrangementsvisninger samler oplysninger om det enkelte tilbud, mens sider for kultursteder og et kort giver en anden vej ind. Du kan altså tage udgangspunkt i enten en interesse eller et sted, når du leder efter arrangementer.
+Folk kan finde arrangementer og kultursteder efter **kategori, arrangementstype, genre, dato og sted** eller orientere sig på et kort. Samtidig får kulturaktører en fælles infrastruktur, som gør deres tilbud synlige og anvendelige på andre hjemmesider.
 
-Applikationen er flersproget og indeholder brugerfladetekster på tysk, dansk og engelsk. Projektet har rødder i Flensborg, men valget af steder og regioner er ikke begrænset til byen. Hvilke tilbud du finder, afhænger af de arrangementer, der faktisk er offentliggjort.
+Projektet henvender sig udtrykkeligt også til **små institutioner, foreninger, initiativer og uafhængige kulturaktører**. kulturbytes skal ikke blot være endnu en arrangementskalender, men en fælles digital infrastruktur for en regions kulturliv.
 
 ## Hvorfor findes projektet?
 
-Kulturoplysninger ligger ofte spredt på mange hjemmesider. For at få et overblik skal man derfor tit kende de relevante institutioner på forhånd. En fælles søgning kan også gøre det muligt at opdage tilbud, man ikke vidste, at man skulle lede efter.
+Hvis man vil vide, hvad der sker på kulturområdet i en region, skal man i dag ofte kende mange forskellige kilder. Samtidig skal arrangører vedligeholde de samme oplysninger flere steder.
 
-kulturbytes henvender sig udtrykkeligt også til mindre institutioner, foreninger, initiativer og uafhængige kulturaktører. Projektet vil give dem digital synlighed sammen med de større kulturhuse. Projektbeskrivelsen angiver, at brugen er gratis både for besøgende og for kulturaktører, der offentliggør tilbud.
+kulturbytes bygger derfor på en **fælles, struktureret database**: Oplysninger indtastes én gang og kan derefter bruges på forskellige hjemmesider, regionale portaler eller i indlejrede arrangementskalendere.
 
-## Data og teknik
+Målet er at gøre kulturtilbud mere synlige digitalt og samtidig mindske arbejdsbyrden for de enkelte arrangører.
 
-Oplysningerne leveres gennem KulturBytes API, også omtalt som Uranus API. Den tilknyttede klient bruger Nuxt, Vue og TypeScript. Den nuværende kildekode anvender MapLibre til kort. Arrangementer og arrangementssteder behandles som strukturerede data og præsenteres i forskellige visninger.
+## Åbent og fællesskabsdrevet
 
-Brugerfladen, indholdsadministrationen og backend er separate dele af projektet. En beskrivelse af klienten er derfor ikke et løfte om, at alle administrative funktioner findes direkte på den offentlige hjemmeside.
+kulturbytes er **gratis, open source og til gavn for fællesskabet**. Projektet skal kunne videreudvikles af de mennesker, der bruger det – både teknisk og indholdsmæssigt.
+
+Ud over kultur omfatter platformen også tilbud inden for **uddannelse, sport, fritid, familie og samfund**. Et fælles kategorisystem hjælper med at gøre forskellige tilbud nemme at finde.
+
+Projektet er opstået i Flensborg, men skal også kunne bruges i andre byer og regioner.
+
+## Teknik og data
+
+kulturbytes består af flere forbundne open source-komponenter:
+
+- [**kulturbytes-client**](https://github.com/sndcds/kulturbytes-client) – webgrænsefladen for **kulturinteresserede**, hvor man kan opdage arrangementer og kultursteder.
+- [**uranus-dashboard**](https://github.com/sndcds/uranus-dashboard) – webapplikationen til **registrering og vedligeholdelse af arrangementer, steder og andre data**.
+- [**uranus**](https://github.com/sndcds/uranus) – **backend og API**. Den administrerer og stiller strukturerede arrangements- og stedsdata til rådighed.
+- [**pluto**](https://github.com/sndcds/pluto) – **billedserveren** til de medier, der bruges i kulturbytes.
+
+Komponenterne er bygget sådan, at dataene ikke er bundet til én hjemmeside. API'et gør det muligt at integrere de samme oplysninger i andre hjemmesider og digitale tilbud.
 
 ## Vær med
 
-Du kan afprøve arrangementssider og filtre, melde uklare oplysninger eller bidrage til oversættelser, dokumentation og kode. Beskriv gerne præcist, hvilket tilbud eller hvilken søgning din tilbagemelding handler om. Det tilknyttede repository er et udgangspunkt for at deltage i udviklingen.
+kulturbytes lever af, at kulturaktører bidrager med deres tilbud, og at folk afprøver og videreudvikler platformen.
+
+Du kan opdage arrangementer og kultursteder på [kulturbytes](https://kulturbytes.de/), melde manglende eller uklare oplysninger eller støtte projektet teknisk, organisatorisk og med indhold.
+
+**kulturbytes skal være en fælles digital infrastruktur for kultur – udviklet åbent og formet af de mennesker, der bruger den.**
