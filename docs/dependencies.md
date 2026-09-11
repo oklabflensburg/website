@@ -28,6 +28,14 @@ pnpm's parent-to-child override selectors are documented in [dependency resoluti
 2. Remove `nuxt-component-meta@0.18.0>@nuxt/kit` when component-meta's parser/unplugin ranges support the peers required by current Kit/unctx.
 3. Re-resolve with pnpm, inspect the lockfile, and rerun peers plus the full application checks. Exact parent-version selectors deliberately stop applying when those parents upgrade; the CI peer check detects unresolved upstream incompatibilities.
 
+## MDC dependency optimization in development
+
+With Content `3.16.0`, MDC `0.23.1`, Nuxt `4.5.2` and pnpm's isolated dependency layout, MDC adds optimizer entries such as `@nuxtjs/mdc > remark-gfm`. MDC is only installed through Content here, so Vite cannot locate that first package from the application root. The resulting `NUXT_B7002` warning affects the ten MDC parser dependency entries, not the legal runtime configuration.
+
+The late `vite:extendConfig` hook in `nuxt.config.ts` qualifies only those entries as `@nuxt/content > @nuxtjs/mdc > …`, preserving prebundling and all unrelated optimizer settings. Registering after `modules:done` ensures MDC has added its entries first. No packages are added, dependencies excluded, or diagnostics suppressed. This follows Vite's [nested dependency include syntax](https://vite.dev/config/dep-optimization-options.html#optimizedeps-include).
+
+Remove this correction when MDC generates paths resolvable through its actual dependency chain. MDC `0.23.1` was still the latest published release when checked on 2026-09-11. Verify removal with a fresh development optimizer cache and browser navigation to Content pages; the production build alone does not exercise the development optimizer.
+
 ## Supply-chain and lockfile policy
 
 - Keep `packageManager: pnpm@12.3.4`.
