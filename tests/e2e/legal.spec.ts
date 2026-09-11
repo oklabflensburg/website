@@ -3,8 +3,11 @@ import AxeBuilder from '@axe-core/playwright'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
 import { createServer } from 'node:net'
+import { mkdtemp, rm } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
+import { join, resolve } from 'node:path'
 import { legalFixture, legalFixtureEnvironment } from '../fixtures/legal'
-import { legalFields, optionalLegalFields, type LegalContact } from '../../shared/utils/legal'
+import { hostingFields, legalFields, optionalLegalFields, type LegalContact } from '../../shared/utils/legal'
 import { locales, localizedPath, site } from '../../shared/config/site'
 
 for (const locale of locales) {
@@ -31,8 +34,22 @@ for (const locale of locales) {
       expect(html.match(/<link\b[^>]*\bhreflang=/g) ?? []).toHaveLength(0)
       await page.goto(path)
       await expect(page.locator('.menu-toggle')).toBeEnabled()
+      const hosting = page.locator('[data-legal-kind="hosting"]')
+      if (key === 'datenschutz') {
+        const hostingAddress = html.match(/<div\b[^>]*data-legal-kind="hosting"[^>]*>.*?<address\b[^>]*>(.*?)<\/address>/s)?.[1]
+        expect(hostingAddress).toBeDefined()
+        expect(html.match(/data-hosting-dpa[^>]*>(.*?)<\/div>/s)?.[1]).toMatch(/(?:Art\.|artikel|Article) 28/)
+        for (const field of hostingFields) {
+          expect(hostingAddress).toContain(legalFixture[field])
+          await expect(hosting.locator('address')).toContainText(legalFixture[field])
+        }
+        await expect(hosting.locator('h2')).toHaveCount(1)
+        await expect(hosting.locator('[data-hosting-dpa]')).toContainText(/(?:Art\.|artikel|Article) 28/)
+      } else {
+        await expect(hosting).toHaveCount(0)
+      }
       await expect(page.locator('[data-legal-name]')).toHaveText(legalFixture.name)
-      await expect(page.locator('.legal-details a')).toHaveAttribute('href', `mailto:${legalFixture.email}`)
+      await expect(page.locator('[data-legal-field="email"] a')).toHaveAttribute('href', `mailto:${legalFixture.email}`)
       for (const field of optionalLegalFields) await expect(page.locator(`[data-legal-field="${field}"]`)).toHaveCount(0)
       await expect(page.locator('.contact-panel')).toHaveCount(0)
       await expect(page.locator('main')).not.toContainText(/\b(?:TODO|undefined|null|example)\b|legal\.(?:email|phone)|\{\{/i)
@@ -78,6 +95,10 @@ test('production startup rejects missing and example config without logging valu
     Object.fromEntries(legalFields.map((field) => [field, ''])),
     { name: 'Example Civic Lab', email: 'legal@example.invalid' },
     { representedBy: 'TODO' },
+    { hostingProviderCity: '' },
+    { hostingProviderName: 'Example Hosting' },
+    { hostingDpa: 'yes' },
+    { hostingDpa: '1' },
   ]) {
     const child = spawn(process.execPath, ['.output/server/index.mjs'], {
       env: { ...process.env, ...legalFixtureEnvironment(overrides), NODE_ENV: 'development', PORT: '0', HOST: '127.0.0.1' },
@@ -93,7 +114,7 @@ test('production startup rejects missing and example config without logging valu
     expect(code).not.toBe(0)
     expect(output).toContain('Invalid legal configuration: NUXT_PUBLIC_LEGAL_')
     expect(output).not.toContain('Listening on')
-    for (const value of [legalFixture.name, legalFixture.email, 'Example Civic Lab', 'legal@example.invalid']) expect(output).not.toContain(value)
+    for (const value of [legalFixture.name, legalFixture.email, legalFixture.hostingProviderName, legalFixture.hostingProviderStreet, 'Example Civic Lab', 'legal@example.invalid', 'Example Hosting']) expect(output).not.toContain(value)
   }
   expect((await request.get('/impressum')).status()).toBe(200)
 })
@@ -113,54 +134,74 @@ test('the audited website uses local resources and no browser storage', async ({
   expect(external).toEqual([])
 })
 
-test('runtime overrides render all optional details with Vue escaping', async ({ browser }, testInfo) => {
-  test.skip(testInfo.project.name !== 'desktop')
-  const reservation = createServer()
-  reservation.listen(0, '127.0.0.1')
-  await once(reservation, 'listening')
-  const address = reservation.address()
-  if (!address || typeof address === 'string') throw new Error('No test port available')
-  const port = address.port
-  await new Promise<void>((resolve, reject) => reservation.close((error) => error ? reject(error) : resolve()))
-  const optional: Partial<LegalContact> = {
-    name: 'Küstenlabor & Prüfverein', phone: '+49 123 456789', representedBy: 'Robin Prüfperson',
-    registerCourt: 'Amtsgericht Küstenstadt', registerNumber: 'VR 4242', vatId: 'DE123456789',
-    privacyContactPerson: 'Kim Prüfperson', contentResponsible: 'Robin Prüfperson, Hafenweg 42, 12345 Küstenstadt',
-  }
-  const child = spawn(process.execPath, ['.output/server/index.mjs'], {
-    env: { ...process.env, ...legalFixtureEnvironment(optional), PORT: String(port), HOST: '127.0.0.1' },
-    stdio: ['ignore', 'pipe', 'pipe'],
-  })
-  const closed = once(child, 'close')
-  const context = await browser.newContext({ baseURL: `http://127.0.0.1:${port}`, javaScriptEnabled: false })
-  try {
-    await new Promise<void>((resolve, reject) => {
-      const timeout = setTimeout(() => reject(new Error('Legal fixture server startup timed out')), 10000)
-      child.once('exit', () => { clearTimeout(timeout); reject(new Error('Legal fixture server failed to start')) })
-      child.stdout.on('data', (chunk) => {
-        if (String(chunk).includes('Listening on')) { clearTimeout(timeout); resolve() }
-      })
-      child.once('error', reject)
+for (const hostingMode of ['without-dpa', 'omitted'] as const) {
+  test(`runtime overrides render optional details with Vue escaping; hosting ${hostingMode}`, async ({ browser }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop')
+    const reservation = createServer()
+    reservation.listen(0, '127.0.0.1')
+    await once(reservation, 'listening')
+    const address = reservation.address()
+    if (!address || typeof address === 'string') throw new Error('No test port available')
+    const port = address.port
+    await new Promise<void>((resolve, reject) => reservation.close((error) => error ? reject(error) : resolve()))
+    const optional: Partial<LegalContact> = {
+      name: 'Küstenlabor & Prüfverein', phone: '+49 123 456789', representedBy: 'Robin Prüfperson',
+      registerCourt: 'Amtsgericht Küstenstadt', registerNumber: 'VR 4242', vatId: 'DE123456789',
+      privacyContactPerson: 'Kim Prüfperson', contentResponsible: 'Robin Prüfperson, Hafenweg 42, 12345 Küstenstadt',
+      hostingDpa: false,
+      ...(hostingMode === 'omitted'
+        ? Object.fromEntries(hostingFields.map((field) => [field, '']))
+        : { hostingProviderName: 'Wolkenhafen & Rechenbetrieb', hostingProviderHouseNumber: '' }),
+    }
+    // Each fixture server needs its own Content database and cache directory.
+    const runtimeDirectory = await mkdtemp(join(tmpdir(), 'website-legal-'))
+    const child = spawn(process.execPath, [resolve('.output/server/index.mjs')], {
+      cwd: runtimeDirectory,
+      env: { ...process.env, ...legalFixtureEnvironment(optional), PORT: String(port), HOST: '127.0.0.1' },
+      stdio: ['ignore', 'pipe', 'pipe'],
     })
-    const page = await context.newPage()
-    for (const locale of locales) {
-      for (const key of ['impressum', 'datenschutz']) {
-        await page.goto(localizedPath(`/${key}`, locale))
-        await expect(page.locator('[data-legal-name]')).toHaveText(optional.name!)
-        await expect(page.locator('[data-legal-field="phone"] a')).toHaveAttribute('href', 'tel:+49123456789')
-        for (const field of optionalLegalFields.filter((field) => field !== 'phone')) {
-          const shown = key === 'datenschutz' ? field === 'privacyContactPerson' : field !== 'privacyContactPerson'
-          const element = page.locator(`[data-legal-field="${field}"]`)
-          if (shown) await expect(element.locator('dd')).toHaveText(optional[field]!)
-          else await expect(element).toHaveCount(0)
+    const closed = once(child, 'close')
+    const context = await browser.newContext({ baseURL: `http://127.0.0.1:${port}`, javaScriptEnabled: false })
+    try {
+      await new Promise<void>((resolve, reject) => {
+        const timeout = setTimeout(() => reject(new Error('Legal fixture server startup timed out')), 10000)
+        child.once('exit', () => { clearTimeout(timeout); reject(new Error('Legal fixture server failed to start')) })
+        child.stdout.on('data', (chunk) => {
+          if (String(chunk).includes('Listening on')) { clearTimeout(timeout); resolve() }
+        })
+        child.once('error', reject)
+      })
+      const page = await context.newPage()
+      for (const locale of locales) {
+        for (const key of ['impressum', 'datenschutz']) {
+          await page.goto(localizedPath(`/${key}`, locale))
+          await expect(page.locator('[data-legal-name]')).toHaveText(optional.name!)
+          const hosting = page.locator('[data-legal-kind="hosting"]')
+          if (key === 'datenschutz' && hostingMode === 'without-dpa') {
+            await expect(hosting.locator('address')).toContainText(optional.hostingProviderName!)
+            await expect(hosting.locator('address')).toContainText(legalFixture.hostingProviderStreet)
+            await expect(hosting.locator('address')).not.toContainText(legalFixture.hostingProviderHouseNumber)
+          } else {
+            await expect(hosting).toHaveCount(0)
+          }
+          await expect(page.locator('[data-hosting-dpa]')).toHaveCount(0)
+          await expect(page.locator('.prose')).not.toContainText(/(?:Art\.|artikel|Article) 28/)
+          await expect(page.locator('[data-legal-field="phone"] a')).toHaveAttribute('href', 'tel:+49123456789')
+          for (const field of optionalLegalFields.filter((field) => field !== 'phone')) {
+            const shown = key === 'datenschutz' ? field === 'privacyContactPerson' : field !== 'privacyContactPerson'
+            const element = page.locator(`[data-legal-field="${field}"]`)
+            if (shown) await expect(element.locator('dd')).toHaveText(optional[field]!)
+            else await expect(element).toHaveCount(0)
+          }
         }
       }
+      const html = await (await context.request.get('/impressum')).text()
+      expect(html).toContain('Küstenlabor &amp; Prüfverein')
+    } finally {
+      await context.close()
+      child.kill('SIGTERM')
+      await closed
+      await rm(runtimeDirectory, { recursive: true, force: true })
     }
-    const html = await (await context.request.get('/impressum')).text()
-    expect(html).toContain('Küstenlabor &amp; Prüfverein')
-  } finally {
-    await context.close()
-    child.kill('SIGTERM')
-    await closed
-  }
-})
+  })
+}

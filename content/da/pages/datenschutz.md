@@ -20,6 +20,15 @@ Ved besøg behandles tekniske forbindelsesdata, herunder IP-adresse, tidspunkt, 
 
 Hjemmesiden fører ikke selv en adgangslog over besøgende. Webserveren eller tjenester foran den kan desuden danne tekniske logfiler. Omfang, modtagere og opbevaring afhænger af den faktiske hosting. Du kan få oplysninger herom hos den ovenfor angivne dataansvarlige.
 
+::legal-details{kind="hosting"}
+## Ekstern hostingudbyder
+
+Vi bruger følgende eksterne hostingudbyder til at levere denne hjemmeside:
+
+#dpa
+Der er indgået en databehandleraftale med hostingudbyderen i henhold til artikel 28 i GDPR.
+::
+
 ## Kontakt via e-mail og opbevaring
 
 Når du kontakter os via e-mail, behandles din e-mailadresse, beskedens indhold og frivilligt oplyste data for at besvare din henvendelse. Afhængigt af henvendelsen er grundlaget foranstaltninger før eller under en kontrakt efter artikel 6, stk. 1, litra b, i GDPR eller den legitime interesse i at besvare henvendelser efter artikel 6, stk. 1, litra f. Hjemmesiden har ingen kontaktformular.

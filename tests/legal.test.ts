@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { legalContactLinks, legalEnvironmentKey, legalFields, normalizeLegalContact, optionalLegalFields, requiredLegalFields, validateLegalContact } from '../shared/utils/legal'
+import { hasHostingProvider, hostingFields, legalContactLinks, legalEnvironmentKey, legalFields, legalStringFields, normalizeLegalContact, optionalLegalFields, requiredHostingFields, requiredLegalFields, validateLegalContact } from '../shared/utils/legal'
 import { legalFixture } from './fixtures/legal'
 
 describe('legal runtime configuration', () => {
@@ -11,15 +11,17 @@ describe('legal runtime configuration', () => {
     expect(normalized.phone).toBe('')
     expect(normalized.city).toBe('')
     expect(normalized).not.toHaveProperty('secret')
-    expect(Object.values(normalizeLegalContact(undefined))).toEqual(legalFields.map(() => ''))
+    expect(normalizeLegalContact(undefined)).toEqual({ ...Object.fromEntries(legalStringFields.map((field) => [field, ''])), hostingDpa: false })
   })
 
   it('handles Nitro numeric env parsing while preserving string postal codes with leading zeros', () => {
-    const contact = normalizeLegalContact({ houseNumber: 42, postalCode: '01234', registerNumber: 123, phone: Infinity })
+    const contact = normalizeLegalContact({ houseNumber: 42, postalCode: '01234', registerNumber: 123, phone: Infinity, hostingProviderHouseNumber: 7, hostingProviderPostalCode: '02345' })
     expect(contact.houseNumber).toBe('42')
     expect(contact.postalCode).toBe('01234')
     expect(contact.registerNumber).toBe('123')
     expect(contact.phone).toBe('')
+    expect(contact.hostingProviderHouseNumber).toBe('7')
+    expect(contact.hostingProviderPostalCode).toBe('02345')
   })
 
   it('accepts a complete fictional identity with empty optional fields', () => {
@@ -71,11 +73,42 @@ describe('legal runtime configuration', () => {
     for (const locale of ['de', 'da', 'en']) {
       for (const key of ['impressum', 'datenschutz']) {
         const source = readFileSync(`content/${locale}/pages/${key}.md`, 'utf8')
-        expect(source.match(/::legal-details/g)).toHaveLength(1)
+        expect(source.match(/::legal-details/g)).toHaveLength(key === 'datenschutz' ? 2 : 1)
         expect(source).toContain('noindex: true')
         expect(source).not.toMatch(/TODO|undefined|mailto:|NUXT_PUBLIC_|\S+@\S+/)
         expect(source).not.toContain(legalFixture.name)
+        expect(source).not.toContain(legalFixture.hostingProviderName)
+        if (key === 'datenschutz') {
+          expect(source).toContain('::legal-details{kind="hosting"}')
+          expect(source).toContain('#dpa')
+        }
       }
     }
+  })
+
+  it.each([true, 'true', false, 'false'])('accepts only explicit DPA boolean %s', (hostingDpa) => {
+    const contact = validateLegalContact({ ...legalFixture, hostingDpa })
+    expect(contact.hostingDpa).toBe(hostingDpa === true || hostingDpa === 'true')
+  })
+
+  it.each(['yes', '1', '0', '', 'TRUE', ' true ', 1, 0, null, {}, []])('rejects invalid DPA value %j without disclosing it', (hostingDpa) => {
+    expect(() => validateLegalContact({ ...legalFixture, hostingDpa })).toThrow('Invalid legal configuration: NUXT_PUBLIC_LEGAL_HOSTING_DPA')
+    expect(normalizeLegalContact({ hostingDpa }).hostingDpa).toBe(false)
+  })
+
+  it.each(requiredHostingFields)('requires %s for enabled hosting, including when DPA is false', (field) => {
+    expect(() => validateLegalContact({ ...legalFixture, hostingDpa: false, [field]: '' })).toThrow(`Invalid legal configuration: ${legalEnvironmentKey(field)}`)
+  })
+
+  it('allows omitted hosting and an optional house number, but never an agreement without a provider', () => {
+    const emptyHosting = Object.fromEntries(hostingFields.map((field) => [field, '']))
+    expect(hasHostingProvider(validateLegalContact({ ...legalFixture, ...emptyHosting, hostingDpa: false }))).toBe(false)
+    expect(validateLegalContact({ ...legalFixture, ...emptyHosting, hostingDpa: undefined }).hostingDpa).toBe(false)
+    expect(validateLegalContact({ ...legalFixture, hostingProviderHouseNumber: '' }).hostingProviderHouseNumber).toBe('')
+    expect(() => validateLegalContact({ ...legalFixture, ...emptyHosting, hostingDpa: true })).toThrow('NUXT_PUBLIC_LEGAL_HOSTING_PROVIDER_NAME')
+  })
+
+  it.each(hostingFields)('rejects hosting placeholders in %s without logging the value', (field) => {
+    expect(() => validateLegalContact({ ...legalFixture, [field]: 'Example Hosting' })).toThrow(`Invalid legal configuration: ${legalEnvironmentKey(field)}`)
   })
 })

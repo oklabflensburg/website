@@ -20,6 +20,15 @@ Beim Aufruf werden technische Verbindungsdaten verarbeitet, insbesondere die IP-
 
 Die Website führt selbst kein Besucher-Zugriffsprotokoll. Zusätzlich können beim Betrieb des Webservers oder vorgeschalteter Dienste technische Protokolle entstehen. Deren Umfang, Empfänger und Aufbewahrung hängen vom tatsächlichen Hosting ab. Informationen hierzu erhalten Sie bei der oben genannten verantwortlichen Stelle.
 
+::legal-details{kind="hosting"}
+## Externer Hosting-Anbieter
+
+Für die Bereitstellung dieser Website nutzen wir den folgenden externen Hosting-Anbieter:
+
+#dpa
+Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.
+::
+
 ## E-Mail-Kontakt und Aufbewahrung
 
 Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre E-Mail-Adresse, der Nachrichteninhalt und freiwillig mitgeteilte Angaben zur Bearbeitung Ihrer Anfrage verarbeitet. Je nach Anliegen erfolgt dies zur Durchführung vorvertraglicher oder vertraglicher Maßnahmen nach Art. 6 Abs. 1 lit. b DSGVO oder zur Beantwortung von Anfragen als berechtigtem Interesse nach Art. 6 Abs. 1 lit. f DSGVO. Ein Kontaktformular wird auf dieser Website nicht angeboten.

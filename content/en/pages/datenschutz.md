@@ -20,6 +20,15 @@ Visiting the website involves processing technical connection data, including th
 
 The website itself does not keep a visitor access log. The web server or services in front of it may generate additional technical logs. Their scope, recipients and retention depend on the actual hosting arrangements. Please contact the controller listed above for information about these arrangements.
 
+::legal-details{kind="hosting"}
+## External hosting provider
+
+We use the following external hosting provider to deliver this website:
+
+#dpa
+A data processing agreement pursuant to Article 28 GDPR is in place with the hosting provider.
+::
+
 ## Email contact and retention
 
 When you contact us by email, your email address, message and any information you provide voluntarily are processed to handle your enquiry. Depending on its subject, this is based on pre-contractual or contractual steps under Article 6(1)(b) GDPR or the legitimate interest in responding to enquiries under Article 6(1)(f). This website has no contact form.
