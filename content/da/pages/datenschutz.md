@@ -15,9 +15,9 @@ Du kan kontakte den ovenfor angivne dataansvarlige med spørgsmål om behandling
 
 ## Levering af hjemmesiden
 
-Ved besøg behandles tekniske forbindelsesdata, herunder IP-adresse, tidspunkt, den ønskede adresse og browserens oplysninger om browser og operativsystem. Behandlingen gør det muligt at levere indholdet og understøtter sikker og stabil drift. Artikel 6, stk. 1, litra f, i GDPR kan være retsgrundlag, når behandlingen er nødvendig for disse legitime interesser, og dine interesser ikke går forud.
+Ved besøg behandles tekniske forbindelsesdata, herunder IP-adresse, tidspunkt, den ønskede adresse og browserens oplysninger om browser og operativsystem. Behandlingen gør det muligt at levere indholdet og understøtter sikker og stabil drift. Retsgrundlaget er artikel 6, stk. 1, litra f, i GDPR. Vores legitime interesse er en sikker, stabil og teknisk pålidelig levering af denne hjemmeside.
 
-Hjemmesiden fører ikke selv en adgangslog over besøgende. Webserveren eller tjenester foran den kan desuden danne tekniske logfiler. Omfang, modtagere og opbevaring afhænger af den faktiske hosting. Du kan få oplysninger herom hos den ovenfor angivne dataansvarlige.
+Hjemmesiden fører ikke selv en adgangslog over besøgende. Webserveren eller tjenester foran den kan desuden danne tekniske logfiler. Disse behandles kun, når det er nødvendigt for drift, fejlsøgning og sikkerhed, og opbevares kun så længe, som formålet eller lovgivningen kræver.
 
 ::legal-details{kind="hosting"}
 ## Ekstern hostingudbyder
@@ -30,9 +30,9 @@ Der er indgået en databehandleraftale med hostingudbyderen i henhold til artike
 
 ## Kontakt via e-mail og opbevaring
 
-Når du kontakter os via e-mail, behandles din e-mailadresse, beskedens indhold og frivilligt oplyste data for at besvare din henvendelse. Afhængigt af henvendelsen er grundlaget foranstaltninger før eller under en kontrakt efter artikel 6, stk. 1, litra b, i GDPR eller den legitime interesse i at besvare henvendelser efter artikel 6, stk. 1, litra f. Hjemmesiden har ingen kontaktformular.
+Når du kontakter os via e-mail, behandles din e-mailadresse, beskedens indhold og frivilligt oplyste data for at besvare din henvendelse. Afhængigt af henvendelsen er grundlaget foranstaltninger før eller under en kontrakt efter artikel 6, stk. 1, litra b, i GDPR eller vores legitime interesse i at besvare henvendelser efter artikel 6, stk. 1, litra f.
 
-Personoplysninger må kun opbevares, så længe det er nødvendigt for formålet, eller lovbestemte opbevaringskrav gælder. Kontakt den dataansvarlige for oplysninger om opbevaringen af din konkrete henvendelse og de involverede e-mailudbydere.
+Personoplysninger opbevares kun så længe, som det er nødvendigt for det pågældende formål, eller så længe lovbestemte opbevaringskrav gælder. Hjemmesiden har ingen kontaktformular.
 
 ## Lokale ressourcer og sprog
 
@@ -40,9 +40,17 @@ Skrifttyper, billeder og kortillustrationen leveres fra denne hjemmeside. Der br
 
 ## Brugsstatistik med Plausible
 
-Vi bruger Plausible Analytics via `plausible.oklabflensburg.de` til at analysere brugen af hjemmesiden og forbedre tilbuddet. Din browser henter analysescriptet derfra og sender sidevisninger med den besøgte URL og den henvisende side. Scriptet registrerer også besøgstid, rulledybde samt klik på eksterne links og fildownloads med den tilhørende destinationsadresse. Ved hentning og overførsel sendes også IP-adresse og browseroplysninger til tjenesten som en teknisk del af forbindelsen.
+Vi bruger den selvhostede webanalyse-software Plausible Analytics på `plausible.oklabflensburg.de` til statistisk at analysere brugen af denne hjemmeside og forbedre vores tilbud.
 
-Det indlejrede script sætter ingen analysecookies og gemmer ingen identifikator i browseren. Statistikken bruges ikke til reklamer. Kontakt den ovenfor angivne dataansvarlige for oplysninger om driften af analysetjenesten, modtagere og opbevaring.
+Din browser henter analysescriptet fra denne tjeneste og sender sidevisninger med den besøgte URL og den henvisende side. Afhængigt af de aktiverede målefunktioner kan tjenesten desuden registrere besøgstid, rulledybde samt klik på eksterne links og fildownloads med den tilhørende destinationsadresse. Ved hentning af scriptet og overførsel af analysedata overføres også IP-adresse og browseroplysninger teknisk til den analysetjeneste, som vi driver.
+
+I vores konfiguration sætter Plausible ingen analysecookies og gemmer ingen permanent besøgsidentifikator i browseren. De indsamlede brugsdata bruges ikke til reklamer eller til at oprette personlige reklameprofiler.
+
+Behandlingen sker på grundlag af artikel 6, stk. 1, litra f, i GDPR. Vores legitime interesse er en databesparende statistisk analyse, identifikation af tekniske problemer og forbedring af vores online-tilbud.
+
+Hvis eksterne hostingudbydere indgår i driften af Plausible, anvendes de som databehandlere i henhold til artikel 28 i GDPR. Analysedata opbevares kun så længe, som det er nødvendigt for de beskrevne formål, og i overensstemmelse med den opbevaring, der er konfigureret for tjenesten.
+
+**Du kan gøre indsigelse mod denne behandling efter artikel 21 i GDPR af grunde, der vedrører din særlige situation.** Du kan rette din indsigelse til den dataansvarlige, der er angivet i denne privatlivspolitik.
 
 ## Eksterne links
 
