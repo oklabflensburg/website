@@ -48,7 +48,7 @@ Plausible setzt in unserer Konfiguration keine Analyse-Cookies und speichert kei
 
 Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der datensparsamen statistischen Auswertung, der Erkennung technischer Probleme und der Verbesserung unseres Online-Angebots.
 
-Soweit beim Betrieb von Plausible externe Hosting-Dienstleister eingesetzt werden, erfolgt deren Einbindung als Auftragsverarbeiter auf Grundlage von Art. 28 DSGVO. Analysedaten werden nur so lange gespeichert, wie dies für die genannten Zwecke erforderlich ist und es die für den Dienst konfigurierte Aufbewahrung vorsieht.
+Soweit beim Betrieb von Plausible externe Hosting-Dienstleister eingesetzt werden, werden diese im Einklang mit den anwendbaren datenschutzrechtlichen Anforderungen eingebunden. Analysedaten werden nur so lange gespeichert, wie dies für die genannten Zwecke erforderlich ist und es die für den Dienst konfigurierte Aufbewahrung vorsieht.
 
 **Sie können der Verarbeitung nach Art. 21 DSGVO aus Gründen, die sich aus Ihrer besonderen Situation ergeben, widersprechen.** Ihren Widerspruch können Sie an die in dieser Datenschutzerklärung genannte verantwortliche Stelle richten.
 
