@@ -5,7 +5,8 @@
     "language": "Sprache wählen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "breadcrumbs": "Brotkrumennavigation"
+    "breadcrumbs": "Brotkrumennavigation",
+    "newTab": "Öffnet in einem neuen Tab."
   },
   "hero": {
     "line1": "Offene Daten.",
@@ -152,5 +153,12 @@
     "vatId": "Umsatzsteuer-Identifikationsnummer",
     "privacyContactPerson": "Kontaktperson für Datenschutz",
     "contentResponsible": "Inhaltlich verantwortlich nach § 18 Abs. 2 MStV"
+  },
+  "mastodon": {
+    "heading": "Aus dem Fediverse",
+    "more": "Mehr auf Mastodon",
+    "empty": "Aktuelle Beiträge finden Sie auf unserem Mastodon-Profil.",
+    "post": "Beitrag vom",
+    "warning": "Inhaltshinweis"
   }
 }

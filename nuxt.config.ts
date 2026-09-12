@@ -9,6 +9,8 @@ export default defineNuxtConfig({
   // Nuxt overrides these at runtime with NUXT_PUBLIC_LEGAL_<FIELD>.
   // Empty build defaults keep deployment identities out of the build artifact.
   runtimeConfig: {
+    mastodonBaseUrl: new URL(site.social.mastodon).origin,
+    mastodonAccountId: '',
     public: {
       legal: {
         name: '',

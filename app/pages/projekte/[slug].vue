@@ -54,18 +54,18 @@ usePageSeo(
             tech
           }}</span>
         </div>
-        <a
+        <SiteLink
           v-if="project.links.website"
           :href="project.links.website"
           class="button"
-          >{{ $t('common.website') }} ↗</a
-        ><a
+          >{{ $t('common.website') }} ↗</SiteLink
+        ><SiteLink
           v-if="project.links.github"
           :href="project.links.github"
           class="text-link"
-          >{{ $t('common.github') }} ↗</a
-        ><a :href="project.source" class="text-link"
-          >{{ $t('common.source') }} ↗</a
+          >{{ $t('common.github') }} ↗</SiteLink
+        ><SiteLink :href="project.source" class="text-link"
+          >{{ $t('common.source') }} ↗</SiteLink
         ><NuxtLink :to="localePath('/mitmachen')" class="text-link"
           >{{ $t('nav.mitmachen') }} →</NuxtLink
         >
