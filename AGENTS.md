@@ -95,6 +95,8 @@ Dependency resolution and temporary scoped overrides are documented in [dependen
 
 ## GitHub Actions
 
+- Pin every workflow `uses:` to the full 40-character commit SHA of a verified upstream release, with a trailing version comment. `.github/dependabot.yml` checks GitHub Actions weekly; review update PRs while retaining least-privilege permissions. `pnpm test` validates YAML, pins and update configuration.
+
 - [Website CI](.github/workflows/ci.yml): `verify` job on PRs and pushes to `main`; frozen install, peer check, lint, typecheck, Vitest, build, Chromium install and Playwright. Uploads reports/screenshots as `browser-report-and-screenshots`.
 - [CodeQL](.github/workflows/codeql.yml): JavaScript/TypeScript analysis on PRs, pushes to `main` and weekly schedule; `build-mode: none`.
 - These are the only workflow files; Playwright/build run within Website CI, with no separate Dependency Review workflow. Repository-level Actions were re-enabled on 2026-09-10 after the audit in [ci-audit.md](docs/ci-audit.md). Both workflows target PRs against `main`. Check the current PR head and actual run conclusions when reporting CI; workflow presence alone is not a successful check. Local validation remains required.
