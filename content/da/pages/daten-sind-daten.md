@@ -21,4 +21,4 @@ Vil du bidrage med infrastruktur, tid eller viden? [Kontakt os](/kontakt). Mulig
 
 ## Oplysninger om foreningen
 
-TODO: Tilføj bekræftede oplysninger om bestyrelse, tegningsret, vedtægter, register og gennemsigtighed. Medlemsvilkår og eventuelle donationsoplysninger kræver også foreningens godkendelse.
+Yderligere oplysninger om foreningen bliver tilføjet her, når de er kontrolleret og godkendt af foreningen.

@@ -19,4 +19,4 @@ Harassment, discrimination, threats and publishing private information have no p
 
 If a problem arises, speak to an organiser or use the general contact address. Share only what you are comfortable sharing. Do not report personal incidents in public issues.
 
-TODO: Agree on this code together, name confidential contacts and establish a clear process for reports and actions.
+This code is a proposal for community discussion. Confidential contacts and the process for reports and actions will be published once they have been agreed together.

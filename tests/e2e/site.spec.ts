@@ -56,6 +56,7 @@ for (const locale of ['de', 'da', 'en']) {
         await expect(page.locator('link[hreflang="en-GB"]')).toHaveCount(1)
       }
       await expect(page.locator('main')).toBeVisible()
+      await expect(page.locator('main')).not.toContainText(/\b(?:TODO|TBD|placeholder|changeme|replace-me)\b/i)
       expect(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,
