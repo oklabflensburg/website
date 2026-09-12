@@ -117,6 +117,8 @@ Mit Zustimmung eine YAML-Datei in `content/team/` anlegen. Felder: `name`, optio
 
 ## Deployment
 
+Nitro setzt die [HTTP-Sicherheitsheader einschließlich CSP](docs/security-headers.md); der HTTPS-Reverse-Proxy übernimmt TLS, HTTPS-Weiterleitung und HSTS. Beim Deployment die bisherigen Nginx-Anwendungsheader entfernen und anschließend den dokumentierten HTTPS-Smoke-Test ausführen.
+
 Betreiberangaben für Impressum und Datenschutz werden ausschließlich über `NUXT_PUBLIC_LEGAL_*` konfiguriert. Pflichtfelder sind Name, Straße, Hausnummer, Postleitzahl, Ort, Land und E-Mail. Optional kommen Hosting-Anbieter und Anschrift aus derselben Konfiguration; `NUXT_PUBLIC_LEGAL_HOSTING_DPA=true` blendet den übersetzten AVV-Hinweis ein. [Variablen, `.env.example`, Produktionsprüfung und redaktionelle Freigabe](docs/legal-configuration.md) dokumentieren alle Pflicht- und optionalen Angaben. Echte Produktionswerte dürfen nicht in Git oder CI-Logs gelangen.
 
 ```sh

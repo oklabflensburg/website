@@ -2,6 +2,8 @@
 
 The shared shell in `app/app.vue` installs the supplied Plausible bootstrap and asynchronous script once. The script URL has one source in `shared/config/site.ts`. Initialization precedes the loader. The integration runs only in a production build on the hostname from `site.url` (`oklabflensburg.de`); development, localhost and other preview hosts do not load the script. The reverse proxy must preserve the public `Host` header.
 
+The [production CSP](security-headers.md) permits this origin only for scripts and connections, with an exact hash for the inline initializer. It does not require `unsafe-inline` or ordinary JavaScript `unsafe-eval`. Nginx must pass through Nitro's policy without a conflicting second CSP.
+
 Plausible handles initial pageviews, `pushState` and back/forward navigation itself. Do not add a second router hook or manual pageview calls. No Nuxt module, package dependency, tracking proxy or consent banner is added. Blocking the script leaves the site usable.
 
 ## Current script and data flow
