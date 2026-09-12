@@ -13,7 +13,7 @@ const localePath = useLocalePath()
         <div class="footer-social">
           <a :href="site.github" class="icon-button" aria-label="GitHub"><AppIcon name="github" :size="18" /></a>
           <a :href="site.social.mastodon" class="icon-button" aria-label="Mastodon" rel="me"><AppIcon name="social" :size="18" /></a>
-          <a :href="`mailto:${site.email}`" class="icon-button" :aria-label="$t('common.contact')"><AppIcon name="mail" :size="18" /></a>
+          <a :href="`mailto:${site.contact.email}`" class="icon-button" :aria-label="$t('common.contact')"><AppIcon name="mail" :size="18" /></a>
           <a :href="`/rss.xml?lang=${$i18n.locale}`" class="icon-button" aria-label="RSS"><AppIcon name="rss" :size="18" /></a>
         </div>
         <nav :aria-label="$t('footer.group0')">

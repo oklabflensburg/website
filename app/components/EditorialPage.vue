@@ -56,7 +56,7 @@ usePageSeo(
       class="contact-panel"
     >
       <h2>{{ $t('common.contact') }}</h2>
-      <a :href="`mailto:${site.email}`" class="text-link">{{ site.email }} ↗</a
+      <a :href="`mailto:${site.contact.email}`" class="text-link">{{ site.contact.email }} ↗</a
       ><a v-if="slug === 'kontakt'" :href="site.github" class="text-link"
         >GitHub ↗</a
       >

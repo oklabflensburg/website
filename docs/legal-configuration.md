@@ -2,7 +2,9 @@
 
 Impressum und Datenschutz verwenden denselben Datensatz aus `runtimeConfig.public.legal` in `nuxt.config.ts`. Nuxt überschreibt die Felder mit `NUXT_PUBLIC_LEGAL_*` aus der Prozessumgebung. `useLegalContact()` normalisiert die Angaben über `shared/utils/legal.ts`; `app/components/content/LegalDetails.vue` rendert sie mit Vue-Escaping. Die sechs Markdown-Seiten binden diese Komponente über MDC ein. Überschriften und Fließtext bleiben in `content/{de,da,en}/pages/`, Feldbeschriftungen in den drei UI-Dictionaries.
 
-Die Angaben sind **öffentlich**, auch im Nuxt-Seitenpayload. Nur zur Veröffentlichung bestimmte Betreiberinformationen konfigurieren; keine Zugangsdaten oder internen Kontaktdaten. Es gibt keine zweite Betreiberkonfiguration in `shared/config/site.ts`: dessen `site.email` ist der allgemeine öffentliche Lab-Kontakt, `site.meeting` beschreibt ausschließlich das Treffen. Beides begründet keine rechtliche Betreiberidentität. Auf den Rechtstextseiten entfällt der bisherige allgemeine Kontaktkasten zugunsten der konfigurierten Angaben.
+Die Angaben sind **öffentlich**, auch im Nuxt-Seitenpayload. Nur zur Veröffentlichung bestimmte Betreiberinformationen konfigurieren; keine Zugangsdaten oder internen Kontaktdaten. Es gibt keine zweite Betreiberkonfiguration in `shared/config/site.ts`: dessen `site.contact.email` ist der allgemeine öffentliche Lab-Kontakt, `site.meeting` beschreibt ausschließlich das Treffen. Beides begründet keine rechtliche Betreiberidentität. Auf den Rechtstextseiten entfällt der bisherige allgemeine Kontaktkasten zugunsten der konfigurierten Angaben.
+
+Der allgemeine Kontaktkasten, der Footer und die strukturierten `Organization`-Daten des OK Lab verwenden bewusst `site.contact.email`. Die `Organization` beschreibt das Lab mit dessen Namen, URL und Logo; sie ist keine Kopie der rechtlichen Betreiberidentität. Impressum und Datenschutz verwenden ausschließlich `runtimeConfig.public.legal.email` über `useLegalContact()`. Die Adressen dürfen voneinander abweichen; es gibt keinen Fallback zwischen beiden Quellen. RSS enthält keine Kontakt-E-Mail.
 
 ## Variablen
 

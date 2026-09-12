@@ -9,7 +9,7 @@ Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs
 - `app/`: gemeinsame Komponenten, Seiten und SEO.
 - `content/`: einzige Quelle für Projekte, Blog, redaktionelle Seiten, Team und zusätzliche Events.
 - `i18n/locales/`: ausschließlich UI-Texte in DE/DA/EN.
-- `shared/config/site.ts`: Organisation, Domain, Kontakt und regelmäßiges Treffen.
+- `shared/config/site.ts`: Organisation, Domain, allgemeiner Lab-Kontakt (`site.contact.email`) und regelmäßiges Treffen. Der allgemeine Kontakt gilt auch für die `Organization`-Metadaten; rechtlicher Betreiberkontakt kommt ausschließlich aus `runtimeConfig.public.legal`, ohne gegenseitigen Fallback.
 - `shared/config/content.ts`: gemeinsame Content-Schemas; `content.config.ts`: Collections und Dateiquellen.
 - `server/routes/`: RSS, Sitemap und robots.txt aus derselben Konfiguration und denselben Collections.
 - `public/`: tatsächlich verwendete lokale Bilder, Marken und Schrift.
