@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { computed, createSSRApp, defineComponent, h, ref } from 'vue'
 import { renderToString } from 'vue/server-renderer'
-import { parseFragment } from 'parse5'
+import { parseFragment, type DefaultTreeAdapterTypes } from 'parse5'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import SiteLink from '../app/components/SiteLink.vue'
@@ -33,7 +33,11 @@ async function render(component: typeof SiteLink | typeof ProseA, props: Record<
   }))
   const html = await renderToString(app)
   const anchor = parseFragment(html).childNodes.find((node) => 'tagName' in node && node.tagName === 'a')
-  return { html, attrs: Object.fromEntries(anchor && 'attrs' in anchor ? anchor.attrs.map(({ name, value }) => [name, value]) : []) }
+  function textContent(node: DefaultTreeAdapterTypes.Node): string {
+    if ('value' in node) return node.value
+    return 'childNodes' in node ? node.childNodes.map(textContent).join('') : ''
+  }
+  return { text: anchor ? textContent(anchor) : '', attrs: Object.fromEntries(anchor && 'attrs' in anchor ? anchor.attrs.map(({ name, value }) => [name, value]) : []) }
 }
 
 describe('one canonical origin rule', () => {
@@ -55,10 +59,10 @@ describe('one canonical origin rule', () => {
 describe('rendered link components', () => {
   it('renders Markdown external anchors with safe attributes and intact query/fragment', async () => {
     const href = 'https://github.com/oklabflensburg?q=a%20b#readme'
-    const { attrs, html } = await render(ProseA, { href, target: '_self', rel: 'opener' })
+    const { attrs, text } = await render(ProseA, { href, target: '_self', rel: 'opener' })
     expect(attrs).toMatchObject({ href, target: '_blank', rel: 'noopener noreferrer', 'aria-description': 'Opens in a new tab.' })
     expect(attrs['data-nuxt-link']).toBeUndefined()
-    expect(html.replace(/<!--.*?-->/g, '')).toContain('>Link label</a>')
+    expect(text).toBe('Link label')
   })
   it.each(['/projekte/karte?q=a%20b#map', site.url + '/projekte/karte?q=a%20b#map'])('localizes %s with NuxtLink, query and fragment preserved', async (href) => {
     const { attrs } = await render(ProseA, { href, target: '_blank' })
