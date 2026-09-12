@@ -48,7 +48,7 @@ I vores konfiguration sætter Plausible ingen analysecookies og gemmer ingen per
 
 Behandlingen sker på grundlag af artikel 6, stk. 1, litra f, i GDPR. Vores legitime interesse er en databesparende statistisk analyse, identifikation af tekniske problemer og forbedring af vores online-tilbud.
 
-Hvis eksterne hostingudbydere indgår i driften af Plausible, anvendes de som databehandlere i henhold til artikel 28 i GDPR. Analysedata opbevares kun så længe, som det er nødvendigt for de beskrevne formål, og i overensstemmelse med den opbevaring, der er konfigureret for tjenesten.
+Hvis eksterne hostingudbydere indgår i driften af Plausible, inddrages de i overensstemmelse med de gældende databeskyttelseskrav. Analysedata opbevares kun så længe, som det er nødvendigt for de beskrevne formål, og i overensstemmelse med den opbevaring, der er konfigureret for tjenesten.
 
 **Du kan gøre indsigelse mod denne behandling efter artikel 21 i GDPR af grunde, der vedrører din særlige situation.** Du kan rette din indsigelse til den dataansvarlige, der er angivet i denne privatlivspolitik.
 
