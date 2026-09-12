@@ -2,7 +2,6 @@
 title: "Privacy"
 description: "Information about the processing of personal data and your rights."
 locale: "en"
-slug: "datenschutz"
 translationKey: "datenschutz"
 noindex: true
 ---

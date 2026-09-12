@@ -2,7 +2,6 @@
 title: "Impressum"
 description: "Anbieter und Kontaktinformationen für die Website des OK Lab Flensburg."
 locale: "de"
-slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---

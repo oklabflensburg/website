@@ -1,10 +1,13 @@
 import { z } from 'zod'
-const identity = {
+const localeIdentity = {
   locale: z.enum(['de', 'da', 'en']),
+}
+const slugIdentity = {
+  ...localeIdentity,
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 }
 const editorial = {
-  ...identity,
+  ...localeIdentity,
   translationKey: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   title: z.string().min(1),
   description: z.string().min(20),
@@ -12,6 +15,7 @@ const editorial = {
 export const schemas = {
   projects: z.object({
     ...editorial,
+    ...slugIdentity,
     aliases: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).default([]),
     status: z.enum([
       'development',
@@ -33,6 +37,7 @@ export const schemas = {
   }),
   blog: z.object({
     ...editorial,
+    ...slugIdentity,
     aliases: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).default([]),
     date: z.iso.date(),
     updated: z.iso.date().optional(),
@@ -43,7 +48,7 @@ export const schemas = {
   }),
   pages: z.object({ ...editorial, noindex: z.boolean().default(false) }),
   events: z.object({
-    ...identity,
+    ...slugIdentity,
     title: z.string(),
     description: z.string(),
     kind: z.enum([

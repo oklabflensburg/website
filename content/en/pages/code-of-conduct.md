@@ -2,7 +2,6 @@
 title: "Respect is our foundation."
 description: "A proposed code for working together in the lab and our projects."
 locale: "en"
-slug: "code-of-conduct"
 translationKey: "code-of-conduct"
 noindex: true
 ---

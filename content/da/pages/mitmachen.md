@@ -2,7 +2,6 @@
 title: "Dine idéer. Vores næste projekt."
 description: "Du behøver ikke kunne programmere. Nysgerrighed er nok til at begynde."
 locale: "da"
-slug: "mitmachen"
 translationKey: "mitmachen"
 noindex: false
 ---

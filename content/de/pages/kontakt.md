@@ -2,7 +2,6 @@
 title: "Lass uns ins Gespräch kommen."
 description: "Eine Idee, eine Frage oder Interesse an Zusammenarbeit?"
 locale: "de"
-slug: "kontakt"
 translationKey: "kontakt"
 noindex: false
 ---

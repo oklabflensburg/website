@@ -2,7 +2,6 @@
 title: "DatenSindDaten e.V."
 description: "Ein organisatorisches Zuhause für offenes Engagement."
 locale: "de"
-slug: "daten-sind-daten"
 translationKey: "daten-sind-daten"
 noindex: false
 ---

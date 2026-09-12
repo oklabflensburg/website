@@ -2,7 +2,6 @@
 title: "Respekt er vores grundlag."
 description: "Et forslag til god omgang i vores lab og projekter."
 locale: "da"
-slug: "code-of-conduct"
 translationKey: "code-of-conduct"
 noindex: true
 ---

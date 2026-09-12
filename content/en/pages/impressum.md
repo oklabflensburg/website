@@ -2,7 +2,6 @@
 title: "Legal notice"
 description: "Provider and contact information for the OK Lab Flensburg website."
 locale: "en"
-slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---

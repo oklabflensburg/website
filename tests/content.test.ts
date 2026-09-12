@@ -15,12 +15,14 @@ describe('canonical content', () => {
         const rows = readdirSync(dir)
           .filter((file) => file.endsWith('.md'))
           .map((file) => readContent(`${dir}/${file}`))
-        expect(new Set(rows.map((row) => row.slug)).size).toBe(rows.length)
+        if (collection !== 'pages') expect(new Set(rows.map((row) => row.slug)).size).toBe(rows.length)
         expect(new Set(rows.map((row) => row.translationKey)).size).toBe(rows.length)
         for (const row of rows) {
           const result = schemas[collection].safeParse(row)
           expect(result.success, JSON.stringify(result)).toBe(true)
           expect(row.locale).toBe(locale)
+          if (collection === 'pages') expect(row).not.toHaveProperty('slug')
+          else expect(schemas[collection].safeParse({ ...row, slug: undefined }).success).toBe(false)
           if (row.image) expect(existsSync(`public${row.image}`)).toBe(true)
           expect(row.description.length).toBeGreaterThan(20)
         }

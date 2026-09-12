@@ -8,7 +8,7 @@ export async function publicTranslations(event: H3Event) {
     queryCollection(event, 'blog').where('draft', '=', false)
       .where('date', '<=', new Date().toISOString().slice(0, 10))
       .select('locale', 'slug', 'translationKey', 'aliases').all(),
-    queryCollection(event, 'pages').select('locale', 'slug', 'translationKey', 'noindex').all(),
+    queryCollection(event, 'pages').select('locale', 'translationKey', 'noindex').all(),
   ])
   return translationGroups({ projects, blog, pages })
 }

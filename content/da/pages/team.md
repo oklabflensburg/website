@@ -2,7 +2,6 @@
 title: "Mennesker gør forskellen."
 description: "Forskellige perspektiver og en fælles interesse for åbne løsninger."
 locale: "da"
-slug: "team"
 translationKey: "team"
 noindex: false
 ---

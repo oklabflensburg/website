@@ -35,7 +35,7 @@ The first migrated detail slugs demonstrate the complete flow:
 
 The changed records store their former slug in `aliases`. Keep these aliases for existing inbound links. Project asset names use the stable translation key, so translating a slug does not duplicate images or social cards. The brand generator reads available project locales and deduplicates by key; it does not require a German translation.
 
-Editorial route identities come from `editorialSlugs`; each existing locale record participates independently. Its `slug` does not determine its public path. UI-only home/project-index/blog-index pages exist in all three languages.
+Editorial route identities come from `editorialSlugs`; each existing locale record participates independently. Editorial frontmatter contains `locale` and `translationKey`, with no `slug`. Public paths come only from `routePaths`; filenames remain stable for translation pairing. Projects and blog posts still require their localized `slug`. UI-only home/project-index/blog-index pages exist in all three languages.
 
 ## Redirects and links
 

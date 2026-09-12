@@ -2,7 +2,6 @@
 title: "People make the difference."
 description: "Different perspectives and a shared interest in open solutions."
 locale: "en"
-slug: "team"
 translationKey: "team"
 noindex: false
 ---
