@@ -2,7 +2,6 @@
 title: "Meet. Experiment. Learn."
 description: "Open meetups and room to exchange ideas."
 locale: "en"
-slug: "veranstaltungen"
 translationKey: "veranstaltungen"
 noindex: false
 ---

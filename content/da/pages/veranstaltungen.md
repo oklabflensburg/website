@@ -2,7 +2,6 @@
 title: "Mød hinanden. Prøv noget. Lær sammen."
 description: "Åbne møder og plads til udveksling."
 locale: "da"
-slug: "veranstaltungen"
 translationKey: "veranstaltungen"
 noindex: false
 ---

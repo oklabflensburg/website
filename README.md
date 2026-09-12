@@ -9,7 +9,7 @@ Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs
 - `app/`: gemeinsame Komponenten, Seiten und SEO.
 - `content/`: einzige Quelle für Projekte, Blog, redaktionelle Seiten, Team und zusätzliche Events.
 - `i18n/locales/`: ausschließlich UI-Texte in DE/DA/EN.
-- `shared/config/site.ts`: Organisation, Domain, Kontakt und regelmäßiges Treffen.
+- `shared/config/site.ts`: Organisation, Domain, allgemeiner Lab-Kontakt (`site.contact.email`) und regelmäßiges Treffen. Der allgemeine Kontakt gilt auch für die `Organization`-Metadaten; rechtlicher Betreiberkontakt kommt ausschließlich aus `runtimeConfig.public.legal`, ohne gegenseitigen Fallback.
 - `shared/config/content.ts`: gemeinsame Content-Schemas; `content.config.ts`: Collections und Dateiquellen.
 - `server/routes/`: RSS, Sitemap und robots.txt aus derselben Konfiguration und denselben Collections.
 - `public/`: tatsächlich verwendete lokale Bilder, Marken und Schrift.
@@ -46,7 +46,7 @@ Peer-Abhängigkeiten, zwei vorübergehende eng begrenzte Versionskorrekturen und
 
 Nur Nuxt i18n verwaltet Sprache und Routing. Deutsch liegt unter `/`, Dänisch unter `/da`, Englisch unter `/en`, mit übersetzten Pfaden: `/projekte`, `/da/projekter`, `/en/projects`. Die zentrale Routenmatrix steht in `shared/config/site.ts`. Sprachwechsel berücksichtigen die tatsächlich vorhandenen Übersetzungen, auch bei unterschiedlichen Detail-Slugs. Kein Spracherkennungscookie.
 
-Die redaktionellen Route-Einstiege rendern ausschließlich die gemeinsame `EditorialPage.vue`. Die bisherige generische `[page].vue` ist entfernt; unbekannte URLs liefern 404. Projekte und Blogbeiträge werden über `locale` und `slug` abgefragt; `translationKey` verbindet Übersetzungen derselben Collection unabhängig vom Slug. Editorial-Seiten werden über ihren stabilen Key abgefragt. Interne Markdown-Links werden über `ProseA` lokalisiert.
+Die redaktionellen Route-Einstiege rendern ausschließlich die gemeinsame `EditorialPage.vue`. Die bisherige generische `[page].vue` ist entfernt; unbekannte URLs liefern 404. Projekte und Blogbeiträge werden über `locale` und `slug` abgefragt; `translationKey` verbindet Übersetzungen derselben Collection unabhängig vom Slug. Editorial-Seiten werden über `locale` und ihren stabilen `translationKey` abgefragt; ihr Frontmatter enthält keinen redundanten `slug`. Die Dateinamen bleiben unverändert, die öffentlichen Pfade kommen ausschließlich aus `routePaths`. Interne Markdown-Links werden über `ProseA` lokalisiert.
 
 Canonical, OpenGraph und strukturierte Daten verwenden die aufgerufene Sprachroute. Hreflang und Sitemap verwenden denselben aus Nuxt Content abgeleiteten Übersetzungsindex. Fehlende oder unveröffentlichte Sprachvarianten werden nicht erfunden; `noindex`-Varianten werden nicht als Alternates ausgegeben. Alte Sprachpfade und dokumentierte Slug-Aliase werden mit 301 direkt weitergeleitet. [Routenmatrix, Migration und SEO-Regeln](docs/localized-routing.md).
 
@@ -116,6 +116,8 @@ Das regelmäßige Treffen wird ausschließlich in `shared/config/site.ts` gepfle
 Mit Zustimmung eine YAML-Datei in `content/team/` anlegen. Felder: `name`, optional `github` und lokaler `avatar`-Pfad, `role: { de, da, en }`, `bio: { de, da, en }`, `links: [{ label, url }]`, `consent: true`. Zustimmung im Review nachvollziehbar bestätigen, keine privaten Belege veröffentlichen. Es gibt keine automatische Übernahme von GitHub-Mitgliedern und keine zweite Teamliste.
 
 ## Deployment
+
+Nitro setzt die [HTTP-Sicherheitsheader einschließlich CSP](docs/security-headers.md); der HTTPS-Reverse-Proxy übernimmt TLS, HTTPS-Weiterleitung und HSTS. Beim Deployment die bisherigen Nginx-Anwendungsheader entfernen und anschließend den dokumentierten HTTPS-Smoke-Test ausführen.
 
 Betreiberangaben für Impressum und Datenschutz werden ausschließlich über `NUXT_PUBLIC_LEGAL_*` konfiguriert. Pflichtfelder sind Name, Straße, Hausnummer, Postleitzahl, Ort, Land und E-Mail. Optional kommen Hosting-Anbieter und Anschrift aus derselben Konfiguration; `NUXT_PUBLIC_LEGAL_HOSTING_DPA=true` blendet den übersetzten AVV-Hinweis ein. [Variablen, `.env.example`, Produktionsprüfung und redaktionelle Freigabe](docs/legal-configuration.md) dokumentieren alle Pflicht- und optionalen Angaben. Echte Produktionswerte dürfen nicht in Git oder CI-Logs gelangen.
 

@@ -35,7 +35,7 @@ The first migrated detail slugs demonstrate the complete flow:
 
 The changed records store their former slug in `aliases`. Keep these aliases for existing inbound links. Project asset names use the stable translation key, so translating a slug does not duplicate images or social cards. The brand generator reads available project locales and deduplicates by key; it does not require a German translation.
 
-Editorial route identities come from `editorialSlugs`; each existing locale record participates independently. Its `slug` does not determine its public path. UI-only home/project-index/blog-index pages exist in all three languages.
+Editorial route identities come from `editorialSlugs`; each existing locale record participates independently. Editorial frontmatter contains `locale` and `translationKey`, with no `slug`. Public paths come only from `routePaths`; filenames remain stable for translation pairing. Projects and blog posts still require their localized `slug`. UI-only home/project-index/blog-index pages exist in all three languages.
 
 ## Redirects and links
 
@@ -51,6 +51,8 @@ Unknown paths and absent translations do not get invented destinations. Existing
 ## SEO ownership
 
 `server/utils/translations.ts` queries the existing Content collections and derives a minimal public translation index. `/api/translations` supplies it to SSR and the hydrated app; it is not a second content source. Draft and future blog posts never enter that index. Sitemap uses the same server utility.
+
+Production shares one in-flight/resolved promise per Node process and UTC date across the API, redirects and sitemap. Deployment/restart clears it; there is no persisted or committed translation map. The first request after UTC midnight replaces the entry, preserving the existing date-based publication of scheduled posts without a deployment. Failures evict their own entry and retry on the next call. Development bypasses caching so Content edits appear immediately. Only the derived groups are cached, never request URLs, queries or legal runtime data. Each worker maintains its own bounded entry.
 
 `usePageSeo` owns canonical, OpenGraph URL, WebPage data and actual hreflang alternates. `app/app.vue` uses `useLocaleHead({ seo: false })` only for HTML language attributes, avoiding a competing guessed slug-based alternate set. BlogPosting and breadcrumb URLs continue to use the resolved locale route. RSS uses the actual locale slug and the shared path serializer.
 

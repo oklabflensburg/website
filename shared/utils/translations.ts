@@ -4,9 +4,16 @@ import { escapeXml } from './xml'
 export interface TranslationRecord {
   translationKey: string
   locale: string
+  noindex?: boolean
+}
+export interface DetailTranslationRecord extends TranslationRecord {
   slug: string
   aliases?: string[]
-  noindex?: boolean
+}
+export interface TranslationContent {
+  projects: DetailTranslationRecord[]
+  blog: DetailTranslationRecord[]
+  pages: TranslationRecord[]
 }
 export interface TranslationVariant {
   locale: SiteLocale
@@ -20,7 +27,7 @@ export interface TranslationGroup {
 }
 
 // This is a derived view of Content, never an independently maintained source.
-export function translationGroups(content: Record<'projects' | 'blog' | 'pages', TranslationRecord[]>): TranslationGroup[] {
+export function translationGroups(content: TranslationContent): TranslationGroup[] {
   const groups = new Map<string, TranslationGroup>()
   const paths = new Set<string>()
   function add(id: string, variant: TranslationVariant) {
@@ -39,25 +46,27 @@ export function translationGroups(content: Record<'projects' | 'blog' | 'pages',
       add(`static:${key}`, { locale, path, aliases: old === path ? [] : [old], indexable: true })
     }
   }
-  for (const kind of ['projects', 'blog', 'pages'] as const) {
-    for (const record of content[kind]) {
-      if (!locales.includes(record.locale as SiteLocale)) throw new Error(`Invalid locale: ${record.locale}`)
-      const locale = record.locale as SiteLocale
-      if (kind === 'pages' && !editorialSlugs.includes(record.translationKey as typeof editorialSlugs[number])) {
-        throw new Error(`Unknown editorial identity: ${record.translationKey}`)
-      }
-      const logicalPath = kind === 'pages' ? `/${record.translationKey}` : `/${kind === 'projects' ? 'projekte' : 'blog'}/${record.slug}`
-      const path = localizedPath(logicalPath, locale)
-      const aliases = new Set<string>()
-      const previous = kind === 'pages' ? [record.translationKey] : [record.slug, ...record.aliases ?? []]
-      for (const slug of previous) {
-        const old = kind === 'pages' ? `/${slug}` : `/${kind === 'projects' ? 'projekte' : 'blog'}/${slug}`
-        aliases.add(locale === 'de' ? old : `/${locale}${old}`)
-        aliases.add(localizedPath(old, locale))
-      }
-      aliases.delete(path)
-      add(`${kind}:${record.translationKey}`, { locale, path, aliases: [...aliases], indexable: !record.noindex })
+  for (const record of [
+    ...content.projects.map((record) => ({ ...record, kind: 'projects' as const })),
+    ...content.blog.map((record) => ({ ...record, kind: 'blog' as const })),
+    ...content.pages.map((record) => ({ ...record, kind: 'pages' as const })),
+  ]) {
+    if (!locales.includes(record.locale as SiteLocale)) throw new Error(`Invalid locale: ${record.locale}`)
+    const locale = record.locale as SiteLocale
+    if (record.kind === 'pages' && !editorialSlugs.includes(record.translationKey as typeof editorialSlugs[number])) {
+      throw new Error(`Unknown editorial identity: ${record.translationKey}`)
     }
+    const logicalPath = record.kind === 'pages' ? `/${record.translationKey}` : `/${record.kind === 'projects' ? 'projekte' : 'blog'}/${record.slug}`
+    const path = localizedPath(logicalPath, locale)
+    const aliases = new Set<string>()
+    const previous = record.kind === 'pages' ? [record.translationKey] : [record.slug, ...record.aliases ?? []]
+    for (const slug of previous) {
+      const old = record.kind === 'pages' ? `/${slug}` : `/${record.kind === 'projects' ? 'projekte' : 'blog'}/${slug}`
+      aliases.add(locale === 'de' ? old : `/${locale}${old}`)
+      aliases.add(localizedPath(old, locale))
+    }
+    aliases.delete(path)
+    add(`${record.kind}:${record.translationKey}`, { locale, path, aliases: [...aliases], indexable: !record.noindex })
   }
   for (const group of groups.values()) {
     for (const variant of group.variants) {

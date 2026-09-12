@@ -2,7 +2,6 @@
 title: "Privatliv"
 description: "Oplysninger om behandling af personoplysninger og om dine rettigheder."
 locale: "da"
-slug: "datenschutz"
 translationKey: "datenschutz"
 noindex: true
 ---

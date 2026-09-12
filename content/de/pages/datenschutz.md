@@ -2,7 +2,6 @@
 title: "Datenschutz"
 description: "Informationen zur Verarbeitung personenbezogener Daten und zu Ihren Rechten."
 locale: "de"
-slug: "datenschutz"
 translationKey: "datenschutz"
 noindex: true
 ---

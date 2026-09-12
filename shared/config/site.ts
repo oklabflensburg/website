@@ -13,7 +13,8 @@ export const site = {
   analytics: {
     script: 'https://plausible.oklabflensburg.de/js/pa-kAVDHPi3E6v_DQyTEdWt-.js',
   },
-  email: 'info@oklabflensburg.de',
+  // Public community inbox; legal/operator contact belongs to runtimeConfig.public.legal.
+  contact: { email: 'info@oklabflensburg.de' },
   github: 'https://github.com/oklabflensburg',
   repository: 'https://github.com/oklabflensburg/website',
   social: { mastodon: 'https://norden.social/@oklabflensburg' },

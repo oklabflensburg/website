@@ -1,14 +1,29 @@
 import { describe, expect, it } from 'vitest'
-import { alternateLinks, findTranslationGroup, sitemapXml, translationGroups, translationRedirect, type TranslationRecord } from '../shared/utils/translations'
+import { alternateLinks, findTranslationGroup, sitemapXml, translationGroups, translationRedirect, type DetailTranslationRecord } from '../shared/utils/translations'
 import { localizedPath } from '../shared/config/site'
 import { schemas } from '../shared/config/content'
 
-const record = (locale: string, slug: string, extra: Partial<TranslationRecord> = {}): TranslationRecord => ({
+const record = (locale: string, slug: string, extra: Partial<DetailTranslationRecord> = {}): DetailTranslationRecord => ({
   locale, slug, translationKey: 'map', ...extra,
 })
 const empty = { projects: [], blog: [], pages: [] }
 
 describe('localized routes and translation identity', () => {
+  it.each([
+    ['datenschutz', '/datenschutz', '/da/privatliv', '/en/privacy'],
+    ['impressum', '/impressum', '/da/kolofon', '/en/legal-notice'],
+    ['ueber-uns', '/ueber-uns', '/da/om-os', '/en/about'],
+    ['mitmachen', '/mitmachen', '/da/deltag', '/en/join'],
+    ['veranstaltungen', '/veranstaltungen', '/da/arrangementer', '/en/events'],
+  ])('routes slug-free editorial identity %s through the existing matrix', (translationKey, de, da, en) => {
+    const groups = translationGroups({ ...empty, pages: ['de', 'da', 'en'].map((locale) => ({ locale, translationKey })) })
+    const group = findTranslationGroup(groups, de!)
+    expect(group?.variants.map((variant) => variant.path)).toEqual([de, da, en])
+    expect(alternateLinks(group).map((link) => link.href)).toEqual([de, da, en].map((path) => `https://oklabflensburg.de${path}`))
+    for (const path of [de, da, en]) expect(sitemapXml(groups)).toContain(`<loc>https://oklabflensburg.de${path}</loc>`)
+    if (`/en/${translationKey}` !== en) expect(translationRedirect(groups, `/en/${translationKey}`)).toBe(en)
+  })
+
   it('localizes every route family while preserving content slugs, queries and fragments', () => {
     expect(localizedPath('/projekte/own-slug', 'da')).toBe('/da/projekter/own-slug')
     expect(localizedPath('/ueber-uns', 'en')).toBe('/en/about')
@@ -34,7 +49,7 @@ describe('localized routes and translation identity', () => {
   it('omits absent and non-indexable variants without inventing a default language', () => {
     const groups = translationGroups({ ...empty,
       projects: [record('en', 'map')],
-      pages: [record('de', 'unrelated-slug', { translationKey: 'ueber-uns' }), record('da', 'om-os', { translationKey: 'ueber-uns', noindex: true })],
+      pages: [{ locale: 'de', translationKey: 'ueber-uns' }, { locale: 'da', translationKey: 'ueber-uns', noindex: true }],
     })
     expect(alternateLinks(findTranslationGroup(groups, '/en/projects/map')).map((item) => item.hreflang)).toEqual(['en-GB'])
     expect(alternateLinks(findTranslationGroup(groups, '/ueber-uns')).map((item) => item.href)).toEqual(['https://oklabflensburg.de/ueber-uns'])

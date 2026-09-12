@@ -2,7 +2,6 @@
 title: "Respekt ist unsere Grundlage."
 description: "Ein Vorschlag für den gemeinsamen Umgang im Lab und in unseren Projekten."
 locale: "de"
-slug: "code-of-conduct"
 translationKey: "code-of-conduct"
 noindex: true
 ---
@@ -19,4 +18,4 @@ Belästigung, Diskriminierung, Drohungen und die Veröffentlichung privater Info
 
 Sprich bei Problemen eine organisierende Person an oder nutze den allgemeinen Kontakt. Schildere nur Informationen, die du teilen möchtest. Veröffentliche Beschwerden über persönliche Vorfälle nicht als öffentliches Issue.
 
-TODO: Den Kodex gemeinsam bestätigen sowie vertrauliche Ansprechpersonen und ein verbindliches Verfahren für Meldungen und Maßnahmen benennen.
+Dieser Kodex ist ein Vorschlag zur gemeinsamen Abstimmung. Vertrauliche Ansprechpersonen und das Verfahren für Meldungen und Maßnahmen werden nach der gemeinsamen Vereinbarung veröffentlicht.

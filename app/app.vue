@@ -36,7 +36,8 @@ useHead({
             name: site.name,
             url: site.url,
             logo: new URL(site.logo, site.url).href,
-            email: site.email,
+            // This Organization describes the Lab, not its runtime legal operator.
+            email: site.contact.email,
             sameAs: [site.github, site.network.url, site.social.mastodon],
           },
           {

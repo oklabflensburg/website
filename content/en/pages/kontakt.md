@@ -2,7 +2,6 @@
 title: "Let’s start a conversation."
 description: "An idea, a question or an interest in working together?"
 locale: "en"
-slug: "kontakt"
 translationKey: "kontakt"
 noindex: false
 ---

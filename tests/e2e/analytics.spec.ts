@@ -18,8 +18,15 @@ for (const blocked of [false, true]) {
     }
 
     let scriptRequests = 0
+    let eventRequests = 0
     const errors: string[] = []
     page.on('pageerror', (error) => errors.push(error.message))
+    await page.addInitScript(() => {
+      document.addEventListener('securitypolicyviolation', (event) => console.error(`CSP violation: ${event.violatedDirective}`))
+    })
+    page.on('console', (message) => {
+      if (message.text().startsWith('CSP violation:')) errors.push(message.text())
+    })
     // Serve the public origin from the local production build. Never send test
     // events to the real analytics service or fetch a mutable script in CI.
     await context.route('**/*', async (route) => {
@@ -35,8 +42,11 @@ for (const blocked of [false, true]) {
         if (blocked) await route.abort('blockedbyclient')
         else await route.fulfill({
           contentType: 'application/javascript',
-          body: 'if(typeof window.plausible!=="function"||!window.plausible.o)throw new Error("Missing Plausible initialization");window.plausible.integrationReady=true;',
+          body: `if(typeof window.plausible!=="function"||!window.plausible.o)throw new Error("Missing Plausible initialization");window.plausible.integrationReady=true;fetch("${new URL('/api/event', site.analytics.script).href}",{method:"POST",body:"isolated-test"});`,
         })
+      } else if (url.href === new URL('/api/event', site.analytics.script).href) {
+        eventRequests++
+        await route.fulfill({ status: 202, headers: { 'access-control-allow-origin': site.url }, body: '' })
       } else {
         errors.push(`Unexpected external request: ${url.origin}`)
         await route.abort()
@@ -49,10 +59,12 @@ for (const blocked of [false, true]) {
     await expect(loader).toHaveCount(1)
     await expect(loader).toHaveAttribute('async', '')
     if (!blocked) {
+      await expect.poll(() => eventRequests).toBe(1)
       await expect.poll(() => page.evaluate(() => (window as unknown as {
         plausible: { integrationReady?: boolean }
       }).plausible.integrationReady)).toBe(true)
     }
+    else expect(eventRequests).toBe(0)
     await page.evaluate(() => { document.documentElement.dataset.analyticsDocument = 'initial' })
     await page.locator('.project-card a[href="/projekte/open-city-planner"]').first().click()
     await expect(page).toHaveURL(`${site.url}/projekte/open-city-planner`)

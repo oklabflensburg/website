@@ -2,7 +2,6 @@
 title: "DatenSindDaten e.V."
 description: "An organisational home for open collaboration."
 locale: "en"
-slug: "daten-sind-daten"
 translationKey: "daten-sind-daten"
 noindex: false
 ---
@@ -21,4 +20,4 @@ Would you like to contribute infrastructure, time or knowledge? [Contact us](/ko
 
 ## Association information
 
-TODO: Add verified board and representation details, statutes, registration and transparency information. Membership terms and any donation details also need approval from the association.
+Further association information will be added here once it has been verified and approved by the association.

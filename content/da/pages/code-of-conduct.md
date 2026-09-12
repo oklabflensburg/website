@@ -2,7 +2,6 @@
 title: "Respekt er vores grundlag."
 description: "Et forslag til god omgang i vores lab og projekter."
 locale: "da"
-slug: "code-of-conduct"
 translationKey: "code-of-conduct"
 noindex: true
 ---
@@ -19,4 +18,4 @@ Chikane, diskrimination, trusler og deling af private oplysninger hører ikke hj
 
 Tal med en organisator eller brug den fælles kontaktadresse ved problemer. Del kun det, du ønsker at dele. Beskriv ikke personlige hændelser i offentlige issues.
 
-TODO: Bekræft kodekset i fællesskab, udpeg fortrolige kontaktpersoner og fastlæg en procedure for henvendelser og handling.
+Dette kodeks er et forslag til fælles drøftelse. Fortrolige kontaktpersoner og proceduren for henvendelser og handling bliver offentliggjort, når der er opnået en fælles aftale.

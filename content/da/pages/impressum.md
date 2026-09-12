@@ -2,7 +2,6 @@
 title: "Juridiske oplysninger"
 description: "Udbyder og kontaktoplysninger for OK Lab Flensburgs hjemmeside."
 locale: "da"
-slug: "impressum"
 translationKey: "impressum"
 noindex: true
 ---

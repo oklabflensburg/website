@@ -2,7 +2,6 @@
 title: "DatenSindDaten e.V."
 description: "Ein organisatorisches Zuhause für offenes Engagement."
 locale: "de"
-slug: "daten-sind-daten"
 translationKey: "daten-sind-daten"
 noindex: false
 ---
@@ -21,4 +20,4 @@ Du möchtest Infrastruktur, Zeit oder Wissen beitragen? [Nimm Kontakt auf](/kont
 
 ## Vereinsinformationen
 
-TODO: Bestätigte Angaben zu Vorstand und Vertretung, Satzung, Register und Transparenz ergänzen. Auch Mitgliedschaftsbedingungen und gegebenenfalls Spendeninformationen benötigen eine Freigabe durch den Verein.
+Weitere Vereinsinformationen werden hier ergänzt, sobald sie geprüft und vom Verein freigegeben sind.
