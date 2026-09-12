@@ -27,10 +27,21 @@ it('pins every workflow action to a full commit SHA with a release comment', () 
   }
 })
 
+it('uses the same CodeQL release for initialization and analysis', () => {
+  const workflow = yaml('.github/workflows/codeql.yml')
+  const steps = workflow.jobs.analyze.steps as { uses?: string }[]
+  const init = steps.find((step) => step.uses?.startsWith('github/codeql-action/init@'))?.uses
+  const analyze = steps.find((step) => step.uses?.startsWith('github/codeql-action/analyze@'))?.uses
+  expect(init).toBeDefined()
+  expect(analyze).toBeDefined()
+  expect(analyze?.split('@')[1]).toBe(init?.split('@')[1])
+})
+
 it('keeps GitHub Actions pins eligible for automated dependency updates', () => {
   const config = yaml('.github/dependabot.yml')
   expect(config.version).toBe(2)
   expect(config.updates).toContainEqual({
     'package-ecosystem': 'github-actions', directory: '/', schedule: { interval: 'weekly' },
+    groups: { codeql: { patterns: ['github/codeql-action/*'] } },
   })
 })
