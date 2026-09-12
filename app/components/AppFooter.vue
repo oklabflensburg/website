@@ -11,10 +11,10 @@ const localePath = useLocalePath()
       <p class="footer-tagline">{{ $t('footer.tagline') }}</p>
       <div class="footer-links">
         <div class="footer-social">
-          <a :href="site.github" class="icon-button" aria-label="GitHub"><AppIcon name="github" :size="18" /></a>
-          <a :href="site.social.mastodon" class="icon-button" aria-label="Mastodon" rel="me"><AppIcon name="social" :size="18" /></a>
-          <a :href="`mailto:${site.contact.email}`" class="icon-button" :aria-label="$t('common.contact')"><AppIcon name="mail" :size="18" /></a>
-          <a :href="`/rss.xml?lang=${$i18n.locale}`" class="icon-button" aria-label="RSS"><AppIcon name="rss" :size="18" /></a>
+          <SiteLink :href="site.github" class="icon-button" aria-label="GitHub"><AppIcon name="github" :size="18" /></SiteLink>
+          <SiteLink :href="site.social.mastodon" class="icon-button" aria-label="Mastodon" rel="me"><AppIcon name="social" :size="18" /></SiteLink>
+          <SiteLink :href="`mailto:${site.contact.email}`" class="icon-button" :aria-label="$t('common.contact')"><AppIcon name="mail" :size="18" /></SiteLink>
+          <SiteLink :href="`/rss.xml?lang=${$i18n.locale}`" class="icon-button" aria-label="RSS"><AppIcon name="rss" :size="18" /></SiteLink>
         </div>
         <nav :aria-label="$t('footer.group0')">
           <NuxtLink v-for="item in ['mitmachen', 'veranstaltungen', 'team', 'daten-sind-daten']" :key="item" :to="localePath(`/${item}`)">{{ $t(`nav.${item}`) }}</NuxtLink>

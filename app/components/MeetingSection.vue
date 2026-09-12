@@ -22,7 +22,7 @@ const localePath = useLocalePath()
     <div class="meeting-note">
       <p>{{ $t('meeting.welcome') }}</p>
       <p>{{ $t('meeting.note') }}</p>
-      <a :href="site.meeting.map" class="text-link">{{ $t('meeting.map') }} <AppIcon name="arrow" :size="16" /></a>
+      <SiteLink :href="site.meeting.map" class="text-link">{{ $t('meeting.map') }} <AppIcon name="arrow" :size="16" /></SiteLink>
     </div>
   </section>
 </template>

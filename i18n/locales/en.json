@@ -5,7 +5,8 @@
     "language": "Choose language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "breadcrumbs": "Breadcrumbs"
+    "breadcrumbs": "Breadcrumbs",
+    "newTab": "Opens in a new tab."
   },
   "hero": {
     "line1": "Open data.",
@@ -152,5 +153,12 @@
     "vatId": "VAT identification number",
     "privacyContactPerson": "Privacy contact person",
     "contentResponsible": "Responsible for content under section 18(2) MStV"
+  },
+  "mastodon": {
+    "heading": "From the Fediverse",
+    "more": "More on Mastodon",
+    "empty": "Find recent posts on our Mastodon profile.",
+    "post": "Post from",
+    "warning": "Content warning"
   }
 }

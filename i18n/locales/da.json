@@ -5,7 +5,8 @@
     "language": "Vælg sprog",
     "openMenu": "Åbn menu",
     "closeMenu": "Luk menu",
-    "breadcrumbs": "Brødkrummenavigation"
+    "breadcrumbs": "Brødkrummenavigation",
+    "newTab": "Åbner i en ny fane."
   },
   "hero": {
     "line1": "Åbne data.",
@@ -152,5 +153,12 @@
     "vatId": "Momsregistreringsnummer",
     "privacyContactPerson": "Kontaktperson for databeskyttelse",
     "contentResponsible": "Ansvarlig for indhold i henhold til § 18, stk. 2, MStV"
+  },
+  "mastodon": {
+    "heading": "Fra Fediverset",
+    "more": "Mere på Mastodon",
+    "empty": "Find aktuelle indlæg på vores Mastodon-profil.",
+    "post": "Indlæg fra",
+    "warning": "Indholdsadvarsel"
   }
 }

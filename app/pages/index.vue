@@ -27,7 +27,7 @@ usePageSeo(() => `${t('hero.line1')} ${t('hero.line2')}`, () => t('hero.intro'))
         <img src="/images/flensburg-map.svg" :alt="$t('hero.map')" width="800" height="680" fetchpriority="high" />
         <div class="hero-map-fade" /><span class="absolute top-[74%] left-[47%] text-base font-bold text-brand">{{ site.meeting.city }}</span>
         <p class="map-caption">{{ $t('hero.caption') }}</p>
-        <a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a>
+        <SiteLink class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap</SiteLink>
       </div>
     </section>
     <section class="pillars" :aria-label="$t('nav.ueber-uns')">
@@ -63,7 +63,8 @@ usePageSeo(() => `${t('hero.line1')} ${t('hero.line2')}`, () => t('hero.intro'))
           </li>
         </ul>
       </section>
-      <section class="join-card">
+      <MastodonFeed />
+      <section class="join-card md:col-span-2">
         <h2>{{ $t('home.joinTitle') }}</h2>
         <p>{{ $t('home.joinText') }}</p>
         <NuxtLink :to="localePath('/mitmachen')" class="button">{{ $t('common.learn') }} <AppIcon name="arrow" :size="16" /></NuxtLink>

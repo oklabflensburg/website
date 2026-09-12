@@ -17,7 +17,7 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: 'node .output/server/index.mjs',
+    command: 'node --experimental-strip-types tests/fixtures/serve-e2e.ts',
     url: 'http://127.0.0.1:3100',
     reuseExistingServer: false,
     timeout: 120000,

@@ -139,3 +139,7 @@ Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, die zum 
 ## Lizenz und Quellen
 
 Quellcode: [CC0 1.0](LICENSE). Manrope: [SIL Open Font License](OFL.txt). Projektbeschreibungen, soweit von [Code for Germany](https://codefor.de/flensburg/) adaptiert: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), mit konkreter Quellenangabe in jeder Projektdatei. Vorhandene Marken und Projektbilder behalten ihre ursprünglichen Rechte; die Code-Lizenz ist keine zusätzliche Markenlizenz.
+
+## Mastodon
+
+Die Startseite zeigt bis zu drei öffentliche Mastodon-Beiträge neben den Blog-Neuigkeiten. Abruf, Cache und HTML-zu-Text-Verarbeitung erfolgen ausschließlich serverseitig; es werden keine entfernten Medien geladen. [Konfiguration, Ausfallverhalten, Datenschutz und Tests](docs/mastodon.md).
