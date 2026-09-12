@@ -52,6 +52,8 @@ Unknown paths and absent translations do not get invented destinations. Existing
 
 `server/utils/translations.ts` queries the existing Content collections and derives a minimal public translation index. `/api/translations` supplies it to SSR and the hydrated app; it is not a second content source. Draft and future blog posts never enter that index. Sitemap uses the same server utility.
 
+Production shares one in-flight/resolved promise per Node process and UTC date across the API, redirects and sitemap. Deployment/restart clears it; there is no persisted or committed translation map. The first request after UTC midnight replaces the entry, preserving the existing date-based publication of scheduled posts without a deployment. Failures evict their own entry and retry on the next call. Development bypasses caching so Content edits appear immediately. Only the derived groups are cached, never request URLs, queries or legal runtime data. Each worker maintains its own bounded entry.
+
 `usePageSeo` owns canonical, OpenGraph URL, WebPage data and actual hreflang alternates. `app/app.vue` uses `useLocaleHead({ seo: false })` only for HTML language attributes, avoiding a competing guessed slug-based alternate set. BlogPosting and breadcrumb URLs continue to use the resolved locale route. RSS uses the actual locale slug and the shared path serializer.
 
 Only present, indexable translations appear in HTML hreflang and reciprocal sitemap alternates. `noindex` pages retain their canonical and navigation but stay out of sitemap/alternates. No `x-default` is emitted: the site has no language-neutral landing page, and missing German content must not imply one. XML URLs are escaped and browser tests parse the sitemap as XML.
