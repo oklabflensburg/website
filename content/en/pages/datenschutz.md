@@ -48,7 +48,7 @@ In our configuration, Plausible does not set analytics cookies and does not stor
 
 The processing is based on Article 6(1)(f) GDPR. Our legitimate interest is privacy-friendly statistical analysis, identifying technical issues and improving our online services.
 
-Where external hosting providers are involved in operating Plausible, they are engaged as processors pursuant to Article 28 GDPR. Analytics data is retained only for as long as necessary for the purposes described above and in accordance with the retention configured for the service.
+Where external hosting providers are involved in operating Plausible, they are engaged in accordance with the applicable data protection requirements. Analytics data is retained only for as long as necessary for the purposes described above and in accordance with the retention configured for the service.
 
 **You may object to this processing under Article 21 GDPR on grounds relating to your particular situation.** You can submit your objection to the controller identified in this privacy notice.
 
