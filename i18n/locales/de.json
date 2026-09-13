@@ -55,10 +55,17 @@
     "3": "Mittwoch"
   },
   "footer": {
-    "tagline": "Offene Daten. Starke Gemeinschaft. Flensburg.",
-    "group0": "Entdecken",
-    "group1": "Das Lab",
-    "group2": "Gut zu wissen"
+    "tagline": "Offene Daten, freie Software und Civic Tech für Flensburg und Schleswig-Holstein.",
+    "community": "Mitmachen",
+    "explore": "Entdecken",
+    "follow": "Folge uns",
+    "legal": "Rechtliches",
+    "meeting": "{day}, {start}–{end} Uhr",
+    "joinCta": "Komm dazu",
+    "githubCta": "Auf GitHub beitragen",
+    "email": "E-Mail",
+    "network": "Teil von {network}",
+    "carrier": "Träger: {association}"
   },
   "common": {
     "all": "Alle",
