@@ -139,3 +139,7 @@ Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, die zum 
 ## Lizenz und Quellen
 
 Quellcode: [CC0 1.0](LICENSE). Manrope: [SIL Open Font License](OFL.txt). Projektbeschreibungen, soweit von [Code for Germany](https://codefor.de/flensburg/) adaptiert: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), mit konkreter Quellenangabe in jeder Projektdatei. Vorhandene Marken und Projektbilder behalten ihre ursprünglichen Rechte; die Code-Lizenz ist keine zusätzliche Markenlizenz.
+
+## Externe Links
+
+Externe HTTP(S)-Links öffnen über `SiteLink.vue` in einem neuen Tab mit `noopener noreferrer`; zusätzliche Werte wie `rel="me"` bleiben erhalten. `shared/utils/links.ts` vergleicht die Ziel-Origin mit `site.url`. Nuxt Content nutzt dieselbe Regel in `ProseA.vue`; interne und gleichursprüngliche absolute Links bleiben im selben Tab. Übersetzte Routen, Query-Parameter und Fragmente bleiben erhalten. Die Komponenten- und Browsertests prüfen diese Regeln in DE/DA/EN.

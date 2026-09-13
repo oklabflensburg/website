@@ -18,14 +18,14 @@ const { data: members } = await useAsyncData('team', () =>
       <h2>{{ member.name }}</h2>
       <p class="eyebrow">{{ member.role[locale] }}</p>
       <p>{{ member.bio[locale] }}</p>
-      <a v-if="member.github" :href="member.github" class="text-link"
-        >GitHub ↗</a
-      ><a
+      <SiteLink v-if="member.github" :href="member.github" class="text-link"
+        >GitHub ↗</SiteLink
+      ><SiteLink
         v-for="link in member.links"
         :key="link.url"
         :href="link.url"
         class="text-link"
-        >{{ link.label }} ↗</a
+        >{{ link.label }} ↗</SiteLink
       >
     </article>
   </div>

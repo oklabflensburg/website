@@ -19,7 +19,7 @@ function escapeMenu() {
 }
 </script>
 <template>
-  <a class="skip-link" href="#main-content">{{ $t('a11y.skip') }}</a>
+  <SiteLink class="skip-link" href="#main-content">{{ $t('a11y.skip') }}</SiteLink>
   <header class="header" @keydown.esc="escapeMenu">
     <div class="shell header-inner">
       <NuxtLink :to="localePath('/')" class="brand"><AppLogo /></NuxtLink>

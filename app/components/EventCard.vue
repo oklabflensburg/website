@@ -19,12 +19,12 @@ const format = (value: string) =>
     <p>{{ event.description }}</p>
     <p>{{ event.location }} · {{ event.address }}</p>
     <p>{{ $t(`events.${event.status}`) }}</p>
-    <a :href="event.url" class="text-link">{{ $t('events.details') }} ↗</a
-    ><a
+    <SiteLink :href="event.url" class="text-link">{{ $t('events.details') }} ↗</SiteLink
+    ><SiteLink
       v-if="event.registrationUrl && event.status === 'scheduled'"
       :href="event.registrationUrl"
       class="button"
-      >{{ $t('events.register') }} ↗</a
+      >{{ $t('events.register') }} ↗</SiteLink
     >
   </article>
 </template>
