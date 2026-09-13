@@ -1,6 +1,74 @@
-# OK Lab Flensburg
+# OK Lab Flensburg – Open Data, Civic Tech, GIS & Open Source
 
-Die Website des OK Lab Flensburg: offene Daten, freie Software und Civic Tech für Flensburg und Schleswig-Holstein. Der Trägerverein ist DatenSindDaten e.V. Die Website richtet sich an interessierte Menschen und ehrenamtliche Contributor; Programmieren ist keine Voraussetzung.
+[![Website](https://img.shields.io/badge/Website-oklabflensburg.de-0b4f80)](https://oklabflensburg.de)
+[![Code for Germany](https://img.shields.io/badge/Network-Code%20for%20Germany-0b4f80)](https://codefor.de/flensburg/)
+[![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-success.svg)](LICENSE)
+
+**OK Lab Flensburg** ist eine offene Civic-Tech-Community für **Open Data, GIS, Geodaten, Open Source und digitale Stadtentwicklung in Flensburg und Schleswig-Holstein**. Wir entwickeln ehrenamtlich freie digitale Werkzeuge, Karten, WebGIS-Anwendungen und Datenprojekte, die öffentliche Informationen leichter zugänglich, verständlich und nutzbar machen.
+
+Die Website unter **[oklabflensburg.de](https://oklabflensburg.de)** stellt das Lab, seine Projekte, Veranstaltungen, Blogbeiträge und Möglichkeiten zum digitalen Ehrenamt vor. Sie ist auf **Deutsch, Dänisch und Englisch** verfügbar.
+
+- 🌐 **Website:** [oklabflensburg.de](https://oklabflensburg.de)
+- 🗺️ **Projekte:** [oklabflensburg.de/projekte](https://oklabflensburg.de/projekte)
+- 💻 **GitHub:** [github.com/oklabflensburg](https://github.com/oklabflensburg)
+- 🐘 **Fediverse:** [@oklabflensburg@norden.social](https://norden.social/@oklabflensburg)
+- 🌍 **Netzwerk:** [Code for Germany](https://codefor.de/flensburg/)
+
+## Über das OK Lab Flensburg
+
+Das OK Lab Flensburg bringt Menschen zusammen, die sich für **offene Daten, Softwareentwicklung, Geoinformatik, OpenStreetMap, Stadtentwicklung, Datenanalyse und digitale Gemeingüter** interessieren. Programmieren ist keine Voraussetzung: Auch Beiträge zu Datenrecherche, Dokumentation, Übersetzungen, UX, Design, Tests und Öffentlichkeitsarbeit sind willkommen.
+
+Unsere Projekte beschäftigen sich unter anderem mit:
+
+- offenen kommunalen und regionalen Daten,
+- interaktiven Karten und WebGIS,
+- GIS, Geodaten und OpenStreetMap,
+- Stadtplanung und Stadtentwicklung,
+- Umwelt-, Sozial-, Bildungs- und Kulturdaten,
+- Open-Source-Software und offenen Schnittstellen,
+- digitalem Ehrenamt und Civic Tech.
+
+Das OK Lab Flensburg ist Teil des **Code-for-Germany-Netzwerks**. Träger ist **DatenSindDaten e.V.**
+
+## Projekte
+
+Auf der Website werden zahlreiche Open-Data- und Civic-Tech-Projekte aus Flensburg und Schleswig-Holstein dokumentiert. Dazu gehören unter anderem:
+
+- **Open City Planner** – offenes WebGIS für urbane Daten und Stadtanalyse,
+- **Kulturbytes** – digitale Plattform rund um Kulturveranstaltungen,
+- **Denkmalkarte Schleswig-Holstein** – offene Kartendarstellung von Kulturdenkmalen,
+- **Biotopkarte Schleswig-Holstein** – räumlicher Zugang zu Biotop- und Umweltdaten,
+- **Flurstücksauskunft Schleswig-Holstein** – Kartenanwendung für Flurstücke,
+- **Open Data API** – maschinenlesbarer Zugang zu offenen Daten,
+- **Badestellenkarte**, **Bildungsatlas**, **Kitafinder**, **Nahverkehrskarte**, **Notfallkarte** und weitere Kartenprojekte.
+
+➡️ **[Alle Projekte ansehen](https://oklabflensburg.de/projekte)**
+
+## Mitmachen
+
+Das OK Lab Flensburg ist offen für neue Mitwirkende. Besonders hilfreich sind Kenntnisse oder Interesse in Bereichen wie **GIS/Geoinformatik, PostgreSQL/PostGIS, Webentwicklung, OpenStreetMap, Datenanalyse, Open Data, Barrierefreiheit, UX und Dokumentation**.
+
+➡️ **[Mehr über Mitmachen und digitales Ehrenamt](https://oklabflensburg.de/mitmachen)**
+
+## Dieses Repository
+
+Dieses Repository enthält den Quellcode der offiziellen Website **[oklabflensburg.de](https://oklabflensburg.de)**.
+
+### Tech Stack
+
+- Nuxt 4
+- Vue 3
+- TypeScript
+- Tailwind CSS 4
+- Nuxt Content 3
+- Nuxt i18n
+- Nuxt Image
+- Nitro / Node.js SSR
+- Vitest
+- Playwright
+- CodeQL
+
+Die Website wird serverseitig gerendert, verwendet Nuxt Content als kanonische Inhaltsquelle und unterstützt lokalisierte URLs, Canonical URLs, hreflang, Sitemap, RSS, OpenGraph und strukturierte Daten.
 
 ## Architektur
 
@@ -9,20 +77,34 @@ Eine kanonische Nuxt-4-Anwendung mit Vue 3, TypeScript, Tailwind CSS 4, `@nuxtjs
 - `app/`: gemeinsame Komponenten, Seiten und SEO.
 - `content/`: einzige Quelle für Projekte, Blog, redaktionelle Seiten, Team und zusätzliche Events.
 - `i18n/locales/`: ausschließlich UI-Texte in DE/DA/EN.
-- `shared/config/site.ts`: Organisation, Domain, allgemeiner Lab-Kontakt (`site.contact.email`) und regelmäßiges Treffen. Der allgemeine Kontakt gilt auch für die `Organization`-Metadaten; rechtlicher Betreiberkontakt kommt ausschließlich aus `runtimeConfig.public.legal`, ohne gegenseitigen Fallback.
+- `shared/config/site.ts`: Organisation, Domain, allgemeiner Lab-Kontakt (`site.contact.email`) und regelmäßiges Treffen.
 - `shared/config/content.ts`: gemeinsame Content-Schemas; `content.config.ts`: Collections und Dateiquellen.
 - `server/routes/`: RSS, Sitemap und robots.txt aus derselben Konfiguration und denselben Collections.
-- `public/`: tatsächlich verwendete lokale Bilder, Marken und Schrift.
+- `public/`: lokale Bilder, Marken und Schrift.
 
-[Migration und entfernte Implementierungen](docs/migration.md) · [Offene redaktionelle Angaben](docs/editorial-todos.md)
+Weiterführende Dokumentation:
+
+- [Lokalisierte Routen und SEO](docs/localized-routing.md)
+- [Analytics](docs/analytics.md)
+- [Branding](docs/brand.md)
+- [HTTP-Sicherheitsheader](docs/security-headers.md)
+- [Legal-Konfiguration](docs/legal-configuration.md)
+- [Abhängigkeiten](docs/dependencies.md)
+- [Migration und entfernte Implementierungen](docs/migration.md)
+- [Offene redaktionelle Angaben](docs/editorial-todos.md)
 
 ## Entwicklung
 
-Node.js **22.22 oder neuer**, pnpm **12.3.4**. Vite 8 ist als gemeinsamer Peer für Nuxt, Tailwind und Vitest festgelegt. Nuxt Content nutzt den nativen SQLite-Treiber von Node; keine zusätzliche Datenbankinstallation nötig.
+Voraussetzungen:
+
+- Node.js **22.22 oder neuer**
+- pnpm **12.3.4**
+
+Nuxt Content nutzt den nativen SQLite-Treiber von Node; eine zusätzliche Datenbankinstallation ist für die Website nicht notwendig.
 
 ```sh
 corepack enable
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
@@ -38,29 +120,31 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Vitest 5 prüft Schemas, Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Sommer-/Winterzeit der Treffen. Playwright startet den Production Server auf Port 3100 und prüft alle Pflichtseiten in drei Sprachen, Navigation, mobile Bedienung, Filter, SEO, SSR/Hydration und axe-Barrierefreiheit. Screenshots liegen in `docs/screenshots/`, Testberichte in `playwright-report/`. Der Workflow [Website CI](.github/workflows/ci.yml) installiert Chromium mit Systemabhängigkeiten und lädt Berichte als Artefakte hoch; [CodeQL](.github/workflows/codeql.yml) prüft JavaScript/TypeScript. GitHub Actions ist aktiviert; der [CI-Audit](docs/ci-audit.md) dokumentiert die Wiederaktivierung. Für einen PR zählt das tatsächliche Ergebnis der Runs auf seinem aktuellen Commit, nicht allein das Vorhandensein der Workflow-Dateien.
+Vitest prüft unter anderem Content-Schemas, Übersetzungsidentitäten, UI-Locale-Parität, Pagination, XML-Escaping und Zeitberechnungen. Playwright prüft Pflichtseiten in allen drei Sprachen, Navigation, mobile Bedienung, SEO, SSR/Hydration und axe-Barrierefreiheit.
 
-Peer-Abhängigkeiten, zwei vorübergehende eng begrenzte Versionskorrekturen und ihre Entfernungskriterien: [docs/dependencies.md](docs/dependencies.md). Release-Alter und Build-Script-Freigaben bleiben erhalten.
+GitHub Actions führt dieselben zentralen Prüfungen aus. [Website CI](.github/workflows/ci.yml) deckt Installation, Peer-Checks, Lint, Typecheck, Tests, Build und Playwright ab; [CodeQL](.github/workflows/codeql.yml) analysiert JavaScript und TypeScript.
 
 ## Sprachen und Routing
 
-Nur Nuxt i18n verwaltet Sprache und Routing. Deutsch liegt unter `/`, Dänisch unter `/da`, Englisch unter `/en`, mit übersetzten Pfaden: `/projekte`, `/da/projekter`, `/en/projects`. Die zentrale Routenmatrix steht in `shared/config/site.ts`. Sprachwechsel berücksichtigen die tatsächlich vorhandenen Übersetzungen, auch bei unterschiedlichen Detail-Slugs. Kein Spracherkennungscookie.
+Nuxt i18n verwaltet Sprache und Routing:
 
-Die redaktionellen Route-Einstiege rendern ausschließlich die gemeinsame `EditorialPage.vue`. Die bisherige generische `[page].vue` ist entfernt; unbekannte URLs liefern 404. Projekte und Blogbeiträge werden über `locale` und `slug` abgefragt; `translationKey` verbindet Übersetzungen derselben Collection unabhängig vom Slug. Editorial-Seiten werden über `locale` und ihren stabilen `translationKey` abgefragt; ihr Frontmatter enthält keinen redundanten `slug`. Die Dateinamen bleiben unverändert, die öffentlichen Pfade kommen ausschließlich aus `routePaths`. Interne Markdown-Links werden über `ProseA` lokalisiert.
+- Deutsch: `/`
+- Dänisch: `/da`
+- Englisch: `/en`
 
-Canonical, OpenGraph und strukturierte Daten verwenden die aufgerufene Sprachroute. Hreflang und Sitemap verwenden denselben aus Nuxt Content abgeleiteten Übersetzungsindex. Fehlende oder unveröffentlichte Sprachvarianten werden nicht erfunden; `noindex`-Varianten werden nicht als Alternates ausgegeben. Alte Sprachpfade und dokumentierte Slug-Aliase werden mit 301 direkt weitergeleitet. [Routenmatrix, Migration und SEO-Regeln](docs/localized-routing.md).
+Beispiele für lokalisierte Projektpfade:
 
-## Kanonische Organisationsmarke
+- `/projekte`
+- `/da/projekter`
+- `/en/projects`
 
-`shared/config/site.ts` definiert `site.logo`: `/brand/oklabflensburg-logo.png`. Die Datei ist die unveränderte PNG aus dem offiziellen Organisationsrepository. `AppLogo.vue` verwendet sie für Header, Footer und Projekt-Absender; Projekt-Signets bleiben eigenständige Identitäten. Die Marke enthält bereits Schrift und erhält keine zusätzliche Text-Wortmarke.
+Die zentrale Routenmatrix liegt in `shared/config/site.ts`. Projekte und Blogbeiträge werden über `locale` und lokalisierte `slug`-Werte geladen; `translationKey` verbindet Übersetzungen derselben Ressource. Editorial-Seiten verwenden `locale` und `translationKey` und erhalten ihre öffentlichen Pfade ausschließlich über `routePaths`.
 
-`pnpm brand:generate` leitet daraus ICO-/PNG-Favicons, Apple-Touch-Icon, die allgemeine Social Card und gebrandete Projekt-Social-Cards ab. `pnpm build` führt diesen Schritt automatisch aus. Projektzuordnungen kommen aus Nuxt Content. Nach Änderungen am Logo oder an Projekt-Signets die Ableitungen vor Tests neu erzeugen und zusammen mit der Quelle einchecken. Alle Blogbeiträge nutzen dieselbe gebrandete Standardvorschau; optionale Artikelbilder bleiben Inhaltsbilder.
-
-Quelle, Prüfsumme, Markenrollen und Audit: [docs/brand.md](docs/brand.md).
+Canonical URLs, OpenGraph, strukturierte Daten, hreflang und Sitemap verwenden dieselbe abgeleitete Übersetzungsstruktur. Details stehen in [docs/localized-routing.md](docs/localized-routing.md).
 
 ## Projekt hinzufügen
 
-Pro Sprache eine Datei `content/{de,da,en}/projects/<translationKey>.md` erstellen. Das sind Übersetzungen derselben kanonischen Content-Quelle, keine zusätzlichen Datensysteme.
+Pro Sprache eine Datei unter `content/{de,da,en}/projects/<translationKey>.md` anlegen.
 
 ```yaml
 ---
@@ -82,7 +166,9 @@ source: https://example.org/projektquelle
 ---
 ```
 
-Danach Markdown mit Zweck, Datenquellen und Einstiegsmöglichkeiten. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`. Neue Kategorie-Schlüssel in allen drei UI-Dateien ergänzen. Jedes Projekt braucht ein eigenes, textfreies SVG-Signet unter `public/images/projects/<translationKey>.svg` (1024 × 1024 px, `viewBox="0 0 128 128"`) und einen beschreibenden, lokalisierten `imageAlt`. Bilder und Alt-Texte sind Pflichtfelder. Keine Fotos, Screenshots oder Platzhalter. Keine zweite Liste in Vue oder JSON. Palette, Raster, Symbolkonzepte und Review stehen in [docs/project-logo-system.md](docs/project-logo-system.md). Die Karten zeigen die vollständigen Signets mit `object-fit: contain`; die Social-Vorschau kombiniert dieselbe SVG-Quelle mit der kanonischen Organisationsmarke als PNG.
+Danach den Markdown-Inhalt mit Zweck, Datenquellen und Einstiegsmöglichkeiten ergänzen. Nur verifizierte Projekte anlegen. Statuswerte: `development`, `seeking-contributors`, `completed`, `unknown`.
+
+Jedes Projekt benötigt ein passendes SVG-Signet unter `public/images/projects/<translationKey>.svg` und einen lokalisierten `imageAlt`. Das Logo- und Signet-System ist in [docs/project-logo-system.md](docs/project-logo-system.md) dokumentiert.
 
 ## Blogbeitrag schreiben
 
@@ -103,43 +189,47 @@ draft: true
 ---
 ```
 
-Optional `image`. Nach redaktioneller Freigabe `draft: false` setzen. Unveröffentlichte und zukünftige Beiträge erscheinen weder in Übersichten noch in Detailrouten, Sitemap oder RSS. Pagination umfasst sechs Beiträge pro Seite, Themenfilter nutzt `?tag=…`. RSS: `/rss.xml?lang=de` (auch `da`, `en`). Keine zweite Blog-Engine.
+Nach redaktioneller Freigabe `draft: false` setzen. Unveröffentlichte und zukünftige Beiträge erscheinen nicht in Übersichten, Detailrouten, Sitemap oder RSS. RSS ist unter `/rss.xml?lang=de` sowie für `da` und `en` verfügbar.
 
 ## Event hinzufügen
 
-Nur bestätigte Einzeltermine in `content/{de,da,en}/events/<slug>.yml` speichern. Pflichtfelder: `locale`, `slug`, `title`, `description`, `kind`, `start`, `end`, `location`, `address`, `url`, `status`. Zeitangaben sind ISO 8601 mit explizitem Offset, z.B. `2027-01-20T18:00:00+01:00`; dieses Beispiel ist keine Terminankündigung. Optional `registrationUrl`. `kind`: `meetup`, `open-data-day`, `workshop`, `talk`, `hackathon`, `community`; `status`: `scheduled`, `cancelled`, `postponed`. Vergangene Termine bleiben als solche sichtbar, abgesagte Termine behalten ihren Status.
+Bestätigte Einzeltermine werden in `content/{de,da,en}/events/<slug>.yml` gepflegt. Pflichtfelder sind `locale`, `slug`, `title`, `description`, `kind`, `start`, `end`, `location`, `address`, `url` und `status`.
 
-Das regelmäßige Treffen wird ausschließlich in `shared/config/site.ts` gepflegt. Der nächste reguläre Termin für strukturierte Daten berücksichtigt die Zeitzone Europe/Berlin. Feiertagsausnahmen müssen organisatorisch geprüft und angekündigt werden.
+Das regelmäßige Treffen wird ausschließlich in `shared/config/site.ts` gepflegt.
 
 ## Teammitglied hinzufügen
 
-Mit Zustimmung eine YAML-Datei in `content/team/` anlegen. Felder: `name`, optional `github` und lokaler `avatar`-Pfad, `role: { de, da, en }`, `bio: { de, da, en }`, `links: [{ label, url }]`, `consent: true`. Zustimmung im Review nachvollziehbar bestätigen, keine privaten Belege veröffentlichen. Es gibt keine automatische Übernahme von GitHub-Mitgliedern und keine zweite Teamliste.
+Mit Zustimmung eine YAML-Datei in `content/team/` anlegen. Unterstützte Felder sind `name`, optional `github` und lokaler `avatar`, übersetzte `role`- und `bio`-Objekte, zusätzliche Links und `consent: true`.
+
+Teamdaten werden nicht automatisch aus GitHub übernommen.
 
 ## Deployment
 
-Nitro setzt die [HTTP-Sicherheitsheader einschließlich CSP](docs/security-headers.md); der HTTPS-Reverse-Proxy übernimmt TLS, HTTPS-Weiterleitung und HSTS. Beim Deployment die bisherigen Nginx-Anwendungsheader entfernen und anschließend den dokumentierten HTTPS-Smoke-Test ausführen.
+Nitro setzt die [HTTP-Sicherheitsheader einschließlich CSP](docs/security-headers.md); der HTTPS-Reverse-Proxy übernimmt TLS, HTTPS-Weiterleitung und HSTS.
 
-Betreiberangaben für Impressum und Datenschutz werden ausschließlich über `NUXT_PUBLIC_LEGAL_*` konfiguriert. Pflichtfelder sind Name, Straße, Hausnummer, Postleitzahl, Ort, Land und E-Mail. Optional kommen Hosting-Anbieter und Anschrift aus derselben Konfiguration; `NUXT_PUBLIC_LEGAL_HOSTING_DPA=true` blendet den übersetzten AVV-Hinweis ein. [Variablen, `.env.example`, Produktionsprüfung und redaktionelle Freigabe](docs/legal-configuration.md) dokumentieren alle Pflicht- und optionalen Angaben. Echte Produktionswerte dürfen nicht in Git oder CI-Logs gelangen.
+Betreiberangaben für Impressum und Datenschutz werden über `NUXT_PUBLIC_LEGAL_*` konfiguriert. Echte Produktionswerte gehören nicht in Git oder CI-Logs. Details stehen in [docs/legal-configuration.md](docs/legal-configuration.md).
 
 ```sh
 pnpm build
 HOST=0.0.0.0 PORT=3000 node --env-file=.env .output/server/index.mjs
 ```
 
-Die `.env` auf dem Zielserver muss geprüfte Werte enthalten; alternativ die Variablen über systemd/Prozessumgebung setzen und `--env-file` weglassen. Ein Build ohne Betreiberwerte ist möglich, der gebaute Server verweigert bei fehlenden Pflichtangaben oder erkennbaren Platzhaltern den Start. Playwright verwendet ausschließlich fiktive Testangaben und prüft auch diesen Startfehler.
-
-Die gesamte `.output/` als Node-Anwendung betreiben, hinter einem HTTPS-Reverse-Proxy für `oklabflensburg.de`. Prozess benötigt einen beschreibbaren Arbeitsbereich für die Content-SQLite-Datenbank `.data/`; Inhalte werden beim Build eingebunden. Build und Runtime verwenden eine unterstützte Node-Version. Kein reines Datei-Hosting: SSR, RSS, Sitemap und Bildoptimierung benötigen den Server. Bei Domainänderungen `shared/config/site.ts` anpassen. Alte `.html`- und Contributor-URLs haben gezielte 301-Weiterleitungen.
-
-Vor dem öffentlichen Deployment die [redaktionellen TODOs](docs/editorial-todos.md), insbesondere Anbieter- und Datenschutzangaben, vervollständigen. Diese Migration veröffentlicht keine erfundenen Rechtsangaben und deployt die Website nicht automatisch.
-
-## Mitentwickeln
-
-Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, die zum Änderungstyp gehörenden Prüfungen ausführen und einen Pull Request öffnen. Für Anwendung, Content, Assets und Konfiguration gilt die vollständige Prüfsequenz oben; reine Dokumentationsänderungen erfordern Markdown-, Link-/Pfad-, Command- und Konsistenzprüfung. Bestehende Komponenten erweitern, ersetzte Implementierungen entfernen. Verbindliche Vorgaben stehen in [AGENTS.md](AGENTS.md). Auch Übersetzungen, Datenprüfung, UX, Dokumentation und Tests helfen.
-
-## Lizenz und Quellen
-
-Quellcode: [CC0 1.0](LICENSE). Manrope: [SIL Open Font License](OFL.txt). Projektbeschreibungen, soweit von [Code for Germany](https://codefor.de/flensburg/) adaptiert: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), mit konkreter Quellenangabe in jeder Projektdatei. Vorhandene Marken und Projektbilder behalten ihre ursprünglichen Rechte; die Code-Lizenz ist keine zusätzliche Markenlizenz.
+Die Anwendung wird als Nitro-Node-Server hinter einem HTTPS-Reverse-Proxy betrieben. SSR, RSS, Sitemap und Bildoptimierung benötigen den Server; reines statisches Datei-Hosting ist nicht vorgesehen.
 
 ## Externe Links
 
-Externe HTTP(S)-Links öffnen über `SiteLink.vue` in einem neuen Tab mit `noopener noreferrer`; zusätzliche Werte wie `rel="me"` bleiben erhalten. `shared/utils/links.ts` vergleicht die Ziel-Origin mit `site.url`. Nuxt Content nutzt dieselbe Regel in `ProseA.vue`; interne und gleichursprüngliche absolute Links bleiben im selben Tab. Übersetzte Routen, Query-Parameter und Fragmente bleiben erhalten. Die Komponenten- und Browsertests prüfen diese Regeln in DE/DA/EN.
+Externe HTTP(S)-Links öffnen über `SiteLink.vue` in einem neuen Tab mit `noopener noreferrer`; zusätzliche Werte wie `rel="me"` bleiben erhalten. `shared/utils/links.ts` vergleicht die Ziel-Origin mit `site.url`. Nuxt Content nutzt dieselbe Regel in `ProseA.vue`; interne und gleichursprüngliche absolute Links bleiben im selben Tab.
+
+## Mitentwickeln
+
+Feature-Branch erstellen, Änderungen klein und nachvollziehbar halten, passende Prüfungen ausführen und einen Pull Request öffnen. Verbindliche Vorgaben stehen in [AGENTS.md](AGENTS.md).
+
+Beiträge sind nicht nur als Code willkommen: Auch Datenprüfung, Übersetzungen, UX, Barrierefreiheit, Dokumentation, Recherche und Tests helfen dem Projekt.
+
+## Lizenz und Quellen
+
+- Quellcode: [CC0 1.0](LICENSE)
+- Manrope: [SIL Open Font License](OFL.txt)
+- Projektbeschreibungen, soweit von [Code for Germany](https://codefor.de/flensburg/) adaptiert: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+Vorhandene Marken und Projektbilder behalten ihre ursprünglichen Rechte; die Code-Lizenz ist keine zusätzliche Markenlizenz.
