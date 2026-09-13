@@ -5,7 +5,8 @@
     "language": "Vælg sprog",
     "openMenu": "Åbn menu",
     "closeMenu": "Luk menu",
-    "breadcrumbs": "Brødkrummenavigation"
+    "breadcrumbs": "Brødkrummenavigation",
+    "newTab": "Åbner i en ny fane."
   },
   "hero": {
     "line1": "Åbne data.",

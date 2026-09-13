@@ -5,7 +5,8 @@
     "language": "Sprache wählen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "breadcrumbs": "Brotkrumennavigation"
+    "breadcrumbs": "Brotkrumennavigation",
+    "newTab": "Öffnet in einem neuen Tab."
   },
   "hero": {
     "line1": "Offene Daten.",

@@ -8,10 +8,10 @@ useSeoMeta({ title: () => t('error.title'), robots: 'noindex, follow' })
 <template>
   <main class="shell page">
     <p class="eyebrow">{{ error.statusCode }}</p>
-    <PageHeading :title="$t('error.title')" :description="$t('error.text')" /><a
+    <PageHeading :title="$t('error.title')" :description="$t('error.text')" /><SiteLink
       :href="localePath('/')"
       class="button"
-      >{{ $t('error.home') }}</a
+      >{{ $t('error.home') }}</SiteLink
     >
   </main>
 </template>

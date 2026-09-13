@@ -27,7 +27,7 @@ usePageSeo(() => `${t('hero.line1')} ${t('hero.line2')}`, () => t('hero.intro'))
         <img src="/images/flensburg-map.svg" :alt="$t('hero.map')" width="800" height="680" fetchpriority="high" />
         <div class="hero-map-fade" /><span class="absolute top-[74%] left-[47%] text-base font-bold text-brand">{{ site.meeting.city }}</span>
         <p class="map-caption">{{ $t('hero.caption') }}</p>
-        <a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a>
+        <SiteLink class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap</SiteLink>
       </div>
     </section>
     <section class="pillars" :aria-label="$t('nav.ueber-uns')">

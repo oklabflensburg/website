@@ -5,7 +5,8 @@
     "language": "Choose language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "breadcrumbs": "Breadcrumbs"
+    "breadcrumbs": "Breadcrumbs",
+    "newTab": "Opens in a new tab."
   },
   "hero": {
     "line1": "Open data.",

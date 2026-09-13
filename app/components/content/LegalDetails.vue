@@ -33,11 +33,11 @@ const details = computed(() => optionalLegalFields.filter((field) =>
     <dl v-if="kind !== 'hosting'" class="mt-6 grid gap-4">
       <div v-if="contact.email" data-legal-field="email">
         <dt class="font-bold text-text">{{ $t('legal.email') }}</dt>
-        <dd><a v-if="links.email" :href="links.email">{{ contact.email }}</a><span v-else>{{ contact.email }}</span></dd>
+        <dd><SiteLink v-if="links.email" :href="links.email">{{ contact.email }}</SiteLink><span v-else>{{ contact.email }}</span></dd>
       </div>
       <div v-if="contact.phone" data-legal-field="phone">
         <dt class="font-bold text-text">{{ $t('legal.phone') }}</dt>
-        <dd><a v-if="links.phone" :href="links.phone">{{ contact.phone }}</a><span v-else>{{ contact.phone }}</span></dd>
+        <dd><SiteLink v-if="links.phone" :href="links.phone">{{ contact.phone }}</SiteLink><span v-else>{{ contact.phone }}</span></dd>
       </div>
       <div v-for="field in details" :key="field" :data-legal-field="field">
         <dt class="font-bold text-text">{{ $t(`legal.${field}`) }}</dt>

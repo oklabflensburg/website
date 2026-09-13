@@ -37,8 +37,8 @@ usePageSeo(
           {{ slug === 'ueber-uns' ? site.network.name : site.association.name }}
         </h2>
         <p>{{ $t(slug === 'ueber-uns' ? 'home.networkText' : 'home.associationText') }}</p>
-        <a v-if="slug === 'ueber-uns'" :href="site.network.url" class="text-link"
-          >{{ site.network.name }} ↗</a
+        <SiteLink v-if="slug === 'ueber-uns'" :href="site.network.url" class="text-link"
+          >{{ site.network.name }} ↗</SiteLink
         >
       </aside>
     </div>
@@ -56,9 +56,9 @@ usePageSeo(
       class="contact-panel"
     >
       <h2>{{ $t('common.contact') }}</h2>
-      <a :href="`mailto:${site.contact.email}`" class="text-link">{{ site.contact.email }} ↗</a
-      ><a v-if="slug === 'kontakt'" :href="site.github" class="text-link"
-        >GitHub ↗</a
+      <SiteLink :href="`mailto:${site.contact.email}`" class="text-link">{{ site.contact.email }} ↗</SiteLink
+      ><SiteLink v-if="slug === 'kontakt'" :href="site.github" class="text-link"
+        >GitHub ↗</SiteLink
       >
     </div>
     <MeetingSection
