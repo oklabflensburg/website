@@ -17,7 +17,8 @@ Das Audit umfasste globale Styles, alle Vue-Seiten und Komponenten, Nuxt-Content
 | Kartenüberschrift | 16 px | 20 px |
 | Projekt-/Blog-/Team-/Eventbeschreibung | 13 px | 16/28 px, ab `md` 18/32 px |
 | Meeting-Angaben und Hinweise | 12–14 px | 16/28 px |
-| Tags, Daten, Byline, Footer | 11–12 px | 14 px |
+| Tags, Daten, Byline, Footer-Metazeile | 11–12 px | 14 px |
+| Footer-Identität / Navigation | 14 px | 18/32 px / 16/28 px |
 
 Die Hero- und Seitentitel bleiben unverändert. Abschnittstitel nutzen 24/30 px; längere Absätze bekommen 24 px Abstand. Die redaktionelle Breite begrenzt lange Zeilen auf ungefähr 60–80 Zeichen, abhängig vom Text. Blockquotes, Listen, Links, Tabellen und Codeblöcke teilen das Content-Styling; breite Tabellen und Codeblöcke dürfen innerhalb ihres eigenen Bereichs scrollen.
 
@@ -53,7 +54,7 @@ Alle verbleibenden `text-sm`-Treffer sind geprüfte Sekundärrollen:
 - `.pillars p`: kurze Kennzahlen-/Eigenschaftslabels und Zeitangabe.
 - `.tags span`: Kategorien und technische Tags.
 - `.card-meta`, `.news-list time`, `.blog-card .byline`, `.article-meta`: Datum, Kategorie und Autor.
-- `.footer-tagline`, `.footer nav a`: ergänzender Footer und rechtliche Navigation.
+- `.footer-meta`: Netzwerkhinweise und rechtliche Navigation.
 - `.breadcrumbs`: Standortnavigation.
 - `.filter-bar p`: Ergebnisanzahl, kein Eingabefeld.
 - Projekt-Absender: kurzer Organisationshinweis neben dem kanonischen Logo.

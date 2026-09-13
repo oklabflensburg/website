@@ -55,10 +55,17 @@
     "3": "Onsdag"
   },
   "footer": {
-    "tagline": "Åbne data. Stærkt fællesskab. Flensborg.",
-    "group0": "Udforsk",
-    "group1": "Vores lab",
-    "group2": "Godt at vide"
+    "tagline": "Åbne data, fri software og civic tech for Flensborg og Slesvig-Holsten.",
+    "community": "Vær med",
+    "explore": "Gå på opdagelse",
+    "follow": "Følg os",
+    "legal": "Juridisk information",
+    "meeting": "{day} kl. {start}–{end}",
+    "joinCta": "Kom og vær med",
+    "githubCta": "Bidrag på GitHub",
+    "email": "E-mail",
+    "network": "En del af {network}",
+    "carrier": "Drevet af {association}"
   },
   "common": {
     "all": "Alle",

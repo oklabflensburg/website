@@ -55,10 +55,17 @@
     "3": "Wednesday"
   },
   "footer": {
-    "tagline": "Open data. Strong community. Flensburg.",
-    "group0": "Explore",
-    "group1": "The lab",
-    "group2": "Good to know"
+    "tagline": "Open data, free software and civic tech for Flensburg and Schleswig-Holstein.",
+    "community": "Get involved",
+    "explore": "Explore",
+    "follow": "Follow us",
+    "legal": "Legal information",
+    "meeting": "{day}, {start}–{end}",
+    "joinCta": "Join us",
+    "githubCta": "Contribute on GitHub",
+    "email": "Email",
+    "network": "Part of {network}",
+    "carrier": "Supported by {association}"
   },
   "common": {
     "all": "All",

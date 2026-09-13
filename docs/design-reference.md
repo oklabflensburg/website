@@ -20,9 +20,9 @@ Die Vorlage zeigt eine kompakte neutrale Sans-Serif, kräftige dunkelblaue Über
 | Projektkarten | drei Spalten, 4:3-Bildfeld mit quadratischem Signet, Titel, Beschreibung, Themen-Badges und Link; mobil eine Spalte |
 | Infoleiste | vier Spalten Desktop, zwei Spalten Mobil; Projektzahl aus Content |
 | News / Mitmachen | schlichte Nachrichtenliste neben kleiner heller Mitmachen-Karte |
-| Footer | Weiß, obere Border, kompaktes Logo, kleine Links und lineare Social-Icons |
+| Footer | Helle Fläche, Identität und Mitmach-CTA, drei benannte Linkgruppen, ruhige Netzwerk-/Rechtszeile; mobil eine, auf Tablets zwei und auf großen Bildschirmen vier Spalten |
 
-Gemeinsame Tailwind-Tokens und mit `@apply` zusammengesetzte Komponentenklassen liegen in `app/assets/css/main.css`. Seiten und Komponenten verwenden dieselben Klassen. Es gibt keine zweite Designimplementierung, keinen Theme-Schalter und keine zusätzlich geladene Schrift. Die frühere abstrakte Kartenzeichnung, der blaue CTA-Banner, die großflächige Vereinsleiste, der mehrspaltige Footer und deren Styles sind ersetzt.
+Gemeinsame Tailwind-Tokens und mit `@apply` zusammengesetzte Komponentenklassen liegen in `app/assets/css/main.css`. Seiten und Komponenten verwenden dieselben Klassen. Es gibt keine zweite Designimplementierung, keinen Theme-Schalter und keine zusätzlich geladene Schrift. Die frühere abstrakte Kartenzeichnung, der blaue CTA-Banner, die großflächige Vereinsleiste, der frühere Footer und deren Styles sind ersetzt. Der Community-Footer nutzt das bestehende Logo, zentrale Treffendaten, 16-px-Navigationslinks und beschriftete Social-Links; seine Rechtszeile bleibt bei 14 px.
 
 Die anschließende systematische Lesbarkeitsverbesserung ist in [typography.md](typography.md) dokumentiert: größere Inhalts- und Bedientexte, dunklerer Sekundärton, mehrzeiliger Umbruch und Prüfung schmaler Ansichten.
 

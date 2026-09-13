@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 import { readFileSync } from 'node:fs'
 import { parse } from 'yaml'
 import AxeBuilder from '@axe-core/playwright'
+import sharp from 'sharp'
 import { editorialSlugs, localizedPath, site } from '../../shared/config/site'
 
 test('association information never substitutes the network link', async ({ page }) => {
@@ -195,11 +196,18 @@ test('review screenshots', async ({ page }, testInfo) => {
         return image.decode()
       }))
     })
-    await page.screenshot({
+    const screenshot = await page.screenshot({
       path: `docs/screenshots/${testInfo.project.name}-${path === '/' ? 'home' : path.slice(1)}.png`,
       fullPage: true,
       scale: 'css',
     })
+    if (path === '/' || path === '/ueber-uns') {
+      // Crop the full-page image: an element capture taller than the viewport
+      // can bring fixed elements outside the viewport into the screenshot.
+      const top = await page.locator('footer').evaluate((node) => Math.ceil(node.getBoundingClientRect().top + window.scrollY))
+      const { width, height } = await sharp(screenshot).metadata()
+      await sharp(screenshot).extract({ left: 0, top, width: width!, height: height! - top }).toFile(`docs/screenshots/${testInfo.project.name}-${path === '/' ? 'home' : 'ueber-uns'}-footer.png`)
+    }
   }
 })
 
