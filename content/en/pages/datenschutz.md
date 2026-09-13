@@ -15,9 +15,9 @@ You can contact the controller listed above with questions about the processing 
 
 ## Delivering the website
 
-Visiting the website involves processing technical connection data, including the IP address, time, requested address and information your browser sends about the browser and operating system. This processing enables content delivery and supports secure, stable operation. Article 6(1)(f) GDPR may provide the legal basis where processing is necessary for these legitimate interests and your interests do not override them.
+Visiting the website involves processing technical connection data, including the IP address, time, requested address and information your browser sends about the browser and operating system. This processing enables content delivery and supports secure, stable operation. The legal basis is Article 6(1)(f) GDPR. Our legitimate interest is the secure, stable and technically reliable delivery of this website.
 
-The website itself does not keep a visitor access log. The web server or services in front of it may generate additional technical logs. Their scope, recipients and retention depend on the actual hosting arrangements. Please contact the controller listed above for information about these arrangements.
+The website itself does not keep a visitor access log. The web server or services in front of it may generate additional technical logs. These are processed only where necessary for operation, troubleshooting and security, and retained only for as long as required for those purposes or by law.
 
 ::legal-details{kind="hosting"}
 ## External hosting provider
@@ -30,9 +30,9 @@ A data processing agreement pursuant to Article 28 GDPR is in place with the hos
 
 ## Email contact and retention
 
-When you contact us by email, your email address, message and any information you provide voluntarily are processed to handle your enquiry. Depending on its subject, this is based on pre-contractual or contractual steps under Article 6(1)(b) GDPR or the legitimate interest in responding to enquiries under Article 6(1)(f). This website has no contact form.
+When you contact us by email, your email address, message and any information you provide voluntarily are processed to handle your enquiry. Depending on its subject, this is based on pre-contractual or contractual steps under Article 6(1)(b) GDPR or our legitimate interest in responding to enquiries under Article 6(1)(f) GDPR.
 
-Personal data may only be retained for as long as necessary for its purpose or as required by statutory retention obligations. Please contact the controller for information about the retention of your particular enquiry and the email service providers involved.
+Personal data is retained only for as long as necessary for the respective purpose or as required by statutory retention obligations. This website has no contact form.
 
 ## Local resources and language
 
@@ -40,9 +40,17 @@ Fonts, images and the map illustration are served by this website. There are no 
 
 ## Usage statistics with Plausible
 
-We use Plausible Analytics via `plausible.oklabflensburg.de` to analyse website usage and improve the site. Your browser loads the analytics script from that service and sends pageviews with the visited URL and referring page. The script also records time spent, scroll depth, and clicks on external links and file downloads with their destination addresses. Fetching the script and sending this information also transmits your IP address and browser information to the service as part of the connection.
+We use the self-hosted web analytics software Plausible Analytics at `plausible.oklabflensburg.de` to statistically analyse use of this website and improve our services.
 
-The integrated script sets no analytics cookies and stores no identifier in your browser. These statistics are not used for advertising. Please contact the controller listed above for information about the operation of the analytics service, recipients and retention.
+Your browser loads the analytics script from this service and sends pageviews including the visited URL and referring page. Depending on the measurement features enabled, the service may also record time spent, scroll depth, clicks on external links and file downloads together with the respective destination address. Fetching the script and sending analytics data also technically transmits the IP address and browser information to the analytics service operated by us.
+
+In our configuration, Plausible does not set analytics cookies and does not store a persistent visitor identifier in your browser. The collected usage data is not used for advertising or for creating personalised advertising profiles.
+
+The processing is based on Article 6(1)(f) GDPR. Our legitimate interest is privacy-friendly statistical analysis, identifying technical issues and improving our online services.
+
+Where external hosting providers are involved in operating Plausible, they are engaged in accordance with the applicable data protection requirements. Analytics data is retained only for as long as necessary for the purposes described above and in accordance with the retention configured for the service.
+
+**You may object to this processing under Article 21 GDPR on grounds relating to your particular situation.** You can submit your objection to the controller identified in this privacy notice.
 
 ## External links
 

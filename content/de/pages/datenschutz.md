@@ -15,9 +15,9 @@ Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten oder zur Ausübung Ihr
 
 ## Bereitstellung der Website
 
-Beim Aufruf werden technische Verbindungsdaten verarbeitet, insbesondere die IP-Adresse, Zeitpunkt und angeforderte Adresse sowie die vom Browser übermittelten Informationen zu Browser und Betriebssystem. Diese Verarbeitung ermöglicht die Übertragung der Inhalte und dient einem sicheren und stabilen Betrieb. Als Rechtsgrundlage kommt Art. 6 Abs. 1 lit. f DSGVO in Betracht, soweit die Verarbeitung für diese berechtigten Interessen erforderlich ist und Ihre Interessen nicht überwiegen.
+Beim Aufruf werden technische Verbindungsdaten verarbeitet, insbesondere die IP-Adresse, Zeitpunkt und angeforderte Adresse sowie die vom Browser übermittelten Informationen zu Browser und Betriebssystem. Diese Verarbeitung ermöglicht die Übertragung der Inhalte und dient einem sicheren und stabilen Betrieb. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren, stabilen und technisch zuverlässigen Bereitstellung dieser Website.
 
-Die Website führt selbst kein Besucher-Zugriffsprotokoll. Zusätzlich können beim Betrieb des Webservers oder vorgeschalteter Dienste technische Protokolle entstehen. Deren Umfang, Empfänger und Aufbewahrung hängen vom tatsächlichen Hosting ab. Informationen hierzu erhalten Sie bei der oben genannten verantwortlichen Stelle.
+Die Website führt selbst kein Besucher-Zugriffsprotokoll. Zusätzlich können beim Betrieb des Webservers oder vorgeschalteter Dienste technische Protokolle entstehen. Diese werden nur verarbeitet, soweit dies für Betrieb, Fehleranalyse und Sicherheit erforderlich ist, und nur so lange aufbewahrt, wie der jeweilige Zweck oder gesetzliche Pflichten dies erfordern.
 
 ::legal-details{kind="hosting"}
 ## Externer Hosting-Anbieter
@@ -30,9 +30,9 @@ Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Ar
 
 ## E-Mail-Kontakt und Aufbewahrung
 
-Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre E-Mail-Adresse, der Nachrichteninhalt und freiwillig mitgeteilte Angaben zur Bearbeitung Ihrer Anfrage verarbeitet. Je nach Anliegen erfolgt dies zur Durchführung vorvertraglicher oder vertraglicher Maßnahmen nach Art. 6 Abs. 1 lit. b DSGVO oder zur Beantwortung von Anfragen als berechtigtem Interesse nach Art. 6 Abs. 1 lit. f DSGVO. Ein Kontaktformular wird auf dieser Website nicht angeboten.
+Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre E-Mail-Adresse, der Nachrichteninhalt und freiwillig mitgeteilte Angaben zur Bearbeitung Ihrer Anfrage verarbeitet. Je nach Anliegen erfolgt dies zur Durchführung vorvertraglicher oder vertraglicher Maßnahmen nach Art. 6 Abs. 1 lit. b DSGVO oder zur Beantwortung von Anfragen auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO.
 
-Personenbezogene Daten dürfen nur so lange aufbewahrt werden, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Für Auskünfte zur Aufbewahrung Ihrer konkreten Anfrage und zu beteiligten E-Mail-Dienstleistern wenden Sie sich bitte an die verantwortliche Stelle.
+Personenbezogene Daten werden nur so lange aufbewahrt, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Ein Kontaktformular wird auf dieser Website nicht angeboten.
 
 ## Lokale Ressourcen und Sprache
 
@@ -40,9 +40,17 @@ Schriften, Bilder und die Kartenillustration werden von dieser Website ausgelief
 
 ## Nutzungsstatistik mit Plausible
 
-Wir verwenden Plausible Analytics über `plausible.oklabflensburg.de`, um die Nutzung dieser Website auszuwerten und das Angebot zu verbessern. Ihr Browser lädt dort das Analyseskript und übermittelt Seitenaufrufe mit der aufgerufenen URL und der verweisenden Seite. Das Skript erfasst außerdem Nutzungsdauer, Scrolltiefe sowie Klicks auf externe Links und Dateidownloads mit der jeweiligen Zieladresse. Beim Abruf und bei der Übertragung werden technisch auch IP-Adresse und Browserinformationen an diesen Dienst übermittelt.
+Wir verwenden die selbst gehostete Webanalyse-Software Plausible Analytics unter `plausible.oklabflensburg.de`, um die Nutzung dieser Website statistisch auszuwerten und unser Angebot zu verbessern.
 
-Das eingebundene Skript setzt keine Analyse-Cookies und speichert keine Kennung im Browser. Die Statistik ist nicht für Werbung bestimmt. Informationen zum Betrieb des Analysedienstes, zu Empfängern und zur Aufbewahrung erhalten Sie bei der oben genannten verantwortlichen Stelle.
+Ihr Browser lädt das Analyseskript von diesem Dienst und übermittelt Seitenaufrufe mit der aufgerufenen URL und der verweisenden Seite. Je nach aktivierten Messfunktionen können außerdem Nutzungsdauer, Scrolltiefe sowie Klicks auf externe Links und Dateidownloads mit der jeweiligen Zieladresse erfasst werden. Beim Abruf und bei der Übertragung werden technisch auch die IP-Adresse und Browserinformationen an den von uns betriebenen Analysedienst übermittelt.
+
+Plausible setzt in unserer Konfiguration keine Analyse-Cookies und speichert keine dauerhafte Besucherkennung im Browser. Die erhobenen Nutzungsdaten werden nicht für Werbung oder zur Erstellung personenbezogener Werbeprofile verwendet.
+
+Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der datensparsamen statistischen Auswertung, der Erkennung technischer Probleme und der Verbesserung unseres Online-Angebots.
+
+Soweit beim Betrieb von Plausible externe Hosting-Dienstleister eingesetzt werden, werden diese im Einklang mit den anwendbaren datenschutzrechtlichen Anforderungen eingebunden. Analysedaten werden nur so lange gespeichert, wie dies für die genannten Zwecke erforderlich ist und es die für den Dienst konfigurierte Aufbewahrung vorsieht.
+
+**Sie können der Verarbeitung nach Art. 21 DSGVO aus Gründen, die sich aus Ihrer besonderen Situation ergeben, widersprechen.** Ihren Widerspruch können Sie an die in dieser Datenschutzerklärung genannte verantwortliche Stelle richten.
 
 ## Externe Links
 
